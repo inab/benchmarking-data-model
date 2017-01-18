@@ -1,0 +1,20 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#ToolStatus",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Tool Status concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the tool status. It should be something meaningful, like a short word or an acronym",
+			"type": "string",
+			"minLength": 1
+		},
+		"description": {
+			"title": "Description of this tool status",
+			"type": "string"
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id"],
+	"dependencies": {}
+}

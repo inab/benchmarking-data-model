@@ -1,0 +1,79 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#BenchmarkingEvent",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Benchmarking Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the benchmarking event. If it is possible, it should be something meaningful, like an URL",
+			"type": "string",
+			"minLength": 1
+		},
+		"name": {
+			"title": "Short benchmarking event name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"is_automated": {
+			"title": "Is this an automated event?",
+			"type": "boolean"
+		},
+		"dates": {
+			"title": "Relevant dates for this benchmarking event",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the benchmarking event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the benchmarking event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"bench_start": {
+					"title": "When starts the benchmarking event?",
+					"type": "string",
+					"format": "date-time"
+				},
+				"bench_stop": {
+					"title": "When stops the benchmarking event?",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation","modification","bench_start","bench_stop"]
+		},
+		"url": {
+			"title": "The link to the benchmarking event",
+			"type": "string",
+			"format": "uri"
+		},
+		"community_id": {
+			"title": "The community id where this benchmarking event belongs",
+			"type": "string",
+			"minLength": 1
+		},
+		"bench_contact_id": {
+			"title": "The benchmarking event contact id(s)",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"references": {
+			"title": "The benchmarking event reference id(s) (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","name","is_automated","dates","community_id","bench_contact_id"],
+	"dependencies": {}
+}

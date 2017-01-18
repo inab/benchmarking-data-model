@@ -1,0 +1,79 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Contact",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Contact concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the contact. It should be whatever ELIXIR AAI uses as public unique user id (for instance, a URI)",
+			"type": "string",
+			"minLength": 1
+		},
+		"givenName": {
+			"title": "First / given name",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"surname": {
+			"title": "Surname(s)",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"email": {
+			"title": "The e-mail address(es) of the contact",
+			"type": "array",
+			"format": "email",
+			"minItems": 1,
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"minLength": 1,
+				"format": "email"
+			}
+		},
+		"notes": {
+			"title": "Comments about the contact",
+			"type": "string"
+		},
+		"links": {
+			"title": "Optional links related to the contact",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"uri": {
+						"title": "The URI of the link related to the contact",
+						"type": "string",
+						"format": "uri"
+					},
+					"label": {
+						"title": "The type of URI",
+						"type": "string",
+						"enum": ["PublicationDOI","LinkedIn","ORCID"]
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"uri",
+					"label"
+				]
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": [
+		"_id",
+		"givenName",
+		"surname",
+		"email"
+	],
+	"dependencies": {}
+}

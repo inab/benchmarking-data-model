@@ -1,0 +1,93 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Dataset",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the dataset. If it is possible, it should be something meaningful",
+			"type": "string",
+			"minLength": 1
+		},
+		"name": {
+			"title": "Short dataset name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"version": {
+			"title": "Version (or relelase date) of the dataset",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long dataset description",
+			"type": "string"
+		},
+		"dates": {
+			"title": "Relevant dates for this dataset",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the dataset",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the dataset",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation","modification"]
+		},
+		"type": {
+			"title": "Type of dataset",
+			"type": "string",
+			"mingLength": 1
+		},
+		"datalink": {
+			"title": "The link to the dataset itself",
+			"type": "string",
+			"format": "uri"
+		},
+		"dataset_contact_id": {
+			"title": "The contact id(s) of the creators of this dataset",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"metrics": {
+			"title": "The different metrics generated from this dataset",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"metrics_id": {
+						"title": "The id of the metrics as such",
+						"type": "string",
+						"minLength": 1
+					},
+					"result": {
+						"title": "The results obtained from the metrics",
+						"type": "object",
+						"additionalProperties": true
+					}
+				}
+			}
+		},
+		"references": {
+			"title": "The reference id(s) of this dataset (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","name","version","type","dates","dataset_contact_id"],
+	"dependencies": {}
+}

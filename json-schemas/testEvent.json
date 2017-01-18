@@ -1,0 +1,84 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#TestEvent",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Test Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the test event.",
+			"type": "string",
+			"minLength": 1
+		},
+		"tool_id": {
+			"title": "The tool id which takes this input dataset",
+			"type": "string",
+			"minLength": 1
+		},
+		"input_dataset_id": {
+			"title": "The id of the input dataset",
+			"type": "string",
+			"minLength": 1
+		},
+		"output_dataset_id": {
+			"title": "The id of the output dataset (if available)",
+			"type": "string",
+			"minLength": 1
+		},
+		"benchmarking_event_id": {
+			"title": "The id of the benchmarking event where this test event was generated",
+			"type": "string",
+			"minLength": 1
+		},
+		"result_report": {
+			"title": "Relevant information about the status changes",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"status": {
+						"title": "Status retval",
+						"type": "integer"
+					},
+					"status_date": {
+						"title": "Date of the status reception",
+						"type": "string",
+						"format": "date-time"
+					},
+					"report": {
+						"title": "Textual report for this status",
+						"type": "string"
+					}
+				}
+			}
+		},
+		"dates": {
+			"title": "Relevant dates for this test event",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the test event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the test event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"reception": {
+					"title": "Last reception date of the output dataset (redundant, as the output dataset already has this date)",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation"]
+		},
+		"metadata": {
+			"title": "Relevant metadata used to call the tool",
+			"type": "object"
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","tool_id","input_dataset_id","benchmarking_event_id","dates"],
+	"dependencies": {}
+}

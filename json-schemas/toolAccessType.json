@@ -1,0 +1,20 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#ToolAccessType",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Tool Access Type concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the tool access type. It should be something meaningful, like a short word or an acronym",
+			"type": "string",
+			"minLength": 1
+		},
+		"description": {
+			"title": "Description of this tool access type",
+			"type": "string"
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id"],
+	"dependencies": {}
+}
