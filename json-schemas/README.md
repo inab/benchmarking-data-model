@@ -1,6 +1,6 @@
 # ELIXIR-EXCELERATE Benchmarking JSON Schemas
 
-These are the main benchmarking concepts modelled so far using [JSON Hyper-Schema Draft-04](http://json-schema.org/latest/json-schema-hypermedia.html):
+These are the main benchmarking concepts modelled so far using [JSON Hyper-Schema Draft-04](http://json-schema.org/latest/json-schema-hypermedia.html). Sample JSON files can be validated agains these schemas using [JSON Schema Validator](http://www.jsonschemavalidator.net/):
 
 * [Community](community.json): The description of a benchmarking community, like CASP, CAFA, Quest for Orthologs, etc...
 
