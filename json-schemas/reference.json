@@ -88,6 +88,6 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","title","doi"],
+	"required": ["_id","title"],
 	"dependencies": {}
 }

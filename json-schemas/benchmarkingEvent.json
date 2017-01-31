@@ -32,12 +32,12 @@
 					"type": "string",
 					"format": "date-time"
 				},
-				"bench_start": {
+				"benchmark_start": {
 					"title": "When starts the benchmarking event?",
 					"type": "string",
 					"format": "date-time"
 				},
-				"bench_stop": {
+				"benchmark_stop": {
 					"title": "When stops the benchmarking event?",
 					"type": "string",
 					"format": "date-time"
