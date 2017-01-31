@@ -58,7 +58,7 @@
 						"title": "The type of URI",
 						"type": "string",
 						"enum": ["PublicationDOI","LinkedIn","ORCID","MainSite"]
-					},
+					}
 				},
 				"additionalProperties": false,
 				"required": [
