@@ -11,6 +11,7 @@ if(scalar(@ARGV) > 0) {
 	
 	my $p = JSON->new->convert_blessed;
 	my $v;
+	my $jsonSchema;
 	
 	if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
 		print "* Loading schema $jsonSchemaFile\n";
@@ -18,7 +19,7 @@ if(scalar(@ARGV) > 0) {
 		my $jsonSchemaText = <$S>;
 		close($S);
 		
-		my $jsonSchema = $p->decode($jsonSchemaText);
+		$jsonSchema = $p->decode($jsonSchemaText);
 		
 		$v = JSON::Validator->new($jsonSchema);
 	} else {
@@ -35,7 +36,7 @@ if(scalar(@ARGV) > 0) {
 			
 			my $json = $p->decode($jsonText);
 			
-			my @valErrors = $v->validate($json);
+			my @valErrors = $v->validate($json,$jsonSchema);
 			if(scalar(@valErrors) > 0) {
 				print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
 			} else {
