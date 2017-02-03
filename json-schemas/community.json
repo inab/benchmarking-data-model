@@ -68,6 +68,6 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","name","acronym","status","community_contacts"],
+	"required": ["_id","name","acronym","status_id","community_contacts"],
 	"dependencies": {}
 }
