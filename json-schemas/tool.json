@@ -9,6 +9,16 @@
 			"type": "string",
 			"minLength": 1
 		},
+		"_type": {
+			"title": "The document type. In this case, fixed to Tool",
+			"type": "string",
+			"enum": [ "Tool" ]
+		},
+		"_version": {
+			"title": "The document type version. In this case, fixed to 0.2",
+			"type": "string",
+			"enum": [ "0.2" ]
+		},
 		"bioTools_id": {
 			"title": "The unique id of the tool in EXCELERATE WP1 bio.tools registry",
 			"type": "string",
@@ -85,6 +95,6 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
+	"required": ["_id","_type","_version","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
 	"dependencies": {}
 }

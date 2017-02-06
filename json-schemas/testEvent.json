@@ -9,6 +9,16 @@
 			"type": "string",
 			"minLength": 1
 		},
+		"_type": {
+			"title": "The document type. In this case, fixed to TestEvent",
+			"type": "string",
+			"enum": [ "TestEvent" ]
+		},
+		"_version": {
+			"title": "The document type version. In this case, fixed to 0.2",
+			"type": "string",
+			"enum": [ "0.2" ]
+		},
 		"tool_id": {
 			"title": "The tool id which takes this input dataset",
 			"type": "string",
@@ -79,6 +89,6 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","tool_id","input_dataset_id","benchmarking_event_id","dates"],
+	"required": ["_id","_type","_version","tool_id","input_dataset_id","benchmarking_event_id","dates"],
 	"dependencies": {}
 }
