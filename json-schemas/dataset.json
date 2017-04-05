@@ -15,9 +15,9 @@
 			"enum": [ "Dataset" ]
 		},
 		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
+			"title": "The document type version. In this case, fixed to 0.3",
 			"type": "string",
-			"enum": [ "0.2" ]
+			"enum": [ "0.3" ]
 		},
 		"name": {
 			"title": "Short dataset name",
