@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Contact",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Contact concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -91,5 +91,6 @@
 		"contact_type",
 		"email"
 	],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Community",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Community",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -35,6 +35,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#CommunityStatus",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -73,11 +77,16 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Contact",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		}
 	},
 	"additionalProperties": true,
 	"required": ["_id","_type","_version","name","acronym","status_id","community_contacts"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

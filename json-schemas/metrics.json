@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Metrics",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Metrics concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -34,6 +34,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Contact",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -78,11 +82,16 @@
 			"type": "array",
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Reference",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		}
 	},
 	"additionalProperties": true,
 	"required": ["_id","_type","_version","title","metrics_contact_id"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

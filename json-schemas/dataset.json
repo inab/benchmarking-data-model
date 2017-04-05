@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Dataset",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -66,6 +66,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Contact",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -78,6 +82,10 @@
 					"metrics_id": {
 						"title": "The id of the metrics as such",
 						"type": "string",
+						"foreign_key": {
+							"schema_id": "#Metrics",
+							"property": "_id"
+						},
 						"minLength": 1
 					},
 					"result": {
@@ -93,11 +101,16 @@
 			"type": "array",
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Reference",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		}
 	},
 	"additionalProperties": true,
 	"required": ["_id","_type","_version","name","version","type","dates","dataset_contact_id"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

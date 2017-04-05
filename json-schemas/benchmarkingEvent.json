@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#BenchmarkingEvent",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#BenchmarkingEvent",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Benchmarking Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -67,6 +67,10 @@
 		"community_id": {
 			"title": "The community id where this benchmarking event belongs",
 			"type": "string",
+			"foreign_key": {
+				"schema_id": "#Community",
+				"property": "_id"
+			},
 			"minLength": 1
 		},
 		"bench_contact_id": {
@@ -75,6 +79,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Contact",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -83,11 +91,16 @@
 			"type": "array",
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Reference",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		}
 	},
 	"additionalProperties": true,
 	"required": ["_id","_type","_version","name","is_automated","dates","community_id","bench_contact_id"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

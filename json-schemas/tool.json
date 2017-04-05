@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Tool",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Tool concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -43,6 +43,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Community",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -52,12 +56,20 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Contact",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
 		"status_id": {
 			"title": "_id of the current tool status",
 			"type": "string",
+			"foreign_key": {
+				"schema_id": "#ToolStatus",
+				"property": "_id"
+			},
 			"minLength": 1
 		},
 		"references": {
@@ -66,6 +78,10 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_key": {
+					"schema_id": "#Reference",
+					"property": "_id"
+				},
 				"minLength": 1
 			}
 		},
@@ -79,6 +95,10 @@
 					"tool_access_type_id": {
 						"title": "The tool access type id",
 						"type": "string",
+						"foreign_key": {
+							"schema_id": "#ToolAccessType",
+							"property": "_id"
+						},
 						"minLength": 1
 					},
 					"link": {
@@ -120,5 +140,6 @@
 	},
 	"additionalProperties": true,
 	"required": ["_id","_type","_version","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }
