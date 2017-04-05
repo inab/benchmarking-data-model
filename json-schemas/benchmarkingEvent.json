@@ -53,7 +53,11 @@
 					"format": "date-time"
 				}
 			},
-			"required": ["creation","modification","benchmark_start","benchmark_stop"]
+			"required": ["creation","modification"],
+			"dependencies": {
+				"benchmark_start": ["benchmark_stop"],
+				"benchmark_stop": ["benchmark_start"]
+			}
 		},
 		"url": {
 			"title": "The link to the benchmarking event",

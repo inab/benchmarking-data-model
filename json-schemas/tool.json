@@ -82,9 +82,33 @@
 						"minLength": 1
 					},
 					"link": {
-						"title": "The link to the access point",
+						"title": "The base link to the access point (when it is not a local algorithm)",
 						"type": "string",
 						"format": "uri"
+					},
+					"techdocs": {
+						"title": "Optional technical documentation of the tool access",
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"uri": {
+									"title": "The URI of the technical documentation",
+									"type": "string",
+									"format": "uri"
+								},
+								"label": {
+									"title": "The type of URI (WSDL, WADL, OpenAPI/Swagger, Source code, Miscellaneous documentation)",
+									"type": "string",
+									"enum": ["WSDL","WADL","OpenAPI","source","doc"]
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"uri",
+								"label"
+							]
+						}
 					}
 				},
 				"additionalProperties": true,
