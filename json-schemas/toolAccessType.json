@@ -14,6 +14,12 @@
 			"type": "string",
 			"enum": [ "ToolAccessType" ]
 		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#ToolAccessType" ]
+		},
 		"_version": {
 			"title": "The document type version. In this case, fixed to 0.3",
 			"type": "string",
@@ -25,7 +31,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_version"],
+	"required": ["_id","_type","_schema","_version"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
