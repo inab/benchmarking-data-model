@@ -1,7 +1,8 @@
 {
     "_id": "server20",
     "_type": "Tool",
-    "_version": "0.2",
+    "_version": "0.3",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
     "bioTools_id": "JIID1",
     "name": "SWISS-MODEL",
     "description": "Comparative Structure Prediction",

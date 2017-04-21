@@ -1,7 +1,8 @@
 {
 		"_id": "10.1093/bioinformatics/btt473",
 		"_type": "Reference",
-		"_version": "0.2",
+		"_version": "0.3",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
 		"title": "lDDT: a local superposition-free score for comparing protein structures and models using distance difference tests",
 		"pubmed_id": 23986568
 

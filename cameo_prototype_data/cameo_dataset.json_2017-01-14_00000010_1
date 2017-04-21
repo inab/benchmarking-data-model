@@ -1,7 +1,8 @@
 {
     "_id": "2017-01-14_00000010_1",
     "_type": "Dataset",
-    "_version": "0.2",
+    "_version": "0.3",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
     "name": "Crystal structure of phosphoribulokinase from Methanospirillum hungatei",
     "version":"0",
     "description": "Target 10_1 of week 2017-01-14",
