@@ -7,53 +7,52 @@ use File::Spec;
 use JSON::MaybeXS;
 use JSON::Validator 0.95;
 
-sub loadSchemaDir($$\%);
-
-sub loadSchemaDir($$\%) {
-	my($jsonSchemaDir,$v,$p_schemaHash) = @_;
-	
+sub loadJSONSchemas($\%@) {
+	my($v,$p_schemaHash,@jsonSchemaFiles) = @_;
 	my $p = JSON->new->convert_blessed;
-	if(opendir(my $JSD,$jsonSchemaDir)) {
-		print "Processing directory $jsonSchemaDir\n";
-		while(my $relJsonSchemaFile = readdir($JSD)) {
-			# Skipping hidden files / directories
-			next  if(substr($relJsonSchemaFile,0,1) eq '.');
-			
-			my $jsonSchemaFile = File::Spec->catfile($jsonSchemaDir,$relJsonSchemaFile);
-			if(-d $jsonSchemaFile) {
-				loadSchemaDir($jsonSchemaFile,$v,%{$p_schemaHash});
-			} elsif($relJsonSchemaFile =~ /\.json$/) {
-				if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
-					print "* Loading schema $jsonSchemaFile\n";
-					local $/;
-					my $jsonSchemaText = <$S>;
-					close($S);
+	
+	foreach my $jsonSchemaFile (@jsonSchemaFiles) {
+		if(-d $jsonSchemaFile) {
+			# It's a possible JSON Schema directory, not a JSON Schema file
+			if(opendir(my $JSD,$jsonSchemaFile)) {
+				while(my $relJsonSchemaFile = readdir($JSD)) {
+					# Skipping hidden files / directories
+					next  if(substr($relJsonSchemaFile,0,1) eq '.');
 					
-					my $jsonSchema = $p->decode($jsonSchemaText);
-					my @valErrors = $v->schema(JSON::Validator::SPECIFICATION_URL)->validate($jsonSchema);
-					if(scalar(@valErrors) > 0) {
-						print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
-					} else {
-						if(exists($jsonSchema->{'id'})) {
-							if(exists($p_schemaHash->{$jsonSchema->{'id'}})) {
-								print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchema->{'id'}}[1]." have the same id\n";
-							} else {
-								print "\t- Validated ".$jsonSchema->{'id'}."\n";
-								$p_schemaHash->{$jsonSchema->{'id'}} = [$jsonSchema,$jsonSchemaFile];
-							}
-						} else {
-							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile has no id attribute\n";
-						}
-					}
-				} else {
-					print STDERR "FATAL ERROR: Unable to open schema file $jsonSchemaFile. Reason: $!\n";
+					my $newJsonSchemaFile = File::Spec->catfile($jsonSchemaFile,$relJsonSchemaFile);
+					push(@jsonSchemaFiles, $newJsonSchemaFile)  if(-d $newJsonSchemaFile || $relJsonSchemaFile =~ /\.json/);
 				}
+				closedir($JSD);
+			} else {
+				print STDERR "FATAL ERROR: Unable to open JSON schema directory $jsonSchemaFile. Reason: $!\n";
+			}
+		} else {
+			if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
+				print "* Loading schema $jsonSchemaFile\n";
+				local $/;
+				my $jsonSchemaText = <$S>;
+				close($S);
+				
+				my $jsonSchema = $p->decode($jsonSchemaText);
+				my @valErrors = $v->schema(JSON::Validator::SPECIFICATION_URL)->validate($jsonSchema);
+				if(scalar(@valErrors) > 0) {
+					print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
+				} else {
+					if(exists($jsonSchema->{'id'})) {
+						if(exists($p_schemaHash->{$jsonSchema->{'id'}})) {
+							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchema->{'id'}}[1]." have the same id\n";
+						} else {
+							print "\t- Validated ".$jsonSchema->{'id'}."\n";
+							$p_schemaHash->{$jsonSchema->{'id'}} = [$jsonSchema,$jsonSchemaFile];
+						}
+					} else {
+						print STDERR "\tERROR: validated, but schema in $jsonSchemaFile has no id attribute\n";
+					}
+				}
+			} else {
+				print STDERR "FATAL ERROR: Unable to open schema file $jsonSchemaFile. Reason: $!\n";
 			}
 		}
-		closedir($JSD);
-	} else {
-		print STDERR "FATAL ERROR: Unable to open JSON schema directory $jsonSchemaDir. Reason: $!\n";
-		exit 1;
 	}
 }
 
@@ -70,7 +69,7 @@ sub jsonValidate($\%@) {
 					next  if(substr($relJsonFile,0,1) eq '.');
 					
 					my $newJsonFile = File::Spec->catfile($jsonFile,$relJsonFile);
-					push(@jsonFiles, $newJsonFile)  if(-d $newJsonFile || $relJsonFile =~ /\.json$/);
+					push(@jsonFiles, $newJsonFile)  if(-d $newJsonFile || $relJsonFile =~ /\.json/);
 				}
 				closedir($JSD);
 			} else {
@@ -97,7 +96,6 @@ sub jsonValidate($\%@) {
 					}
 				} else {
 					print "\t- Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
-					print "\t- No schema declared for $jsonFile\n";
 				}
 			} else {
 				print "\t- Skipping schema validation (no one declared for $jsonFile)\n";
@@ -116,7 +114,7 @@ if(scalar(@ARGV) > 0) {
 	
 	my $v = JSON::Validator->new();
 	my %schemaHash = ();
-	loadSchemaDir($jsonSchemaDir,$v,%schemaHash);
+	loadJSONSchemas($v,%schemaHash,$jsonSchemaDir);
 	
 	if(scalar(@ARGV) > 0) {
 		if(scalar(keys(%schemaHash))==0) {
