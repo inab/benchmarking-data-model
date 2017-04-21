@@ -43,6 +43,19 @@ sub loadJSONSchemas($\%@) {
 							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchema->{'id'}}[1]." have the same id\n";
 						} else {
 							print "\t- Validated ".$jsonSchema->{'id'}."\n";
+							# Curating the primary key
+							if(exists($jsonSchema->{'primary_key'})) {
+								if(ref($jsonSchema->{'primary_key'}) eq 'ARRAY') {
+									foreach my $key (@{$jsonSchema->{'primary_key'}}) {
+										if(ref(\$key) ne 'SCALAR') {
+											print STDERR "\tWARNING: primary key in $jsonSchemaFile is not composed by strings. Ignoring it\n";
+											delete($jsonSchema->{'primary_key'});
+										}
+									}
+								} else {
+									delete($jsonSchema->{'primary_key'});
+								}
+							}
 							$p_schemaHash->{$jsonSchema->{'id'}} = [$jsonSchema,$jsonSchemaFile];
 						}
 					} else {
@@ -59,6 +72,12 @@ sub loadJSONSchemas($\%@) {
 sub jsonValidate($\%@) {
 	my($v,$p_schemaHash,@jsonFiles) = @_;
 	my $p = JSON->new->convert_blessed;
+	
+	# A two level hash, in order to check primary key restrictions
+	my %PKvals = ();
+	
+	# A two level hash, in order to check foreign key restrictions
+	my %FKvals = ();
 	
 	foreach my $jsonFile (@jsonFiles) {
 		if(-d $jsonFile) {
@@ -88,11 +107,31 @@ sub jsonValidate($\%@) {
 					print "\t- Using ".$json->{'_schema'}." schema\n";
 					
 					my $jsonSchema = $p_schemaHash->{$json->{'_schema'}}[0];
+					
 					my @valErrors = $v->validate($json,$jsonSchema);
 					if(scalar(@valErrors) > 0) {
 						print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
 					} else {
-						print "\t- Validated!\n";
+						# Does the schema contain a PK declaration?
+						my $isValid = 1;
+						if(exists($jsonSchema->{'primary_key'})) {
+							my $p_PK;
+							if(exists($PKvals{$jsonSchema->{'primary_key'}})) {
+								$p_PK = $PKvals{$jsonSchema->{'primary_key'}};
+							} else {
+								$PKvals{$jsonSchema->{'primary_key'}} = $p_PK = {};
+							}
+							
+							my $pkString = join("\0",@{$json}{@{$jsonSchema->{'primary_key'}}});
+							if(exists($p_PK->{$pkString})) {
+								print STDERR "\t- PK ERROR: Duplicate PK in $jsonFile and ".$p_PK->{$pkString}."\n";
+								$isValid = undef;
+							} else {
+								$p_PK->{$pkString} = $jsonFile;
+							}
+						}
+						
+						print "\t- Validated!\n"  if($isValid);
 					}
 				} else {
 					print "\t- Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
@@ -105,6 +144,8 @@ sub jsonValidate($\%@) {
 			print STDERR "\t- ERROR: Unable to open file $jsonFile. Reason: $!\n";
 		}
 	}
+	
+	# TODO, Once all the data is read, apply FK checks
 }
 
 if(scalar(@ARGV) > 0) {
