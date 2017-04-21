@@ -1,0 +1,20 @@
+{
+    "_id": "2017-01-14_00000003_1",
+    "_type": "TestEvent",
+    "_version": "0.2",
+    "tool_id": "server11",
+    "input_dataset_id": "2017-01-14_00000003_1_11",
+    "benchmarking_event_id": "2017-01-14T00:00:00Z",
+    "result_report": [
+      {
+          "status": 0,
+          "status_date": "2017-01-30T00:00:00Z",
+          "report": "informe"
+      }
+    ],
+    "dates": 
+      {
+        "creation":"2017-01-14T05:30:00",
+        "reception":"2017-01-14T05:45:00"
+      }
+}
