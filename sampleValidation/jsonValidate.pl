@@ -69,6 +69,87 @@ sub loadJSONSchemas($\%@) {
 	}
 }
 
+sub materializeJPath($$) {
+	my($json,$jPath) = @_;
+	
+	my @objectives = ( $json );
+	my @jSteps = ($jPath eq '.') ? ( undef ) : split(/\./,$jPath);
+	foreach my $jStep (@jSteps) {
+		my @newObjectives = ();
+		my $isArray;
+		my $arrayIndex;
+		if($jStep =~ /^([^\[]+)\[(0|[1-9][0-9]+)?\]$/) {
+			$isArray = 1;
+			$arrayIndex = $2 + 0  if(defined($2));
+			$jStep = $1;
+		}
+		foreach my $objective ( @objectives ) {
+			my $value;
+			if(defined($jStep)) {
+				if(ref($objective) eq 'HASH') {
+					$value = $objective->{$jStep};
+				} else {
+					# Failing
+					return undef;
+				}
+			} else {
+				$value = $objective;
+			}
+			
+			if(ref($value) eq 'ARRAY') {
+				if(defined($arrayIndex)) {
+					push(@newObjectives,$value->[$arrayIndex]);
+				} else {
+					push(@newObjectives,@{$value});
+				}
+			} else {
+				push(@newObjectives,$value);
+			}
+		}
+		
+		@objectives = @newObjectives;
+	}
+	
+	# Flattening it (we return a reference to a list of atomic values)
+	foreach my $objective (@objectives) {
+		if(ref($objective)) {
+			$objective = JSON->new->convert_blessed->encode($objective);
+		}
+	}
+	
+	return \@objectives;
+}
+
+# It fetches the values from a JSON, based on the given paths to the members of the key
+sub getKeyValues($\@) {
+	my($json,$p_members) = @_;
+	
+	return map { materializeJPath($json,$_); } @{$p_members};
+}
+
+# It generates pk strings from a set of values
+sub genKeyStrings(@) {
+	my @pkStrings = ();
+	
+	my $numPKcols = scalar(@_);
+	if($numPKcols > 0) {
+		@pkStrings = @{$_[0]};
+		shift(@_);
+		
+		foreach my $curPKvalues (@_) {
+			my @newPKstrings = ();
+			
+			foreach my $curPKvalue (@{$curPKvalues}) {
+				push(@newPKstrings,map { $_ . "\0" . $curPKvalue } @newPKstrings);
+			}
+			
+			@pkStrings = @newPKstrings;
+		}
+	}
+	
+	return @pkStrings;
+}
+
 sub jsonValidate($\%@) {
 	my($v,$p_schemaHash,@jsonFiles) = @_;
 	my $p = JSON->new->convert_blessed;
@@ -122,12 +203,15 @@ sub jsonValidate($\%@) {
 								$PKvals{$jsonSchema->{'primary_key'}} = $p_PK = {};
 							}
 							
-							my $pkString = join("\0",@{$json}{@{$jsonSchema->{'primary_key'}}});
-							if(exists($p_PK->{$pkString})) {
-								print STDERR "\t- PK ERROR: Duplicate PK in $jsonFile and ".$p_PK->{$pkString}."\n";
-								$isValid = undef;
-							} else {
-								$p_PK->{$pkString} = $jsonFile;
+							my @pkValues = getKeyValues($json, @{$jsonSchema->{'primary_key'}});
+							my @pkStrings = genKeyStrings(@pkValues);
+							foreach my $pkString (@pkStrings) {
+								if(exists($p_PK->{$pkString})) {
+									print STDERR "\t- PK ERROR: Duplicate PK in $jsonFile and ".$p_PK->{$pkString}."\n";
+									$isValid = undef;
+								} else {
+									$p_PK->{$pkString} = $jsonFile;
+								}
 							}
 						}
 						
