@@ -75,7 +75,7 @@
 				"foreign_keys": [
 					{
 						"schema_id": "#Contact",
-						"property": "_id"
+						"members": [ "." ]
 					}
 				],
 				"minLength": 1
@@ -93,7 +93,7 @@
 						"foreign_keys": [
 							{
 								"schema_id": "#Metrics",
-								"property": "_id"
+								"members": [ "." ]
 							}
 						],
 						"minLength": 1
@@ -114,7 +114,7 @@
 				"foreign_keys": [
 					{
 						"schema_id": "#Reference",
-						"property": "_id"
+						"members": [ "." ]
 					}
 				],
 				"minLength": 1

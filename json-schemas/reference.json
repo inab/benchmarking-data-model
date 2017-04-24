@@ -95,7 +95,7 @@
 						"foreign_keys": [
 							{
 								"schema_id": "#Contact",
-								"property": "_id"
+								"members": [ "." ]
 							}
 						],
 						"minLength": 1
