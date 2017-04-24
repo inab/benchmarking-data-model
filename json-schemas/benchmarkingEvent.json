@@ -73,10 +73,12 @@
 		"community_id": {
 			"title": "The community id where this benchmarking event belongs",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#Community",
-				"property": "_id"
-			},
+			"foreign_keys": [
+				{
+					"schema_id": "#Community",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"bench_contact_id": {
@@ -85,10 +87,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Contact",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Contact",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -97,10 +101,12 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Reference",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Reference",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		}

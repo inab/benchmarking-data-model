@@ -41,10 +41,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#CommunityStatus",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#CommunityStatus",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -83,10 +85,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Contact",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Contact",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		}

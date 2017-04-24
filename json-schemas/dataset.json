@@ -72,10 +72,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Contact",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Contact",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -88,10 +90,12 @@
 					"metrics_id": {
 						"title": "The id of the metrics as such",
 						"type": "string",
-						"foreign_key": {
-							"schema_id": "#Metrics",
-							"property": "_id"
-						},
+						"foreign_keys": [
+							{
+								"schema_id": "#Metrics",
+								"property": "_id"
+							}
+						],
 						"minLength": 1
 					},
 					"result": {
@@ -107,10 +111,12 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Reference",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Reference",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		}

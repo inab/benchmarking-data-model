@@ -28,37 +28,45 @@
 		"tool_id": {
 			"title": "The tool id which takes this input dataset",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#Tool",
-				"property": "_id"
-			},
+			"foreign_keys": [
+				{
+					"schema_id": "#Tool",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"input_dataset_id": {
 			"title": "The id of the input dataset",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#Dataset",
-				"property": "_id"
-			},
+			"foreign_keys":  [
+				{
+					"schema_id": "#Dataset",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"output_dataset_id": {
 			"title": "The id of the output dataset (if available)",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#Dataset",
-				"property": "_id"
-			},
+			"foreign_keys": [
+				{
+					"schema_id": "#Dataset",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"benchmarking_event_id": {
 			"title": "The id of the benchmarking event where this test event was generated",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#BenchmarkingEvent",
-				"property": "_id"
-			},
+			"foreign_keys": [
+				{
+					"schema_id": "#BenchmarkingEvent",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"result_report": {

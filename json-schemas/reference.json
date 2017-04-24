@@ -92,10 +92,12 @@
 					"contact_id": {
 						"title": "If it is a known contact, its contact id",
 						"type": "string",
-						"foreign_key": {
-							"schema_id": "#Contact",
-							"property": "_id"
-						},
+						"foreign_keys": [
+							{
+								"schema_id": "#Contact",
+								"property": "_id"
+							}
+						],
 						"minLength": 1
 					}
 				},

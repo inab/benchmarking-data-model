@@ -49,10 +49,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Community",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Community",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -62,20 +64,24 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Contact",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Contact",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
 		"status_id": {
 			"title": "_id of the current tool status",
 			"type": "string",
-			"foreign_key": {
-				"schema_id": "#ToolStatus",
-				"property": "_id"
-			},
+			"foreign_keys": [
+				{
+					"schema_id": "#ToolStatus",
+					"property": "_id"
+				}
+			],
 			"minLength": 1
 		},
 		"references": {
@@ -84,10 +90,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
-				"foreign_key": {
-					"schema_id": "#Reference",
-					"property": "_id"
-				},
+				"foreign_keys": [
+					{
+						"schema_id": "#Reference",
+						"property": "_id"
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -101,10 +109,12 @@
 					"tool_access_type_id": {
 						"title": "The tool access type id",
 						"type": "string",
-						"foreign_key": {
-							"schema_id": "#ToolAccessType",
-							"property": "_id"
-						},
+						"foreign_keys": [
+							{
+								"schema_id": "#ToolAccessType",
+								"property": "_id"
+							}
+						],
 						"minLength": 1
 					},
 					"link": {
