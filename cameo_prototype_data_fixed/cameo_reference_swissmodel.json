@@ -1,0 +1,9 @@
+{
+		"_id": "10.1093/database/bat031",
+		"_type": "Reference",
+		"_version": "0.3",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+		"title": "The Protein Model Portal--a comprehensive resource for protein structure and model information",
+		"pubmed_id": 23624946
+
+}
