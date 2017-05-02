@@ -1,0 +1,55 @@
+{
+	"_id": "OMA-Pairs",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "OMA Pairs",
+	"description": "OMA is a publicly available resource (http://omabrowser.org/) that provides orthology predictions among thousands of proteomes from all domains of life. OMA uses evolutionary distance estimates from Smith–Waterman alignments to infer orthologs. A distinct feature among graph-based methods is the witness of nonorthology step in its pipeline, where cases of differential gene losses get detected. OMA provides three different groupings of orthologs: Pairs, Groups, and HOGs. The raw pairwise ortholog relationships form the OMA Pairs, a gene-centric view that lists all the orthologs for a given gene. The OMA Pairs are the primary product of the OMA pipeline. It is a list of high-confidence pairs of orthologous genes. OMA is based on an algorithm that compares genes on the basis of evolutionary distances, considers distance inference uncertainty, and accounts for differential gene losses.",
+	"is_automated": true,
+	"community_id": "QfO",
+	"tool_contact_id": [
+		"Christophe.Dessimoz",
+		"Adrian.Altenhoff",
+		"OMA.ContactMail"
+	],
+	"status_id": "active",
+	"references": [
+		"10.1093/bioinformatics/btm295",
+		"10.1007/978-1-61779-582-4_9",
+		"10.1093/nar/gku1158"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "SOAP-Web-API",
+			"link": "http://omabrowser.org/oma/APISOAP/",
+			"techdocs": [
+				{
+					"uri": "http://omabrowser.org/omabrowser.wsdl",
+					"label": "WSDL"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "http://omabrowser.org/standalone/OMA.2.1.1.tgz",
+			"techdocs": [
+				{
+					"uri": "http://omabrowser.org/standalone/release_notes.txt",
+					"label": "doc"
+				},
+				{
+					"uri": "http://omabrowser.org/standalone/",
+					"label": "doc"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "Web-application",
+			"link": "http://omabrowser.org/oma/landOMA/"
+		},
+		{
+			"tool_access_type_id": "Database",
+			"link": "http://omabrowser.org/oma/current/"
+		}
+	]
+}

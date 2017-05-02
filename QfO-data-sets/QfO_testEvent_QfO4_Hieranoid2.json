@@ -1,0 +1,13 @@
+{
+	"_id": "QfO4_Hieranoid2",
+	"_type": "TestEvent",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#TestEvent",
+	"tool_id": "Hieranoid2",
+	"input_dataset_id": "QfO4_input_seqXML",
+	"output_dataset_id": "QfO4_output_Hieranoid2",
+	"benchmarking_event_id": "QfO4",
+	"dates": {
+		"creation": "2015-04-14T23:59:59Z"
+	}
+}

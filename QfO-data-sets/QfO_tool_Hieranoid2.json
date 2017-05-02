@@ -1,0 +1,30 @@
+{
+	"_id": "Hieranoid2",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "Hieranoid 2",
+	"description": "Orthology inference method using a hierarchical approach. Hieranoid performs pairwise orthology analysis using InParanoid at each node in a guide tree as it progresses from its leaves to the root. It combines efficient graph-based methodology with aspects of compute-intensive tree-based methods",
+	"is_automated": false,
+	"community_id": "QfO",
+	"tool_contact_id": [
+		"Erik.Sonnhammer",
+		"Mateusz.Kaduk"
+	],
+	"status_id": "active",
+	"references": [
+		"10.1093/bioinformatics/btw774"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone application",
+			"link": "http://software.sbc.su.se/cgi-bin/request.cgi?project=hieranoid2",
+			"techdocs": [
+				{
+					"uri": "https://github.com/fabsta/hieranoid2",
+					"label": "source"
+				}
+			]
+		}
+	]
+}
