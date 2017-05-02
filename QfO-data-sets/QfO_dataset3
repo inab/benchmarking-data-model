@@ -1,0 +1,18 @@
+{
+	"_id": "QfO4_output_EggNOG",
+	"_type": "Dataset",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"name": "EggNOG-.429.rels",
+	"version": "v1.0",
+	"description": "Output data set (pairwise orthologs predictions) for EggNOG tool",
+	"dates": {
+		"creation": "2015-07-02T16:01:26Z",
+		"modification": "2015-07-02T16:01:26Z"
+	},
+	"type": "Output",
+	"datalink": "http://orthology.benchmarkservice.org/raw/EggNOG-.429.rels.raw.gz",
+	"dataset_contact_id": [
+		"Jaime.Huerta-Cepas"
+	]
+}

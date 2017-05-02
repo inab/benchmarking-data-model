@@ -1,0 +1,24 @@
+{
+	"_id": "QfO4_input_seqXML",
+	"_type": "Dataset",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"name": "2011_04_reference_proteomes_SeqXML",
+	"version": "version 5; 2011_04",
+	"description": "Reference Proteome data sets in SeqXML format: collection of data providing a representative protein for each gene in the genome of selected species that have been generated annually from the uniProt Knowledgebase (UniProtKB) for the past five years",
+	"dates": {
+		"creation": "2011-04-01T00:00:00Z",
+		"modification": "2011-04-01T00:00:00Z"
+	},
+	"type": "Input",
+	"datalink": "http://seqxml.org/download/ReferenceProteomes/current.tgz",
+	"dataset_contact_id": [
+		"Toni.Gabaldon",
+		"Erik.Sonnhammer",
+		"Christophe.Dessimoz",
+		"Paul.Thomas"
+	],
+	"references": [
+		"https://www.ncbi.nlm.nih.gov/pubmed/22102590"
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"_id": "Benjamin.Linard",
+	"_type": "Contact",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
+	"contact_type": "person",
+	"givenName": [
+		"Benjamin"
+	],
+	"surname": [
+		"Linard"
+	],
+	"email": [
+		"benjamin.linard@gmail.com"
+	],
+	"notes": "Contact for any bug reports",
+	"links": [
+		{
+			"label": "LinkedIn",
+			"uri": "https://www.linkedin.com/in/benjamin-linard-68a3bb65/"
+		}
+	]
+}
