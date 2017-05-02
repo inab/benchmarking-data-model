@@ -1,0 +1,25 @@
+{
+	"_id": "QfO4",
+	"_type": "BenchmarkingEvent",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#BenchmarkingEvent",
+	"_version": "0.3",
+	"name": "Quest for Orthologs 4",
+	"is_automated": true,
+	"dates": {
+		"creation": "2015-XX-XXTXX:XX:XXZ",
+		"modification": "2015-XX-XXTXX:XX:XXZ",
+		"benchmark_start": "2015-XX-XXTXX:XX:XXZ",
+		"benchmark_stop": "2015-04-14T23:59:59Z"
+	},
+	"url": "http://genome.crg.es/~tgabaldon/QfO4/index.html",
+	"community_id": "QfO",
+	"bench_contact_id": [
+		"Christophe.Dessimoz",
+		"Paul.Thomas",
+		"Toni.Gabaldon",
+		"Erik.Sonnhammer"
+	],
+	"references": [
+		"10.1038/nmeth.3830"
+	]
+}
