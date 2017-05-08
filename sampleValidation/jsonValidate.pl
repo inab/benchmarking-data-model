@@ -3,7 +3,10 @@
 use warnings 'all';
 use strict;
 
-use File::Spec;
+use FindBin qw();
+use File::Spec qw();
+use lib File::Spec->catfile($FindBin::Bin,'perllibs','lib','perl5');
+
 use JSON::MaybeXS;
 use JSON::Validator 0.95;
 
@@ -417,6 +420,6 @@ if(scalar(@ARGV) > 0) {
 		jsonValidate(%schemaHash,@ARGV);
 	}
 } else {
-	print STDERR "Usage: $0 {json_schema_directory} {json_file}*\n";
+	print STDERR "Usage: $0 {json_schema_directory} {json_file_or_directory}*\n";
 	exit 1;
 }
