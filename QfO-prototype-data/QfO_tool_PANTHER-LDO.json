@@ -7,7 +7,7 @@
 	"name": "PANTHER 8.0 (LDO only)",
 	"description": "The PANTHER (Protein ANalysis THrough Evolutionary Relationships) Classification System was designed to classify proteins (and their genes) in order to facilitate high-throughput analysis. PANTHER LDO will return only least diverged ortholog for each gene (single best ortholog)",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Paul.Thomas"
 	],

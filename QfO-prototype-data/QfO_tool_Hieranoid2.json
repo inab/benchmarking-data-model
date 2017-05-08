@@ -6,7 +6,7 @@
 	"name": "Hieranoid 2",
 	"description": "Orthology inference method using a hierarchical approach. Hieranoid performs pairwise orthology analysis using InParanoid at each node in a guide tree as it progresses from its leaves to the root. It combines efficient graph-based methodology with aspects of compute-intensive tree-based methods",
 	"is_automated": false,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Erik.Sonnhammer",
 		"Mateusz.Kaduk"

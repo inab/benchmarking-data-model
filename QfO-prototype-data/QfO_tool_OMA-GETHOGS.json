@@ -6,7 +6,7 @@
 	"name": "OMA GETHOGs",
 	"description": "OMA is a publicly available resource (http://omabrowser.org/) that provides orthology predictions among thousands of proteomes from all domains of life. OMA uses evolutionary distance estimates from Smith–Waterman alignments to infer orthologs. A distinct feature among graph-based methods is the witness of nonorthology step in its pipeline, where cases of differential gene losses get detected. OMA provides three different groupings of orthologs: Pairs, Groups, and HOGs. Here, we constructed hierarchical orthologous groups (OMA HOGs). These are nested groups that contain genes that descend from a single common ancestral gene within a given taxonomic range using the GETHOGs algorithm.",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Christophe.Dessimoz",
 		"Adrian.Altenhoff",

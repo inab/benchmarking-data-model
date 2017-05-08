@@ -6,7 +6,7 @@
 	"name": "MethaPhOrs",
 	"description": "MetaPhOrs is a public repository of phylogeny-based orthologs and paralogs that were computed using phylogenetic trees available in twelve public repositories",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Toni.Gabaldon"
 	],

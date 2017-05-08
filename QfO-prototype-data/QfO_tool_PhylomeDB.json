@@ -6,7 +6,7 @@
 	"name": "PhylomeDB",
 	"description": "PhylomeDB is a public database for complete catalogs of gene phylogenies (phylomes).",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Toni.Gabaldon"
 	],

@@ -2,9 +2,9 @@
 	"_id": "QfO_metrics_STD-recall2",
 	"_type": "Metrics",
 	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
 	"title": "Species Tree Discordance test / Recall (orthologous relations)",
 	"description": "Recall is measured in terms of the number of uploaded orthologous relations",
-	"metrics_contact_id": "unknown",
+	"metrics_contact_id": ["unknown"],
 	"formal_definition": "Recall is measured in terms of the number of uploaded orthologous relations"
 }

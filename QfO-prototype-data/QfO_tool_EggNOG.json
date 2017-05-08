@@ -6,7 +6,7 @@
 	"name": "EggNOG",
 	"description": "A database of orthologous groups and functional annotation",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"Jaime.Huerta-Cepas"
 	],

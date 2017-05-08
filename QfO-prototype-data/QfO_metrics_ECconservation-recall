@@ -5,6 +5,6 @@
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
 	"title": "Enzyme Commission (EC) Conservation  test - Recall",
 	"description": "Evaluation of orthology in terms of functional similarity using the Enzyme Commission (EC) Conservation test. Functional similarity is assessed based on experimentally backed annotations from the EC database. Recall is measured as the number of orthologous relationships predicted by the method",
-	"metrics_contact_id": "unknown",
+	"metrics_contact_id": ["unknown"],
 	"formal_definition": "Recall is measured as the number of orthologous relationships predicted by the method"
 }

@@ -6,7 +6,7 @@
 	"name": "Reciprocal Smallest Distance (RSD) 0.8 1e-5 Deluca",
 	"description": "Roundup is a large-scale orthology database. The orthologs are computed using the Reciprocal Smallest Distance (RSD) algorithm. Reciprocal Smallest Distance (RSD) is a pairwise orthology algorithm that uses global sequence alignment and maximum likelihood evolutionary distance between sequences to accurately detects orthologs between genomes. This dataset is computed using a divergence parameter of 0.8 and an E-value cutoff of 1e-5.",
 	"is_automated": true,
-	"community_id": "QfO",
+	"community_id": ["QfO"],
 	"tool_contact_id": [
 		"ToddF.DeLuca",
 		"DennisP.Wall"
