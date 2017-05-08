@@ -1,0 +1,19 @@
+{
+	"_id": "QfO4_output_Orthoinspector",
+	"_type": "Dataset",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"name": "orthoinspector_1.30_blast_threshold_10-9-.154.rels",
+	"version": "v1.0",
+	"description": "Output data set (predicted orthologous groups) for orthoinspector 1.30 (blast threshold 10-9) tool in OrthoXML format. These orthologs were computed using the following Reciprocal Smallest Distance (RSD) parameters: divergence=0.8 and evalue=1e-5. Orthology relationships are stored in OrthoXML format",
+	"dates": {
+		"creation": "2011-06-10T11:39:26Z",
+		"modification": "2011-06-10T11:39:26Z"
+	},
+	"type": "Output",
+	"datalink": "http://orthology.benchmarkservice.org/raw/orthoinspector_1.30_blast_threshold_10-9-.154.rels.raw.gz",
+	"dataset_contact_id": [
+		"Benjamin.Linard",
+		"Odile.Lecompte"
+	]
+}

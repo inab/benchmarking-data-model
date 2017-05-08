@@ -1,0 +1,19 @@
+{
+	"_id": "QfO4_output_OMA-Groups",
+	"_type": "Dataset",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"name": "OMA_Groups_RefSet5-.212.rels",
+	"version": "v1.0",
+	"description": "Output data set (predicted orthologous groups) for OMA Groups tool. The orthologs pairs are stored in OrthoXML format",
+	"dates": {
+		"creation": "2011-06-06T18:48:45Z",
+		"modification": "2011-06-06T18:48:45Z"
+	},
+	"type": "Output",
+	"datalink": "http://orthology.benchmarkservice.org/raw/OMA_Groups_RefSet5-.212.rels.raw.gz",
+	"dataset_contact_id": [
+		"Christophe.Dessimoz",
+		"Adrian.Altenhoff"
+	]
+}
