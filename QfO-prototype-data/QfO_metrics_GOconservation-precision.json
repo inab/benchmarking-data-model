@@ -1,0 +1,13 @@
+{
+	"_id": "QfO_metrics_GOConservationTest-precision",
+	"_type": "Metrics",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
+	"title": "Gene Ontology Conservation test - Precision",
+	"description": "Evaluation of orthology in terms of functional similarity using the Gene Ontology Conservation test. Functional similarity is assessed basde on experimentally backed annotations from the UniProt-Gene Ontology Annotation (GOA) database. Precision is measured as the average Schlicker semantic similarity of functional annotations associated with orthologs",
+	"metrics_contact_id": ["Andreas.Schlicker"],
+	"formal_definition": "The Schlicker semantic similarity is a functional similarity measure for comparing two GO terms with each other and it is calculated based on the annotation statistics of their common ancestor terms. It uses the probability of annotation of the most informative common ancestor (MIA) as a weighting factor to provide graph placement This score ranges from 0 for terms that have no similarity to 1 for terms with maximum similarity. It is calculated as follows: sim (t1, t2) = 2*log p (MIA) / log p(t1) + log p(t2) * (1 - p(MIA)), where t1 and t2 are two GO terms, and S(t1, t2) is the set of their common ancestors in the ontology",
+	"references": [
+		"10.1371/journal.pcbi.1000262"
+	]
+}
