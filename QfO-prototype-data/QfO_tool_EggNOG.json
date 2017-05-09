@@ -1,16 +1,16 @@
 {
-	"_id": "EggNOG",
+	"_id": "QfO:EggNOG",
 	"_type": "Tool",
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
 	"name": "EggNOG",
 	"description": "A database of orthologous groups and functional annotation",
 	"is_automated": true,
-	"community_id": ["QfO"],
+	"community_id": ["QfO:QfO"],
 	"tool_contact_id": [
 		"Jaime.Huerta-Cepas"
 	],
-	"status_id": "active",
+	"status_id": "QfO:active",
 	"references": [
 		"10.1093/nar/gkv1248",
 		"10.1093/nar/gkt1253",
@@ -20,7 +20,7 @@
 	],
 	"tool_access": [
 		{
-			"tool_access_type_id": "RESTful-Web-API",
+			"tool_access_type_id": "QfO:RESTful-Web-API",
 			"link": "http://eggnogapi.embl.de/nog_data/",
 			"techdocs": [
 				{

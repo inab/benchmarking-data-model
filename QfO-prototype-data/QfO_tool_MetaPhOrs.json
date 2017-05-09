@@ -1,26 +1,26 @@
 {
-	"_id": "MetaPhOrs",
+	"_id": "QfO:MetaPhOrs",
 	"_type": "Tool",
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
 	"name": "MethaPhOrs",
 	"description": "MetaPhOrs is a public repository of phylogeny-based orthologs and paralogs that were computed using phylogenetic trees available in twelve public repositories",
 	"is_automated": true,
-	"community_id": ["QfO"],
+	"community_id": ["QfO:QfO"],
 	"tool_contact_id": [
 		"Toni.Gabaldon"
 	],
-	"status_id": "active",
+	"status_id": "QfO:active",
 	"references": [
 		"10.1093/nar/gkq953"
 	],
 	"tool_access": [
 		{
-			"tool_access_type_id": "RESTful-Web-API",
+			"tool_access_type_id": "QfO:RESTful-Web-API",
 			"link": "http://betaorthology.phylomedb.org"
 		},
 		{
-			"tool_access_type_id": "Web-code",
+			"tool_access_type_id": "QfO:Web-code",
 			"link": "http://betaorthology.phylomedb.org/wsgi/query.py/"
 		}
 	]

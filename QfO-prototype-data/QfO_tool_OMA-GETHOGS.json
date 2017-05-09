@@ -1,25 +1,25 @@
 {
-	"_id": "OMA-GETHOGs",
+	"_id": "QfO:OMA-GETHOGs",
 	"_type": "Tool",
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
 	"name": "OMA GETHOGs",
 	"description": "OMA is a publicly available resource (http://omabrowser.org/) that provides orthology predictions among thousands of proteomes from all domains of life. OMA uses evolutionary distance estimates from Smith–Waterman alignments to infer orthologs. A distinct feature among graph-based methods is the witness of nonorthology step in its pipeline, where cases of differential gene losses get detected. OMA provides three different groupings of orthologs: Pairs, Groups, and HOGs. Here, we constructed hierarchical orthologous groups (OMA HOGs). These are nested groups that contain genes that descend from a single common ancestral gene within a given taxonomic range using the GETHOGs algorithm.",
 	"is_automated": true,
-	"community_id": ["QfO"],
+	"community_id": ["QfO:QfO"],
 	"tool_contact_id": [
 		"Christophe.Dessimoz",
 		"Adrian.Altenhoff",
 		"OMA.ContactMail"
 	],
-	"status_id": "active",
+	"status_id": "QfO:active",
 	"references": [
 		"10.1371/journal.pone.0053786",
 		"10.1093/nar/gku1158"
 	],
 	"tool_access": [
 		{
-			"tool_access_type_id": "SOAP-Web-API",
+			"tool_access_type_id": "QfO:SOAP-Web-API",
 			"link": "http://omabrowser.org/oma/APISOAP/",
 			"techdocs": [
 				{
@@ -29,7 +29,7 @@
 			]
 		},
 		{
-			"tool_access_type_id": "Standalone-application",
+			"tool_access_type_id": "QfO:Standalone-application",
 			"link": "http://omabrowser.org/standalone/OMA.2.1.1.tgz",
 			"techdocs": [
 				{
@@ -43,7 +43,7 @@
 			]
 		},
 		{
-			"tool_access_type_id": "Web-application",
+			"tool_access_type_id": "QfO:Web-application",
 			"link": "http://omabrowser.org/oma/hogs/",
 			"techdocs": [
 				{
@@ -53,7 +53,7 @@
 			]
 		},
 		{
-			"tool_access_type_id": "Database",
+			"tool_access_type_id": "QfO:Database",
 			"link": "http://omabrowser.org/oma/current/"
 		}
 	]
