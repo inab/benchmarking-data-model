@@ -1,5 +1,5 @@
 {
-	"_id": "QfO_metrics_referenceTreeFam-A_recall",
+	"_id": "QfO:referenceTreeFam-A_recall",
 	"_type": "Metrics",
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",

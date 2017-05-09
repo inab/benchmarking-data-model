@@ -1,22 +1,22 @@
 {
-	"_id": "EnsemblCompara",
+	"_id": "QfO:EnsemblCompara",
 	"_type": "Tool",
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
 	"name": "EnsemblCompara (e81)",
 	"description": "Ensembl Compara pipeline (version 81) provides cross-species resources and analyses, at both the sequence level and the gene level, with modifications to only use amino-acid models in treebest",
 	"is_automated": true,
-	"community_id": ["QfO"],
+	"community_id": ["QfO:QfO"],
 	"tool_contact_id": [
 		"Albert.Vilella"
 	],
-	"status_id": "active",
+	"status_id": "QfO:active",
 	"references": [
 		"10.1101/gr.073585.107"
 	],
 	"tool_access": [
 		{
-			"tool_access_type_id": "RESTful-Web-API",
+			"tool_access_type_id": "QfO:RESTful-Web-API",
 			"link": "http://rest.ensembl.org/",
 			"techdocs": [
 				{
@@ -38,7 +38,7 @@
 			]
 		},
 		{
-			"tool_access_type_id": "VM",
+			"tool_access_type_id": "QfO:VM",
 			"link": "ftp://ftp.ensembl.org/pub/current_virtual_machine",
 			"techdocs": [
 				{
@@ -48,7 +48,7 @@
 			]
 		},
 		{
-			"tool_access_type_id": "Web-code",
+			"tool_access_type_id": "QfO:Web-code",
 			"link": "https://github.com/Ensembl/ensembl-git-tools.git",
 			"techdocs": [
 				{
