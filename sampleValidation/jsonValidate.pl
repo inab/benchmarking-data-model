@@ -71,6 +71,7 @@ sub loadJSONSchemas(\%@) {
 	my($p_schemaHash,@jsonSchemaFiles) = @_;
 	my $p = JSON->new->convert_blessed;
 	
+	# Schema validation stats
 	my $numDirOK = 0;
 	my $numDirFail = 0;
 	my $numFileOK = 0;
@@ -257,6 +258,15 @@ sub jsonValidate(\%@) {
 	# A two level hash, in order to check primary key restrictions
 	my %PKvals = ();
 	
+	# JSON validation stats
+	my $numDirOK = 0;
+	my $numDirFail = 0;
+	my $numFilePass1OK = 0;
+	my $numFilePass1Ignore = 0;
+	my $numFilePass1Fail = 0;
+	my $numFilePass2OK = 0;
+	my $numFilePass2Fail = 0;
+	
 	# First pass, check against JSON schema, as well as primary keys unicity
 	print "\nPASS 1: Schema validation and PK checks\n";
 	foreach my $jsonFile (@jsonFiles) {
@@ -272,10 +282,12 @@ sub jsonValidate(\%@) {
 				}
 				closedir($JSD);
 				
-				# Masking it for the next loop
+				# Masking it for the pass 2 loop
 				$jsonFile = undef;
+				$numDirOK++;
 			} else {
 				print STDERR "FATAL ERROR: Unable to open JSON directory $jsonFile. Reason: $!\n";
+				$numDirFail++;
 			}
 		} elsif(open(my $J,'<:encoding(UTF-8)',$jsonFile)) {
 			print "* Validating $jsonFile\n";
@@ -299,6 +311,7 @@ sub jsonValidate(\%@) {
 						
 						# Masking it for the next loop
 						$jsonFile = undef;
+						$numFilePass1Fail++;
 					} else {
 						# Does the schema contain a PK declaration?
 						my $isValid = 1;
@@ -323,24 +336,35 @@ sub jsonValidate(\%@) {
 							}
 							
 							# Masking it for the next loop if there was an error
-							$jsonFile = undef  unless($isValid);
+							unless($isValid) {
+								$jsonFile = undef;
+								$numFilePass1Fail++;
+							}
 						}
 						
-						print "\t- Validated!\n"  if($isValid);
+						if($isValid) {
+							print "\t- Validated!\n";
+							$numFilePass1OK++;
+						}
 					}
 				} else {
 					print "\t- Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
 					# Masking it for the next loop
 					$jsonFile = undef;
+					$numFilePass1Ignore++;
 				}
 			} else {
 				print "\t- Skipping schema validation (no one declared for $jsonFile)\n";
 				# Masking it for the next loop
 				$jsonFile = undef;
+				$numFilePass1Ignore++;
 			}
 			print "\n";
 		} else {
 			print STDERR "\t- ERROR: Unable to open file $jsonFile. Reason: $!\n";
+			# Masking it for the next loop
+			$jsonFile = undef;
+			$numFilePass1Fail++;
 		}
 	}
 	
@@ -389,6 +413,7 @@ sub jsonValidate(\%@) {
 										unless(exists($p_PK->{$fkString})) {
 											print STDERR "\t- FK ERROR: Missing FK to $pkSchemaId in $jsonFile\n";
 											$isValid = undef;
+											$numFilePass2Fail++;
 											last;
 										}
 									#} else {
@@ -397,25 +422,34 @@ sub jsonValidate(\%@) {
 									}
 								}
 							} else {
-								print STDERR "\t- FK ERROR: No available PKs ($pkSchemaId) in $jsonFile\n";
+								print STDERR "\t- FK ERROR: No available PKs ($pkSchemaId) for $jsonFile\n";
 								
 								$isValid = undef;
+								$numFilePass2Fail++;
 								last;
 							}
 						}
 					}
-					print "\t- Validated!\n"  if($isValid);
+					if($isValid) {
+						print "\t- Validated!\n";
+						$numFilePass2OK++;
+					}
 				} else {
 					print "\t- ASSERTION ERROR: Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
+					$numFilePass2Fail++;
 				}
 			} else {
 				print STDERR "\t- ASSERTION ERROR: Skipping schema validation (no one declared for $jsonFile)\n";
+				$numFilePass2Fail++;
 			}
 			print "\n";
 		} else {
 			print STDERR "\t- ERROR: Unable to open file $jsonFile. Reason: $!\n";
+			$numFilePass2Fail++;
 		}
 	}
+	
+	print "\nVALIDATION STATS:\n\t- directories ($numDirOK OK, $numDirFail failed)\n\t- PASS 1 ($numFilePass1OK OK, $numFilePass1Ignore ignored, $numFilePass1Fail error)\n\t- PASS 2 ($numFilePass2OK OK, $numFilePass2Fail error)\n";
 }
 
 if(scalar(@ARGV) > 0) {
