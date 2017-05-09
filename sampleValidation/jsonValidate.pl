@@ -71,6 +71,11 @@ sub loadJSONSchemas(\%@) {
 	my($p_schemaHash,@jsonSchemaFiles) = @_;
 	my $p = JSON->new->convert_blessed;
 	
+	my $numDirOK = 0;
+	my $numDirFail = 0;
+	my $numFileOK = 0;
+	my $numFileIgnore = 0;
+	my $numFileFail = 0;
 	foreach my $jsonSchemaFile (@jsonSchemaFiles) {
 		if(-d $jsonSchemaFile) {
 			# It's a possible JSON Schema directory, not a JSON Schema file
@@ -80,11 +85,13 @@ sub loadJSONSchemas(\%@) {
 					next  if(substr($relJsonSchemaFile,0,1) eq '.');
 					
 					my $newJsonSchemaFile = File::Spec->catfile($jsonSchemaFile,$relJsonSchemaFile);
-					push(@jsonSchemaFiles, $newJsonSchemaFile)  if(-d $newJsonSchemaFile || $relJsonSchemaFile =~ /\.json/);
+					push(@jsonSchemaFiles, $newJsonSchemaFile)  if(-d $newJsonSchemaFile || index($relJsonSchemaFile,'.json')!=-1);
 				}
 				closedir($JSD);
+				$numDirOK++;
 			} else {
 				print STDERR "FATAL ERROR: Unable to open JSON schema directory $jsonSchemaFile. Reason: $!\n";
+				$numDirFail++;
 			}
 		} else {
 			if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
@@ -98,6 +105,7 @@ sub loadJSONSchemas(\%@) {
 				my @valErrors = $v->schema(JSON::Validator::SPECIFICATION_URL)->validate($jsonSchema);
 				if(scalar(@valErrors) > 0) {
 					print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
+					$numFileFail++;
 				} else {
 					# Getting the JSON Pointer object instance of the augmented schema
 					my $jsonSchemaP = $v->schema($jsonSchema)->schema;
@@ -107,6 +115,7 @@ sub loadJSONSchemas(\%@) {
 						my $jsonSchemaURI = $jsonSchema->{'id'};
 						if(exists($p_schemaHash->{$jsonSchemaURI})) {
 							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchemaURI}[1]." have the same id\n";
+							$numFileFail++;
 						} else {
 							print "\t- Validated $jsonSchemaURI\n";
 							
@@ -114,10 +123,10 @@ sub loadJSONSchemas(\%@) {
 							my $p_PK = undef;
 							if(exists($jsonSchema->{'primary_key'})) {
 								$p_PK = $jsonSchema->{'primary_key'};
-								if(ref($jsonSchema->{'primary_key'}) eq 'ARRAY') {
-									foreach my $key (@{$jsonSchema->{'primary_key'}}) {
+								if(ref($p_PK) eq 'ARRAY') {
+									foreach my $key (@{$p_PK}) {
 										if(ref(\$key) ne 'SCALAR') {
-											print STDERR "\tWARNING: primary key in $jsonSchemaFile is not composed by strings. Ignoring it\n";
+											print STDERR "\tWARNING: primary key in $jsonSchemaFile is not composed by strings defining its attributes. Ignoring it\n";
 											$p_PK = undef;
 											last;
 										}
@@ -135,22 +144,27 @@ sub loadJSONSchemas(\%@) {
 							#print STDERR Dumper(\@FKs),"\n";
 							
 							$p_schemaHash->{$jsonSchemaURI} = [$jsonSchema,$jsonSchemaFile,$p_PK,\@FKs];
+							$numFileOK++;
 						}
 					} else {
-						print STDERR "\tERROR: validated, but schema in $jsonSchemaFile has no id attribute\n";
+						print STDERR "\tIGNORE: validated, but schema in $jsonSchemaFile has no id attribute\n";
+						$numFileIgnore++;
 					}
 				}
 			} else {
 				print STDERR "FATAL ERROR: Unable to open schema file $jsonSchemaFile. Reason: $!\n";
+				$numFileFail++;
 			}
 		}
 	}
+	
+	print "\nSCHEMA VALIDATION STATS: loaded $numFileOK schemas from $numDirOK directories, ignored $numFileIgnore schemas, failed $numFileFail schemas and $numDirFail directories\n";
 }
 
 sub materializeJPath($$) {
-	my($json,$jPath) = @_;
+	my($jsonDoc,$jPath) = @_;
 	
-	my @objectives = ( $json );
+	my @objectives = ( $jsonDoc );
 	my @jSteps = ($jPath eq '.' || $jPath eq '') ? ( undef ) : split(/\./,$jPath);
 	foreach my $jStep (@jSteps) {
 		my @newObjectives = ();
@@ -200,9 +214,9 @@ sub materializeJPath($$) {
 
 # It fetches the values from a JSON, based on the given paths to the members of the key
 sub getKeyValues($\@) {
-	my($json,$p_members) = @_;
+	my($jsonDoc,$p_members) = @_;
 	
-	return map { materializeJPath($json,$_); } @{$p_members};
+	return map { materializeJPath($jsonDoc,$_); } @{$p_members};
 }
 
 # It generates pk strings from a set of values
@@ -220,7 +234,7 @@ sub genKeyStrings(@) {
 					my @newPKstrings = ();
 					
 					foreach my $curPKvalue (@{$curPKvalues}) {
-						push(@newPKstrings,map { $_ . "\0" . $curPKvalue } @newPKstrings);
+						push(@newPKstrings,map { $_ . "\0" . $curPKvalue } @pkStrings);
 					}
 					
 					@pkStrings = @newPKstrings;
@@ -244,7 +258,7 @@ sub jsonValidate(\%@) {
 	my %PKvals = ();
 	
 	# First pass, check against JSON schema, as well as primary keys unicity
-	print "PASS 1: Schema validation and PK checks\n";
+	print "\nPASS 1: Schema validation and PK checks\n";
 	foreach my $jsonFile (@jsonFiles) {
 		if(-d $jsonFile) {
 			# It's a possible JSON directory, not a JSON file
@@ -371,6 +385,7 @@ sub jsonValidate(\%@) {
 								my $p_PK = $PKvals{$pkSchemaId};
 								foreach my $fkString (@fkStrings) {
 									if(defined($fkString)) {
+										#print STDERR "DEBUG FK ",$fkString,"\n";
 										unless(exists($p_PK->{$fkString})) {
 											print STDERR "\t- FK ERROR: Missing FK to $pkSchemaId in $jsonFile\n";
 											$isValid = undef;
