@@ -295,17 +295,17 @@ sub jsonValidate(\%@) {
 			my $jsonText = <$J>;
 			close($J);
 			
-			my $json = $p->decode($jsonText);
+			my $jsonDoc = $p->decode($jsonText);
 			
-			if(exists($json->{'_schema'})) {
-				if(exists($p_schemaHash->{$json->{'_schema'}})) {
-					my $jsonSchemaId = $json->{'_schema'};
+			if(exists($jsonDoc->{'_schema'})) {
+				my $jsonSchemaId = $jsonDoc->{'_schema'};
+				if(exists($p_schemaHash->{$jsonSchemaId})) {
 					print "\t- Using $jsonSchemaId schema\n";
 					
 					my $jsonSchema = $p_schemaHash->{$jsonSchemaId}[0];
 					
 					my $v = JSON::Validator->new()->schema($jsonSchema);
-					my @valErrors = $v->validate($json);
+					my @valErrors = $v->validate($jsonDoc);
 					if(scalar(@valErrors) > 0) {
 						print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
 						
@@ -324,7 +324,7 @@ sub jsonValidate(\%@) {
 								$PKvals{$jsonSchemaId} = $p_PK = {};
 							}
 							
-							my @pkValues = getKeyValues($json, @{$p_PK_def});
+							my @pkValues = getKeyValues($jsonDoc, @{$p_PK_def});
 							my @pkStrings = genKeyStrings(@pkValues);
 							foreach my $pkString (@pkStrings) {
 								if(exists($p_PK->{$pkString})) {
@@ -348,7 +348,7 @@ sub jsonValidate(\%@) {
 						}
 					}
 				} else {
-					print "\t- Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
+					print "\t- Skipping schema validation (schema with URI ".$jsonSchemaId." not found)\n";
 					# Masking it for the next loop
 					$jsonFile = undef;
 					$numFilePass1Ignore++;
@@ -385,11 +385,11 @@ sub jsonValidate(\%@) {
 			my $jsonText = <$J>;
 			close($J);
 			
-			my $json = $p->decode($jsonText);
+			my $jsonDoc = $p->decode($jsonText);
 			
-			if(exists($json->{'_schema'})) {
-				if(exists($p_schemaHash->{$json->{'_schema'}})) {
-					my $jsonSchemaId = $json->{'_schema'};
+			if(exists($jsonDoc->{'_schema'})) {
+				my $jsonSchemaId = $jsonDoc->{'_schema'};
+				if(exists($p_schemaHash->{$jsonSchemaId})) {
 					print "\t- Using $jsonSchemaId schema\n";
 					
 					my $p_FKs = $p_schemaHash->{$jsonSchemaId}[3];
@@ -398,7 +398,7 @@ sub jsonValidate(\%@) {
 					foreach my $p_FK_decl (@{$p_FKs}) {
 						my($pkSchemaId,$p_FK_def) = @{$p_FK_decl};
 						
-						my @fkValues = getKeyValues($json, @{$p_FK_def});
+						my @fkValues = getKeyValues($jsonDoc, @{$p_FK_def});
 						#use Data::Dumper;
 						#print Dumper(\@fkValues),"\n";
 						
@@ -435,7 +435,7 @@ sub jsonValidate(\%@) {
 						$numFilePass2OK++;
 					}
 				} else {
-					print "\t- ASSERTION ERROR: Skipping schema validation (schema with URI ".$json->{'_schema'}." not found)\n";
+					print "\t- ASSERTION ERROR: Skipping schema validation (schema with URI ".$jsonSchemaId." not found)\n";
 					$numFilePass2Fail++;
 				}
 			} else {
