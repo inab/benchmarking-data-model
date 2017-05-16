@@ -171,7 +171,7 @@ sub materializeJPath($$) {
 		my @newObjectives = ();
 		my $isArray;
 		my $arrayIndex;
-		if($jStep =~ /^([^\[]+)\[(0|[1-9][0-9]+)?\]$/) {
+		if(defined($jStep) && $jStep =~ /^([^\[]+)\[(0|[1-9][0-9]+)?\]$/) {
 			$isArray = 1;
 			$arrayIndex = $2 + 0  if(defined($2));
 			$jStep = $1;
