@@ -14,5 +14,5 @@ So, the proposed validation programs use libraries compliant with that specifica
 	  
 	- The program can launched using next command line:
 	  ```bash
-	  perl jsonValidate.pl ../json-schemas ../cameo_prototype_data_fixed
+	  perl jsonValidate.pl ../../json-schemas ../../cameo_prototype_data_fixed
 	  ```
