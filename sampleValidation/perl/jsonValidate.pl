@@ -167,6 +167,7 @@ sub materializeJPath($$) {
 	
 	my @objectives = ( $jsonDoc );
 	my @jSteps = ($jPath eq '.' || $jPath eq '') ? ( undef ) : split(/\./,$jPath);
+	#print STDERR "JPATH $jPath\n";
 	foreach my $jStep (@jSteps) {
 		my @newObjectives = ();
 		my $isArray;
@@ -178,25 +179,39 @@ sub materializeJPath($$) {
 		}
 		foreach my $objective ( @objectives ) {
 			my $value;
+			my $isAvailable = undef;
 			if(defined($jStep)) {
 				if(ref($objective) eq 'HASH') {
-					$value = $objective->{$jStep};
-				} else {
-					# Failing
-					return undef;
+					if(exists($objective->{$jStep})) {
+						$value = $objective->{$jStep};
+						$isAvailable = 1;
+					}
+				#} else {
+				#	# Failing
+				#	return undef;
 				}
 			} else {
 				$value = $objective;
+				$isAvailable = 1;
 			}
 			
-			if(ref($value) eq 'ARRAY') {
-				if(defined($arrayIndex)) {
-					push(@newObjectives,$value->[$arrayIndex]);
+			if($isAvailable) {
+				if(ref($value) eq 'ARRAY') {
+					if(defined($arrayIndex)) {
+						if($arrayIndex>=0 && $arrayIndex < scalar(@{$value})) {
+							push(@newObjectives,$value->[$arrayIndex]);
+						#} else {
+						#	return undef;
+						}
+					} else {
+						push(@newObjectives,@{$value});
+					}
 				} else {
-					push(@newObjectives,@{$value});
+					push(@newObjectives,$value);
 				}
-			} else {
-				push(@newObjectives,$value);
+			#} else {
+			#	# Failing
+			#	return undef;
 			}
 		}
 		
@@ -222,33 +237,33 @@ sub getKeyValues($\@) {
 
 # It generates pk strings from a set of values
 sub genKeyStrings(@) {
-	my @pkStrings = ();
-	
 	my $numPKcols = scalar(@_);
-	if($numPKcols > 0) {
-		if(ref($_[0]) eq 'ARRAY') {
-			@pkStrings = @{$_[0]};
-			shift(@_);
-			
-			foreach my $curPKvalues (@_) {
-				if(ref($curPKvalues) eq 'ARRAY') {
-					my @newPKstrings = ();
-					
-					foreach my $curPKvalue (@{$curPKvalues}) {
-						push(@newPKstrings,map { $_ . "\0" . $curPKvalue } @pkStrings);
-					}
-					
-					@pkStrings = @newPKstrings;
-				} else {
-					# If there is no found value, generate nothing
-					@pkStrings=();
-					last;
-				}
-			}
-		}
+	return ()  if($numPKcols == 0);
+	
+	# Exiting in case some of the inputs is undefined
+	foreach my $curPKvalues (@_) {
+		# If there is no found value, generate nothing
+		return ()  unless(ref($curPKvalues) eq 'ARRAY' && scalar(@{$curPKvalues}) > 0);
 	}
 	
-	return @pkStrings;
+	my @pkStrings = map { [ $_ ] } @{$_[0]};
+	
+	if($numPKcols > 1) {
+		shift(@_);
+		
+		foreach my $curPKvalues (@_) {
+			my @newPKstrings = ();
+			
+			foreach my $curPKvalue (@{$curPKvalues}) {
+				push(@newPKstrings,map { [ @{$_}, $curPKvalue ] } @pkStrings);
+			}
+			
+			@pkStrings = @newPKstrings;
+		}
+	}
+		
+	my $p = JSON->new->convert_blessed;
+	return map { $p->encode($_) } @pkStrings;
 }
 
 sub jsonValidate(\%@) {
@@ -328,7 +343,7 @@ sub jsonValidate(\%@) {
 							my @pkStrings = genKeyStrings(@pkValues);
 							foreach my $pkString (@pkStrings) {
 								if(exists($p_PK->{$pkString})) {
-									print STDERR "\t- PK ERROR: Duplicate PK in $jsonFile and ".$p_PK->{$pkString}."\n";
+									print STDERR "\t- PK ERROR: Duplicate PK in ".$p_PK->{$pkString}." and $jsonFile\n";
 									$isValid = undef;
 								} else {
 									$p_PK->{$pkString} = $jsonFile;
@@ -411,7 +426,7 @@ sub jsonValidate(\%@) {
 									if(defined($fkString)) {
 										#print STDERR "DEBUG FK ",$fkString,"\n";
 										unless(exists($p_PK->{$fkString})) {
-											print STDERR "\t- FK ERROR: Missing FK to $pkSchemaId in $jsonFile\n";
+											print STDERR "\t- FK ERROR: Umatched FK ($fkString) in $jsonFile to schema $pkSchemaId\n";
 											$isValid = undef;
 											$numFilePass2Fail++;
 											last;
@@ -422,7 +437,7 @@ sub jsonValidate(\%@) {
 									}
 								}
 							} else {
-								print STDERR "\t- FK ERROR: No available PKs ($pkSchemaId) for $jsonFile\n";
+								print STDERR "\t- FK ERROR: No available documents from $pkSchemaId schema, required by $jsonFile \n";
 								
 								$isValid = undef;
 								$numFilePass2Fail++;
