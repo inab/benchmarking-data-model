@@ -26,6 +26,18 @@ else:
 			warnings.warn('opener is not supported in py2')
 		return codecs.open(filename=file, mode=mode, encoding=encoding, errors=errors, buffering=buffering)
 
+# From http://stackoverflow.com/a/3678114
+def disable_outerr_buffering():
+	# Appending to gc.garbage is a way to stop an object from being
+	# destroyed.  If the old sys.stdout is ever collected, it will
+	# close() stdout, which is not good.
+	# gc.garbage.append(sys.stdout)
+	sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+	# gc.garbage.append(sys.stderr)
+	sys.stderr = os.fdopen(sys.stderr.fileno(), 'w', 0)
+
+disable_outerr_buffering()
+
 def getFKs(jsonSchema,jsonSchemaURI,prefix=""):
 	FKs = []
 	
@@ -49,20 +61,20 @@ def getFKs(jsonSchema,jsonSchemaURI,prefix=""):
 					
 					if isinstance(members,(list,tuple)):
 						# Translating to absolute URI (in case it is relative)
-						abs_ref_schema_id = uritools.urijoin(ref_schema_id,jsonSchemaURI)
+						abs_ref_schema_id = uritools.urijoin(jsonSchemaURI,ref_schema_id)
 						
 						# Translating the paths
 						components = tuple(map(lambda component: prefix + '.' + component  if component not in ['.','']  else prefix, members))
 						
-						FKs.append((abs_ref_schema_id,component))
+						FKs.append((abs_ref_schema_id,components))
 		
 		# Then, the foreign keys inside sublevels
 		if 'properties' in jsonSchema and isinstance(jsonSchema['properties'],dict):
 			if prefix != '':
 				prefix += '.'
-				p = jsonSchema['properties']
-				for k,subSchema in p.items():
-					push(FKs,getFKs(subSchema,jsonSchemaURI,prefix+k))
+			p = jsonSchema['properties']
+			for k,subSchema in p.items():
+				FKs.extend(getFKs(subSchema,jsonSchemaURI,prefix+k))
 	
 	return FKs
 
@@ -88,18 +100,18 @@ def loadJSONSchemas(p_schemaHash,*args):
 						jsonSchemaFiles.append(newJsonSchemaFile)
 				numDirOK += 1
 			except IOError as ioe:
-				print("FATAL ERROR: Unable to open JSON schema directory {0}. Reason: {1}".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
+				print("FATAL ERROR: Unable to open JSON schema directory {0}. Reason: {1}\n".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
 				numDirFail += 1
 		else:
 			try:
 				with open(jsonSchemaFile,mode="r",encoding="utf-8") as sHandle:
-					print("* Loading schema {0}\n".format(jsonSchemaFile))
+					print("* Loading schema {0}".format(jsonSchemaFile))
 					
 					jsonSchema = json.load(sHandle)
 					
 					valErrors = [ error  for error in JSV.validators.Draft4Validator(JSV.validators.Draft4Validator.META_SCHEMA).iter_errors(jsonSchema) ]
 					if len(valErrors) > 0:
-						print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format(se.path,se.message) , valErrors)))
+						print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format("/"+"/".join(map(lambda e: str(e),se.path)),se.message) , valErrors))+"\n")
 						numFileFail += 1
 					else:
 						# Getting the JSON Pointer object instance of the augmented schema
@@ -109,10 +121,10 @@ def loadJSONSchemas(p_schemaHash,*args):
 						if 'id' in jsonSchema:
 							jsonSchemaURI = jsonSchema['id']
 							if jsonSchemaURI in p_schemaHash:
-								print("\tERROR: validated, but schema in {0} and schema in {1} have the same id\n".format(jsonSchemaFile,p_schemaHash[jsonSchemaURI][1]),file=sys.stderr)
+								print("\tERROR: validated, but schema in {0} and schema in {1} have the same id".format(jsonSchemaFile,p_schemaHash[jsonSchemaURI][1]),file=sys.stderr)
 								numFileFail += 1
 							else:
-								print("\t- Validated {0}\n".format(jsonSchemaURI))
+								print("\t- Validated {0}".format(jsonSchemaURI))
 								
 								# Curating the primary key
 								p_PK = None
@@ -122,7 +134,7 @@ def loadJSONSchemas(p_schemaHash,*args):
 										for key in p_PK:
 											#if type(key) not in (int, long, float, bool, str):
 											if type(key) not in (str,unicode):
-												print("\tWARNING: primary key in {0} is not composed by strings defining its attributes. Ignoring it\n".format(jsonSchemaFile),file=sys.stderr)
+												print("\tWARNING: primary key in {0} is not composed by strings defining its attributes. Ignoring it".format(jsonSchemaFile),file=sys.stderr)
 												p_PK = None
 												break
 									else:
@@ -131,26 +143,24 @@ def loadJSONSchemas(p_schemaHash,*args):
 								# Gather foreign keys
 								FKs = getFKs(jsonSchema,jsonSchemaURI)
 								
-								#use Data::Dumper;
-								#
-								#print STDERR Dumper(\@FKs),"\n";
+								#print(FKs,file=sys.stderr)
 								
 								p_schemaHash[jsonSchemaURI] = (jsonSchema,jsonSchemaFile,p_PK,FKs)
 								numFileOK += 1
 						else:
-							print("\tIGNORE: validated, but schema in {0} has no id attribute\n".format(jsonSchemaFile),file=sys.stderr)
+							print("\tIGNORE: validated, but schema in {0} has no id attribute".format(jsonSchemaFile),file=sys.stderr)
 							numFileIgnore += 1
 			except IOError as ioe:
-				print("FATAL ERROR: Unable to open schema file {0}. Reason: {1}\n".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
+				print("FATAL ERROR: Unable to open schema file {0}. Reason: {1}".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
 				numFileFail += 1
 	
-	print("\nSCHEMA VALIDATION STATS: loaded {0} schemas from {1} directories, ignored {2} schemas, failed {3} schemas and {4} directories\n".format(numFileOK,numDirOK,numFileIgnore,numFileFail,numDirFail))
+	print("\nSCHEMA VALIDATION STATS: loaded {0} schemas from {1} directories, ignored {2} schemas, failed {3} schemas and {4} directories".format(numFileOK,numDirOK,numFileIgnore,numFileFail,numDirFail))
 
 
 jStepPat = re.compile(r"^([^\[]+)\[(0|[1-9][0-9]+)?\]$")
 def materializeJPath(jsonDoc, jPath):
 	objectives = [ jsonDoc ]
-	jSteps = jPath.split('.') if jPath in ('.','') else (None,)
+	jSteps = jPath.split('.') if jPath not in ('.','') else (None,)
 	for jStep in jSteps:
 		newObjectives = []
 		isArray = False
@@ -163,20 +173,33 @@ def materializeJPath(jsonDoc, jPath):
 					arrayIndex = int(jStepMatch.group(2))
 				jStep = jStepMatch.group(1)
 		for objective in objectives:
+			isAvailable = False
 			if jStep is not None:
 				if isinstance(objective,dict):
-					value = objective[jStep]
-				else:
-					# Failing
-					return None
+					if jStep in objective:
+						value = objective[jStep]
+						isAvailable = True
+				#else:
+				#	# Failing
+				#	return None
 			else:
 				value = objective
+				isAvailable = True
 			
-			if isinstance(value,(list,tuple)):
-				if arrayIndex is not None:
-					newObjectives.append(value[arrayIndex])
+			if isAvailable:
+				if isinstance(value,(list,tuple)):
+					if arrayIndex is not None:
+						if arrayIndex >= 0 and arrayIndex < len(value):
+							newObjectives.append(value[arrayIndex])
+						#else:
+						#	return None
+					else:
+						newObjectives.extend(value)
 				else:
-					newObjectives.extend(value)
+					newObjectives.append(value)
+			#else:
+			#	# Failing
+			#	return None
 		
 		objectives = newObjectives
 	
@@ -193,29 +216,34 @@ def getKeyValues(jsonDoc,p_members):
 	return tuple(materializeJPath(jsonDoc,member) for member in p_members)
 
 
+def _aggPKhelper(basePK,curPKvalue):
+	newPK = list(basePK)
+	newPK.append(curPKvalue)
+	return newPK
+
 # It generates pk strings from a set of values
 def genKeyStrings(keyTuple):
-	pkStrings = []
-	
 	numPKcols = len(keyTuple)
-	if numPKcols > 0:
-		if isinstance(keyTuple[0],(list,tuple)):
-			pkStrings = keyTuple[0]
-			
-			for curPKvalues in keyTuple[1:]:
-				if isinstance(curPKvalues,(list, tuple)):
-					newPKstrings = []
-					
-					for curPKvalue in curPKvalues:
-						newPKstrings.extend(newPK+"\0"+curPKvalue  for newPK in newPKstrings)
-					
-					pkStrings = newPKstrings
-				else:
-					# If there is no found value, generate nothing
-					pkStrings = []
-					break
+	if numPKcols == 0:
+		return []
 	
-	return tuple(pkStrings)
+	# Exiting in case some of the inputs is undefined
+	for curPKvalues in keyTuple:
+		# If there is no found value, generate nothing
+		if not isinstance(curPKvalues,(list, tuple)) or len(curPKvalues) == 0:
+			return []
+	
+	pkStrings = list(map(lambda elem: [ elem ], keyTuple[0]))
+	
+	for curPKvalues in keyTuple[1:]:
+		newPKstrings = []
+		
+		for curPKvalue in curPKvalues:
+			newPKstrings.extend(map(lambda basePK: _aggPKhelper(basePK,curPKvalue) , pkStrings))
+		
+		pkStrings = newPKstrings
+	
+	return tuple(map(lambda pkString: json.dumps(pkString, sort_keys=True, separators=(',',':')) , pkStrings))
 
 
 def jsonValidate(p_schemaHash,*args):
@@ -232,7 +260,7 @@ def jsonValidate(p_schemaHash,*args):
 	numFilePass2Fail = 0
 	
 	# First pass, check against JSON schema, as well as primary keys unicity
-	print("\nPASS 1: Schema validation and PK checks\n")
+	print("\nPASS 1: Schema validation and PK checks")
 	iJsonFile = -1
 	jsonFiles = list(args)
 	for jsonFile in jsonFiles:
@@ -253,7 +281,7 @@ def jsonValidate(p_schemaHash,*args):
 				jsonFiles[iJsonFile] = None
 				numDirOK += 1
 			except IOError as ioe:
-				print("FATAL ERROR: Unable to open JSON directory {0}. Reason: {1}\n".format(jsonFile,ioe.strerror),file=sys.stderr)
+				print("FATAL ERROR: Unable to open JSON directory {0}. Reason: {1}".format(jsonFile,ioe.strerror),file=sys.stderr)
 				numDirFail += 1
 		else:
 			try:
@@ -264,14 +292,17 @@ def jsonValidate(p_schemaHash,*args):
 					if '_schema' in jsonDoc:
 						jsonSchemaId = jsonDoc['_schema']
 						if jsonSchemaId in p_schemaHash:
-							print("\t- Using {0} schema\n".format(jsonSchemaId))
+							print("\t- Using {0} schema".format(jsonSchemaId))
 							
 							jsonSchema = p_schemaHash[jsonSchemaId][0]
 							
 							valErrors = [ error  for error in JSV.validators.Draft4Validator(jsonSchema).iter_errors(jsonDoc) ]
 							
 							if len(valErrors) > 0:
-								print("\t- ERRORs:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format(se.path,se.message) , valErrors)))
+								print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format("/"+"/".join(map(lambda e: str(e),se.path)),se.message) , valErrors))+"\n")
+								
+								# Masking it for the next loop
+								jsonFiles[iJsonFile] = None
 								numFilePass1Fail += 1
 							else:
 								# Does the schema contain a PK declaration?
@@ -288,7 +319,7 @@ def jsonValidate(p_schemaHash,*args):
 									pkStrings = genKeyStrings(pkValues)
 									for pkString in pkStrings:
 										if pkString in p_PK:
-											print("\t- PK ERROR: Duplicate PK in {0} and {1}\n".format(jsonFile,p_PK[pkString]),file=sys.stderr)
+											print("\t- PK ERROR: Duplicate PK in {0} and {1}\n".format(p_PK[pkString],jsonFile),file=sys.stderr)
 											isValid = False
 										else:
 											p_PK[pkString] = jsonFile
@@ -303,19 +334,18 @@ def jsonValidate(p_schemaHash,*args):
 									numFilePass1OK += 1
 							
 						else:
-							print("\t- Skipping schema validation (schema with URI {0} not found)\n".format(jsonSchemaId))
+							print("\t- Skipping schema validation (schema with URI {0} not found)".format(jsonSchemaId))
 							# Masking it for the next loop
 							jsonFiles[iJsonFile] = None
 							numFilePass1Ignore += 1
 					else:
-						print("\t- Skipping schema validation (no one declared for {0})\n".format(jsonFile))
+						print("\t- Skipping schema validation (no one declared for {0})".format(jsonFile))
 						# Masking it for the next loop
 						jsonFiles[iJsonFile] = None
 						numFilePass1Ignore += 1
 					
-					print("\n")
 			except IOError as ioe:
-				print("\t- ERROR: Unable to open file {0}. Reason: {1}\n".format(jsonFile,ioe.strerror),file=sys.stderr)
+				print("\t- ERROR: Unable to open file {0}. Reason: {1}".format(jsonFile,ioe.strerror),file=sys.stderr)
 				numFilePass1Fail += 1
 	
 	#use Data::Dumper;
@@ -323,7 +353,7 @@ def jsonValidate(p_schemaHash,*args):
 	#print Dumper(\%PKvals),"\n";
 	
 	# Second pass, check foreign keys against gathered primary keys
-	print("PASS 2: foreign keys checks\n")
+	print("PASS 2: foreign keys checks")
 	#use Data::Dumper;
 	#print Dumper(@jsonFiles),"\n";
 	for jsonFile in jsonFiles:
@@ -339,54 +369,55 @@ def jsonValidate(p_schemaHash,*args):
 					jsonSchemaId = jsonDoc['_schema']
 					
 					if jsonSchemaId in p_schemaHash:
-						print("\t- Using {0} schema\n".format(jsonSchemaId))
+						print("\t- Using {0} schema".format(jsonSchemaId))
 						
 						p_FKs = p_schemaHash[jsonSchemaId][3]
 						
 						isValid = True
+						#print(p_schemaHash[jsonSchemaId])
 						for p_FK_decl in p_FKs:
-							pkSchemaId, p_FK_def = p_FK_decl
+							fkPkSchemaId, p_FK_def = p_FK_decl
 							
 							fkValues = getKeyValues(jsonDoc,p_FK_def)
-							#use Data::Dumper;
-							#print Dumper(\@fkValues),"\n";
+							
+							#print(fkValues,file=sys.stderr);
 							
 							fkStrings = genKeyStrings(fkValues)
 							
 							if len(fkStrings) > 0:
-								if pkSckemaId in PKvals:
-									p_PK = PKvals[pkSchemaId]
+								if fkPkSchemaId in PKvals:
+									p_PK = PKvals[fkPkSchemaId]
 									for fkString in fkStrings:
 										if fkString is not None:
 											#print STDERR "DEBUG FK ",$fkString,"\n";
 											if fkString not in p_PK:
-												print("\t- FK ERROR: Missing FK to {0} in {1}\n".format(pkSchemaId,jsonFile),file=sys.stderr)
+												print("\t- FK ERROR: Unmatching FK ({0}) in {1} to schema {2}".format(fkString,jsonFile,fkPkSchemaId),file=sys.stderr)
 												isValid = False
-												numFilePass2Fail += 1
 												break
 										#else:
 										#	use Data::Dumper;
 										#	print Dumper($p_FK_def),"\n";
 								else:
-									print("\t- FK ERROR: No available PKs ({0}) for {1}\n".format(pkSchemaId,jsonFile),file=sys.stderr)
+									print("\t- FK ERROR: No available documents from {0} schema, required by {1}".format(fkPkSchemaId,jsonFile),file=sys.stderr)
 									
 									isValid = False
-									numFilePass2Fail += 1
-									break
 						if isValid:
-							print("\t- Validated!\n")
+							print("\t- Validated!")
 							numFilePass2OK += 1
+						else:
+							numFilePass2Fail += 1
 					else:
-						print("\t- ASSERTION ERROR: Skipping schema validation (schema with URI {0} not found)\n".format(jsonSchemaId))
+						print("\t- ASSERTION ERROR: Skipping schema validation (schema with URI {0} not found)".format(jsonSchemaId))
 						numFilePass2Fail += 1
 				else:
-					print("\t- ASSERTION ERROR: Skipping schema validation (no one declared for {0})\n".format(jsonFile))
+					print("\t- ASSERTION ERROR: Skipping schema validation (no one declared for {0})".format(jsonFile))
 					numFilePass2Fail += 1
+				print()
 		except IOError as ioe:
 			print("\t- ERROR: Unable to open file {0}. Reason: {1}\n".format(jsonFile,ioe.strerror),file=sys.stderr)
 			numFilePass2Fail += 1
 	
-	print("\nVALIDATION STATS:\n\t- directories ({0} OK, {1} failed)\n\t- PASS 1 ({2} OK, {3} ignored, {4} error)\n\t- PASS 2 ({5} OK, {6} error)\n".format(numDirOK,numDirFail,numFilePass1OK,numFilePass1Ignore,numFilePass1Fail,numFilePass2OK,numFilePass2Fail))
+	print("\nVALIDATION STATS:\n\t- directories ({0} OK, {1} failed)\n\t- PASS 1 ({2} OK, {3} ignored, {4} error)\n\t- PASS 2 ({5} OK, {6} error)".format(numDirOK,numDirFail,numFilePass1OK,numFilePass1Ignore,numFilePass1Fail,numFilePass2OK,numFilePass2Fail))
 
 
 if len(sys.argv) > 1:

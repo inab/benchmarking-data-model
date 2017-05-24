@@ -411,7 +411,7 @@ sub jsonValidate(\%@) {
 					
 					my $isValid = 1;
 					foreach my $p_FK_decl (@{$p_FKs}) {
-						my($pkSchemaId,$p_FK_def) = @{$p_FK_decl};
+						my($fkPkSchemaId,$p_FK_def) = @{$p_FK_decl};
 						
 						my @fkValues = getKeyValues($jsonDoc, @{$p_FK_def});
 						#use Data::Dumper;
@@ -420,15 +420,14 @@ sub jsonValidate(\%@) {
 						my @fkStrings = genKeyStrings(@fkValues);
 						
 						if(scalar(@fkStrings) > 0) {
-							if(exists($PKvals{$pkSchemaId})) {
-								my $p_PK = $PKvals{$pkSchemaId};
+							if(exists($PKvals{$fkPkSchemaId})) {
+								my $p_PK = $PKvals{$fkPkSchemaId};
 								foreach my $fkString (@fkStrings) {
 									if(defined($fkString)) {
 										#print STDERR "DEBUG FK ",$fkString,"\n";
 										unless(exists($p_PK->{$fkString})) {
-											print STDERR "\t- FK ERROR: Umatched FK ($fkString) in $jsonFile to schema $pkSchemaId\n";
+											print STDERR "\t- FK ERROR: Unmatching FK ($fkString) in $jsonFile to schema $fkPkSchemaId\n";
 											$isValid = undef;
-											$numFilePass2Fail++;
 											last;
 										}
 									#} else {
@@ -437,17 +436,17 @@ sub jsonValidate(\%@) {
 									}
 								}
 							} else {
-								print STDERR "\t- FK ERROR: No available documents from $pkSchemaId schema, required by $jsonFile \n";
+								print STDERR "\t- FK ERROR: No available documents from $fkPkSchemaId schema, required by $jsonFile\n";
 								
 								$isValid = undef;
-								$numFilePass2Fail++;
-								last;
 							}
 						}
 					}
 					if($isValid) {
 						print "\t- Validated!\n";
 						$numFilePass2OK++;
+					} else {
+						$numFilePass2Fail++;
 					}
 				} else {
 					print "\t- ASSERTION ERROR: Skipping schema validation (schema with URI ".$jsonSchemaId." not found)\n";
