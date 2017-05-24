@@ -55,7 +55,7 @@ def getFKs(jsonSchema,jsonSchemaURI,prefix=""):
 		if 'foreign_keys' in jsonSchema and isinstance(jsonSchema['foreign_keys'],(list,tuple)):
 			for fk_def in jsonSchema['foreign_keys']:
 				# Only valid declarations are taken into account
-				if 'schema_id' in fk_def and 'members' in fk_def:
+				if isinstance(fk_def,dict) and 'schema_id' in fk_def and 'members' in fk_def:
 					ref_schema_id = fk_def['schema_id']
 					members = fk_def['members']
 					

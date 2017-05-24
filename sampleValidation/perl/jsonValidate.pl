@@ -38,7 +38,7 @@ sub getFKs($$;$) {
 		if(exists($jsonSchema->{'foreign_keys'}) && ref($jsonSchema->{'foreign_keys'}) eq 'ARRAY') {
 			foreach my $fk_def (@{$jsonSchema->{'foreign_keys'}}) {
 				# Only valid declarations are taken into account
-				if(exists($fk_def->{'schema_id'}) && exists($fk_def->{'members'})) {
+				if(ref($fk_def) eq 'HASH' && exists($fk_def->{'schema_id'}) && exists($fk_def->{'members'})) {
 					my($ref_schema_id,$members) = @{$fk_def}{'schema_id','members'};
 					
 					if(ref($members) eq 'ARRAY') {
