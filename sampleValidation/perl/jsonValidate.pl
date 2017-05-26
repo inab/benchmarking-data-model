@@ -463,7 +463,6 @@ sub jsonValidate(\%@) {
 										unless(exists($p_PK->{$fkString})) {
 											print STDERR "\t- FK ERROR: Unmatching FK ($fkString) in $jsonFile to schema $fkPkSchemaId\n";
 											$isValid = undef;
-											last;
 										}
 									#} else {
 									#	use Data::Dumper;

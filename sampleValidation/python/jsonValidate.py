@@ -425,7 +425,6 @@ def jsonValidate(p_schemaHash,*args):
 											if fkString not in p_PK:
 												print("\t- FK ERROR: Unmatching FK ({0}) in {1} to schema {2}".format(fkString,jsonFile,fkPkSchemaId),file=sys.stderr)
 												isValid = False
-												break
 										#else:
 										#	use Data::Dumper;
 										#	print Dumper($p_FK_def),"\n";
