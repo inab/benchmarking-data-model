@@ -77,6 +77,8 @@ sub loadJSONSchemas(\%@) {
 	my $numFileOK = 0;
 	my $numFileIgnore = 0;
 	my $numFileFail = 0;
+	
+	print "PASS 0.a: JSON schema loading and validation\n";
 	foreach my $jsonSchemaFile (@jsonSchemaFiles) {
 		if(-d $jsonSchemaFile) {
 			# It's a possible JSON Schema directory, not a JSON Schema file
@@ -160,6 +162,35 @@ sub loadJSONSchemas(\%@) {
 	}
 	
 	print "\nSCHEMA VALIDATION STATS: loaded $numFileOK schemas from $numDirOK directories, ignored $numFileIgnore schemas, failed $numFileFail schemas and $numDirFail directories\n";
+	
+	print "\nPASS 0.b: JSON schema set consistency checks\n";
+	
+	# Now, we check whether the declared foreign keys are pointing to loaded JSON schemas
+	my $numSchemaConsistent = 0;
+	my $numSchemaInconsistent = 0;
+	while(my($jsonSchemaURI,$p_schema) = each(%{$p_schemaHash})) {
+		my $jsonSchemaFile = $p_schema->[1];
+		my $p_FKs = $p_schema->[3];
+		print "* Checking $jsonSchemaFile\n";
+		
+		my $isValid = 1;
+		foreach my $p_FK_decl (@{$p_FKs}) {
+			my($fkPkSchemaId,$p_FK_def) = @{$p_FK_decl};
+			
+			unless(exists($p_schemaHash->{$fkPkSchemaId})) {
+				print STDERR "\t- FK ERROR: No schema with $fkPkSchemaId id, required by $jsonSchemaFile ($jsonSchemaURI)\n";
+				
+				$isValid = undef;
+			}
+		}
+		if($isValid) {
+			print "\t- Consistent!\n";
+			$numSchemaConsistent++;
+		} else {
+			$numSchemaInconsistent++;
+		}
+	}
+	print "\nSCHEMA CONSISTENCY STATS: $numSchemaConsistent schemas right, $numSchemaInconsistent with inconsistencies\n";
 }
 
 sub materializeJPath($$) {
@@ -341,17 +372,21 @@ sub jsonValidate(\%@) {
 							
 							my @pkValues = getKeyValues($jsonDoc, @{$p_PK_def});
 							my @pkStrings = genKeyStrings(@pkValues);
+							# Pass 1.a: check duplicate keys
 							foreach my $pkString (@pkStrings) {
 								if(exists($p_PK->{$pkString})) {
 									print STDERR "\t- PK ERROR: Duplicate PK in ".$p_PK->{$pkString}." and $jsonFile\n";
 									$isValid = undef;
-								} else {
-									$p_PK->{$pkString} = $jsonFile;
 								}
 							}
 							
-							# Masking it for the next loop if there was an error
-							unless($isValid) {
+							# Pass 1.b: record keys
+							if($isValid) {
+								foreach my $pkString (@pkStrings) {
+									$p_PK->{$pkString} = $jsonFile;
+								}
+							} else {
+								# Masking it for the next loop if there was an error
 								$jsonFile = undef;
 								$numFilePass1Fail++;
 							}

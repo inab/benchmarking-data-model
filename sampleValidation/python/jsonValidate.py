@@ -86,6 +86,8 @@ def loadJSONSchemas(p_schemaHash,*args):
 	numFileOK = 0
 	numFileIgnore = 0
 	numFileFail = 0
+	
+	print("PASS 0.a: JSON schema loading and validation")
 	jsonSchemaFiles = list(args)
 	for jsonSchemaFile in jsonSchemaFiles:
 		if os.path.isdir(jsonSchemaFile):
@@ -155,6 +157,33 @@ def loadJSONSchemas(p_schemaHash,*args):
 				numFileFail += 1
 	
 	print("\nSCHEMA VALIDATION STATS: loaded {0} schemas from {1} directories, ignored {2} schemas, failed {3} schemas and {4} directories".format(numFileOK,numDirOK,numFileIgnore,numFileFail,numDirFail))
+	
+	print("\nPASS 0.b: JSON schema set consistency checks")
+	
+	# Now, we check whether the declared foreign keys are pointing to loaded JSON schemas
+	numSchemaConsistent = 0
+	numSchemaInconsistent = 0
+	for jsonSchemaURI , p_schema in p_schemaHash.items():
+		jsonSchemaFile = p_schema[1]
+		p_FKs = p_schema[3]
+		print("* Checking {0}".format(jsonSchemaFile))
+		
+		isValid = True
+		for p_FK_decl in p_FKs:
+			fkPkSchemaId , p_FK_def = p_FK_decl
+			
+			if fkPkSchemaId not in p_schemaHash:
+				print("\t- FK ERROR: No schema with {0} id, required by {1} ({2})".format(fkPkSchemaId,jsonSchemaFile,jsonSchemaURI),file=sys.stderr);
+				
+				isValid = False
+		
+		if isValid:
+			print("\t- Consistent!")
+			numSchemaConsistent += 1
+		else:
+			numSchemaInconsistent += 1
+	
+	print("\nSCHEMA CONSISTENCY STATS: {0} schemas right, {1} with inconsistencies".format(numSchemaConsistent,numSchemaInconsistent));
 
 
 jStepPat = re.compile(r"^([^\[]+)\[(0|[1-9][0-9]+)?\]$")
@@ -317,15 +346,18 @@ def jsonValidate(p_schemaHash,*args):
 									
 									pkValues = getKeyValues(jsonDoc,p_PK_def)
 									pkStrings = genKeyStrings(pkValues)
+									# Pass 1.a: check duplicate keys
 									for pkString in pkStrings:
 										if pkString in p_PK:
 											print("\t- PK ERROR: Duplicate PK in {0} and {1}\n".format(p_PK[pkString],jsonFile),file=sys.stderr)
 											isValid = False
-										else:
-											p_PK[pkString] = jsonFile
 									
-									# Masking it for the next loop if there was an error
-									if not isValid:
+									# Pass 1.b: record keys
+									if isValid:
+										for pkString in pkStrings:
+											p_PK[pkString] = jsonFile
+									else:
+										# Masking it for the next loop if there was an error
 										jsonFiles[iJsonFile] = None
 										numFilePass1Fail += 1
 										
