@@ -116,7 +116,7 @@ public class ValidatorCli
 			System.out.printf("* Checking %s\n",p_schema.getJsonSchemaSource());
 			
 			try {
-				p_schema.consistencyChecks(p_schemaHash);
+				p_schemaHash.consistencyChecks(p_schema);
 				System.out.println("\t- Consistent!");
 				numSchemaConsistent ++;
 			} catch(SchemaInconsistentException sie) {
@@ -133,7 +133,142 @@ public class ValidatorCli
 	}
 	
 	public void jsonValidate(List<File> jsonFiles) {
-		// TODO
+		// JSON validation stats
+		int numDirOK = 0;
+		int numDirFail = 0;
+		int numFilePass1OK = 0;
+		int numFilePass1Ignore = 0;
+		int numFilePass1Fail = 0;
+		int numFilePass2OK = 0;
+		int numFilePass2Fail = 0;
+		
+		// First pass, check against JSON schema, as well as primary keys unicity
+		System.out.println("\nPASS 1: Schema validation and PK checks");
+		
+		for(int iJsonFile = 0; iJsonFile < jsonFiles.size(); iJsonFile++) {
+			File jsonFile = jsonFiles.get(iJsonFile);
+			if(jsonFile.isDirectory()) {
+				// It's a possible JSON directory, not a JSON file
+				Path jsonDir = jsonFile.toPath();
+				try(DirectoryStream<Path> jsonDirStream = Files.newDirectoryStream(jsonDir)) {
+					for(Path newJsonPath: jsonDirStream) {
+						File newJsonFile = newJsonPath.toFile();
+						// Skipping hidden files / directories
+						if(newJsonFile.getName().charAt(0)!='.') {
+							if(newJsonFile.isDirectory() || newJsonFile.getName().contains(".json")) {
+								jsonFiles.add(newJsonFile);
+							}
+						}
+					}
+					// Masking it for the pass 2 loop
+					jsonFiles.set(iJsonFile,null);
+					numDirOK++;
+				} catch(IOException ioe) {
+					System.err.printf("FATAL ERROR: Unable to open JSON directory %s. Reason: %s\n",jsonFile.getPath(),ioe.getMessage());
+					System.err.flush();
+					numDirFail++;
+				}
+			} else {
+				System.out.printf("* Validating %s\n",jsonFile.getPath());
+				System.out.flush();
+				try {
+					BenchmarkingDoc bDoc = BenchmarkingDoc.parseFile(jsonFile);
+					try {
+						p_schemaHash.validatePass1(bDoc);
+						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
+						System.out.println("\t- Validated!\n");
+						System.out.flush();
+						numFilePass1OK++;
+					} catch(BenchmarkingDocNoSchemaIdException bdnsie) {
+						System.out.println("\t- "+bdnsie.getMessage());
+						// Masking it for the next loop
+						jsonFiles.set(iJsonFile,null);
+						numFilePass1Ignore++;
+					} catch(OrphanBenchmarkingDocException obde) {
+						System.out.println("\t- "+obde.getMessage());
+						// Masking it for the next loop
+						jsonFiles.set(iJsonFile,null);
+						numFilePass1Ignore++;
+					} catch(BenchmarkingDocUnmatchingSchemaException bduse) {
+						System.out.println("\t- ASSERTION ERROR: "+bduse.getMessage());
+						// Masking it for the next loop
+						jsonFiles.set(iJsonFile,null);
+						numFilePass1Fail++;
+					} catch(ValidationException ve) {
+						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
+						System.out.flush();
+						System.err.println("\t- ERRORS:");
+						ve.getCausingExceptions().stream().forEach(se -> System.err.printf("\t\tPath: %s . Message: %s\n",se.getPointerToViolation(),se.getMessage()));
+						System.err.flush();
+						//Masking it for the next loop
+						jsonFiles.set(iJsonFile,null);
+						numFilePass1Fail++;
+					} catch(SchemaDuplicatedPrimaryKeyException sdpke) {
+						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
+						System.out.flush();
+						Collection<SchemaDuplicatedPrimaryKeyException> inconsistencies = sdpke.getInconsistencies();
+						if(inconsistencies!=null) {
+							inconsistencies.forEach(incon -> System.err.println("\t PK ERROR: "+incon.getMessage()));
+						} else {
+							System.err.println("\t PK ERROR: "+sdpke.getMessage());
+						}
+						System.err.flush();
+						//Masking it for the next loop
+						jsonFiles.set(iJsonFile,null);
+						numFilePass1Fail++;
+					}
+				} catch(IOException ioe) {
+					System.err.printf("\t- ERROR: Unable to open file %s. Reason: %s\n",jsonFile.getPath(),ioe.getMessage());
+					System.err.flush();
+					// Masking it for the next loop
+					jsonFiles.set(iJsonFile,null);
+					numFilePass1Fail++;
+				}
+			}
+		}
+		
+		// Second pass, check foreign keys against gathered primary keys
+		System.out.println("PASS 2: foreign keys checks");
+		
+		for(File jsonFile: jsonFiles) {
+			if(jsonFile!=null) {
+				System.out.printf("* Checking FK on %s\n",jsonFile.getPath());
+				System.out.flush();
+				try {
+					BenchmarkingDoc bDoc = BenchmarkingDoc.parseFile(jsonFile);
+					try {
+						p_schemaHash.validatePass2(bDoc);
+						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
+						System.out.println("\t- Validated!\n");
+						System.out.flush();
+						numFilePass2OK++;
+					} catch(BenchmarkingDocNoSchemaIdException bdnsie) {
+						System.out.println("\t- ASSERTION ERROR: "+bdnsie.getMessage());
+						numFilePass2Fail++;
+					} catch(OrphanBenchmarkingDocException obde) {
+						System.out.println("\t- ASSERTION ERROR: "+obde.getMessage());
+						numFilePass2Fail++;
+					} catch(SchemaMissingForeignKeySchemaException smfkse) {
+						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
+						System.out.flush();
+						Collection<SchemaMissingForeignKeySchemaException> inconsistencies = smfkse.getInconsistencies();
+						if(inconsistencies!=null) {
+							inconsistencies.forEach(incon -> System.err.println(((incon instanceof SchemaMissingForeignKeyNoDocumentsException) ? "\t FK ERROR: ":"\t ASSERTION ERROR: ")+incon.getMessage()));
+						} else {
+							System.err.println(((smfkse instanceof SchemaMissingForeignKeyNoDocumentsException) ? "\t FK ERROR: ":"\t ASSERTION ERROR: ")+smfkse.getMessage());
+						}
+						System.err.flush();
+						numFilePass2Fail++;
+					}
+				} catch(IOException ioe) {
+					System.err.printf("\t- ERROR: Unable to open file %s. Reason: %s\n",jsonFile.getPath(),ioe.getMessage());
+					System.err.flush();
+					numFilePass2Fail++;
+				}
+			}
+		}
+		
+		System.out.printf("\nVALIDATION STATS:\n\t- directories (%d OK, %d failed)\n\t- PASS 1 (%d OK, %d ignored, %d error)\n\t- PASS 2 (%d OK, %d error)\n",numDirOK,numDirFail,numFilePass1OK,numFilePass1Ignore,numFilePass1Fail,numFilePass2OK,numFilePass2Fail);
 	}
 	
 	public static void main( String[] args )

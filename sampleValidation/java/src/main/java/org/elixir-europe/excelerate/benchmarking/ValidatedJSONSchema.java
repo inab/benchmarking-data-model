@@ -112,68 +112,66 @@ public class ValidatedJSONSchema {
 		}
 	}
 	
-	protected Collection<ForeignKey> getFKs() {
-		return getFKs(jsonSchema);
+	protected Collection<ForeignKey> findFKs() {
+		return findFKs(jsonSchema);
 	}
 	
-	protected Collection<ForeignKey> getFKs(Object schema) {
-		return getFKs(schema,"");
+	protected Collection<ForeignKey> findFKs(JSONObject schema) {
+		return findFKs(schema,"");
 	}
 	
-	protected Collection<ForeignKey> getFKs(Object schema,String prefix) {
+	protected Collection<ForeignKey> findFKs(JSONObject jsonSchema,String prefix) {
 		Collection<ForeignKey> FKs = new ArrayList<ForeignKey>();
 		
-		if(schema instanceof JSONObject) {
-			JSONObject jsonSchema = (JSONObject)schema;
+		// First, this level's foreign keys
+		boolean isArray = false;
+		
+		if(jsonSchema.has(ITEMS_KEY) && jsonSchema.get(ITEMS_KEY) instanceof JSONObject) {
+			jsonSchema = (JSONObject) jsonSchema.get(ITEMS_KEY);
+			isArray = true;
 			
-			// First, this level's foreign keys
-			boolean isArray = false;
-			
-			if(jsonSchema.has(ITEMS_KEY) && jsonSchema.get(ITEMS_KEY) instanceof JSONObject) {
-				jsonSchema = (JSONObject) jsonSchema.get(ITEMS_KEY);
-				isArray = true;
-				
-				if(prefix.length() > 0) {
-					prefix += "[]";
-				}
+			if(prefix.length() > 0) {
+				prefix = prefix + "[]";
 			}
-			
-			if(jsonSchema.has(FOREIGN_KEYS_KEY) && jsonSchema.get(FOREIGN_KEYS_KEY) instanceof JSONArray) {
-				for(Object fk_def_obj: (JSONArray)jsonSchema.get(FOREIGN_KEYS_KEY)) {
-					// Only valid declarations are taken into account
-					if(fk_def_obj instanceof JSONObject) {
-						JSONObject fk_def = (JSONObject) fk_def_obj;
-						if(fk_def.has(SCHEMA_ID_KEY) && fk_def.has(MEMBERS_KEY)) {
-							String ref_schema_id = fk_def.getString(SCHEMA_ID_KEY);
-							Object members = fk_def.get(MEMBERS_KEY);
+		}
+		
+		if(jsonSchema.has(FOREIGN_KEYS_KEY) && jsonSchema.get(FOREIGN_KEYS_KEY) instanceof JSONArray) {
+			for(Object fk_def_obj: (JSONArray)jsonSchema.get(FOREIGN_KEYS_KEY)) {
+				// Only valid declarations are taken into account
+				if(fk_def_obj instanceof JSONObject) {
+					JSONObject fk_def = (JSONObject) fk_def_obj;
+					if(fk_def.has(SCHEMA_ID_KEY) && fk_def.has(MEMBERS_KEY)) {
+						String ref_schema_id = fk_def.getString(SCHEMA_ID_KEY);
+						Object members = fk_def.get(MEMBERS_KEY);
+						
+						if(members instanceof JSONArray) {
+							// Translating to absolute URI (in case it is relative)
+							URI abs_ref_schema_id = jsonSchemaURI.resolve(ref_schema_id);
 							
-							if(members instanceof JSONArray) {
-								// Translating to absolute URI (in case it is relative)
-								URI abs_ref_schema_id = jsonSchemaURI.resolve(ref_schema_id);
-								
-								Collection<String> components = new ArrayList<String>();
-								for(Object component: (JSONArray)members) {
-									String compStr = component.toString();
-									components.add((compStr.length() > 0 && !compStr.equals("."))?prefix+"."+compStr:compStr);
-								}
-								
-								FKs.add(new ForeignKey(abs_ref_schema_id,components));
+							Collection<String> components = new ArrayList<String>();
+							for(Object component: (JSONArray)members) {
+								String compStr = component.toString();
+								components.add((compStr.length() > 0 && !compStr.equals("."))?prefix+"."+compStr:prefix);
 							}
+							
+							FKs.add(new ForeignKey(abs_ref_schema_id,components));
 						}
 					}
 				}
 			}
+		}
+		
+		// Then, the foreign keys inside sublevels
+		if(jsonSchema.has(PROPERTIES_KEY) && jsonSchema.get(PROPERTIES_KEY) instanceof JSONObject) {
+			if(prefix.length()>0) {
+				prefix = prefix + ".";
+			}
 			
-			// Then, the foreign keys inside sublevels
-			if(jsonSchema.has(PROPERTIES_KEY) && jsonSchema.get(PROPERTIES_KEY) instanceof JSONObject) {
-				if(prefix.length()>0) {
-					prefix += ".";
-				}
-				
-				JSONObject p = (JSONObject)jsonSchema.get(PROPERTIES_KEY);
-				for(String k: p.keySet()) {
-					Object subschema = p.get(k);
-					FKs.addAll(getFKs(subschema,prefix+k));
+			JSONObject p = (JSONObject)jsonSchema.get(PROPERTIES_KEY);
+			for(String k: p.keySet()) {
+				Object subschema = p.get(k);
+				if(subschema instanceof JSONObject) {
+					FKs.addAll(findFKs((JSONObject)subschema,prefix+k));
 				}
 			}
 		}
@@ -244,7 +242,7 @@ public class ValidatedJSONSchema {
 					}
 				}
 				
-				p_FKs = getFKs();
+				p_FKs = findFKs();
 			} catch(URISyntaxException use) {
 				// IgnoreIt(R)
 			}
@@ -272,27 +270,12 @@ public class ValidatedJSONSchema {
 		return jsonSchemaSource;
 	}
 	
-	public void consistencyChecks(Validator p_schemaHash)
-		throws SchemaInconsistentException
-	{
-		// Now, we check whether the declared foreign keys are pointing to loaded JSON schemas
-		Collection<String> errors = new ArrayList<String>();
-		for(ForeignKey p_FK_decl: p_FKs) {
-			URI fkPkSchemaId = p_FK_decl.getSchemaURI();
-			if(!p_schemaHash.containsSchema(fkPkSchemaId)) {
-				// store the error for later notification
-				errors.add(String.format("No schema with %s id, required by %s (%s)",fkPkSchemaId.toString(),jsonSchemaSource,jsonSchemaURI.toString()));
-			}
-		}
-		
-		if(!errors.isEmpty()) {
-			// throw exception with the gathered errors
-			throw new SchemaInconsistentException(errors);
-		}
-	}
-	
 	public URI getId() {
 		return jsonSchemaURI;
+	}
+	
+	public Collection<ForeignKey> getForeignKeys() {
+		return p_FKs;
 	}
 	
 	public boolean hasPKs() {
@@ -308,9 +291,14 @@ public class ValidatedJSONSchema {
 	}
 	
 	public void validatePass1(BenchmarkingDoc bDoc)
-		throws ValidationException
+		throws ValidationException, BenchmarkingDocNoSchemaIdException, BenchmarkingDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
 	{
 		URI jsonSchemaId = bDoc.getJsonSchemaId();
+		if(jsonSchemaId==null) {
+			// Throw an ignore exception, due no declared schema
+			// This should be an assertion, as it should never happen
+			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+		}
 		if(jsonSchemaURI.equals(jsonSchemaId)) {
 			jsonSchemaVal.validate(bDoc.getJsonDoc());
 			
@@ -319,65 +307,26 @@ public class ValidatedJSONSchema {
 				Collection<Collection<String>> pkValues = bDoc.getKeyValues(p_PK_def);
 				Collection<String> pkStrings = GenKeyStrings(pkValues);
 				// Pass 1.a: check duplicate keys
-				boolean isValid = true;
+				Collection<SchemaDuplicatedPrimaryKeyException> errors = new ArrayList<SchemaDuplicatedPrimaryKeyException>();
 				for(String pkString: pkStrings) {
 					if(p_PK.containsKey(pkString)) {
-						// TODO: Store the error
-						isValid = false;
+						// Store the error
+						errors.add(new SchemaDuplicatedPrimaryKeyException(p_PK.get(pkString),bDoc.getJsonSource()));
 					}
 				}
 				
 				// Pass 1.b: record keys
-				if(isValid) {
+				if(errors.isEmpty()) {
 					String jsonFile = bDoc.getJsonSource();
 					pkStrings.forEach(pkString -> p_PK.put(pkString,jsonFile));
 				} else {
-					// TODO:
 					// Throwing the exception with all the gathered errors
+					throw new SchemaDuplicatedPrimaryKeyException(errors);
 				}
 			}
-		} else if(jsonSchemaId!=null) {
-			// TODO: Throw an ignore exception, due different schemas
 		} else {
-			// TODO: Throw an ignore exception, due no declared schema
-		}
-	}
-	
-	public void validatePass2(BenchmarkingDoc bDoc,Validator p_schemaHash) {
-		boolean isValid = true;
-		for(ForeignKey p_FK_decl: p_FKs) {
-			Collection<Collection<String>> fkValues = bDoc.getKeyValues(p_FK_decl.getComponents());
-			
-			Collection<String> fkStrings = GenKeyStrings(fkValues);
-			
-			if(!fkStrings.isEmpty()) {
-				URI fkPkSchemaId = p_FK_decl.getSchemaURI();
-			
-				if(p_schemaHash.containsSchema(fkPkSchemaId)) {
-					ValidatedJSONSchema p_PK_schema = p_schemaHash.getSchema(fkPkSchemaId);
-					
-					if(p_PK_schema.hasPKs()) {
-						for(String fkString: fkStrings) {
-							if(fkString!=null) {
-								if(!p_PK_schema.containsPK(fkString)) {
-									// TODO: Store error due FK violation
-									isValid = false;
-								}
-							}
-						}
-					} else {
-						// TODO: Store error due schema with no documents
-						isValid = false;
-					}
-				} else {
-					// TODO: Store error due missing schema
-					isValid = false;
-				}
-			}
-		}
-		
-		if(!isValid) {
-			// TODO: Throw an exception with all the gathered errors
+			// Throw an ignore exception, due different schemas
+			throw new BenchmarkingDocUnmatchingSchemaException(bDoc.getJsonSource(),jsonSchemaURI);
 		}
 	}
 }

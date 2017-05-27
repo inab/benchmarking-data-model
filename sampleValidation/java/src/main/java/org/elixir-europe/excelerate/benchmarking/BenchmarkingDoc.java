@@ -77,8 +77,12 @@ public class BenchmarkingDoc {
 	protected Collection<String> materializeJPath(String jPath) {
 		Collection<Object> objectives = new ArrayList<Object>();
 		objectives.add(jsonDoc);
+		
 		String[] jSteps = (jPath.length() ==0 || jPath.equals('.')) ? new String[] { null } : jPath.split("\\.");
 		for(String jStep: jSteps) {
+			// Fail fast
+			if(objectives.isEmpty())  break;
+			
 			Collection<Object> newObjectives = new ArrayList<Object>();
 			boolean isArray = false;
 			Integer arrayIndex = null;
@@ -86,8 +90,9 @@ public class BenchmarkingDoc {
 				Matcher jStepMatch = jStepPat.matcher(jStep);
 				if(jStepMatch.find()) {
 					isArray = true;
-					if(jStepMatch.groupCount()>=2) {
-						arrayIndex = Integer.valueOf(jStepMatch.group(2));
+					String strIndex = jStepMatch.group(2);
+					if(strIndex!=null) {
+						arrayIndex = Integer.valueOf(strIndex);
 					}
 					jStep = jStepMatch.group(1);
 				}
@@ -136,7 +141,7 @@ public class BenchmarkingDoc {
 		}
 		
 		// Flattening it (we return a reference to a list of atomic values)
-		Collection<String> strObjectives = objectives.stream().map(objective -> JSONObject.valueToString(objective)).collect(Collectors.toCollection(ArrayList::new));
+		Collection<String> strObjectives = objectives.stream().map(objective -> objective.toString()).collect(Collectors.toCollection(ArrayList::new));
 		
 		return strObjectives;
 	}

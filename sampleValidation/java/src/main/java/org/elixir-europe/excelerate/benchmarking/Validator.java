@@ -76,4 +76,93 @@ public class Validator
 	public Collection<ValidatedJSONSchema> getSchemas() {
 		return schemaHash.values();
 	}
+	
+	public void consistencyChecks(ValidatedJSONSchema p_schema)
+		throws SchemaInconsistentException
+	{
+		// Now, we check whether the declared foreign keys are pointing to loaded JSON schemas
+		Collection<String> errors = new ArrayList<String>();
+		for(ValidatedJSONSchema.ForeignKey p_FK_decl: p_schema.getForeignKeys()) {
+			URI fkPkSchemaId = p_FK_decl.getSchemaURI();
+			if(!containsSchema(fkPkSchemaId)) {
+				// store the error for later notification
+				errors.add(String.format("No schema with %s id, required by %s (%s)",fkPkSchemaId.toString(),p_schema.getJsonSchemaSource(),p_schema.getId().toString()));
+			}
+		}
+		
+		if(!errors.isEmpty()) {
+			// throw exception with the gathered errorsValidationException, BenchmarkingDocNoSchemaIdException
+			throw new SchemaInconsistentException(errors);
+		}
+	}
+	
+	public void validatePass1(BenchmarkingDoc bDoc)
+		throws ValidationException, BenchmarkingDocNoSchemaIdException, OrphanBenchmarkingDocException, BenchmarkingDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
+	{
+		URI jsonSchemaId = bDoc.getJsonSchemaId();
+		
+		if(jsonSchemaId == null) {
+			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+		}
+		
+		if(!containsSchema(jsonSchemaId)) {
+			throw new OrphanBenchmarkingDocException(jsonSchemaId);
+		}
+		
+		ValidatedJSONSchema bSchemaDoc = getSchema(jsonSchemaId);
+		bSchemaDoc.validatePass1(bDoc);
+	}
+	
+	public void validatePass2(BenchmarkingDoc bDoc)
+		throws BenchmarkingDocNoSchemaIdException, OrphanBenchmarkingDocException, SchemaMissingForeignKeySchemaException
+	{
+		URI jsonSchemaId = bDoc.getJsonSchemaId();
+		
+		if(jsonSchemaId == null) {
+			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+		}
+		
+		if(!containsSchema(jsonSchemaId)) {
+			throw new OrphanBenchmarkingDocException(jsonSchemaId);
+		}
+		
+		ValidatedJSONSchema bSchemaDoc = getSchema(jsonSchemaId);
+		
+		Collection<SchemaMissingForeignKeySchemaException> errors = new ArrayList<SchemaMissingForeignKeySchemaException>();
+		for(ValidatedJSONSchema.ForeignKey p_FK_decl: bSchemaDoc.getForeignKeys()) {
+			Collection<Collection<String>> fkValues = bDoc.getKeyValues(p_FK_decl.getComponents());
+			
+			Collection<String> fkStrings = ValidatedJSONSchema.GenKeyStrings(fkValues);
+			
+			if(!fkStrings.isEmpty()) {
+				URI fkPkSchemaId = p_FK_decl.getSchemaURI();
+				
+				if(containsSchema(fkPkSchemaId)) {
+					ValidatedJSONSchema p_PK_schema = getSchema(fkPkSchemaId);
+					
+					if(p_PK_schema.hasPKs()) {
+						for(String fkString: fkStrings) {
+							if(fkString!=null) {
+								if(!p_PK_schema.containsPK(fkString)) {
+									// Store error due FK violation
+									errors.add(new SchemaMissingForeignKeyException(fkString,bDoc.getJsonSource(),fkPkSchemaId));
+								}
+							}
+						}
+					} else {
+						// Store error due schema with no documents
+						errors.add(new SchemaMissingForeignKeyNoDocumentsException(bDoc.getJsonSource(),fkPkSchemaId));
+					}
+				} else {
+					// Store error due missing schema
+					errors.add(new SchemaMissingForeignKeySchemaException(bDoc.getJsonSource(),fkPkSchemaId));
+				}
+			}
+		}
+		
+		if(!errors.isEmpty()) {
+			// Throw an exception with all the gathered errors
+			throw new SchemaMissingForeignKeySchemaException(errors);
+		}
+	}
 }
