@@ -38,7 +38,7 @@ def disable_outerr_buffering():
 
 disable_outerr_buffering()
 
-def getFKs(jsonSchema,jsonSchemaURI,prefix=""):
+def findFKs(jsonSchema,jsonSchemaURI,prefix=""):
 	FKs = []
 	
 	if isinstance(jsonSchema,dict):
@@ -74,7 +74,7 @@ def getFKs(jsonSchema,jsonSchemaURI,prefix=""):
 				prefix += '.'
 			p = jsonSchema['properties']
 			for k,subSchema in p.items():
-				FKs.extend(getFKs(subSchema,jsonSchemaURI,prefix+k))
+				FKs.extend(findFKs(subSchema,jsonSchemaURI,prefix+k))
 	
 	return FKs
 
@@ -143,7 +143,7 @@ def loadJSONSchemas(p_schemaHash,*args):
 										p_PK = None
 								
 								# Gather foreign keys
-								FKs = getFKs(jsonSchema,jsonSchemaURI)
+								FKs = findFKs(jsonSchema,jsonSchemaURI)
 								
 								#print(FKs,file=sys.stderr)
 								
@@ -378,6 +378,8 @@ def jsonValidate(p_schemaHash,*args):
 					
 			except IOError as ioe:
 				print("\t- ERROR: Unable to open file {0}. Reason: {1}".format(jsonFile,ioe.strerror),file=sys.stderr)
+				# Masking it for the next loop
+				jsonFiles[iJsonFile] = None
 				numFilePass1Fail += 1
 	
 	#use Data::Dumper;

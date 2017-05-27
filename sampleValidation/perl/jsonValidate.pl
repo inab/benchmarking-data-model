@@ -16,9 +16,9 @@ use IO::Handle;
 STDOUT->autoflush;
 STDERR->autoflush;
 
-sub getFKs($$;$);
+sub findFKs($$;$);
 
-sub getFKs($$;$) {
+sub findFKs($$;$) {
 	my($jsonSchema,$jsonSchemaURI,$prefix) = @_;
 	$prefix = ""  unless(defined($prefix));
 	
@@ -59,7 +59,7 @@ sub getFKs($$;$) {
 			$prefix .= "."  unless($prefix eq '');
 			my $p = $jsonSchema->{'properties'};
 			while(my($k,$subSchema) = each(%{$p})) {
-				push(@FKs,getFKs($subSchema,$jsonSchemaURI,$prefix.$k));
+				push(@FKs,findFKs($subSchema,$jsonSchemaURI,$prefix.$k));
 			}
 		}
 	}
@@ -140,7 +140,7 @@ sub loadJSONSchemas(\%@) {
 							}
 							
 							# Gather foreign keys 
-							my @FKs = getFKs($jsonSchema,$jsonSchemaURI);
+							my @FKs = findFKs($jsonSchema,$jsonSchemaURI);
 							
 							#use Data::Dumper;
 							#
