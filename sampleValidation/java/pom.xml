@@ -42,7 +42,7 @@
 				<configuration>
 					<programs>
 						<program>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.Validator</mainClass>
+							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
 							<id>jsonValidate</id>
 						</program>
 					</programs>
@@ -57,7 +57,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.Validator</mainClass>
+							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -74,7 +74,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.Validator</mainClass>
+							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -103,7 +103,7 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>org.elixir_europe.excelerate.benchmarking.Validator</mainClass>
+									<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
