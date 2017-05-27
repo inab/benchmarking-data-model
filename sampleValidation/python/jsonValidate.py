@@ -173,7 +173,7 @@ def loadJSONSchemas(p_schemaHash,*args):
 			fkPkSchemaId , p_FK_def = p_FK_decl
 			
 			if fkPkSchemaId not in p_schemaHash:
-				print("\t- FK ERROR: No schema with {0} id, required by {1} ({2})".format(fkPkSchemaId,jsonSchemaFile,jsonSchemaURI),file=sys.stderr);
+				print("\t- FK ERROR: No schema with {0} id, required by {1} ({2})".format(fkPkSchemaId,jsonSchemaFile,jsonSchemaURI),file=sys.stderr)
 				
 				isValid = False
 		
@@ -183,7 +183,7 @@ def loadJSONSchemas(p_schemaHash,*args):
 		else:
 			numSchemaInconsistent += 1
 	
-	print("\nSCHEMA CONSISTENCY STATS: {0} schemas right, {1} with inconsistencies".format(numSchemaConsistent,numSchemaInconsistent));
+	print("\nSCHEMA CONSISTENCY STATS: {0} schemas right, {1} with inconsistencies".format(numSchemaConsistent,numSchemaInconsistent))
 
 
 jStepPat = re.compile(r"^([^\[]+)\[(0|[1-9][0-9]+)?\]$")
