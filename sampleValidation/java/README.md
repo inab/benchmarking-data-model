@@ -7,13 +7,13 @@ So, the proposed validation program uses libraries compliant with that specifica
 * This directory contains a Java project of a validator program, whose dependencies are defined in [pom.xml](pom.xml).
 	- In order to compile the project you need [Maven](https://maven.apache.org/). It is available in some Linux distributions (Ubuntu package `maven`).
 	
-	- The program is built running next command from this directory:
+	- The dependencies are fetched, and the program is built running next command from this directory:
 	  ```bash
 	  mvn package appassembler:assemble
 	  ```
 	
-	- The program, along all its dependencies, is available at `target/appassembler` subdirectory. It can launched using next command line:
+	- The generated bundle (the program, along all its dependencies), is available at `target/appassembler` subdirectory. It can be run using next command line:
 	  ```bash
 	  export PATH="${PWD}/target/appassembler/bin:$PATH"
-	  jsonValidate ../../json-schemas ../../cameo_prototype_data_fixed
+	  jsonValidate ../../json-schemas ../../prototype-data/cameo_prototype_data_fixed
 	  ```

@@ -20,8 +20,8 @@ So, the proposed validation program uses libraries compliant with that specifica
 	  pyenv/bin/pip install -r requirements.txt
 	  ```
 	  
-	- The program can launched using next command line:
+	- The program can be run using next command line:
 	  ```bash
 	  source pyenv/bin/activate
-	  python jsonValidate.py ../../json-schemas ../../cameo_prototype_data_fixed
+	  python jsonValidate.py ../../json-schemas ../../prototype-data/cameo_prototype_data_fixed
 	  ```
