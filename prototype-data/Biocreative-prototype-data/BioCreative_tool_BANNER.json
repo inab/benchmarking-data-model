@@ -1,0 +1,30 @@
+{
+	"_id": "BioCreative:BANNER",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "BANNER",
+	"description": "BANNER is a named entity recognition system, primarily intended for biomedical text. It is a machine-learning system based on conditional random fields and contains a wide survey of the best features in recent literature on biomedical named entity recognition (NER). BANNER is portable and is designed to maximize domain independence by not employing semantic features or rule-based processing steps. It is therefore useful to developers as an extensible NER implementation, to researchers as a standard for comparing innovative techniques, and to biologists requiring the ability to find novel entities in large amounts of text. This system has been compared to the official results of the Second BioCreative Challenge Evaluation as well as to other applications such as ABNER, LingPipe and NERBio.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Robert.Leaman",
+		"Graciela.Gonzalez"
+	],
+	"status_id": "active",
+	"references": [
+		"10.1142/9789812776136_0062"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "http://banner.sourceforge.net",
+			"techdocs": [
+				{
+					"uri": "http://banner.cvs.sourceforge.net/banner/",
+					"label": "source"
+				}
+			]
+		}
+	]
+}

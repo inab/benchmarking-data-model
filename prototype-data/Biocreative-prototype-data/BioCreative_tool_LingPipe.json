@@ -1,0 +1,41 @@
+{
+	"_id": "BioCreative:LingPipe",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "LingPipe",
+	"description": "LingPipe is a suite of NLP tools (in Java) including many features such as named-entity detector, an approximate dictionary match named-entity detector, a heuristic sentence boundary detector, a heuristic within-document coreference resolution engine and a set of tools for MEDLINE data.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"lingpipe.helpdesk"
+	],
+	"status_id": "implemented",
+	"references": [
+		"10.1093/bioinformatics/16.2.169"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "http://alias-i.com/lingpipe/web/downloadJarOrDistro.html?",
+			"techdocs": [
+				{
+					"uri": "http://alias-i.com/lingpipe/web/models.html",
+					"label": "source"
+				},
+				{
+					"uri": "http://alias-i.com/lingpipe/demos/tutorial/read-me.html",
+					"label": "doc"
+				},
+				{
+					"uri": "http://alias-i.com/lingpipe/web/install.html",
+					"label": "doc"
+				},
+				{
+					"uri": "http://alias-i.com/lingpipe/docs/api/index.html",
+					"label": "OpenAPI"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"_id": "BioCreative:T2KGeneTagger",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "T2K Gene Tagger",
+	"description": "T2K Gene Tagger is a web tool that take a medical text file or a list of gene names and tag genes with <'gene'> tag with taxonomy and sequence information. Note that it will take quiet a long time if you are tagging a long paragraphs or a full paper.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Yong.Huang"
+	],
+	"status_id": "active",
+	"tool_access": [
+		{
+			"tool_access_type_id": "Web-application",
+			"link": "http://www.bioinformatics.org/textknowledge/genetag.php"		}
+	]
+}

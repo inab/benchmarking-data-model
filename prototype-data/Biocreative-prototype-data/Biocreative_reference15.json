@@ -1,0 +1,10 @@
+{
+	"_id": "10.1186/gb-2008-9-s2-s6",
+	"_type": "Reference",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"title": "Introducing meta-services for biomedical information extraction",
+	"doi": "10.1186/gb-2008-9-s2-s6",
+	"pubmed_id": 18834497,
+	"abstract": "We introduce the first meta-service for information extraction in molecular biology, the BioCreative MetaServer (BCMS; http://bcms.bioinfo.cnio.es/). This prototype platform is a joint effort of 13 research groups and provides automatically generated annotations for PubMed/Medline abstracts. Annotation types cover gene names, gene IDs, species, and protein-protein interactions. The annotations are distributed by the meta-server in both human and machine readable formats (HTML/XML). This service is intended to be used by biomedical researchers and database annotators, and in biomedical language processing. The platform allows direct comparison, unified access, and result aggregation of the annotations."
+}

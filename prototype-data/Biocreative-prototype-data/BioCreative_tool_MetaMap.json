@@ -1,0 +1,48 @@
+{
+	"_id": "BioCreative:MetaMap",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "MetaMap",
+	"description": "MetaMap is a program for mapping biomedical text to concepts in the UMLS Metathesaurus or, equivalently, to discover Metathesaurus concepts referred to in text. MetaMap uses a knowledge intensive approach based on symbolic, natural language processing (NLP) and computational linguistic techniques. Because of the intensiveness of its computations, it is not appropriate for real time processing. On the other hand, it is thorough and is particularly adept at constructing partial matches when a phrase cannot be described by a single concept. MetaMap has been used to support tasks such as information retrieval, text mining, literature-based discovery, document indexing, classification and question answering. MetaMap's output normally consists of the best 'mappings' for input text phrases, i.e., sets of Metathesaurus concepts which best match the input. Intermetiate results, also available for output, consist of ranked lists of concepts (keywords, gene/protein names, ..., i.e., any concept in the UMLS Metathesaurus), a shallow parse of the text and a list of author-defined acronyms/abbreviations. MetaMap has been used by a range of different tools/applications, some of them are listed in the keyword section. MetaMap is one of the primary components of the NLM Medical Text Indexer (NLM) which is in daily use assisting NLM indexers in creating the MeSH indexing for MEDLINE citations.",
+	"is_automated": true,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"MetaMap.helpdesk"
+	],
+	"status_id": "active",
+	"references": [
+		"PMID11825149"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "https://metamap.nlm.nih.gov/MainDownload.shtml",
+			"techdocs": [
+				{
+					"uri": "https://metamap.nlm.nih.gov/download/public_mm_src_2013v2.tar.bz2",
+					"label": "source"
+				},
+				{
+					"uri": "https://metamap.nlm.nih.gov/download/public_mm_linux_javaapi_2016v2.tar.bz2",
+					"label": "API"
+				},
+				{
+					"uri": "https://metamap.nlm.nih.gov/Installation.shtml",
+					"label": "doc"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "Web-application",
+			"link": "http://ii.nlm.nih.gov/Interactive/UTS_Required/metamap.shtml",
+			"techdocs": [
+				{
+					"uri": "https://ii.nlm.nih.gov/Web_API/index.shtml",
+					"label": "API"
+				}
+
+			]
+		}
+	]
+}

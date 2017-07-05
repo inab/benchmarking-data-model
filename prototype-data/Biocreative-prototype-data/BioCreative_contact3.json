@@ -1,0 +1,17 @@
+{
+	"_id": "Burr.Settles",
+	"_type": "Contact",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
+	"contact_type": "person",
+	"givenName": [
+		"Burr"
+	],
+	"surname": [
+		"Settles"
+	],
+	"email": [
+		"bsettles@cs.wisc.edu"
+	],
+	"notes": "Support contact / Maintainer"
+}

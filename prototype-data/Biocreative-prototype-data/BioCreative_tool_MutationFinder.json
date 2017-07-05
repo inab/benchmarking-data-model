@@ -1,0 +1,22 @@
+{
+	"_id": "BioCreative:MutationFinder",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "MutationFinder",
+	"description": "MutationFinder (MF) is an open-source, high-performance information extraction system for extracting mentions of point mutations from free text. MutationFinder was developed in the Center for Computational Pharmacology, a part of the Computational Bioscience Program at the University of Colorado Health Sciences Center. On blind test data, MF achieves a precision of 98.4% and a recall of 81.9% when extracting point mutation mentions. MF is available as a stand-alone Python script that can be applied to input text, and via an API. For accessibility, three functionally identical implementations of the API are provided, in Python, Java, and Perl. Full documentation, along with usage examples, are presented in a README file packaged with the software.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Greg.Caporaso"
+	],
+	"status_id": "implemented",
+	"references": [
+		"10.1093/bioinformatics/btm235"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "https://sourceforge.net/projects/mutationfinder/files/latest/download"		}
+	]
+}

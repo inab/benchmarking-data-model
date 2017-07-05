@@ -1,0 +1,29 @@
+{
+	"_id": "BioCreative:BioThesaurus",
+	"_type": "Tool",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"name": "BioThesaurus",
+	"description": "BioThesaurus is a web-based system designed to map a comprehensive collection of protein and gene names to UniProt Knowledgebase (UniProtKB) protein entries (Liu et al., 2006a, 2006b). It covers all UniProtKB protein entries, and consists of several millions of names extracted from multiple resources based on database cross-references in iProClass (detailed statistics and data sources). The web site allows the retrieval of synonymous names of given protein entries and the identification of ambiguous names shared by multiple proteins.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"PIR.helpdesk"
+	],
+	"status_id": "active",
+	"references": [
+		"10.1093/bioinformatics/bti749"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Web-application",
+			"link": "http://pir.georgetown.edu/iprolink/biothesaurus",
+			"techdocs": [
+				{
+					"uri": "ftp://ftp.pir.georgetown.edu/databases/iprolink/bioThesaurus.dist_7.0.gz",
+					"label": "source"
+				}
+			]
+		}
+	]
+}

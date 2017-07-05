@@ -1,0 +1,10 @@
+{
+	"_id": "10.1093/bioinformatics/btm235",
+	"_type": "Reference",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"title": "MutationFinder: a high-performance system for extracting point mutation mentions from text",
+	"doi": "10.1093/bioinformatics/btm235",
+	"pubmed_id": 17495998,
+	"abstract": "Discussion of point mutations is ubiquitous in biomedical literature, and manually compiling databases or literature on mutations in specific genes or proteins is tedious. We present an open-source, rule-based system, MutationFinder, for extracting point mutation mentions from text. On blind test data, it achieves nearly perfect precision and a markedly improved recall over a baseline. AVAILABILITY: MutationFinder, along with a high-quality gold standard data set, and a scoring script for mutation extraction systems have been made publicly available. Implementations, source code and unit tests are available in Python, Perl and Java. MutationFinder can be used as a stand-alone script, or imported by other applications. PROJECT URL: http://bionlp.sourceforge.net."
+}

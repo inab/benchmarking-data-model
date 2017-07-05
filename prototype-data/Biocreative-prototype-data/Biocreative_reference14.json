@@ -1,0 +1,10 @@
+{
+	"_id": "10.1093/database/baw120",
+	"_type": "Reference",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"title": "The Markyt visualisation, prediction and benchmark platform for chemical and gene entity recognition at BioCreative/CHEMDNER challenge",
+	"doi": "10.1093/database/baw120",
+	"pubmed_id": 27542845,
+	"abstract": "Biomedical text mining methods and technologies have improved significantly in the last decade. Considerable efforts have been invested in understanding the main challenges of biomedical literature retrieval and extraction and proposing solutions to problems of practical interest. Most notably, community-oriented initiatives such as the BioCreative challenge have enabled controlled environments for the comparison of automatic systems while pursuing practical biomedical tasks. Under this scenario, the present work describes the Markyt Web-based document curation platform, which has been implemented to support the visualisation, prediction and benchmark of chemical and gene mention annotations at BioCreative/CHEMDNER challenge. Creating this platform is an important step for the systematic and public evaluation of automatic prediction systems and the reusability of the knowledge compiled for the challenge. Markyt was not only critical to support the manual annotation and annotation revision process but also facilitated the comparative visualisation of automated results against the manually generated Gold Standard annotations and comparative assessment of generated results. We expect that future biomedical text mining challenges and the text mining community may benefit from the Markyt platform to better explore and interpret annotations and improve automatic system predictions.Database URL: http://www.markyt.org, https://github.com/sing-group/Markyt."
+}

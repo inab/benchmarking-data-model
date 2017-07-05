@@ -1,0 +1,17 @@
+{
+	"_id": "Laura.Furlong",
+	"_type": "Contact",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
+	"contact_type": "person",
+	"givenName": [
+		"Laura I."
+	],
+	"surname": [
+		"Furlong"
+	],
+	"email": [
+		"lfurlong@imim.es"
+	],
+	"notes": "Contact / Maintainer for OSIRISv1.2"
+}
