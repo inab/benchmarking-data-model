@@ -7,3 +7,5 @@ This directory contains several prototype data sets:
 * [cameo_prototype_data_fixed](cameo_prototype_data_fixed): Sample data set from [CAMEO](https://www.cameo3d.org/), fixed in order to pass all the validation tests against the benchmarking JSON schemas.
 
 * [QfO-prototype-data](QfO-prototype-data): Sample data set from [Quest for Orthologs](http://questfororthologs.org/).
+
+* [Biocreative-prototype-data](Biocreative-prototype-data): Sample data set from [Biocreative/Becalm](http://www.becalm.eu/). Under development.
