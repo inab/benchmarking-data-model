@@ -27,11 +27,11 @@
 		},
                 "primary_key" : {
                     "type": "string",
-                    "title": "property used as primary key, defaults to _id in MongoDB implemtations",
+                    "title": "property used as primary key, defaults to _id in MongoDB implementation",
                     "default": "_id"
                 },
                 "foreign_keys" : {
-                    "title": "Properites used as pseudo relational type FKs",
+                    "title": "Properties used as pseudo relational type FKs",
                     "type": "array",
                     "items" : {
                         "type": "object",
@@ -53,5 +53,5 @@
                 }
 	},
 	"additionalProperties": false,
-	"required": ["_id","_type","_schema","_version"]
+	"required": ["_id","_schema"]
 }
