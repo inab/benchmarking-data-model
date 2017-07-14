@@ -32,21 +32,13 @@
 		},
 		"givenName": {
 			"title": "First / given name",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string",
+			"minLength": 1
 		},
 		"surname": {
 			"title": "Surname(s)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string",
+			"minLength": 1
 		},
 		"email": {
 			"title": "The e-mail address(es) of the contact",
