@@ -1,8 +1,6 @@
 {
 	"_id": "10.1186/1471-2105-9-84",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "OSIRISv1.2: a named entity recognition system for sequence variants of genes in biomedical literature",
 	"doi": "10.1186/1471-2105-9-84",
 	"pubmed_id": 18251998,

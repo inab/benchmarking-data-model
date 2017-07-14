@@ -1,8 +1,6 @@
 {
 	"_id": "10.1186/1471-2105-10-223",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Incorporating rich background knowledge for gene named entity classification and recognition",
 	"doi": "10.1186/1471-2105-10-223",
 	"pubmed_id": 19615051,

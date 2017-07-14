@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bioinformatics/bti475",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "ABNER: an open source tool for automatically tagging genes, proteins and other entity names in text",
 	"doi": "10.1093/bioinformatics/bti475",
 	"pubmed_id": 15860559,

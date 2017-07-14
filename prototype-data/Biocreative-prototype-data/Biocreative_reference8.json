@@ -1,8 +1,6 @@
 {
 	"_id": "10.1007/978-3-540-36668-3_150",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "MaxMatcher: Biological Concept Extraction Using Approximate Dictionary Lookup",
 	"doi": "10.1007/978-3-540-36668-3_150",
 	"abstract": "Dictionary-based biological concept extraction is still the state-of-the-art approach to large-scale biomedical literature annotation and indexing. The exact dictionary lookup is a very simple approach, but always achieves low extraction recall because a biological term often has many variants while a dictionary is impossible to collect all of them. We propose a generic extraction approach, referred to as approximate dictionary lookup, to cope with term variations and implement it as an extraction system called MaxMatcher. The basic idea of this approach is to capture the significant words instead of all words to a particular concept. The new approach dramatically improves the extraction recall while maintaining the precision. In a comparative study on GENIA corpus, the recall of the new approach reaches a 57% recall while the exact dictionary lookup only achieves a 26% recall."

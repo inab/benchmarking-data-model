@@ -1,8 +1,6 @@
 {
 	"_id": "10.1142/9789812776136_0062",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "BANNER: an executable survey of advances in biomedical named entity recognition",
 	"doi": "10.1142/9789812776136_0062",
 	"pubmed_id": 18229723,

@@ -1,7 +1,5 @@
 {
 	"_id": "Active",
-	"_type": "CommunityStatus",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#CommunityStatus",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/CommunityStatus",
 	"description": "Active"
 }

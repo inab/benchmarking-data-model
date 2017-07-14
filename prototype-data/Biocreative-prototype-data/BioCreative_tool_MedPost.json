@@ -1,8 +1,6 @@
 {
 	"_id": "BioCreative:Medpost",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "MedPost",
 	"description": "MedPost: Part-of-speech tagger for biomedical literature (Medline citations).",
 	"is_automated": false,

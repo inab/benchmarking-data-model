@@ -1,8 +1,6 @@
 {
 	"_id": "10.1186/gb-2008-9-s2-s6",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Introducing meta-services for biomedical information extraction",
 	"doi": "10.1186/gb-2008-9-s2-s6",
 	"pubmed_id": 18834497,

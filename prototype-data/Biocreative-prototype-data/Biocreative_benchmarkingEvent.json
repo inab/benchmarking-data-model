@@ -1,8 +1,6 @@
 {
 	"_id": "Biocreative:V.5-BeCalm-TIPS",
-	"_type": "BenchmarkingEvent",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#BenchmarkingEvent",
-	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
 	"name": "BiocreativeV.5/BeCalm - Technical interoperability and performance of annotation servers (TIPS)",
 	"is_automated": true,
 	"dates": {

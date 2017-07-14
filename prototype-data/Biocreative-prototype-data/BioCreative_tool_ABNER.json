@@ -1,8 +1,6 @@
 {
 	"_id": "BioCreative:ABNER",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "ABNER",
 	"description": "Machine-learning-based NER system for tagging biological entities (genes, proteins, cell lines, cell types, RNA, DNA) in text. It is based on conditional random fields (CRFs) and trained on the NLPBA and BioCreative corpora. It is implemented in Java and can be used locally.",
 	"is_automated": false,

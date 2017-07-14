@@ -1,8 +1,6 @@
 {
 	"_id": "BioCreative:KEX",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "KEX",
 	"description": "KEX (Knowledge EXtraction) is a protein name annotation tool based on PROPER (PROtien Proper-noun Extraction Rules). The format of your input file should be a plain and simple text format or a 'MEDLINE report' format. The format of the output file is a one_sentence-one_line format. Protein names are annotated with special mark-ups. KEX can be downloaded and was tested on Solaris, dec and irix. You need a C compier (preferably gcc), and Perl version 5.",
 	"is_automated": false,

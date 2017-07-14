@@ -1,8 +1,6 @@
 {
 	"_id": "BioCreative:MaxMatcher",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "MaxMatcher",
 	"description": "MaxMatcher is a biological concept extractor tool using dicitonary-based approximate matching. UMLS 2004AA version is used as the dictionary. The precision and recall on GENIA3.02 corpus are 71.60% and 75.18%, respectively.",
 	"is_automated": false,

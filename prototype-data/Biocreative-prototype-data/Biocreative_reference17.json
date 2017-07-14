@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bioinformatics/bti586",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Resolving abbreviations to their senses in Medline",
 	"doi": "10.1093/bioinformatics/bti586",
 	"pubmed_id": 16037121,
