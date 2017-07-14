@@ -4,12 +4,8 @@
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
 	"contact_type": "person",
-	"givenName": [
-		"Graciela"
-	],
-	"surname": [
-		"Gonzalez"
-	],
+	"givenName": "Graciela",
+	"surname": "Gonzalez",
 	"email": [
 		"graciela.gonzalez@asu.edu"
 	],

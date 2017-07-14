@@ -1,0 +1,10 @@
+{
+	"_id": "10.1093/bioinformatics/bth227",
+	"_type": "Reference",
+	"_version": "0.3",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"title": "MedPost: a part-of-speech tagger for bioMedical text",
+	"doi": "10.1093/bioinformatics/bth227",
+	"pubmed_id": 15073016,
+	"abstract": "We present a part-of-speech tagger that achieves over 97% accuracy on MEDLINE citations.  AVAILABILITY: Software, documentation and a corpus of 5700 manually tagged sentences are available at ftp://ftp.ncbi.nlm.nih.gov/pub/lsmith/MedPost/medpost.tar.gz"
+}
