@@ -3,14 +3,8 @@
 		"_type": "Contact",
 		"_version": "0.3",
 		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
-		"givenName": 
-			[
-				"Juergen"
-			],
-		"surname": 
-			[
-				"Haas"
-			],
+		"givenName": "Juergen",
+		"surname": "Haas",
 		"email": 
 			[
 				"juergen.haas@sib.swiss"
