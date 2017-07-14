@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_input_seqXML",
-	"_type": "Dataset",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
 	"name": "2011_04_reference_proteomes_SeqXML",
 	"version": "version 5; 2011_04",
 	"description": "Reference Proteome data sets in SeqXML format: collection of data providing a representative protein for each gene in the genome of selected species that have been generated annually from the uniProt Knowledgebase (UniProtKB) for the past five years",

@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gks1118",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "PANTHER in 2013: modeling the evolution of gene function, and other gene attributes, in the context of phylogenetic trees",
 	"doi": "10.1093/nar/gks1118",
 	"pubmed_id": 23193289,

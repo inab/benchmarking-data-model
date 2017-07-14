@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:EggNOG",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "EggNOG",
 	"description": "A database of orthologous groups and functional annotation",
 	"is_automated": true,

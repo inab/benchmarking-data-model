@@ -1,7 +1,5 @@
 {
 	"_id": "QfO:VM",
-	"_type": "ToolAccessType",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#ToolAccessType",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolAccessType",
 	"description": "Virtual machine pre-packaged and pre-configured the tool's API"
 }

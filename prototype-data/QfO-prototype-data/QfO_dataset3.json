@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_output_EggNOG",
-	"_type": "Dataset",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
 	"name": "EggNOG-.429.rels",
 	"version": "v1.0",
 	"description": "Output data set (pairwise orthologs predictions) for EggNOG tool",

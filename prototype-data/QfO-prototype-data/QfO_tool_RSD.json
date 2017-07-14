@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:RSD",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "Reciprocal Smallest Distance (RSD) 0.8 1e-5 Deluca",
 	"description": "Roundup is a large-scale orthology database. The orthologs are computed using the Reciprocal Smallest Distance (RSD) algorithm. Reciprocal Smallest Distance (RSD) is a pairwise orthology algorithm that uses global sequence alignment and maximum likelihood evolutionary distance between sequences to accurately detects orthologs between genomes. This dataset is computed using a divergence parameter of 0.8 and an E-value cutoff of 1e-5.",
 	"is_automated": true,

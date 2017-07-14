@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bioinformatics/btl286",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Roundup: a multi-genome repository of orthologs and evolutionary distances",
 	"doi": "10.1093/bioinformatics/btl286",
 	"pubmed_id": 16777906,

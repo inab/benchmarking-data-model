@@ -1,8 +1,6 @@
 {
 	"_id": "10.4137/EBO.S6259",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Cost-effective cloud computing: a case study using the comparative genomics tool, roundup",
 	"doi": "10.4137/EBO.S6259",
 	"pubmed_id": 21258651,

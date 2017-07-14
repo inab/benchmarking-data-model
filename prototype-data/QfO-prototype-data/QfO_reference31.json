@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bib/bbr034",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Conceptual framework and pilot study to benchmark phylogenomic databases based on reference gene trees",
 	"doi": "10.1093/bib/bbr034",
 	"abstract": "Phylogenomic databases provide orthology predictions for species with fully sequenced genomes. Although the goal seems well-defined, the content of these databases differs greatly. Seven ortholog databases (Ensembl Compara, eggNOG, HOGENOM, InParanoid, OMA, OrthoDB, Panther) were compared on the basis of reference trees. For three well-conserved protein families, we observed a generally high specificity of orthology assignments for these databases. We show that differences in the completeness of predicted gene relationships and in the phylogenetic information are, for the great majority, not due to the methods used, but to differences in the underlying database concepts. According to our metrics, none of the databases provides a fully correct and comprehensive protein classification. Our results provide a framework for meaningful and systematic comparisons of phylogenomic databases. In the future, a sustainable set of 'Gold standard' phylogenetic trees could provide a robust method for phylogenomic databases to assess their current quality status, measure changes following new database releases and diagnose improvements subsequent to an upgrade of the analysis procedure."

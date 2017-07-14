@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkm899",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "PhylomeDB: a database for genome-wide collections of gene phylogenies",
 	"doi": "10.1093/nar/gkm899",
 	"pubmed_id": 17962297,

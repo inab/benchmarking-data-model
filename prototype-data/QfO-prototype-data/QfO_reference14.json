@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gki078",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "The PANTHER database of protein families, subfamilies, functions and pathways",
 	"doi": "10.1093/nar/gki078",
 	"pubmed_id": 15608197,

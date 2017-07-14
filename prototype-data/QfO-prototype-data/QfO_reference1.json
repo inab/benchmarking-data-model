@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkv1248",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, prokaryotic and viral sequences",
 	"doi": "10.1093/nar/gkv1248",
 	"pubmed_id": 17942413,

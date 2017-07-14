@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:ECConservationTest-precision",
-	"_type": "Metrics",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
 	"title": "Enzyme Commission Conservation test - Precision",
 	"description": "Evaluation of orthology in terms of functional similarity using the Enzyme Commission (EC) Conservation test. Functional similarity is assessed based on experimentally backed annotations from the Enzyme Commission (EC) numbers from the ENZYME database. Precision is measured as the average Schlicker semantic similarity of functional annotations associated with orthologs",
 	"metrics_contact_id": ["Andreas.Schlicker"],

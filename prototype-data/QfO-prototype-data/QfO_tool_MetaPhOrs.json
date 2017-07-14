@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:MetaPhOrs",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "MethaPhOrs",
 	"description": "MetaPhOrs is a public repository of phylogeny-based orthologs and paralogs that were computed using phylogenetic trees available in twelve public repositories",
 	"is_automated": true,

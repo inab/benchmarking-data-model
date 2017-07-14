@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:Orthoinspector",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "OrthoInspector 1.30",
 	"description": "OrthoInspector30 is a database of precomputed orthology and inparalogy relationships and a stand-alone package allowing large-scale predictions of orthology between thousands of proteomes (http://lbgi.fr/orthoinspector/). The specific version (v1.30) for the Quest for orthologs benchmark used a 1.10-9 blast Evalue threshold. The resource has recently undergone a major new release (2.0), with improved speed and visualisation tools, but the inference algorithm is unchanged from the initial graph-based method.",
 	"is_automated": true,

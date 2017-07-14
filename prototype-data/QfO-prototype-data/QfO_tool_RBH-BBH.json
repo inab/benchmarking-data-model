@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:RBH-BBH",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "Reciprocal Best Hit (RBH) / Bidirectional Best Hit (BBH)",
 	"description": "Reciprocal best hits. Classic method consisting of identifying the pairs of genes with mutually highest alignment score between every pair of species. Use reciprocal blastp hits as orthologs, with minimum E-value of 1e–2, keep all hits that are ≥99% of the highest score.",
 	"is_automated": false,

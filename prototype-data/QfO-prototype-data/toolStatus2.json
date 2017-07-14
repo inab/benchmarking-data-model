@@ -1,7 +1,5 @@
 {
 	"_id": "QfO:inoperative",
-	"_type": "ToolStatus",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#ToolStatus",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
 	"description": "The tool is not available or it is under construction"
 }

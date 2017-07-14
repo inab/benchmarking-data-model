@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_output_PANTHER-LDO",
-	"_type": "Dataset",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
 	"name": "PANTHER_8.0_LDO_only-.832.rels",
 	"version": "v1.0",
 	"description": "Output data set (pairwise orthologs predictions) for PANTHER 8.0 (LDO only) tool",

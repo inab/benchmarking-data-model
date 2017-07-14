@@ -1,7 +1,5 @@
 {
 	"_id": "QfO:active",
-	"_type": "ToolStatus",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#ToolStatus",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
 	"description": "Active for continuous benchmarking"
 }

@@ -1,8 +1,6 @@
 {
 	"_id": "10.1101/gr.772403",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "PANTHER: a library of protein families and subfamilies indexed by function",
 	"doi": "10.1101/gr.772403",
 	"pubmed_id": 12952881,

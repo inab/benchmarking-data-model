@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:referenceTreeFam-A_recall",
-	"_type": "Metrics",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
 	"title": "True Positives Rate for Reference Gene Phylogenies: TreeFam-A",
 	"description": "Agreement (sensitivity) with Reference Gene Phylogenies - TreeFam-A measured through the True Positives Rate (TPR)",
 	"metrics_contact_id": ["unknown"],

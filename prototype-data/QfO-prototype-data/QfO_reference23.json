@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bioinformatics/btr485",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Detecting biological network organization and functional gene orthologs",
 	"doi": "10.1093/bioinformatics/btr485",
 	"pubmed_id": 21856738,

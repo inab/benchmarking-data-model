@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_output_EnsemblCompara",
-	"_type": "Dataset",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
 	"name": "Ensembl_Compara_e81-.376.rels",
 	"version": "v1.0",
 	"description": "Output data set (predicted orthologous groups) for Ensembl Compara (e81) tool. The orthologs pairs are stored in OrthoXML format",

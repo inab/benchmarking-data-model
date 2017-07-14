@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkq953",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "MetaPhOrs: orthology and paralogy predictions from multiple phylogenetic evidence using a consistency-based confidence score",
 	"doi": "10.1093/nar/gkq953",
 	"pubmed_id": 21149260,

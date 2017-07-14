@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkt1253",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "eggNOG v4.0: nested orthology inference across 3686 organisms",
 	"doi": "10.1093/nar/gkt1253",
 	"pubmed_id": 24297252,

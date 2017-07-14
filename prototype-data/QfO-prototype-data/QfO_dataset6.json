@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_output_RSD",
-	"_type": "Dataset",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Dataset",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
 	"name": "rsd_0.8_1e-5_deluca_test-.771.rels",
 	"version": "v1.0",
 	"description": "Output data set (pairwise orthologs predictions) for RSD 0.8 1e-5 Deluca tool",

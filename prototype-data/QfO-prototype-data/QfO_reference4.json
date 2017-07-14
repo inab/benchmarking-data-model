@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkp951",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "eggNOG v2.0: extending the evolutionary genealogy of genes with enhanced non-supervised orthologous groups, species and functional annotations",
 	"doi": "10.1093/nar/gkp951",
 	"pubmed_id": 19900971,

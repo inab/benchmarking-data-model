@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:QfO4_InParanoid",
-	"_type": "TestEvent",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#TestEvent",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
 	"tool_id": "QfO:InParanoid",
 	"input_dataset_id": "QfO:QfO4_input_seqXML",
 	"output_dataset_id": "QfO:QfO4_output_InParanoid",

@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/bioinformatics/btg213",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Detecting putative orthologs",
 	"doi": "10.1093/bioinformatics/btg213",
 	"pubmed_id": 15593400,

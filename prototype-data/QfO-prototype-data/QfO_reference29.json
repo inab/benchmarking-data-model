@@ -1,8 +1,6 @@
 {
 	"_id": "10.1371/journal.pcbi.1000262",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Phylogenetic and functional assessment of orthologs inference projects and methods",
 	"doi": "10.1371/journal.pcbi.1000262",
 	"pubmed_id": 19148271,

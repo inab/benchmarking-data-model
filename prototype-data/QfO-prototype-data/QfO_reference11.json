@@ -1,8 +1,6 @@
 {
 	"_id": "10.1038/nprot.2013.092",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "Large-scale gene function analysis with the PANTHER classification system",
 	"doi": "10.1038/nprot.2013.092",
 	"pubmed_id": 23868073,

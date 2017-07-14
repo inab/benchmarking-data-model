@@ -1,8 +1,6 @@
 {
 	"_id": "QfO:OMA-Groups",
-	"_type": "Tool",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"name": "OMA Groups",
 	"description": "OMA is a publicly available resource (http://omabrowser.org/) that provides orthology predictions among thousands of proteomes from all domains of life. OMA uses evolutionary distance estimates from Smith–Waterman alignments to infer orthologs. A distinct feature among graph-based methods is the witness of nonorthology step in its pipeline, where cases of differential gene losses get detected. OMA provides three different groupings of orthologs: Pairs, Groups, and HOGs. OMA Groups consists of groups of genes in which all pairs are orthologs. In a graph representation with genes as nodes and orthology relations as edge, OMA groups correspond to fully connected subgraphs. Due to this definition, each OMA group includes at most one sequence per species. The primary intended application of these groups is to provide input data for phylogenetic inference.",
 	"is_automated": true,

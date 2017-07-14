@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkv1194",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "PANTHER version 10: expanded protein families and functions, and analysis tools",
 	"doi": "10.1093/nar/gkv1194",
 	"pubmed_id": 26578592,

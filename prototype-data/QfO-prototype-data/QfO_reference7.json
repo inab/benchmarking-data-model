@@ -1,8 +1,6 @@
 {
 	"_id": "10.1093/nar/gkw1138",
-	"_type": "Reference",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"title": "PANTHER version 11: expanded annotation data from Gene Ontology and Reactome pathways, and data analysis tool enhancements",
 	"doi": "10.1093/nar/gkw1138",
 	"pubmed_id": 27899595,
