@@ -1,8 +1,6 @@
 {
 		"_id": "lDDT",
-		"_type": "Metrics",
-		"_version": "0.3",
-		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Metrics",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
 		"title": "local Difference Distance Test (lDDT)",
 		"description": "The local Difference Distance Test (lDDT) is a superposition-free score which evaluates local distance differences in a model compared to a reference structure.",
 		"metrics_contact_id": [

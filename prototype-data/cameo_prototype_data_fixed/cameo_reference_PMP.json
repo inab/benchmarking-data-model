@@ -1,8 +1,6 @@
 {
 		"_id": "10.1093/nar/gku340",
-		"_type": "Reference",
-		"_version": "0.3",
-		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 		"title": "SWISS-MODEL: modelling protein tertiary and quaternary structure using evolutionary information",
 		"pubmed_id": 24782522
 

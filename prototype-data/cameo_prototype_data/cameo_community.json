@@ -1,8 +1,6 @@
 {
 	"_id": "CAMEO-3D",
-	"_type": "Community",
-	"_version": "0.3",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Community",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Community",
 	"name": "Continuous Automated Model Evaluation Category: Protein Structure Prediction",
 	"acronym": "CAMEO Structure Prediction",
 	"status_id": [

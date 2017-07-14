@@ -1,8 +1,6 @@
 {
     "_id": "server11",
-    "_type": "Tool",
-    "_version": "0.3",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
     "bioTools_id": "JIID1",
     "name": "Whatever",
     "description": "Comparative Structure Prediction",
