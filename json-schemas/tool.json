@@ -136,7 +136,7 @@
 								"label": {
 									"title": "The type of URI (WSDL, WADL, OpenAPI/Swagger, Source code, Miscellaneous documentation)",
 									"type": "string",
-									"enum": ["WSDL","WADL","OpenAPI","source","doc"]
+									"enum": ["WSDL","WADL","OpenAPI","API","source","doc"]
 								}
 							},
 							"additionalProperties": false,
