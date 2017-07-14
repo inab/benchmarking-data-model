@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Tool concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,21 +9,11 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Tool",
-			"type": "string",
-			"enum": [ "Tool" ]
-		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Tool" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.3",
-			"type": "string",
-			"enum": [ "0.3" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool" ]
 		},
 		"bioTools_id": {
 			"title": "The unique id of the tool in EXCELERATE WP1 bio.tools registry",
@@ -51,7 +41,7 @@
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "#Community",
+						"schema_id": "Community",
 						"members": [ "." ]
 					}
 				],
@@ -66,7 +56,7 @@
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "#Contact",
+						"schema_id": "Contact",
 						"members": [ "." ]
 					}
 				],
@@ -78,7 +68,7 @@
 			"type": "string",
 			"foreign_keys": [
 				{
-					"schema_id": "#ToolStatus",
+					"schema_id": "ToolStatus",
 					"members": [ "." ]
 				}
 			],
@@ -92,7 +82,7 @@
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "#Reference",
+						"schema_id": "Reference",
 						"members": [ "." ]
 					}
 				],
@@ -111,7 +101,7 @@
 						"type": "string",
 						"foreign_keys": [
 							{
-								"schema_id": "#ToolAccessType",
+								"schema_id": "ToolAccessType",
 								"members": [ "." ]
 							}
 						],
@@ -155,7 +145,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_schema","_version","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
+	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

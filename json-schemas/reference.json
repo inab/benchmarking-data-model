@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,21 +9,11 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Reference",
-			"type": "string",
-			"enum": [ "Reference" ]
-		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Reference" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.3",
-			"type": "string",
-			"enum": [ "0.3" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference" ]
 		},
 		"title": {
 			"title": "The title of the referenced material"
@@ -94,7 +84,7 @@
 						"type": "string",
 						"foreign_keys": [
 							{
-								"schema_id": "#Contact",
+								"schema_id": "Contact",
 								"members": [ "." ]
 							}
 						],
@@ -110,7 +100,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_schema","_version","title"],
+	"required": ["_id","_schema","title"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#TestEvent",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Test Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,28 +9,18 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to TestEvent",
-			"type": "string",
-			"enum": [ "TestEvent" ]
-		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#TestEvent" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.3",
-			"type": "string",
-			"enum": [ "0.3" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent" ]
 		},
 		"tool_id": {
 			"title": "The tool id which takes this input dataset",
 			"type": "string",
 			"foreign_keys": [
 				{
-					"schema_id": "#Tool",
+					"schema_id": "Tool",
 					"members": [ "." ]
 				}
 			],
@@ -41,7 +31,7 @@
 			"type": "string",
 			"foreign_keys":  [
 				{
-					"schema_id": "#Dataset",
+					"schema_id": "Dataset",
 					"members": [ "." ]
 				}
 			],
@@ -52,7 +42,7 @@
 			"type": "string",
 			"foreign_keys": [
 				{
-					"schema_id": "#Dataset",
+					"schema_id": "Dataset",
 					"members": [ "." ]
 				}
 			],
@@ -63,7 +53,7 @@
 			"type": "string",
 			"foreign_keys": [
 				{
-					"schema_id": "#BenchmarkingEvent",
+					"schema_id": "BenchmarkingEvent",
 					"members": [ "." ]
 				}
 			],
@@ -119,7 +109,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_schema","_version","tool_id","input_dataset_id","benchmarking_event_id","dates"],
+	"required": ["_id","_schema","tool_id","input_dataset_id","benchmarking_event_id","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

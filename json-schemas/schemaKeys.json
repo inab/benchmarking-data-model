@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#SchemaKeys",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/SchemaKeys",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Relational information not included in standard Json Schema",
 	"type": "object",
@@ -9,21 +9,11 @@
         		"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to SchemaKeys",
-			"type": "string",
-			"enum": [ "SchemaKeys" ]
-		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#SchemaKeys" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.3",
-			"type": "string",
-			"enum": [ "0.3" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/SchemaKeys" ]
 		},
                 "primary_key" : {
                     "type": "string",
