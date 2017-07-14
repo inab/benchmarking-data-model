@@ -4,12 +4,8 @@
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
 	"contact_type": "person",
-	"givenName": [
-		"Christophe"
-	],
-	"surname": [
-		"Dessimoz"
-	],
+	"givenName": "Christophe",
+	"surname": "Dessimoz",
 	"email": [
 		"Christophe.Dessimoz@unil.ch",
 		"c.dessimoz@ucl.ac.uk"

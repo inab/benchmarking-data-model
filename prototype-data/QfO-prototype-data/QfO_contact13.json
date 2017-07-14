@@ -4,12 +4,7 @@
 	"_version": "0.3",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3#Contact",
 	"contact_type": "other",
-	"givenName": [
-		"Mailing List"
-	],
-	"surname": [
-		" "
-	],
+	"givenName": "Mailing List",
 	"email": [
 		"inparanoid@sbc.su.se"
 	],
