@@ -15,13 +15,18 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus" ]
 		},
+		"status_date": {
+			"title": "Date of the status change",
+			"type": "string",
+			"format": "date-time"
+		},
 		"description": {
-			"title": "Description of this tool status",
+			"title": "Short description of this tool status",
 			"type": "string"
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema"],
+	"required": ["_id","_schema","status_date","description"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
