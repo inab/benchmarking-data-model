@@ -1,0 +1,24 @@
+{
+   "id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/idSolv",
+	 "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	 "title": "Simple Namespace resolver for CURIE ids",
+   "type": "object",
+   "properties" : {
+      "_id": {
+        "title": "Namespace acronym, correspond to the namespace part of Curie (ns:id)",
+        "type": "string"
+      },
+      "description": {
+        "title": "Long description of the namespace",
+        "type": "string"
+      },
+      "URL": {
+        "title": "URL mask for transforming ids. {id} is replaces by the id part of Curie (ns:id)"
+        "type": "string",
+        "format": "uri"
+      }
+   },
+   "additionalProperties": true,
+	 "required": ["_id","URL"],
+   "primary_key": ["_id"],
+}
