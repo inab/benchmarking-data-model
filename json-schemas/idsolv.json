@@ -13,7 +13,7 @@
         "type": "string"
       },
       "URL": {
-        "title": "URL mask for transforming ids. {id} is replaces by the id part of Curie (ns:id)",
+        "title": "URL mask for transforming ids. {id} is replaced by the id part of Curie (ns:id)",
         "type": "string",
         "format": "uri"
       }
