@@ -15,7 +15,7 @@
       "URL": {
         "title": "URL mask for transforming ids. {id} is replaced by the id part of Curie (ns:id)",
         "type": "string",
-        "format": "uri"
+        "format": "uri-template"
       }
    },
    "additionalProperties": true,
