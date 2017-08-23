@@ -16,7 +16,8 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference" ]
 		},
 		"title": {
-			"title": "The title of the referenced material"
+			"title": "The title of the referenced material",
+			"type": "string"
 		},
 		"doi": {
 			"title": "The DOI of the referenced material (in case of books, its ISBN in ISBN-A DOI format)",
