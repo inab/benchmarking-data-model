@@ -202,7 +202,18 @@
                             }
 			}
                     }
-		}
+		},
+                "bench_contacts": {
+                    "title": "Info contacts",
+                    "type": "array",
+                    "items": {"$ref": "contact.json"}
+                },
+                "referencesList": {
+                    "title": "Info references",
+                    "type": "array",
+                    "items": {"$ref": "reference.json"}
+                }                
+                
         },
 	"additionalProperties": true,
 	"required": ["_id","_schema","name","is_automated","dates","community_id","bench_contact_id"],

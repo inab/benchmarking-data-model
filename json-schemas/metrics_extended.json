@@ -78,11 +78,17 @@
 			}
 		},
 		"references": {
-			"title": "The metrics reference id(s) (if any)",
+			"title": "The metrics reference) (if any)",
 			"type": "array",
 			"items": {
-				"type": "string",
-				"minLength": 1
+				"type": {"$ref": "reference.json"}
+			}
+		},
+		"contacts": {
+			"title": "The metrics contacts (if any)",
+			"type": "array",
+			"items": {
+				"type": {"$ref": "contact.json"}
 			}
 		}
 	},

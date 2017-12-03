@@ -130,7 +130,17 @@
                         }
                     ]
                 },
-                "Events": {
+                "contacts": {
+                    "title": "Relevant contacts for dataset",
+                    "type": "array",
+                    "items": {"$ref":"contact.json"}
+                },
+                "references": {
+                    "title": "Relevant references for dataset",
+                    "type": "array",
+                    "items": {"$ref":"reference.json"}
+                },
+                "BenchmarkingEvents": {
                     "title": "List of BenchEvents using the Dataset",
                     "type": "array",
                     "items": {
@@ -143,7 +153,7 @@
                         ]
                     }
                 },
-                "testEventList": {
+                "TestEvents": {
                     "title": "List of TestEvents using the Dataset",
                     "type": "array",
                     "items": {

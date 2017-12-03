@@ -1,0 +1,116 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Tool",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Tool concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the tool. It should be something meaningful, like the tool name, its uri or an acronym",
+			"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The document schema",
+			"type": "string"
+		},
+		"bioTools_id": {
+			"title": "The unique id of the tool in EXCELERATE WP1 bio.tools registry",
+			"type": "string",
+			"format": "uri"
+		},
+		"name": {
+			"title": "Short tool name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long tool name or description",
+			"type": "string"
+		},
+		"is_automated": {
+			"title": "Can this tool be automatically invoked?",
+			"type": "boolean"
+		},
+		"Community": {
+			"title": "The community  where this tool belongs",
+			"type": "array",
+			"items": {
+				"type": {"$ref": "community.json"}
+			}
+		},
+		"tool_contact_id": {
+			"title": "The tool's contact id(s)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"status_id": {
+			"title": "_id of the current tool status",
+			"type": "string",
+			"minLength": 1
+		},
+		"references": {
+			"title": "The tool's reference id(s)",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+		"tool_access": {
+			"title": "Methods to access the tool",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_access_type_id": {
+						"title": "The tool access type id",
+						"type": "string",
+						"minLength": 1
+					},
+					"link": {
+						"title": "The link to the access point",
+						"type": "string",
+						"format": "uri"
+					}
+				},
+				"additionalProperties": true,
+				"required": [
+					"tool_access_type_id"
+				]
+			}
+		},
+                "access_restriction": {
+                    "title": "List of possible restrictions",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Contact":{
+                    "title": "Contact list",
+                    "type": "array",
+                    "items": {
+                        "type": {"$ref":"contact.json"}
+                    }
+                },
+                "Reference":{
+                    "title": "Reference list",
+                    "type": "array",
+                    "items": {
+                        "type": {"$ref":"reference.json"}
+                    }
+                },
+                "ToolStatus":{
+                    "title": "Status",
+                    "type":  {"$ref":"toolStatus.json"}
+                }
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
+	"dependencies": {}
+}

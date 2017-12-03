@@ -66,7 +66,7 @@
 			"type": "array",
 			"minLength": 1,
 			"items": {
-				"type": "string",
+				"type": {"$ref": "contact.json"},
 				"minLength": 1
 			}
 		},
@@ -74,80 +74,43 @@
                     "Title": "Contacts list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "Contact",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref":"contact.json"}
                     }
                 },
                 "BenchmarkingEvent" : {
                     "Title": "BenchmarkingEvents list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "BenchmarkingEvent",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref":"benchmarkingEvent.json"}
                     }
                 },
                 "Metrics": {
                     "Title": "Metrics list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "Metrics",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref": "metrics.json"}
                     }
                 },
                 "TestEvent": {
                     "Title": "TestEvent list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "TestEvent",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref": "testEvent.json"}
                     }           
                 },
                 "Dataset": {
                     "Title": "Datasets list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "Dataset",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref":"dataset.json"}
                     }
                 },
                 "Tool" : {
                     "Title": "Tools list",
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "foreign_keys": [
-                            {
-				"schema_id": "Tool",
-				"members": [ "." ]
-                            }
-                        ]
+                        "type": {"$ref":"tool.json"}
                     }
-
                 }
 	},
 	"additionalProperties": true,

@@ -90,7 +90,19 @@
                           "members": ["."]
                         }
                     ]
-                }
+                },
+                "Tool" : {
+                    "title": "Analyzed tool",
+                    "type" : {"$ref": "tool.json"}
+                },
+                "Dataset" : {
+                    "title": "Dataset used",
+                    "type" : {"$ref": "dataset.json"}
+                },
+                "BenchmarkingEvent" : {
+                    "title": "BenchEvent to which the testEvent belongs",
+                    "type" : {"$ref": "BenchmarkingEvent.json"}
+                }                
 	},
 	"additionalProperties": true,
 	"required": ["_id","_schema","tool_id","input_dataset_id","benchmarking_event_id","dates"],

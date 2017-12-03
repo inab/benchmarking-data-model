@@ -65,8 +65,56 @@
                     "title": "type of contact, (person, helpdesk, etc)",
                     "type" : "string",
                     "enum" : ["person","helpdesk","other"]
+                },
+                "Community": {
+                    "type": "array",
+                    "items" : {
+                        "type": "string",
+                        "foreing_keys":[
+                            {
+                                "schema_id":"",
+                                "members": [ "." ]
+                            }
+                        ]
+                    }
+                },
+                "Dataset":  {
+                    "type": "array",
+                    "items" : {
+                        "type": "string",
+                        "foreing_keys":[
+                            {
+                                "schema_id":"Dataset",
+                                "members": [ "." ]
+                            }
+                        ]
+                    }
+                },
+                "Metrics":  {
+                    "type": "array",
+                    "items" : {
+                        "type": "string",
+                        "foreing_keys":[
+                            {
+                                "schema_id":"Metrics",
+                                "members": [ "." ]
+                            }
+                        ]
+                    }
+                },
+                "Tool":  {
+                    "type": "array",
+                    "items" : {
+                        "type": "string",
+                        "foreing_keys":[
+                            {
+                                "schema_id":"Tool",
+                                "members": [ "." ]
+                            }
+                        ]
+                    }
                 }
-                
+               
 	},
 	"additionalProperties": true,
 	"required": [
