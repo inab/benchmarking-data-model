@@ -20,5 +20,5 @@ Sample JSON files can be validated against these schemas using scripts located i
 
 * [TestEvent](testEvent.json): The event where a tool is involved in a challenge, taking as input a dataset, and generating as result a dataset. The generated dataset can hold the values of several metrics related to the challenge, used to assess the quality of the result.
 
-* [idSolv] (idSolv.json): Namespaces for simple ns:id resolver.
+* [idSolv](idSolv.json): Namespaces for simple ns:id resolver.
 
