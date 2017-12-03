@@ -9,15 +9,9 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Metrics",
-			"type": "string",
-			"enum": [ "Metrics" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
-			"type": "string",
-			"enum": [ "0.2" ]
+		"_schema": {
+			"title": "The document schema",
+			"type": "string"
 		},
 		"title": {
 			"title": "Short metrics name",
@@ -75,6 +69,14 @@
 		},
 		"references": {
 			"title": "The metrics reference id(s) (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			}
+		},
+                "events": {
+			"title": "The events reference id(s) (if any)",
 			"type": "array",
 			"items": {
 				"type": "string",

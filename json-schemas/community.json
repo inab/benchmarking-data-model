@@ -9,15 +9,9 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Community",
-			"type": "string",
-			"enum": [ "Community" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
-			"type": "string",
-			"enum": [ "0.2" ]
+		"_schema": {
+			"title": "The document schema",
+			"type": "string"
 		},
 		"name": {
 			"title": "Short community name",
@@ -78,6 +72,6 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_version","name","acronym","status_id","community_contacts"],
+	"required": ["_id","_schema","name","acronym","status_id","community_contacts"],
 	"dependencies": {}
 }

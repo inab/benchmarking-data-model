@@ -1,0 +1,34 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#idSolv",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Simple ns:id resolution",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the namespace.",
+			"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The document schema",
+			"type": "string"
+		},
+		"description": {
+			"title": "Description of this namespace",
+			"type": "string"
+		},
+		"description_long": {
+			"title": "Long Description of this namespace",
+			"type": "string"
+		},
+                "URL": {
+                    "title": "URL template for URL resolution",
+                    "type": "string",
+                    "format": "uri"
+                }
+                
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","uri"],
+	"dependencies": {}
+}

@@ -9,33 +9,17 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Contact",
-			"type": "string",
-			"enum": [ "Contact" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
-			"type": "string",
-			"enum": [ "0.2" ]
+		"_schema": {
+			"title": "The document schema",
+			"type": "string"
 		},
 		"givenName": {
 			"title": "First / given name",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string"
 		},
 		"surname": {
 			"title": "Surname(s)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string"
 		},
 		"email": {
 			"title": "The e-mail address(es) of the contact",
@@ -81,8 +65,7 @@
 	"additionalProperties": true,
 	"required": [
 		"_id",
-		"_type",
-		"_version",
+		"_schema",
 		"givenName",
 		"surname",
 		"email"
