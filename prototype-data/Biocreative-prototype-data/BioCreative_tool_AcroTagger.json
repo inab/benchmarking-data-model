@@ -1,0 +1,21 @@
+{
+	"_id": "BioCreative: AcroTagger",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+	"name": "AcroTagger",
+	"description": "Tool to tag biomedical abbreviations in text using XML.",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Sylvain.Gaudan"
+	],
+	"status_id": "active",
+	"references": [
+		"10.1093/bioinformatics/bti586"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Database",
+			"link": "ftp://ftp.ebi.ac.uk/pub/software/textmining/abbreviation_resolution/"
+		}
+	]
+}

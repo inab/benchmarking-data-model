@@ -1,0 +1,7 @@
+{
+	"_id": "PMID11825149",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+	"title": "Effective mapping of biomedical text to the UMLS Metathesaurus: the MetaMap program",
+	"pubmed_id": 11825149,
+	"abstract": "The UMLS Metathesaurus, the largest thesaurus in the biomedical domain, provides a representation of biomedical knowledge consisting of concepts classified by semantic type and both hierarchical and non-hierarchical relationships among the concepts. This knowledge has proved useful for many applications including decision support systems, management of patient records, information retrieval (IR) and data mining. Gaining effective access to the knowledge is critical to the success of these applications. This paper describes MetaMap, a program developed at the National Library of Medicine (NLM) to map biomedical text to the Metathesaurus or, equivalently, to discover Metathesaurus concepts referred to in text. MetaMap uses a knowledge intensive approach based on symbolic, natural language processing (NLP) and computational linguistic techniques. Besides being applied for both IR and data mining applications, MetaMap is one of the foundations of NLM's Indexing Initiative System which is being applied to both semi-automatic and fully automatic indexing of the biomedical literature at the library."
+}

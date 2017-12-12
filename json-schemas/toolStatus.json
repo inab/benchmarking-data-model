@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#ToolStatus",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Tool Status concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,22 +9,24 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to ToolStatus",
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
-			"enum": [ "ToolStatus" ]
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus" ]
 		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
+		"status_date": {
+			"title": "Date of the status change",
 			"type": "string",
-			"enum": [ "0.2" ]
+			"format": "date-time"
 		},
 		"description": {
-			"title": "Description of this tool status",
+			"title": "Short description of this tool status",
 			"type": "string"
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_version"],
+	"required": ["_id","_schema","status_date","description"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

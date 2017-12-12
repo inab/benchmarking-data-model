@@ -1,9 +1,5 @@
-# JSON Schema validation
+# EXCELERATE WP2 JSON Schema validation
 
-All the benchmarking JSON schemas should be compliant with JSON Schema Draft04 specification.
+The reference EXCELERATE WP2 validation and consistency check tools are hosted in this directory. They were designed to work on complete sets of JSON files, spread over several directories.
 
-So, the proposed validation programs use librariies compliant with that specification.
-
-* jsonValidate.pl Perl program depends on JSON::Validator module.
-
-* jsonValidate.py Python program depends on jsonschema module.
+You can use any of the reference implementations (currently [Perl 5](perl), [Python 2.x / 3.x](python) and [Java 8](java)), as any of them should do the same validations and consistency checks than the others.

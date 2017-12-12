@@ -1,0 +1,11 @@
+{
+	"_id": "Martin.Perez-Perez",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Martin",
+	"surname": "Perez-Perez",
+	"email": [
+		"mpperez3@esei.uvigo.es"
+	],
+	"notes": "Contact for BioCreativeV.5"
+}

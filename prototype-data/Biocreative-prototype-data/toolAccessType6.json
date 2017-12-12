@@ -1,0 +1,5 @@
+{
+	"_id": "Web-application",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolAccessType",
+	"description": "Client-server software application in which the client runs in a web browser"
+}

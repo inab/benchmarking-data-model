@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Metrics",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Metrics concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,15 +9,11 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Metrics",
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
-			"enum": [ "Metrics" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
-			"type": "string",
-			"enum": [ "0.2" ]
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics" ]
 		},
 		"title": {
 			"title": "Short metrics name",
@@ -34,6 +30,12 @@
 			"minLength": 1,
 			"items": {
 				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
 				"minLength": 1
 			}
 		},
@@ -78,11 +80,18 @@
 			"type": "array",
 			"items": {
 				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
 				"minLength": 1
 			}
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_version","title","metrics_contact_id"],
+	"required": ["_id","_schema","title","metrics_contact_id"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

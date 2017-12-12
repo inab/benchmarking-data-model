@@ -1,0 +1,21 @@
+{
+		"_id": "help-cameo3d@unibas.ch",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+		"contact_type": "person",
+		"givenName": "Help Desk",
+		"email": 
+			[
+				"help-cameo3d@unibas.ch"
+			],
+		"notes": "Contact help for CAMEO project",
+		"links": [
+			{
+				"label":"MainSite",
+				"uri":"http://proteinmodelportal.org"
+			},
+			{
+				"label":"Other",
+				"uri":"http://dx.doi.org/10.1093/database/bat031"
+			}
+		]
+}

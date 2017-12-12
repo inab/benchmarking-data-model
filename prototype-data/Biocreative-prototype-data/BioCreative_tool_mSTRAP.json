@@ -1,0 +1,20 @@
+{
+	"_id": "BioCreative:mSTRAP",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+	"name": "mSTRAP",
+	"description": "mSTRAP is an automated workflow for mining mutation annotations from full-text biomedical literature using natural language processing (NLP) techniques as well as for their subsequent reuse in protein structure annotation and visualization. This system, called mSTRAP (Mutation extraction and STRucture Annotation Pipeline), is designed for both information aggregation and subsequent brokerage of the mutation annotations. It facilitates the coordination of semantically related information from a series of text mining and sequence analysis steps into a formal OWL-DL ontology. The ontology is designed to support application-specific data management of sequence, structure, and literature annotations that are populated as instances of object and data type properties. mSTRAPvizTM is a subsystem that facilitates the brokerage of structure information and the associated mutations for visualization. For mutated sequences without any corresponding structure available in the Protein Data Bank (PDB), an automated pipeline for homology modeling is developed to generate the theoretical model. With mSTRAP, we demonstrate a workable system that can facilitate automation of the workflow for the retrieval, extraction, processing, and visualization of mutation annotations. Tasks which are well known to be tedious, time-consuming, complex, and error-prone.To run this system you need to register (name and e-mail) and install: -Java (version 1.6 and above) -ClustalW -MODELLER (version 9v2)",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Rajaraman.Kanagasabai"
+	],
+	"status_id": "inoperative",
+	"references": [
+		"10.1142/S0219720007003119"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "http://datam.i2r.a-star.edu.sg/mstrap"		}
+	]
+}

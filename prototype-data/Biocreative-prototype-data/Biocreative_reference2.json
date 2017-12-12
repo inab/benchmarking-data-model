@@ -1,0 +1,8 @@
+{
+	"_id": "10.1142/9789812776136_0062",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+	"title": "BANNER: an executable survey of advances in biomedical named entity recognition",
+	"doi": "10.1142/9789812776136_0062",
+	"pubmed_id": 18229723,
+	"abstract": "There has been an increasing amount of research on biomedical named entity recognition, the most basic text extraction problem, resulting in significant progress by different research teams around the world. This has created a need for a freely-available, open source system implementing the advances described in the literature. In this paper we present BANNER, an open-source, executable survey of advances in biomedical named entity recognition, intended to serve as a benchmark for the field. BANNER is implemented in Java as a machine-learning system based on conditional random fields and includes a wide survey of the best techniques recently described in the literature. It is designed to maximize domain independence by not employing brittle semantic features or rule-based processing steps, and achieves significantly better performance than existing baseline systems. It is therefore useful to developers as an extensible NER implementation, to researchers as a standard for comparing innovative techniques, and to biologists requiring the ability to find novel entities in large amounts of text."
+}

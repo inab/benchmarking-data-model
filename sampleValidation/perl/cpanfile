@@ -1,0 +1,3 @@
+requires 'JSON::MaybeXS';
+requires 'JSON::Validator', '0.95';
+requires 'URI';

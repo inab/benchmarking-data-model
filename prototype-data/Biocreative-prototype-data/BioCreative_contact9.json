@@ -1,0 +1,9 @@
+{
+	"_id": "lingpipe.helpdesk",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "helpdesk",
+	"email": [
+		"lingpipe@alias-i.com" 
+	],
+	"notes": "Contact / Maintainer for LingPipe"
+}

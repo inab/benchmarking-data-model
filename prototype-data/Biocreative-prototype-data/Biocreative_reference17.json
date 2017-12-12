@@ -1,0 +1,8 @@
+{
+	"_id": "10.1093/bioinformatics/bti586",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+	"title": "Resolving abbreviations to their senses in Medline",
+	"doi": "10.1093/bioinformatics/bti586",
+	"pubmed_id": 16037121,
+	"abstract": "MOTIVATION: Biological literature contains many abbreviations with one particular sense in each document. However, most abbreviations do not have a unique sense across the literature. Furthermore, many documents do not contain the long forms of the abbreviations. Resolving an abbreviation in a document consists of retrieving its sense in use. Abbreviation resolution improves accuracy of document retrieval engines and of information extraction systems.  RESULTS: We combine an automatic analysis of Medline abstracts and linguistic methods to build a dictionary of abbreviation/sense pairs. The dictionary is used for the resolution of abbreviations occurring with their long forms. Ambiguous global abbreviations are resolved using support vector machines that have been trained on the context of each instance of the abbreviation/sense pairs, previously extracted for the dictionary set-up. The system disambiguates abbreviations with a precision of 98.9% for a recall of 98.2% (98.5% accuracy). This performance is superior in comparison with previously reported research work.  AVAILABILITY: The abbreviation resolution module is available at http://www.ebi.ac.uk/Rebholz/software.html."
+}

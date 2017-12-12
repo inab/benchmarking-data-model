@@ -1,0 +1,27 @@
+{
+    "_id": "server20",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "JIID1",
+    "name": "SWISS-MODEL",
+    "description": "Comparative Structure Prediction",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAMEO", 
+        "Structure Prediction"
+      ],
+    "tool_contact_id": [
+      "Torsten.Schwede@unibas.ch"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gku340"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://swissmodel.expasy.org"
+        }
+      ]
+}

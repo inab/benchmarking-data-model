@@ -1,0 +1,21 @@
+{
+	"_id": "BioCreative:Medpost",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+	"name": "MedPost",
+	"description": "MedPost: Part-of-speech tagger for biomedical literature (Medline citations).",
+	"is_automated": false,
+	"community_id": ["BioCreative"],
+	"tool_contact_id": [
+		"Larry.Smith"
+	],
+	"status_id": "implemented",
+	"references": [
+		"10.1093/bioinformatics/bth227"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "Standalone-application",
+			"link": "ftp://ftp.ncbi.nlm.nih.gov/pub/lsmith/MedPost/medpost.tar.gz"		
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"_id": "QfO:Orthoinspector",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+	"name": "OrthoInspector 1.30",
+	"description": "OrthoInspector30 is a database of precomputed orthology and inparalogy relationships and a stand-alone package allowing large-scale predictions of orthology between thousands of proteomes (http://lbgi.fr/orthoinspector/). The specific version (v1.30) for the Quest for orthologs benchmark used a 1.10-9 blast Evalue threshold. The resource has recently undergone a major new release (2.0), with improved speed and visualisation tools, but the inference algorithm is unchanged from the initial graph-based method.",
+	"is_automated": true,
+	"community_id": ["QfO:QfO"],
+	"tool_contact_id": [
+		"Benjamin.Linard",
+		"Odile.Lecompte"
+	],
+	"status_id": "QfO:active",
+	"references": [
+		"10.1186/1471-2105-12-11",
+		"10.1093/bioinformatics/btu642"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "QfO:Web-application",
+			"link": "http://lbgi.fr/orthoinspector/dbquery_qfo/?stype=text"
+		},
+		{
+			"tool_access_type_id": "QfO:Web-application",
+			"link": "http://lbgi.fr/orthoinspector/dbquery_qfo/?stype=blast"
+		},
+		{
+			"tool_access_type_id": "QfO:Standalone-application",
+			"link": "http://lbgi.fr/orthoinspector/binaries/v2.21/orthoinspector_suite_2.21.zip",
+			"techdocs": [
+				{
+					"uri": "http://lbgi.fr/orthoinspector/binaries/v2.21/orthoinspector_suite_2.21.zip",
+					"label": "source"
+				},
+				{
+					"uri": "http://lbgi.fr/orthoinspector/binaries/database_schema_1.2_.zip",
+					"label": "source"
+				},
+				{
+					"uri": "http://lbgi.fr/orthoinspector/index.php?option=com_content&view=article&id=50:tutorial-prepare-data-to-create-your-own-database&catid=3:tutorials&Itemid=6",
+					"label": "doc"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"_id": "BioCreative",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Community",
+	"name": "BioCreative: Critical Assessment of Information Extraction in Biology",
+	"acronym": "BioCreative",
+	"status_id": [
+		"Active"
+	],
+	"description": "BioCreative: Critical Assessment of Information Extraction in Biology is a community-wide effort for evaluating text mining and information extraction systems applied to the biological domain.  One key goal of BioCreative is the active involvement of the text mining user community in the design of the tracks, preparation of corpus and the testing of interactive systems.",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://www.biocreative.org/"
+		},
+		{
+			"label": "PublicationDOI",
+			"uri": "http://dx.doi.org/10.1186/gb-2008-9-s2-s6"
+		},
+		{
+			"label": "PublicationDOI",
+			"uri": "http://dx.doi.org/10.1002/cfg.337"
+		},
+		{
+			"label": "PublicationDOI",
+			"uri": "http://dx.doi.org/10.1186/gb-2008-9-s2-s8"
+		},
+		{
+			"label": "DataSite",
+			"uri": "http://www.biocreative.org/"
+		}
+	],
+	"community_contacts": [
+		"Martin.Krallinger",
+		"Analia.Lourenço"
+	]
+}

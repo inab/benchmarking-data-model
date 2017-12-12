@@ -1,0 +1,22 @@
+{
+	"_id": "Jaime.Huerta-Cepas",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Jaime",
+	"surname": "Huerta-Cepas",
+	"email": [
+		"huerta@embl.de",
+		"jaime.huerta@embl.de"
+	],
+	"notes": "EggNOG contact",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://www.embl.de/research/units/scb/bork/members/index.php?s_personId=CP-60017534"
+		},
+		{
+			"label": "ORCID",
+			"uri": "https://orcid.org/0000-0003-4195-5025"
+		}
+	]
+}

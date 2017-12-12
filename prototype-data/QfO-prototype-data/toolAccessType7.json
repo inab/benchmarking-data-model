@@ -1,0 +1,5 @@
+{
+	"_id": "QfO:Database",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolAccessType",
+	"description": "Direct access to download the current release of the database"
+}

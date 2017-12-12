@@ -1,0 +1,27 @@
+{
+    "_id": "2017-01-14T00:00:00Z",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
+    "name": "CAMEO-week-263",
+    "is_automated": true,
+    "dates": {
+      "creation": "2017-01-14T05:00:00Z",
+      "modification":"2017-01-15T14:00:00Z",
+      "benchmark_start":"2017-01-14T05:00:00Z",
+      "benchmark_stop":"2017-01-18T02:00:00Z"
+    },
+    "target-list" :
+      [
+        "2017-01-14_00000003_1", "2017-01-14_00000004_1", "2017-01-14_00000010_1", "2017-01-14_00000013_2", "2017-01-14_00000021_1", "2017-01-14_00000024_1"
+      ],
+    "url": "#http://cameo3d.org/sp/2017-01-14",
+    "community_id": "CAMEO-3D",
+    "bench_contact_id": 
+      [
+        "Juergen.Haas",
+        "Torsten.Schwede"
+      ],
+    "references": [
+      "10.1093/database/bat031"
+    ]
+
+}

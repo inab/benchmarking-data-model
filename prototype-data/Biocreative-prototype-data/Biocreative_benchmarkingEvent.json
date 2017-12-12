@@ -1,0 +1,27 @@
+{
+	"_id": "Biocreative:V.5-BeCalm-TIPS",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
+	"name": "BiocreativeV.5/BeCalm - Technical interoperability and performance of annotation servers (TIPS)",
+	"is_automated": true,
+	"dates": {
+		"creation": "2016-12-21T00:00:01Z",
+		"modification": "2017-01-31T00:00:01Z",
+		"benchmark_start": "2017-02-01T00:00:01Z",
+		"benchmark_stop": "2017-03-31T23:59:59Z"
+	},
+	"url": "http://www.becalm.eu/pages/biocreative",
+	"community_id": "BioCreative",
+	"bench_contact_id": [
+		"Martin.Krallinger",
+		"Analia.Lourenço",
+		"Martin.Perez-Perez",
+		"Gael.Perez-Rodriguez",
+		"Florentino.Fdez-Riverola",
+		"Alfonso.Valencia"
+	],
+	"references": [
+		"10.1093/database/baw120",
+		"10.1186/gb-2008-9-s2-s6",
+		"10.1186/1471-2105-6-S1-S1"
+	]
+}

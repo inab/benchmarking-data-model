@@ -1,0 +1,11 @@
+{
+	"_id": "Alfonso.Valencia",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Alfonso",
+	"surname": "Valencia",
+	"email": [
+		"alfonso.valencia@bsc.es"
+	],
+	"notes": "Contact for BioCreativeV.5"
+}

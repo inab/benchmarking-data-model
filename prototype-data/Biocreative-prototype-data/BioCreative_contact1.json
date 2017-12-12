@@ -1,0 +1,11 @@
+{
+	"_id": "Martin.Krallinger",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Martin",
+	"surname": "Krallinger",
+	"email": [
+		"mkrallinger@cnio.es"
+	],
+	"notes": "BioCreative co-organizer and principal contact"
+}

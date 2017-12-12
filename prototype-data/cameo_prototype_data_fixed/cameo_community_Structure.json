@@ -1,0 +1,27 @@
+{
+	"_id": "Structure Prediction",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Community",
+	"name": "Structure prediction community",
+	"acronym": "strpred",
+	"status_id": [
+		"TBD"
+	],
+	"description": "Whatever",
+	"links":[
+		{
+			"label":"MainSite",
+			"uri":"https://en.wikipedia.org/wiki/CASP"
+		},
+		{
+			"label":"PublicationDOI",
+			"uri":"http://dx.doi.org/10.1093/database/bat031"
+		}
+	],
+	"community_contacts":
+		[
+				"Juergen.Haas",
+				"Torsten.Schwede"
+		]
+	
+	
+}

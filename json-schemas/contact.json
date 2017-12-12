@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#Contact",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Contact concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,33 +9,26 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to Contact",
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
-			"enum": [ "Contact" ]
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact" ]
 		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
+		"contact_type": {
+			"title": "Type of contact: physical person, helpdesk, other",
 			"type": "string",
-			"enum": [ "0.2" ]
+			"enum": [ "person", "helpdesk", "other" ]
 		},
 		"givenName": {
 			"title": "First / given name",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string",
+			"minLength": 1
 		},
 		"surname": {
 			"title": "Surname(s)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"minLength": 1
-			}
+			"type": "string",
+			"minLength": 1
 		},
 		"email": {
 			"title": "The e-mail address(es) of the contact",
@@ -67,7 +60,7 @@
 					"label": {
 						"title": "The type of URI",
 						"type": "string",
-						"enum": ["PublicationDOI","LinkedIn","ORCID","MainSite"]
+						"enum": ["LinkedIn","ORCID","MainSite","Twitter","Other"]
 					}
 				},
 				"additionalProperties": false,
@@ -81,11 +74,10 @@
 	"additionalProperties": true,
 	"required": [
 		"_id",
-		"_type",
-		"_version",
-		"givenName",
-		"surname",
+		"_schema",
+		"contact_type",
 		"email"
 	],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }

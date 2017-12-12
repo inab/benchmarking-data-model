@@ -1,0 +1,11 @@
+{
+	"_id": "Sylvain.Gaudan",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Sylvain",
+	"surname": "Gaudan",
+	"email": [
+		"sylvain.gaudan@gmail.com"
+	],
+	"notes": "Contact for AccroTagger"
+}

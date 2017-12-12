@@ -1,0 +1,11 @@
+{
+	"_id": "Larry.Smith",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Larry",
+	"surname": "Smith",
+	"email": [
+		"lsmith@ncbi.nlm.nih.gov"
+	],
+	"notes": "Contact for MedPost"
+}

@@ -1,0 +1,17 @@
+{
+	"_id": "QfO:QfO4_output_OMA-Pairs",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+	"name": "OMA_Pairs_Refset5-.833.rels",
+	"version": "v1.0",
+	"description": "Output data set (predicted orthologous groups) for OMA Pairs (RefSet5) tool. The orthologs pairs are stored in OrthoXML format",
+	"dates": {
+		"creation": "2011-06-08T15:18:11Z",
+		"modification": "2011-06-08T15:18:11Z"
+	},
+	"type": "Output",
+	"datalink": "http://orthology.benchmarkservice.org/raw/OMA_Pairs_Refset5-.833.rels.raw.gz",
+	"dataset_contact_id": [
+		"Christophe.Dessimoz",
+		"Adrian.Altenhoff"
+	]
+}

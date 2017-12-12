@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas#CommunityStatus",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/CommunityStatus",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Community Status concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,15 +9,11 @@
 			"type": "string",
 			"minLength": 1
 		},
-		"_type": {
-			"title": "The document type. In this case, fixed to CommunityStatus",
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
-			"enum": [ "CommunityStatus" ]
-		},
-		"_version": {
-			"title": "The document type version. In this case, fixed to 0.2",
-			"type": "string",
-			"enum": [ "0.2" ]
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/CommunityStatus" ]
 		},
 		"description": {
 			"title": "Description of this community status",
@@ -25,6 +21,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_type","_version"],
+	"required": ["_id","_schema"],
+	"primary_key": ["_id"],
 	"dependencies": {}
 }
