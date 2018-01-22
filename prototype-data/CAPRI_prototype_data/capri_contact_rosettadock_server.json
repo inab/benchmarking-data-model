@@ -1,0 +1,10 @@
+{
+    "_id" : "Jeffrey.Gray",
+    "surname" : "Jeffrey",
+    "givenName" : "Gray",
+    "email" : ["jgray@jhu.edu"],
+    "notes" : "",
+    "links" : [],
+    "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+    "contact_type" : "person"
+}

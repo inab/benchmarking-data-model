@@ -1,0 +1,10 @@
+{
+    "_id" : "Brian.Jimenez-Garcia", 
+    "surname" : "Brian",
+    "givenName" : "Jimenez-Garcia",
+    "email" : ["bjimenez@bsc.es"],
+    "notes" : "PostDoctoral Researcher at BSC",
+    "links" : [],
+    "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+    "contact_type" : "person"
+}

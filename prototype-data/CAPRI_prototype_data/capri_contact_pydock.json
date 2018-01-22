@@ -1,0 +1,10 @@
+{
+    "_id" : "Juan.Fernandez-Recio",
+    "surname" : "Juan",
+    "givenName" : "Fernandez-Recio",
+    "email" : ["juanf@bsc.es"],
+    "notes" : "Group Leader of the Protein Interactions and Docking Group at BSC", 
+    "links" : [],
+    "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+    "contact_type" : "person"
+}

@@ -1,0 +1,10 @@
+{
+    "_id" : "Ilya.Vakser",
+    "surname" : "Ilya",
+    "givenName" : "Vakser",
+    "email" : ["vakser@ku.edu"],
+    "notes" : "",
+    "links" : [],
+    "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+    "contact_type" : "person"
+}
