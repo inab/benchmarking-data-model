@@ -7,16 +7,16 @@
     "is_automated": false,
     "community_id":
       [
-        "CAPRI" 
+        "CAPRI"
       ],
     "tool_contact_id": [
-      "FireDock Administrator"
+      "Haim.J.Wolfson"
     ],
     "status_id": "active",
     "references": [
       "10.1093/nar/gkn186"
     ],
-    "tool_access": 
+    "tool_access":
       [
         {
           "tool_access_type_id":"Web/API",
