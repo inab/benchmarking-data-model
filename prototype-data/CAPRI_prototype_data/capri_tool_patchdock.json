@@ -1,0 +1,26 @@
+{
+    "_id": "PatchDock",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "PatchDock",
+    "name": "PatchDock",
+    "description": "PatchDock is an algorithm for molecular docking. The input is two molecules of any type: proteins, DNA, peptides, drugs. The output is a list of potential complexes sorted by shape complementarity criteria.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Dina.Schneidman-Duhovny"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gki481"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://bioinfo3d.cs.tau.ac.il/PatchDock/"
+        }
+      ]
+}

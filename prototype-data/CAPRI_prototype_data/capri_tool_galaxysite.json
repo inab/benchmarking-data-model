@@ -1,0 +1,26 @@
+{
+    "_id": "GalaxySite",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "GalaxySite",
+    "name": "GalaxySite",
+    "description": "GalaxySite is a web server for ligand-binding site prediction by using molecular docking.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Chaok.Seok"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gku321"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://galaxy.seoklab.org/cgi-bin/submit.cgi?type=SITE"
+        }
+      ]
+}

@@ -1,0 +1,26 @@
+{
+    "_id": "FiberDock",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "FiberDock",
+    "name": "FiberDock",
+    "description": "FiberDock is a docking refinement web server that accounts for backbone and side-chain flexibility. Potential docking structures are scored according to an energy function.",
+    "is_automated": false,
+    "community_id":
+      [
+        "CAPRI"
+      ],
+    "tool_contact_id": [
+      "Haim.J.Wolfson"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkq373"
+    ],
+    "tool_access":
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://bioinfo3d.cs.tau.ac.il/FiberDock/"
+        }
+      ]
+}

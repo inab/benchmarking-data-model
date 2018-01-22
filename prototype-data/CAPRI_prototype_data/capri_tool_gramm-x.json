@@ -1,0 +1,27 @@
+{
+    "_id": "GRAMM-X",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "GRAMM-X",
+    "name": "GRAMM-X",
+    "description": "GRAMM-X is a protein docking server.",
+    "is_automated": false,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Ilya.Vakser"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkl206",
+      "10.1002/prot.20573"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://vakser.bioinformatics.ku.edu/resources/gramm/grammx"
+        }
+      ]
+}

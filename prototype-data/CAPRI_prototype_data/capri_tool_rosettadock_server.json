@@ -1,0 +1,26 @@
+{
+    "_id": "rosettadock_server",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "rosettadock_server",
+    "name": "RosettaDock Server",
+    "description": "Structure prediction program that searches the rigid body and side chain conformational space of two interacting proteins to find a minimum free-energy complex for the protein-protein interaction structure.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Jeffrey.Gray"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkn216"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://rosie.graylab.jhu.edu/"
+        }
+      ]
+}

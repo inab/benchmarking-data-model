@@ -1,0 +1,26 @@
+{
+    "_id": "HexServer",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "HexServer",
+    "name": "HexServer",
+    "description": "A FFT-based protein docking server powered by graphics processors, HexServer rapidly produces a ranked list of docking predictions for input PDB protein structures.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Dave.Ritchie"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkq311"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://hexserver.loria.fr/"
+        }
+      ]
+}

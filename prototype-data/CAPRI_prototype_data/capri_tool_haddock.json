@@ -1,0 +1,26 @@
+{
+    "_id": "HADDOCK",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "HADDOCK",
+    "name": "HADDOCK",
+    "description": "High Ambiguity Driven biomolecular DOCKing: an information-driven flexible docking approach for the modeling of biomolecular complexes. It distinguishes itself from ab-initio docking methods in the fact that it encodes information from identified or predicted protein interfaces in ambiguous interaction restraints (AIRs) to drive the docking process. It can deal with a large class of modeling problems including protein-protein, protein-nucleic acids and protein-ligand complexes.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Alexandre.MJJ.Bonvin"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1016/j.jmb.2015.09.014"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://www.bonvinlab.org/software/haddock2.2/"
+        }
+      ]
+}
