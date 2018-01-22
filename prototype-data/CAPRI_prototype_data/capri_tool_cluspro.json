@@ -1,5 +1,5 @@
 {
-    "_id": "pydock",
+    "_id": "ClusPro",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
     "bioTools_id": "ClusPro",
     "name": "ClusPro",
@@ -7,7 +7,7 @@
     "is_automated": true,
     "community_id":
       [
-        "CAPRI" 
+        "CAPRI"
       ],
     "tool_contact_id": [
       "Sandor.Vajda"
@@ -18,7 +18,7 @@
       "10.1002/prot.22835",
       "10.1002/prot.21117"
     ],
-    "tool_access": 
+    "tool_access":
       [
         {
           "tool_access_type_id":"Web/API",
