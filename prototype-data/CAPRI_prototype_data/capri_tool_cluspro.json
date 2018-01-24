@@ -1,0 +1,28 @@
+{
+    "_id": "ClusPro",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "ClusPro",
+    "name": "ClusPro",
+    "description": "ClusPro is a tool for automatically computing the docking of two protein structures supplied by the user (or as PDB IDs). The result set is a ranked list of putative complexes, ordered by clustering properties.",
+    "is_automated": true,
+    "community_id":
+      [
+        "CAPRI"
+      ],
+    "tool_contact_id": [
+      "Sandor.Vajda"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkh354",
+      "10.1002/prot.22835",
+      "10.1002/prot.21117"
+    ],
+    "tool_access":
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://cluspro.bu.edu/login.php"
+        }
+      ]
+}

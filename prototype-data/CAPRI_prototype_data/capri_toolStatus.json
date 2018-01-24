@@ -1,0 +1,6 @@
+{
+        "_id": "active",
+        "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
+        "description": "CAPRI 7",
+        "status_date": "2016-08-01T00:00:00Z"
+}

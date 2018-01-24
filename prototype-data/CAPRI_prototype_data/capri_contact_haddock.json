@@ -1,0 +1,10 @@
+{
+    "_id" : "Alexandre.MJJ.Bonvin",
+    "surname" : "Alexandre MJJ",
+    "givenName" : "Bonvin",
+    "email" : ["a.m.j.j.bonvin@uu.nl"],
+    "notes" : "",
+    "links" : [],
+    "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+    "contact_type" : "person"
+}

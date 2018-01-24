@@ -1,0 +1,26 @@
+{
+    "_id": "FireDock",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "FireDock",
+    "name": "FireDock",
+    "description": "The FireDock web server performs high-throughput flexible refinement and scoring of protein-protein docking solutions. Side chain conformations and rigid body orientations are optimized, and outputs viewed in three-dimensional space.",
+    "is_automated": false,
+    "community_id":
+      [
+        "CAPRI"
+      ],
+    "tool_contact_id": [
+      "Haim.J.Wolfson"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1093/nar/gkn186"
+    ],
+    "tool_access":
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"http://bioinfo3d.cs.tau.ac.il/FireDock/"
+        }
+      ]
+}

@@ -1,0 +1,26 @@
+{
+    "_id": "pydock",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+    "bioTools_id": "pyDock",
+    "name": "pyDock",
+    "description": "pyDock is a fast protocol for protein-protein docking which uses electrostatics and desolvation energy to score docking poses generated with FFT-based algorithms.",
+    "is_automated": false,
+    "community_id":
+      [
+        "CAPRI" 
+      ],
+    "tool_contact_id": [
+      "Juan.Fernandez-Recio"
+    ],
+    "status_id": "active",
+    "references": [
+      "10.1002/prot.21419"
+    ],
+    "tool_access": 
+      [
+        {
+          "tool_access_type_id":"Web/API",
+          "link":"https://life.bsc.es/pid/pydock/"
+        }
+      ]
+}

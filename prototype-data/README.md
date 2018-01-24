@@ -9,3 +9,5 @@ This directory contains several prototype data sets:
 * [QfO-prototype-data](QfO-prototype-data): Sample data set from [Quest for Orthologs](http://questfororthologs.org/).
 
 * [Biocreative-prototype-data](Biocreative-prototype-data): Sample data set from [Biocreative/Becalm](http://www.becalm.eu/). Under development.
+
+* [CAPRI_prototype_data](CAPRI_prototype_data): Sample data set from [CAPRI](http://www.ebi.ac.uk/msd-srv/capri/capri.html) experiment.

@@ -1,0 +1,22 @@
+{
+		"_id": "Evaluation",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+		"title": "CAPRI evaluation criteria",
+		"description": "Quality assessment of 5613 models submitted by predictor groups from both CAPRI and CASP for the total of 15 most tractable targets from the second joint CASP-CAPRI protein assembly prediction experiment.",
+		"metrics_contact_id": [
+			"Sameer.Velankar",
+			"Marc.Lensink"
+		],
+		"formal_definition": "High-accuracy, Medium, Acceptable, Incorrect",
+		"links":
+			[
+				{
+					"uri":"https://www.ncbi.nlm.nih.gov/pubmed/29127686",
+					"label":"CAPRI-CASP12 Evaluation"
+				}
+			],
+		"references":
+			[
+				"10.1002/prot.25419"
+			]
+}
