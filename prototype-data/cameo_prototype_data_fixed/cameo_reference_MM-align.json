@@ -1,0 +1,6 @@
+{
+		"_id": "10.1093/nar/gkp318",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+		"title": "MM-align: a quick algorithm for aligning multiple-chain protein complex structures using iterative dynamic programming",
+		"pubmed_id": 19443443 
+}
