@@ -1,0 +1,21 @@
+{
+		"_id": "CAMEO-3D:model-confidence-lDDT",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+		"title": "Local per-residue confidence scores are evaluated in a Receiver Operator Characteristics analysis.", 
+		"description": "The confidences assigned by the various methods are compared against residue-wise local Difference Distance Test (lDDT) scores. The value reported is for a given prediction of a given server",
+		"metrics_contact_id": [
+			"Torsten.Schwede"
+		],
+		"formal_definition": "The evaluation of Model Confidence lDDT Values assesses the error estimates given as probabilites with a ROC AUC analysis. A residue is classified as correctly modeled if its local lDDT value is higher or equal 0.6. The local scores shown on the individual model pages are a measure of how well the model fits to the reference structure at a given residue position. Local scores are extracted from the output when calculating the average accuracy. Please note that the ROC AUC is not defined for too good or too bad models (all lDDT values greater or smaller than 0.6).",
+		"links": 
+			[
+				{
+					"uri":"https://dx.doi.org/10.1002/prot.25431",
+					"label":"CAMEO CASP12 publication"
+				}
+			],
+		"references": 
+			[
+				"10.1002/prot.25431"
+			]
+}
