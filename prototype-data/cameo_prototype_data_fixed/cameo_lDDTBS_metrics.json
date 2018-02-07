@@ -1,0 +1,21 @@
+{
+		"_id": "CAMEO-3D:lDDT-BS",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+		"title": "local Difference Distance Test (lDDT)",
+		"description": "lDDT-BS is the average of the individual lDDT local scores of those residues which form the binding site(s) on the respective target. The binding site is determined by the contacts formed with the reference protein structure based on a 10 Å radius interaction shell from each atom of the ligand. ",
+		"metrics_contact_id": [
+			"Torsten.Schwede"
+		],
+		"formal_definition": "The Local Distance Difference Test (lDDT) is a superposition-free score that evaluates local distance differences of all atoms in a model, including validation of stereochemical plausibility.",
+		"links": 
+			[
+				{
+					"uri":"http://www.ncbi.nlm.nih.gov/pubmed/25974172",
+					"label":"CAMEO CASP12 publication"
+				}
+			],
+		"references": 
+			[
+				"10.1002/prot.25431"
+			]
+}
