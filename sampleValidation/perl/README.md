@@ -5,11 +5,18 @@ All the benchmarking JSON schemas should be compliant with JSON Schema Draft04 s
 So, the proposed validation programs use libraries compliant with that specification.
 
 * [jsonValidate.pl](jsonValidate.pl) Perl program which depends on a set of Perl modules declared in [cpanfile](cpanfile).
-	- In order to install the dependencies you need `cpanm`, which is available in many Linux distributions (Ubuntu package `cpanminus`, CentOS EPEL package `perl-App-cpanminus`), and also at [App::cpanminus](http://search.cpan.org/~miyagawa/App-cpanminus-1.7043/) Perl package.
+	- In order to install the dependencies you need `cpan`, which is available in many Linux distributions (Ubuntu package `perl`, CentOS package `perl-CPAN`), and also at [App::Cpan](http://search.cpan.org/~andk/CPAN-2.16/) Perl package.
 	
-	- The installation of the dependencies in the program's directory is done running:
+	- You can install the program dependencies in a local virtual environment with the next recipe:
 	  ```bash
-	  cpanm -L perllibs --installdeps .
+	  # Install App::Virtualenv if it is not installed yet
+	  perl -MApp::Virtualenv -c -e '' || cpan -i App::Virtualenv
+	  # If past step installs local::lib, modifying your .bashrc, then reload
+	  # your profile before following with the next steps
+	  virtualenv.pl .plenv
+	  source .plenv/bin/activate
+	  perl -MApp::cpanminus -c -e '' || cpan -i App::cpanminus
+	  cpanm --installdeps .
 	  ```
 	  
 	- The program can be run using next command line:

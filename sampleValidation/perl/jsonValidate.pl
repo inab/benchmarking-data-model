@@ -3,9 +3,7 @@
 use warnings 'all';
 use strict;
 
-use FindBin qw();
 use File::Spec qw();
-use lib File::Spec->catfile($FindBin::Bin,'perllibs','lib','perl5');
 
 use JSON::MaybeXS;
 use JSON::Validator 0.95;
