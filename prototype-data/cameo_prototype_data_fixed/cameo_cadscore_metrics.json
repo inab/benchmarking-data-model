@@ -1,0 +1,21 @@
+{
+		"_id": "CAMEO-3D:CAD-score",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+		"title": "A new contact area difference-based function for evaluation of protein structural models"
+		"description": "The CAD score (contact area difference) provides a single uniform framework for assessing single-domain, multi-domain, and even multi-subunit protein structural models of varying degree of accuracy and completeness. CAD-score emphasizes the physical realism of models and is superposition-free. Values ranges between 0 and 1 (0 bad, 1 good).",
+		"metrics_contact_id": [
+			"Česlovas Venclovas"
+		],
+		"formal_definition": "CAD-score is a new evaluation function quantifying differences between physical contacts in a model and the reference structure. The new score uses the concept of residue–residue contact area difference (CAD) introduced by Abagyan and Totrov (J Mol Biol 1997; 268:678–685). Contact areas, the underlying basis of the score, are derived using the Voronoi tessellation of protein structure. The newly introduced CAD-score is a continuous function, confined within fixed limits, free of any arbitrary thresholds or parameters. ",
+		"links": 
+			[
+				{
+					"uri":"http://www.ncbi.nlm.nih.gov/pubmed/12824330"
+					"label":"CAD-score publication"
+				}
+			],
+		"references": 
+			[
+				"10.1002/prot.24172"
+			]
+}
