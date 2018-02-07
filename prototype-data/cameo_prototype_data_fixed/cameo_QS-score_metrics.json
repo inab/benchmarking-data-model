@@ -1,5 +1,5 @@
 {
-    "_id": "QS-score",
+    "_id": "CAMEO-3D:QS-score",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
     "title": "Quarternary Structure Score (QS-score)",
     "description": "Evaluates protein complex interface contact similarity by a two-step approach, resolving first the inter-complex chain mapping and subsequently the inter-complex residue mapping.",

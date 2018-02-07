@@ -1,0 +1,22 @@
+{
+		"_id": "John.Moult",
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+		"contact_type": "person",
+		"givenName": "John",
+		"surname": "Moult",
+		"email": 
+			[
+				"jmoult@umd.edu"
+			],
+		"notes": "Initiator of Critical Assessments and Inspiration",
+		"links": [
+			{
+				"label":"MainSite",
+				"uri":"http://predictioncenter.org"
+			},
+			{
+				"label":"Other",
+				"uri":"https://dx.doi.org/10.1002/prot.25415"
+			}
+		]
+}

@@ -1,5 +1,5 @@
 {
-    "_id": "MM-align",
+    "_id": "CAMEO-3D:MM-align",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
     "title": "MM-align (MultiMer-align) is an algorithm for structurally aligning multiple-chain protein-protein complexes.",
     "description": "The algorithm is built on a heuristic iteration of a modified Needleman-Wunsch dynamic programming (DP) algorithm, with the alignment score specified by the inter-complex residue distances. The assignment of matching multiple chains in each complex rely on our chain mapping alogrithm. [DOI:]. Values range between 0 (bad) and 100 (good).",

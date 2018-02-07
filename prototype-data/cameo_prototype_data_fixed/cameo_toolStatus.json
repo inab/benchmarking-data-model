@@ -1,5 +1,6 @@
 {
 		"_id": "active",
 		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
-		"description": "weekly benchmarks"
+		"description": "weekly benchmarks",
+    "status_date": "2018-02-07-12:00:00"
 }
