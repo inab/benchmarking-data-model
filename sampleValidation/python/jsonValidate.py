@@ -11,9 +11,13 @@ import uritools
 
 # This is needed to assure open suports encoding parameter
 if sys.version_info[0] > 2:
+	ALLOWED_KEY_TYPES=(bytes,str)
+	ALLOWED_ATOMIC_VALUE_TYPES=(int,bytes,str,float,bool)
 	# py3k
 	pass
 else:
+	ALLOWED_KEY_TYPES=(str,unicode)
+	ALLOWED_ATOMIC_VALUE_TYPES=(int,long,str,unicode,float,bool)
 	# py2
 	import codecs
 	import warnings
@@ -36,7 +40,8 @@ def disable_outerr_buffering():
 	# gc.garbage.append(sys.stderr)
 	sys.stderr = os.fdopen(sys.stderr.fileno(), 'w', 0)
 
-disable_outerr_buffering()
+if sys.version_info[0] == 2:
+	disable_outerr_buffering()
 
 def findFKs(jsonSchema,jsonSchemaURI,prefix=""):
 	FKs = []
@@ -134,8 +139,8 @@ def loadJSONSchemas(p_schemaHash,*args):
 									p_PK = jsonSchema['primary_key']
 									if isinstance(p_PK,(list,tuple)):
 										for key in p_PK:
-											#if type(key) not in (int, long, float, bool, str):
-											if type(key) not in (str,unicode):
+											#if type(key) not in ALLOWED_ATOMIC_VALUE_TYPES:
+											if type(key) not in ALLOWED_KEY_TYPES:
 												print("\tWARNING: primary key in {0} is not composed by strings defining its attributes. Ignoring it".format(jsonSchemaFile),file=sys.stderr)
 												p_PK = None
 												break
@@ -234,7 +239,7 @@ def materializeJPath(jsonDoc, jPath):
 	
 	# Flattening it (we return a reference to a list of atomic values)
 	for iobj, objective in enumerate(objectives):
-		if not isinstance(objective,(int,long,str,unicode,float,bool)):
+		if not isinstance(objective,ALLOWED_ATOMIC_VALUE_TYPES):
 			objectives[iobj] = json.dumps(objective, sort_keys=True)
 	
 	return objectives

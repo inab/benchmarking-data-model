@@ -16,12 +16,19 @@ So, the proposed validation program uses libraries compliant with that specifica
 	
 	- The creation of a virtual environment and installation of the dependencies in that environment is done running:
 	  ```bash
-	  virtualenv pyenv
-	  pyenv/bin/pip install -r requirements.txt
+	  virtualenv .pyenv
+	  source .pyenv/bin/activate
+	  pip install -r requirements.txt
+	  ```
+	  
+	- The creation of a virtual environment for a concrete python version would be:
+	  ```bash
+	  virtualenv -p /usr/bin/python3 .pyenv
+	  source .pyenv/bin/activate
+	  pip install -r requirements.txt
 	  ```
 	  
 	- The program can be run using next command line:
 	  ```bash
-	  source pyenv/bin/activate
 	  python jsonValidate.py ../../json-schemas ../../prototype-data/cameo_prototype_data_fixed
 	  ```
