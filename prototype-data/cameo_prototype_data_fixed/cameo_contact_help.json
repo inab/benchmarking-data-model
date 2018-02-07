@@ -11,11 +11,11 @@
 		"links": [
 			{
 				"label":"MainSite",
-				"uri":"http://proteinmodelportal.org"
+				"uri":"http://cameo3d.org"
 			},
 			{
 				"label":"Other",
-				"uri":"http://dx.doi.org/10.1093/database/bat031"
+				"uri":"http://dx.doi.org/10.1002/prot.25431"
 			}
 		]
 }
