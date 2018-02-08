@@ -1,9 +1,9 @@
 {
-    "_id": "server11",
+    "_id": "server22",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
-    "bioTools_id": "JIID1",
-    "name": "Whatever",
-    "description": "Comparative Structure Prediction",
+    "bioTools_id": "RaptorX",
+    "name": "RaptorX",
+    "description": "Protein Structure Prediction",
     "is_automated": true,
     "community_id":
       [
@@ -11,17 +11,17 @@
         "Structure Prediction"
       ],
     "tool_contact_id": [
-      "Torsten.Schwede"
+      "help-cameo3d@unibas.ch"
     ],
     "status_id": "active",
     "references": [
-      "10.1093/nar/gku340"
+      "10.1007/978-1-4939-0366-5_2"
     ],
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web/API",
-          "link":"http://swissmodel.expasy.org"
+          "tool_access_type_id":"Web",
+          "link":"http://raptorx.uchicago.edu/"
         }
       ]
 }

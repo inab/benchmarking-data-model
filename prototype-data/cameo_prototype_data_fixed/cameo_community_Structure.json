@@ -1,12 +1,12 @@
 {
 	"_id": "Structure Prediction",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Community",
-	"name": "Structure prediction community",
-	"acronym": "strpred",
+	"name": "Structure Prediction Community",
+	"acronym": "struc_pred",
 	"status_id": [
 		"TBD"
 	],
-	"description": "Whatever",
+	"description": "Anyone relating to protein structure prediction or modeling in a wider sense",
 	"links":[
 		{
 			"label":"MainSite",
@@ -14,13 +14,14 @@
 		},
 		{
 			"label":"PublicationDOI",
-			"uri":"http://dx.doi.org/10.1093/database/bat031"
+			"uri":"http://dx.doi.org/10.1002/prot.25431"
 		}
 	],
 	"community_contacts":
 		[
 				"Juergen.Haas",
-				"Torsten.Schwede"
+				"Torsten.Schwede",
+        "John.Moult"
 		]
 	
 	

@@ -20,7 +20,7 @@
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web/API",
+          "tool_access_type_id":"Web",
           "link":"http://swissmodel.expasy.org"
         }
       ]
