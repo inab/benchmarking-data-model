@@ -1,0 +1,35 @@
+{
+    "_id": "QfO:QfO4:STD_Eukaryota_InParanoid_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the InParanoid tool in the 'Species Tree Discordance' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:STD-recall1",
+            "result": {
+                "value": 11925
+            }
+        },
+        {
+            "metrics_id": "QfO:STD-precision",
+            "result": {
+                "value": 0.0547
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.0028
+            }
+        }
+    ],
+    "name": "InParanoid.tar.gz",
+    "type": "Output",
+    "version": "Eukaryota"
+}

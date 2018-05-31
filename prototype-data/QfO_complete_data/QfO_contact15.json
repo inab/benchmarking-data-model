@@ -1,0 +1,21 @@
+{
+	"_id": "Odile.Lecompte",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+	"contact_type": "person",
+	"givenName": "Odile",
+	"surname": "Lecompte",
+	"email": [
+		"odile.lecompte@unistra.fr"
+	],
+	"notes": "Contact for any questions about OrthoInspector in general or collaborations",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://icube-cstb.unistra.fr/fr/index.php/Odile_Lecompte"
+		},
+		{
+			"label": "LinkedIn",
+			"uri": "https://www.linkedin.com/in/odile-lecompte-48611186/"
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"_id": "QfO:active",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
+	"description": "Active for continuous benchmarking",
+	"status_date": "2015-01-01T00:00:01Z"
+}

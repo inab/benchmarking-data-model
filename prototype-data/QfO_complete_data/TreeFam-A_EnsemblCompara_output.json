@@ -1,0 +1,41 @@
+{
+    "_id": "QfO:QfO4:TreeFam-A_EnsemblCompara_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the EnsemblCompara tool in the 'Agreement with Reference Gene Phylogenies: TreeFam-A' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:referenceTreeFam-A_recall",
+            "result": {
+                "value": 0.5052
+            }
+        },
+        {
+            "metrics_id": "QfO:referenceTreeFam-A_precision",
+            "result": {
+                "value": 0.9132
+            }
+        },
+        {
+            "metrics_id": "QfO:recall_error",
+            "result": {
+                "value": 0.00510097
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.0038615
+            }
+        }
+    ],
+    "name": "EnsemblCompara.tar.gz",
+    "type": "Output",
+    "version": "unknown"
+}

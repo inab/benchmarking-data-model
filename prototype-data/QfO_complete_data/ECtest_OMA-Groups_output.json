@@ -1,0 +1,35 @@
+{
+    "_id": "QfO:QfO4:ECtest_OMA-Groups_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the OMA-Groups tool in the 'Enzyme Classification Conservation Test' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:ECConservationTest-recall",
+            "result": {
+                "value": 45746
+            }
+        },
+        {
+            "metrics_id": "QfO:ECConservationTest-precision",
+            "result": {
+                "value": 0.98693
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.00072
+            }
+        }
+    ],
+    "name": "OMA-Groups.tar.gz",
+    "type": "Output",
+    "version": "unknown"
+}

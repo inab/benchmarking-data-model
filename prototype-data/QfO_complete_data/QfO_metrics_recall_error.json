@@ -1,0 +1,8 @@
+{
+	"_id": "QfO:recall_error",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+	"title": "Recall error",
+	"description": "95% confidence interval for the recall metric",
+	"metrics_contact_id": ["unknown"]
+
+}

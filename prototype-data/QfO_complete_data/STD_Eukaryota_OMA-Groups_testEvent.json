@@ -1,0 +1,11 @@
+{
+    "_id": "QfO:QfO4:STD_Eukaryota_OMA-Groups",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
+    "benchmarking_event_id": "QfO:QfO4:STD",
+    "dates": {
+        "creation": "2015-04-14T23:59:59Z"
+    },
+    "input_dataset_id": "QfO:QfO4_input_seqXML",
+    "output_dataset_id": "QfO:QfO4:STD_Eukaryota_OMA-Groups_output",
+    "tool_id": "QfO:OMA-Groups"
+}

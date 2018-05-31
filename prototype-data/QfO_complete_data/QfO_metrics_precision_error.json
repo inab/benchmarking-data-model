@@ -1,0 +1,8 @@
+{
+	"_id": "QfO:precision_error",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Metrics",
+	"title": "Precision error",
+	"description": "95% confidence interval for the precision metric",
+	"metrics_contact_id": ["unknown"]
+
+}

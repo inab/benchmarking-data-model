@@ -1,0 +1,5 @@
+{
+	"_id": "QfO:Standalone-application",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolAccessType",
+	"description": "Software package to install the application and run it locally"
+}

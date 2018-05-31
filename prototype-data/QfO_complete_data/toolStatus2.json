@@ -1,0 +1,6 @@
+{
+	"_id": "QfO:inoperative",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolStatus",
+	"description": "The tool is not available or it is under construction",
+	"status_date": "2015-01-01T00:00:01Z"
+}

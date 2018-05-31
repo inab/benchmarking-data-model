@@ -1,0 +1,35 @@
+{
+    "_id": "QfO:QfO4:GOtest_InParanoidCore_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the InParanoidCore tool in the 'Gene Ontology Conservation Test' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:GOConservationTest-recall",
+            "result": {
+                "value": 66163
+            }
+        },
+        {
+            "metrics_id": "QfO:GOConservationTest-precision",
+            "result": {
+                "value": 0.5098
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.0017
+            }
+        }
+    ],
+    "name": "InParanoidCore.tar.gz",
+    "type": "Output",
+    "version": "unknown"
+}

@@ -1,0 +1,7 @@
+{
+	"_id": "10.1093/bioinformatics/btm295",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+	"title": "OMA Browser—Exploring orthologous relations across 352 complete genomes",
+	"doi": "10.1093/bioinformatics/btm295",
+	"abstract": "Motivation: Inference of the evolutionary relation between proteins, in particular the identification of orthologs, is a central problem in comparative genomics. Several large-scale efforts with various methodologies and scope tackle this problem, including OMA (the Orthologous MAtrix project). Results: Based on the results of the OMA project, we introduce here the OMA Browser, a web-based tool allowing the exploration of orthologous relations over 352 complete genomes. Orthologs can be viewed as groups across species, but also at the level of sequence pairs, allowing the distinction among one-to-one, one-to-many and many-to-many orthologs. Availability:http://omabrowser.org"
+}

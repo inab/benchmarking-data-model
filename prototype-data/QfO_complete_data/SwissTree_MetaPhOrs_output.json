@@ -1,0 +1,41 @@
+{
+    "_id": "QfO:QfO4:SwissTree_MetaPhOrs_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the MetaPhOrs tool in the 'Agreement with Reference Gene Phylogenies: SwissTree' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:referenceSwissTree_recall",
+            "result": {
+                "value": 0.6679
+            }
+        },
+        {
+            "metrics_id": "QfO:referenceSwissTree_precision",
+            "result": {
+                "value": 0.9947
+            }
+        },
+        {
+            "metrics_id": "QfO:recall_error",
+            "result": {
+                "value": 0.0553154
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.0104533
+            }
+        }
+    ],
+    "name": "MetaPhOrs.tar.gz",
+    "type": "Output",
+    "version": "unknown"
+}

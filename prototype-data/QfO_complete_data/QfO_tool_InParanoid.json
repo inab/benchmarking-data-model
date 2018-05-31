@@ -1,0 +1,48 @@
+{
+	"_id": "QfO:InParanoid",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
+	"name": "InParanoid",
+	"description": "InParanoid is a program for automatic identification of orthologs while differentiating between inparalogs and outparalogs. An InParanoid cluster is seeded by a reciprocally bestmatching ortholog pair, around which inparalogs are gathered independently, while outparalogs are excluded.  The InParanoid database is a collection of pairwise ortholog groups aiming to include all 'completely sequenced' eukaryotic genomes. By this we mean above 6X coverage, and less than 1% X letters in the protein sequences. Two variants were tested in this study: this one is the regular InParanoid output containing all predicted pairs of orthologs",
+	"is_automated": true,
+	"community_id": ["QfO:QfO"],
+	"tool_contact_id": [
+		"Erik.Sonnhammer",
+		"Inparanoid.MailingList"
+	],
+	"status_id": "QfO:active",
+	"references": [
+		"10.1093/nar/gku1203"
+	],
+	"tool_access": [
+		{
+			"tool_access_type_id": "QfO:Standalone-application",
+			"link": "http://software.sbc.su.se/cgi-bin/request.cgi?project=inparanoid",
+			"techdocs": [
+				{
+					"uri": "https://github.com/fabsta/Hieranoid/blob/master/inparanoid.pl",
+					"label": "source"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "QfO:Web-application",
+			"link": "http://inparanoid.sbc.su.se.",
+			"techdocs": [
+				{
+					"uri": "http://inparanoid.sbc.su.se/download/current/relnotes.txt",
+					"label": "doc"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "QfO:Database",
+			"link": "http://inparanoid.sbc.su.se/download/",
+			"techdocs": [
+				{
+					"uri": "http://inparanoid.sbc.su.se/download/8.0_current/",
+					"label": "source"
+				}
+			]
+		}
+	]
+}

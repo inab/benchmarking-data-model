@@ -1,0 +1,35 @@
+{
+    "_id": "QfO:QfO4:G_STD_Eukaryota_Hieranoid2_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the Hieranoid2 tool in the 'Generalized Species Tree Discordance' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:STD-recall1",
+            "result": {
+                "value": 4122
+            }
+        },
+        {
+            "metrics_id": "QfO:STD-precision",
+            "result": {
+                "value": 0.237
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.01
+            }
+        }
+    ],
+    "name": "Hieranoid2.tar.gz",
+    "type": "Output",
+    "version": "Eukaryota"
+}

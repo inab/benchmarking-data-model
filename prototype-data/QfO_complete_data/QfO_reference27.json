@@ -1,0 +1,7 @@
+{
+	"_id": "https://www.ncbi.nlm.nih.gov/pubmed/15593400",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Reference",
+	"title": "Detecting putative orthologs",
+	"pubmed_id": 15593400,
+	"abstract": "We developed an algorithm that improves upon the common procedure of taking reciprocal best blast hits(rbh) in the identification of orthologs. The method-reciprocal smallest distance algorithm (rsd)-relies on global sequence alignment and maximum likelihood estimation of evolutionary distances to detect orthologs between two genomes. rsd finds many putative orthologs missed by rbh because it is less likely than rbh to be misled by the presence of a close paralog."
+}

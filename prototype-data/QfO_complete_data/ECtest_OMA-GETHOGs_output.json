@@ -1,0 +1,35 @@
+{
+    "_id": "QfO:QfO4:ECtest_OMA-GETHOGs_output",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
+    "dataset_contact_id": [
+        "unknown"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Output dataset for the OMA-GETHOGs tool in the 'Enzyme Classification Conservation Test' benchmark event with the correspondent metrics generated from it",
+    "metrics": [
+        {
+            "metrics_id": "QfO:ECConservationTest-recall",
+            "result": {
+                "value": 110683
+            }
+        },
+        {
+            "metrics_id": "QfO:ECConservationTest-precision",
+            "result": {
+                "value": 0.9387
+            }
+        },
+        {
+            "metrics_id": "QfO:precision_error",
+            "result": {
+                "value": 0.001
+            }
+        }
+    ],
+    "name": "OMA-GETHOGs.tar.gz",
+    "type": "Output",
+    "version": "unknown"
+}
