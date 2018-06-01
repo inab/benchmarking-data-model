@@ -1,5 +1,5 @@
 {
-	"_id": "QfO:QfO4:ECtest",
+	"_id": "QfO:QfO4_ECtest",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
 	"name": "Quest for Orthologs 4 - Enzyme Classification (EC) conservation test",
 	"is_automated": true,
