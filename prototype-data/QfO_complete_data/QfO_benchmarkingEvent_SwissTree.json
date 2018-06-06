@@ -1,5 +1,5 @@
 {
-	"_id": "QfO:QfO4:SwissTree",
+	"_id": "QfO:QfO4_SwissTree",
 	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
 	"name": "Quest for Orthologs 4 - Agreement with Reference Gene Phylogenies: SwissTree",
 	"is_automated": true,
