@@ -1,0 +1,47 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/SchemaKeys",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Relational information not included in standard Json Schema",
+	"type": "object",
+	"properties": {
+		"_id": {
+                    "title": "Data Type id. It should correspond to a valid schema in the repository",
+        		"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/SchemaKeys" ]
+		},
+                "primary_key" : {
+                    "type": "string",
+                    "title": "property used as primary key, defaults to _id in MongoDB implementation",
+                    "default": "_id"
+                },
+                "foreign_keys" : {
+                    "title": "Properties used as pseudo relational type FKs",
+                    "type": "array",
+                    "items" : {
+                        "type": "object",
+                        "properties": {
+                            "collection" : {
+                                "title": "Collection where FK is referred. It should correspond to a valid schema in the repository",
+                                "type": "string" 
+                            },
+                            "fields" : {
+                                "title": "fields used as keys, usually _id",
+                                "type": "array",
+                                "minItems":1,
+                                "items" : {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema"]
+}

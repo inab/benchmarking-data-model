@@ -1,0 +1,107 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Reference",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the bibliographic reference. It should be something meaningful, like its DOI or its PubMedId",
+			"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Reference" ]
+		},
+		"title": {
+			"title": "The title of the referenced material",
+			"type": "string"
+		},
+		"doi": {
+			"title": "The DOI of the referenced material (in case of books, its ISBN in ISBN-A DOI format)",
+			"type": "string"
+		},
+		"pubmed_id": {
+			"title": "The PubMed id of the referenced material (if any)",
+			"type": "integer",
+			"minimum": 1
+		},
+		"abstract": {
+			"title": "Optionally, the abstract of the referenced material",
+			"type": "string"
+		},
+		"links": {
+			"title": "Optional links related to the bibliographic reference",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"uri": {
+						"title": "The URI of the link related to the bibliographic reference",
+						"type": "string",
+						"format": "uri"
+					},
+					"label": {
+						"title": "The type of URI",
+						"type": "string",
+						"enum": ["PublicationDOI","LinkedInGroup","MainSite","DataSite"]
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"uri",
+					"label"
+				]
+			}
+		},
+		"authors": {
+			"title": "Optional list of authors of the referenced material",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"givenName": {
+						"title": "First / given name (or initials)",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"surname": {
+						"title": "Surname(s)",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"contact_id": {
+						"title": "If it is a known contact, its contact id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Contact",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"givenName",
+					"surname"
+				]
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","title"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
