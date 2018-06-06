@@ -1,11 +1,11 @@
 {
-    "_id": "QfO:QfO4:ECtest_Orthoinspector",
+    "_id": "QfO:QfO4_ECtest_Orthoinspector",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
-    "benchmarking_event_id": "QfO:QfO4:ECtest",
+    "benchmarking_event_id": "QfO:QfO4_ECtest",
     "dates": {
         "creation": "2015-04-14T23:59:59Z"
     },
     "input_dataset_id": "QfO:QfO4_input_seqXML",
-    "output_dataset_id": "QfO:QfO4:ECtest_Orthoinspector_output",
+    "output_dataset_id": "QfO:QfO4_ECtest_Orthoinspector_output",
     "tool_id": "QfO:Orthoinspector"
 }
