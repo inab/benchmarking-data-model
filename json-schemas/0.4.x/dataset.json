@@ -1,4 +1,4 @@
-{
+											{
 	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
@@ -56,8 +56,8 @@
 			"type": "string",
 			"format": "uri"
 		},
-		"dataset_contact_id": {
-			"title": "The contact id(s) of the creators of this dataset",
+		"dataset_contact_ids": {
+			"title": "The contact id(s) of the creator(s) of this dataset",
 			"type": "array",
 			"minLength": 1,
 			"items": {
@@ -71,30 +71,50 @@
 				"minLength": 1
 			}
 		},
-		"metrics": {
-			"title": "The different metrics generated from this dataset",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"metrics_id": {
-						"title": "The id of the metrics as such",
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Metrics",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
-					},
-					"result": {
-						"title": "The results obtained from the metrics",
+		"depends_on": {
+			"title": "The causal, direct dependencies of this dataset on a tool and other datasets, if available",
+			"type": "object",
+			"properties": {
+				"tool_id": {
+					"title": "The id of the tool which generated this dataset",
+					"type": "string",
+					"foreign_keys": [
+						{
+							"schema_id": "Tool",
+							"members": [ "." ]
+						}
+					],
+					"minLength": 1
+				},
+				"rel_dataset_ids": {
+					"type": "array",
+					"minLength": 1,
+					"items": {
 						"type": "object",
-						"additionalProperties": true
+						"properties": {
+							"dataset_id": {
+								"title": "The id of a dataset which was used to generate this new dataset",
+								"type": "string",
+								"foreign_keys": [
+									{
+										"schema_id": "Dataset",
+										"members": [ "." ]
+									}
+								],
+								"minLength": 1
+							},
+							"role": {
+								"title": "The role of the referenced dataset generating the current one (used to generate the current dataset, superseded by the generated dataset, ....)",
+								"type": "string",
+								"enum": [ "dependency", "superseded", "report" ],
+								"default": "dependency"
+							}
+						},
+						"required": [ "dataset_id" ]
 					}
 				}
-			}
+			},
+			"required": [ "rel_dataset_ids" ]
 		},
 		"references": {
 			"title": "The reference id(s) of this dataset (if any)",
@@ -112,7 +132,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","version","type","dates","dataset_contact_id"],
+	"required": ["_id","_schema","name","version","type","dates","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
