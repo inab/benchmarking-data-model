@@ -19,14 +19,16 @@
 			"title": "The title of the referenced material",
 			"type": "string"
 		},
-		"doi": {
-			"title": "The DOI of the referenced material (in case of books, its ISBN in ISBN-A DOI format)",
-			"type": "string"
-		},
-		"pubmed_id": {
-			"title": "The PubMed id of the referenced material (if any)",
-			"type": "integer",
-			"minimum": 1
+		"bibliographic_ids": {
+			"title": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"title": "Currently, the accepted ids are pmid, doi and pmc",
+				"type": "string",
+				"format": "uri",
+				"pattern": "^(pmid|doi|pmc|http(s)?):.+$"
+			}
 		},
 		"abstract": {
 			"title": "Optionally, the abstract of the referenced material",
@@ -101,7 +103,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","title"],
+	"required": ["_id","_schema","title","bibliographic_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
