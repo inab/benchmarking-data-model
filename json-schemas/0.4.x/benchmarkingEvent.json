@@ -119,6 +119,17 @@
 			"items": {
 				"type": "object",
 				"properties": {
+					"test_event_id": {
+						"title": "The unique identifier of the test event for this participant",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "TestEvent",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
 					"tool_id": {
 						"title": "The id of a participating tool",
 						"type": "string",
