@@ -16,7 +16,7 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestEvent" ]
 		},
 		"tool_id": {
-			"title": "The tool id which takes this input dataset",
+			"title": "The tool id which takes the input and reference datasets declared in the benchmarking event",
 			"type": "string",
 			"foreign_keys": [
 				{
@@ -26,27 +26,37 @@
 			],
 			"minLength": 1
 		},
-		"input_dataset_id": {
-			"title": "The id of the input dataset",
-			"type": "string",
-			"foreign_keys":  [
-				{
-					"schema_id": "Dataset",
-					"members": [ "." ]
-				}
-			],
-			"minLength": 1
-		},
-		"output_dataset_id": {
-			"title": "The id of the output dataset (if available)",
-			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "Dataset",
-					"members": [ "." ]
-				}
-			],
-			"minLength": 1
+		"received_datasets": {
+			"title": "The output, report and metrics datasets received for this testEvent",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"dataset_id": {
+						"title": "A received dataset, with this id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Dataset",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"role": {
+						"title": "The kind of dataset received for this event (report, output, metrics)",
+						"type": "string",
+						"enum": [ "output", "report", "metrics" ]
+						"default": "output"
+					},
+					"received": {
+						"title": "Reception date of the dataset (redundant, as the output dataset already has this date)",
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [ "dataset_id" ]
+			}
 		},
 		"benchmarking_event_id": {
 			"title": "The id of the benchmarking event where this test event was generated",
@@ -58,28 +68,6 @@
 				}
 			],
 			"minLength": 1
-		},
-		"result_report": {
-			"title": "Relevant information about the status changes",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"status": {
-						"title": "Status retval",
-						"type": "integer"
-					},
-					"status_date": {
-						"title": "Date of the status reception",
-						"type": "string",
-						"format": "date-time"
-					},
-					"report": {
-						"title": "Textual report for this status",
-						"type": "string"
-					}
-				}
-			}
 		},
 		"dates": {
 			"title": "Relevant dates for this test event",
@@ -94,11 +82,6 @@
 					"title": "Last modification date of the test event",
 					"type": "string",
 					"format": "date-time"
-				},
-				"reception": {
-					"title": "Last reception date of the output dataset (redundant, as the output dataset already has this date)",
-					"type": "string",
-					"format": "date-time"
 				}
 			},
 			"required": ["creation"]
@@ -109,7 +92,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","tool_id","input_dataset_id","benchmarking_event_id","dates"],
+	"required": ["_id","_schema","tool_id","received_datasets","benchmarking_event_id","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
