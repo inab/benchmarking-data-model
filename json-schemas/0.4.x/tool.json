@@ -33,23 +33,33 @@
 			"title": "Can this tool be automatically invoked?",
 			"type": "boolean"
 		},
-		"community_id": {
-			"title": "The community id(s) where this tool belongs",
+		"roles": {
+			"title": "The roles this tool plays in different communities",
 			"type": "array",
 			"minLength": 1,
 			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Community",
-						"members": [ "." ]
+				"type": "object",
+				"properties": {
+					"community_id": {
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Community",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"role": {
+						"title": "The role played in that community",
+						"type": "string",
+						"enum": [ "metrics", "reference" ]
 					}
-				],
-				"minLength": 1
+				}
 			}
 		},
 		"tool_contact_id": {
-			"title": "The tool's contact id(s)",
+			"title": "The tool's contact id(s), i.e. the creators",
 			"type": "array",
 			"minLength": 1,
 			"items": {
