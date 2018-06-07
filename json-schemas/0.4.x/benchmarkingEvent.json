@@ -130,6 +130,10 @@
 						],
 						"minLength": 1
 					},
+					"name": {
+						"title": "A symbolic name of the participant",
+						"type": "string"
+					},
 					"tool_id": {
 						"title": "The id of a participating tool",
 						"type": "string",
