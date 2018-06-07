@@ -34,30 +34,6 @@
 			"title": "Optionally, the abstract of the referenced material",
 			"type": "string"
 		},
-		"links": {
-			"title": "Optional links related to the bibliographic reference",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"uri": {
-						"title": "The URI of the link related to the bibliographic reference",
-						"type": "string",
-						"format": "uri"
-					},
-					"label": {
-						"title": "The type of URI",
-						"type": "string",
-						"enum": ["PublicationDOI","LinkedInGroup","MainSite","DataSite"]
-					}
-				},
-				"additionalProperties": false,
-				"required": [
-					"uri",
-					"label"
-				]
-			}
-		},
 		"authors": {
 			"title": "Optional list of authors of the referenced material",
 			"type": "array",
