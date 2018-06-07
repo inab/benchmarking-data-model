@@ -20,6 +20,17 @@
 			"minLength": 1,
 			"type": "string"
 		},
+		"parent_benchmarking_event_id": {
+			"title": "The parent benchmarking event, in case of subcategories in a challenge",
+			"minLength": 1,
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "BenchmarkingEvent",
+					"members": [ "." ]
+				}
+			]
+		},
 		"is_automated": {
 			"title": "Is this an automated event?",
 			"type": "boolean"
@@ -71,7 +82,84 @@
 			],
 			"minLength": 1
 		},
-		"bench_contact_id": {
+		"dataset_ids": {
+			"title": "The datasets which every participant in this event must take into account",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"dataset_id": {
+						"title": "The id of a dataset which was used to generate this new dataset",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Dataset",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"role": {
+						"title": "The role of this dataset in the benchmarking event",
+						"type": "string",
+						"enum": [ "input", "reference", "golden", "final" ]
+					}
+				},
+				"required": [ "dataset_id", "role" ]
+			}
+		},
+		"participants": {
+			"title": "The initial participants of this challenge (it shouldn't change after the challenge ends). There will be a testEvent for each participant",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_id": {
+						"title": "The id of a participating tool",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"contact_ids": {
+						"title": "The contacts of the participants with this tool",
+						"type": "array",
+						"items": {
+							"type": "string",
+							"foreign_keys": [
+								{
+									"schema_id": "Contact",
+									"members": [ "." ]
+								}
+							],
+							"minLength": 1
+						},
+						"minLength": 1
+					}
+				},
+				"required": [ "tool_id", "contact_ids" ]
+			}
+		},
+		"metrics_tool_ids": {
+			"title": "The metric(s) (defined as tools) which must be run over all the results provided by the participants",
+			"type": "array",
+			"items": {
+				"title": "The id of a tool which computes metrics for this benchmarking event",
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Tool",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"bench_contact_ids": {
 			"title": "The benchmarking event contact id(s)",
 			"type": "array",
 			"minLength": 1,
@@ -102,7 +190,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","is_automated","dates","community_id","bench_contact_id"],
+	"required": ["_id","_schema","name","is_automated","dates","community_id","bench_contact_ids","dataset_ids","participants","metrics_tool_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
