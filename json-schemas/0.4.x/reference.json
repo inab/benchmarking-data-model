@@ -27,7 +27,7 @@
 				"title": "Currently, the accepted ids are pmid, doi and pmc",
 				"type": "string",
 				"format": "uri",
-				"pattern": "^(pmid|doi|pmc|http(s)?):.+$"
+				"pattern": "^(pmid|doi|pmc|isbn|issn|http(s)?):.+$"
 			}
 		},
 		"abstract": {
