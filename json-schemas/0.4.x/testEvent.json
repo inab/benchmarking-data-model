@@ -82,6 +82,11 @@
 					"title": "Last modification date of the test event",
 					"type": "string",
 					"format": "date-time"
+				},
+				"public": {
+					"title": "The date when this test event becomes public",
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": ["creation"]

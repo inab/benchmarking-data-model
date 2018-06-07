@@ -42,7 +42,12 @@
 					"title": "Last modification date of the dataset",
 					"type": "string",
 					"format": "date-time"
-				}
+				},
+				"public": {
+					"title": "The date when this dataset becomes public",
+					"type": "string",
+					"format": "date-time"
+				},
 			},
 			"required": ["creation","modification"]
 		},
