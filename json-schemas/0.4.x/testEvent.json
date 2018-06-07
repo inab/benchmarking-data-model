@@ -69,6 +69,21 @@
 			],
 			"minLength": 1
 		},
+		"test_contact_ids": {
+			"title": "The testEvent contact id(s), i.e. the runners of the tool and depositors of the results",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
 		"dates": {
 			"title": "Relevant dates for this test event",
 			"type": "object",
@@ -97,7 +112,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","tool_id","received_datasets","benchmarking_event_id","dates"],
+	"required": ["_id","_schema","tool_id","received_datasets","benchmarking_event_id","test_contact_ids","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
