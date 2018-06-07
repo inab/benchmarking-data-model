@@ -46,7 +46,7 @@
 					"role": {
 						"title": "The kind of dataset received for this event (report, output, metrics)",
 						"type": "string",
-						"enum": [ "output", "report", "metrics" ]
+						"enum": [ "output", "report", "metrics", "settings" ]
 						"default": "output"
 					},
 					"received": {
