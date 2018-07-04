@@ -7,8 +7,7 @@
 	    "is_automated": true,
 	    "community_id":
 	      [
-		"CAMEO-3D", 
-		"Structure Prediction"
+		"CAMEO-3D" 
 	      ],
 	    "tool_contact_id": [
 	      "help-cameo3d@unibas.ch"
