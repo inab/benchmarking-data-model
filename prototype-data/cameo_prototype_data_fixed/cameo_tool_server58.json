@@ -20,7 +20,7 @@
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web",
+          "tool_access_type_id":"Web/API",
           "link":"http://www.reading.ac.uk/bioinf/IntFOLD/index.html"
         }
       ]
