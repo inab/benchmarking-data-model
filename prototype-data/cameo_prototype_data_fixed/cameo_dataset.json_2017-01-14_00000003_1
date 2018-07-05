@@ -1,5 +1,5 @@
 {
-    "_id": "2017-01-14_00000003_1",
+    "_id": "CAMEO-3D:2017-01-14_00000003_1",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Dataset",
     "name": "Crystal structure of phosphoribulokinase from Methanospirillum hungatei",
     "version":"0",
@@ -12,15 +12,5 @@
     "dataset_contact_id": 
       [
         "help-cameo3d@unibas.ch"
-      ],
-    "metrics": 
-      [
-        {
-          "metrics_id":"lDDT",
-          "result":
-            {
-              "server11":"45.61","server20":"36.82"
-            }
-        }
       ]
 }

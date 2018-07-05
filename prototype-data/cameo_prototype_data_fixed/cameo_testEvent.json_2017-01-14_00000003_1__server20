@@ -1,9 +1,10 @@
 {
-    "_id": "2017-01-14_00000003_1_server20",
+    "_id": "CAMEO-3D:2017-01-14_00000003_1__server20",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
-    "tool_id": "server20",
-    "input_dataset_id": "2017-01-14_00000003_1",
-    "benchmarking_event_id": "2017-01-14T00:00:00Z",
+    "tool_id": "CAMEO-3D:server20",
+    "input_dataset_id": "CAMEO-3D:2017-01-14_00000003_1",
+    "output_dataset_id": "CAMEO-3D:2017-01-14_00000003_1__server20",
+    "benchmarking_event_id": "CAMEO-3D:2017-01-14T00:00:00Z",
     "result_report": [
       {
           "status": 0,

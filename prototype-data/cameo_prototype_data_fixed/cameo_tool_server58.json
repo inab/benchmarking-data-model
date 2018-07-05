@@ -1,5 +1,5 @@
 {
-    "_id": "server58",
+    "_id": "CAMEO-3D:server58",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
     "bioTools_id": "",
     "name": "IntFOLD4-TS",
@@ -19,7 +19,7 @@
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web/API",
+          "tool_access_type_id":"REST/API",
           "link":"http://www.reading.ac.uk/bioinf/IntFOLD/index.html"
         }
       ]

@@ -1,5 +1,5 @@
 {
-    "_id": "server70",
+    "_id": "CAMEO-3D:server70",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
     "bioTools_id": "",
     "name": "M4T-SMOTIF-TF",
@@ -19,7 +19,7 @@
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web/API",
+          "tool_access_type_id":"REST/API",
           "link":"http://manaslu.fiserlab.org/M4T/"
         }
       ]
