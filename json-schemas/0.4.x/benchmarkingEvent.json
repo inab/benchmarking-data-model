@@ -114,17 +114,17 @@
 			}
 		},
 		"participants": {
-			"title": "The initial participants of this challenge (it shouldn't change after the challenge ends). There will be a testEvent for each participant",
+			"title": "The initial participants of this challenge (it shouldn't change after the challenge ends). There will be a test action for each participant",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
-					"test_event_id": {
-						"title": "The unique identifier of the test event for this participant",
+					"test_action_id": {
+						"title": "The unique identifier of the test action for this participant",
 						"type": "string",
 						"foreign_keys": [
 							{
-								"schema_id": "TestEvent",
+								"schema_id": "TestAction",
 								"members": [ "." ]
 							}
 						],

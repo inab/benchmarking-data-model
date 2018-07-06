@@ -1,11 +1,11 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestEvent",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
-	"title": "Test Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"title": "Test Action concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the test event.",
+			"title": "The unique id of the test action.",
 			"type": "string",
 			"minLength": 1
 		},
@@ -13,7 +13,7 @@
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestEvent" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction" ]
 		},
 		"tool_id": {
 			"title": "The tool id which takes the input and reference datasets declared in the benchmarking event",
@@ -26,8 +26,17 @@
 			],
 			"minLength": 1
 		},
+		"action_type": {
+			"title": "\
+Test Event = Input + Tool -> Participant Data\n\
+Metrics event = Participant Data + Metrics -> Assessment Data\n\
+Statistics event = Assessment Data + Metrics -> Challenge Data\n\
+",
+			"type": "string",
+			"enum": [ "MetricsEvent", "StatisticsEvent", "TestEvent" ]
+		},
 		"received_datasets": {
-			"title": "The output, report and metrics datasets received for this testEvent",
+			"title": "The output, report and metrics datasets received for this test action",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -44,7 +53,7 @@
 						"minLength": 1
 					},
 					"role": {
-						"title": "The kind of dataset received for this event (report, output, metrics)",
+						"title": "The kind of dataset received for this action (report, output, metrics)",
 						"type": "string",
 						"enum": [ "participant", "report", "assessment", "settings" ]
 						"default": "participant"
@@ -59,7 +68,7 @@
 			}
 		},
 		"benchmarking_event_id": {
-			"title": "The id of the benchmarking event where this test event was generated",
+			"title": "The id of the benchmarking event where this test action was generated",
 			"type": "string",
 			"foreign_keys": [
 				{
@@ -70,7 +79,7 @@
 			"minLength": 1
 		},
 		"test_contact_ids": {
-			"title": "The testEvent contact id(s), i.e. the runners of the tool and depositors of the results",
+			"title": "The test action contact id(s), i.e. the runners of the tool and depositors of the results",
 			"type": "array",
 			"minLength": 1,
 			"items": {
@@ -85,21 +94,21 @@
 			}
 		},
 		"dates": {
-			"title": "Relevant dates for this test event",
+			"title": "Relevant dates for this test action",
 			"type": "object",
 			"properties": {
 				"creation": {
-					"title": "Creation date of the test event",
+					"title": "Creation date of the test action",
 					"type": "string",
 					"format": "date-time"
 				},
 				"modification": {
-					"title": "Last modification date of the test event",
+					"title": "Last modification date of the test action",
 					"type": "string",
 					"format": "date-time"
 				},
 				"public": {
-					"title": "The date when this test event becomes public",
+					"title": "The date when this test action becomes public",
 					"type": "string",
 					"format": "date-time"
 				}
