@@ -111,15 +111,10 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"tool_access_type_id": {
-						"title": "The tool access type id",
+					"tool_access_type": {
+						"title": "The tool access type",
 						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "ToolAccessType",
-								"members": [ "." ]
-							}
-						],
+						"enum": [ "command-line", "REST/OpenAPI", "SOAP/WSDL", "Web", "other" ],
 						"minLength": 1
 					},
 					"link": {
