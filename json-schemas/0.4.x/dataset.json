@@ -1,4 +1,4 @@
-											{
+{
 	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
 	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
