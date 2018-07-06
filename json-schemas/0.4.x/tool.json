@@ -73,16 +73,21 @@
 				"minLength": 1
 			}
 		},
-		"status_id": {
-			"title": "_id of the current tool status",
+		"status": {
+			"title": "Current tool status",
 			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "ToolStatus",
-					"members": [ "." ]
-				}
-			],
+			"enum": ["unknown","online","offline","unmaintained"],
 			"minLength": 1
+		},
+		"activation": {
+			"title": "Activation by the benchmarking community",
+			"type": "string",
+			"format": "date-time"
+		},
+		"deactivation": {
+			"title": "Deactivation by the benchmarking community",
+			"type": "string",
+			"format": "date-time"
 		},
 		"references": {
 			"title": "The tool's reference id(s)",
