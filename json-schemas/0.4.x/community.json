@@ -89,7 +89,7 @@
 			"type": "array",
 			"minLength": 1,
 			"items": {
-				"type": "string"
+				"type": "string",
 				"foreign_keys": [
 					{
 						"schema_id": "Contact",

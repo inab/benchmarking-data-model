@@ -27,11 +27,7 @@
 			"minLength": 1
 		},
 		"action_type": {
-			"title": "\
-Test Event = Input + Tool -> Participant Data\n\
-Metrics event = Participant Data + Metrics -> Assessment Data\n\
-Statistics event = Assessment Data + Metrics -> Challenge Data\n\
-",
+			"title": "Test Event = Input + Tool -> Participant Data\nMetrics event = Participant Data + Metrics -> Assessment Data\nStatistics event = Assessment Data + Metrics -> Challenge Data\n",
 			"type": "string",
 			"enum": [ "MetricsEvent", "StatisticsEvent", "TestEvent" ]
 		},
@@ -55,7 +51,7 @@ Statistics event = Assessment Data + Metrics -> Challenge Data\n\
 					"role": {
 						"title": "The kind of dataset received for this action (report, output, metrics)",
 						"type": "string",
-						"enum": [ "participant", "report", "assessment", "settings" ]
+						"enum": [ "participant", "report", "assessment", "settings" ],
 						"default": "participant"
 					},
 					"received": {
