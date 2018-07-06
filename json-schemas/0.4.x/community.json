@@ -83,6 +83,22 @@
 				],
 				"minLength": 1
 			}
+		},
+		"community_namespaces": {
+			"title": "_id of the isSolv (aka CURIE) prefixes defined by the community",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string"
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+				
 		}
 	},
 	"additionalProperties": true,
