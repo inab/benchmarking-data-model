@@ -107,7 +107,7 @@
 					"role": {
 						"title": "The role of this dataset in the benchmarking event",
 						"type": "string",
-						"enum": [ "input", "reference", "golden", "final" ]
+						"enum": [ "input", "reference", "metrics", "challenge" ]
 					}
 				},
 				"required": [ "dataset_id", "role" ]

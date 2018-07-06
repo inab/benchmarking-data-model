@@ -46,8 +46,8 @@
 					"role": {
 						"title": "The kind of dataset received for this event (report, output, metrics)",
 						"type": "string",
-						"enum": [ "output", "report", "metrics", "settings" ]
-						"default": "output"
+						"enum": [ "participant", "report", "assessment", "settings" ]
+						"default": "participant"
 					},
 					"received": {
 						"title": "Reception date of the dataset (redundant, as the output dataset already has this date)",
