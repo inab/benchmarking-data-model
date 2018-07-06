@@ -58,7 +58,7 @@
 			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
 		},
 		"datalink": {
-			"title": "The link to the dataset itself",
+			"title": "The link to the dataset itself, or to a Metalink",
 			"type": "string",
 			"format": "uri"
 		},
