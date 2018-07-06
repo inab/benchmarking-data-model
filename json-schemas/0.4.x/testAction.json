@@ -16,7 +16,7 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction" ]
 		},
 		"tool_id": {
-			"title": "The tool id which takes the input and reference datasets declared in the benchmarking event",
+			"title": "The tool id which takes the input and reference datasets declared in the challenge",
 			"type": "string",
 			"foreign_keys": [
 				{
@@ -63,12 +63,12 @@
 				"required": [ "dataset_id" ]
 			}
 		},
-		"benchmarking_event_id": {
-			"title": "The id of the benchmarking event where this test action was generated",
+		"challenge_id": {
+			"title": "The id of the challenge where this test action was generated",
 			"type": "string",
 			"foreign_keys": [
 				{
-					"schema_id": "BenchmarkingEvent",
+					"schema_id": "Challenge",
 					"members": [ "." ]
 				}
 			],
@@ -117,7 +117,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","tool_id","received_datasets","benchmarking_event_id","test_contact_ids","dates"],
+	"required": ["_id","_schema","tool_id","received_datasets","challenge_id","test_contact_ids","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
