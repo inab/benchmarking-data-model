@@ -58,9 +58,18 @@
 			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
 		},
 		"datalink": {
-			"title": "The link to the dataset itself, or to a Metalink",
+			"title": "Download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
 			"type": "string",
 			"format": "uri"
+		},
+		"datalink_attrs": {
+			"title": "Attributes describing the datalink: whether it is a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"enum": [ "curie","compressed", "archive", "metalink", "sums" ]
+			}
 		},
 		"dataset_contact_ids": {
 			"title": "The contact id(s) of the creator(s) of this dataset",
@@ -138,7 +147,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","version","type","dates","dataset_contact_ids"],
+	"required": ["_id","_schema","name","version","type","dates","datalink","datalink_attrs","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
