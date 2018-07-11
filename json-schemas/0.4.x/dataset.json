@@ -89,7 +89,7 @@
 			"required": [ "uri", "attrs" ]
 		},
 		"dataset_contact_ids": {
-			"title": "The contact id(s) of the creator(s) of this dataset",
+			"title": "The contact id(s) of the depositor(s)/creator(s) of this dataset",
 			"type": "array",
 			"minLength": 1,
 			"items": {
