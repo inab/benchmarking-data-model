@@ -25,20 +25,10 @@
 			"minLength": 1,
 			"type": "string"
 		},
-		"status_id": {
+		"status": {
 			"title": "_id(s) of the current community status(es)",
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "CommunityStatus",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
+			"type": "string",
+			"enum": [ "abandoned","active","unknown" ]
 		},
 		"description": {
 			"title": "Long community name or description",
