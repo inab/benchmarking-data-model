@@ -58,18 +58,35 @@
 			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
 		},
 		"datalink": {
-			"title": "Download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
-			"type": "string",
-			"format": "uri"
-		},
-		"datalink_attrs": {
-			"title": "Attributes describing the datalink: whether it is a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"type": "string",
-				"enum": [ "curie","compressed", "archive", "metalink", "sums" ]
-			}
+			"title": "The link to reach the dataset",
+			"type": "object",
+			"properties": {
+				"uri": {
+					"title": "Download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
+					"type": "string",
+					"format": "uri"
+				},
+				"attrs": {
+					"title": "Attributes describing the datalink: whether it is a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
+					"type": "array",
+					"minLength": 1,
+					"items": {
+						"type": "string",
+						"enum": [ "curie","compressed", "archive", "metalink", "sums" ]
+					}
+				},
+				"validation_date": {
+					"title": "Last validation date of the datalink",
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
+					"type": "string",
+					"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+				}
+			},
+			"required": [ "uri", "attrs" ]
 		},
 		"dataset_contact_ids": {
 			"title": "The contact id(s) of the creator(s) of this dataset",
