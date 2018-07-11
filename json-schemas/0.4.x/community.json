@@ -92,7 +92,7 @@
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "Contact",
+						"schema_id": "idSolv",
 						"members": [ "." ]
 					}
 				],
