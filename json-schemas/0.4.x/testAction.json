@@ -29,7 +29,7 @@
 		"action_type": {
 			"title": "Test Event = Input + Tool -> Participant Data\nMetrics event = Participant Data + Metrics -> Assessment Data\nStatistics event = Assessment Data + Metrics -> Challenge Data\n",
 			"type": "string",
-			"enum": [ "MetricsEvent", "StatisticsEvent", "TestEvent" ]
+			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "TestEvent" ]
 		},
 		"received_datasets": {
 			"title": "The output, report and metrics datasets received for this test action",
@@ -49,10 +49,17 @@
 						"minLength": 1
 					},
 					"role": {
-						"title": "The kind of dataset received for this action (report, output, metrics)",
+						"title": "The kind of dataset received for this action (report, metrics_reference, etc...)",
 						"type": "string",
-						"enum": [ "participant", "report", "assessment", "settings" ],
-						"default": "participant"
+						"enum": [
+							"input",
+							"participant",
+							"public_reference",
+							"metrics_reference",
+							"challenge",
+							"assessment",
+							"settings"
+						]
 					},
 					"received": {
 						"title": "Reception date of the dataset (redundant, as the output dataset already has this date)",
