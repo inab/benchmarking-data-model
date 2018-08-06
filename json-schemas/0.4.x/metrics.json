@@ -43,6 +43,42 @@
 			"title": "Formal definition of the metrics",
 			"type": "string"
 		},
+		"implementations": {
+			"title": "The different implementations of this metrics",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_id": {
+						"title": "The tool id of an implementation of this metric",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"community_ids": {
+						"title": "The communities where this implementation is used",
+						"type": "array",
+						"minLength": 1,
+						"items": {
+							"type": "string",
+							"foreign_keys": [
+								{
+									"schema_id": "Community",
+									"members": [ "." ]
+								}
+							],
+							"minLength": 1
+						}
+					}
+				},
+				"required": [ "tool_id" ]
+			}
+		},
 		"execution_type": {
 			"title": "Type of execution",
 			"type": "string"

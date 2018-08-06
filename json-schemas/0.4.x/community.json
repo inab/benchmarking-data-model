@@ -25,20 +25,10 @@
 			"minLength": 1,
 			"type": "string"
 		},
-		"status_id": {
+		"status": {
 			"title": "_id(s) of the current community status(es)",
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "CommunityStatus",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
+			"type": "string",
+			"enum": [ "abandoned","active","unknown" ]
 		},
 		"description": {
 			"title": "Long community name or description",
@@ -92,13 +82,38 @@
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "Contact",
+						"schema_id": "idSolv",
 						"members": [ "." ]
 					}
 				],
 				"minLength": 1
 			}
 				
+		},
+		"reference_tools": {
+			"title": "The tools which are considered as reference/baseline on this community",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_id": {
+						"title": "The tool id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"description": {
+						"title": "An optional, brief description about why this tool is a baseline or reference in this community",
+						"type": "string"
+					}
+				},
+				"required": [ "tool_id" ]
+			}
 		}
 	},
 	"additionalProperties": true,
