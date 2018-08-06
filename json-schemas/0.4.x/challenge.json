@@ -102,8 +102,8 @@
 				"required": [ "dataset_id", "role" ]
 			}
 		},
-		"participants": {
-			"title": "The initial participants of this challenge (it shouldn't change after the challenge ends). There will be a test action for each participant",
+		"test_actions": {
+			"title": "The initial test actions of this challenge (it shouldn't change after the challenge ends). There will be a test action for each participant",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -123,35 +123,9 @@
 						"title": "A symbolic name of the participant",
 						"type": "string"
 					},
-					"tool_id": {
-						"title": "The id of a participating tool",
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Tool",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
-					},
 					"metrics_category_id": {
 						"title": "Metrics category id where the participant is going to be evaluated",
 						"type": "string"
-					},
-					"contact_ids": {
-						"title": "The contacts of the participants with this tool",
-						"type": "array",
-						"items": {
-							"type": "string",
-							"foreign_keys": [
-								{
-									"schema_id": "Contact",
-									"members": [ "." ]
-								}
-							],
-							"minLength": 1
-						},
-						"minLength": 1
 					}
 				},
 				"required": [ "tool_id", "contact_ids", "metrics_category_id" ]
