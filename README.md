@@ -11,4 +11,4 @@ This repository contains all the developments around the benchmarking data model
 
 * Folder [prototype-data](prototype-data) contains several JSON data sets, which validate against the benchmarking JSON schemas.
 
-* Folder [sampleValidation](sampleValidation) contains several reference programs, which validate the JSON data sets against the benchmarking JSON schemas.
+* Folder [toolsForValidation](toolsForValidation) contains several reference programs, which validate the JSON data sets against the benchmarking JSON schemas.

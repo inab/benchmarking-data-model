@@ -19,7 +19,7 @@ So, the proposed validation programs use libraries compliant with that specifica
 	  cpanm --installdeps .
 	  ```
 	  
-	- The program can be run using next command line:
+	- The program can be run using next command line, to validate using version 0.4 of the schemas:
 	  ```bash
-	  perl jsonValidate.pl ../../json-schemas ../../prototype-data/cameo_prototype_data_fixed
+	  perl jsonValidate.pl ../../json-schemas/.0.4.x ../../prototype-data/cameo_prototype_data_fixed
 	  ```
