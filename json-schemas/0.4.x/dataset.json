@@ -15,6 +15,16 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset" ]
 		},
+		"community_id": {
+			"title": "The community where this dataset was generated or used",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			]
+		},
 		"name": {
 			"title": "Short dataset name",
 			"minLength": 1,
@@ -164,7 +174,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","version","type","dates","datalink","datalink_attrs","dataset_contact_ids"],
+	"required": ["_id","_schema","community_id","name","version","type","dates","datalink","datalink_attrs","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
