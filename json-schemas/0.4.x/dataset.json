@@ -117,6 +117,17 @@
 			"title": "The causal, direct dependencies of this dataset on a tool and other datasets, if available",
 			"type": "object",
 			"properties": {
+				"metrics_id": {
+					"title": "The id of the metrics tied to the tool id",
+					"type": "string",
+					"foreign_keys": [
+						{
+							"schema_id": "Metrics",
+							"members": [ "." ]
+						}
+					],
+					"minLength": 1
+				},
 				"tool_id": {
 					"title": "The id of the tool which generated this dataset",
 					"type": "string",
