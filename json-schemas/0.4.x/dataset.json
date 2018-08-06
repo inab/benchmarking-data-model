@@ -25,6 +25,11 @@
 				}
 			]
 		},
+		"visibility": {
+			"title": "The visibility of this dataset, which must be acknowledged by the APIs",
+			"type": "string",
+			"enum": [ "public", "community", "challenge", "participant" ]
+		},
 		"name": {
 			"title": "Short dataset name",
 			"minLength": 1,
