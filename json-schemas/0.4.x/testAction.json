@@ -96,6 +96,11 @@
 				"minLength": 1
 			}
 		},
+		"status": {
+			"title": "The lifecicle of the testAction will be managed by the API, validating it is progressing forward instead of backward",
+			"type": "string",
+			"enum": [ "scheduled", "sent", "incomplete", "complete", "failed" ]
+		},
 		"dates": {
 			"title": "Relevant dates for this test action",
 			"type": "object",
