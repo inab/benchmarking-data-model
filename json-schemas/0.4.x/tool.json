@@ -15,8 +15,8 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool" ]
 		},
-		"bioTools_id": {
-			"title": "The unique id of the tool in EXCELERATE WP1 bio.tools registry",
+		"registry_tool_id": {
+			"title": "The unique id of the tool (in bio.tools, bioconda, biocontainers, OpenEBench, etc...), in CURIE format",
 			"type": "string",
 			"format": "uri"
 		},
