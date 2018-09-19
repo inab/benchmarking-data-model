@@ -1,0 +1,35 @@
+{
+    "_id": "TCGA:2018-04-05_BRCA_P_MutSig2CV",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "access": "unknown",
+    "community_id": "TCGA",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://portal.gdc.cancer.gov/",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_BRCA_I"
+            }
+        ],
+        "tool_id": "TCGA:MutSig2CV"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool MutSig2CV in Breast Invasive Carcinoma",
+    "name": "Cancer Driver Genes in Breast Invasive Carcinoma",
+    "type": "participant",
+    "version": "unknown"
+}

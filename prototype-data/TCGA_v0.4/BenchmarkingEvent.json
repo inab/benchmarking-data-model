@@ -1,0 +1,22 @@
+{
+   "_id":"TCGA:2018-04-05",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/BenchmarkingEvent",
+   "name":"PanSoftware applied to PanCancer data",
+   "is_automated": false,
+   "dates":{
+      "creation":"2018-04-05T00:00:00Z",
+      "modification":"2018-04-05T14:00:00Z",
+      "benchmark_start":"2018-04-05T05:00:00Z",
+      "benchmark_stop":"2018-04-05T02:00:00Z"
+   },
+   "url":"https://cancergenome.nih.gov/newsevents/newsannouncements/pancancer_atlas",
+   "community_id":"TCGA",
+   "bench_contact_ids":[
+      "Matthew.Bailey",
+      "Eduard.Porta",
+      "Collin.Tokheim"
+   ],
+   "references":[
+      "10.1016/j.cell.2018.02.060"
+   ]
+}

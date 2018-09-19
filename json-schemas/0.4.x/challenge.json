@@ -96,7 +96,7 @@
 					"role": {
 						"title": "The role of this dataset in the benchmarking event",
 						"type": "string",
-						"enum": [ "input", "reference", "metrics", "challenge" ]
+						"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
 					}
 				},
 				"required": [ "dataset_id", "role" ]
@@ -162,7 +162,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","dataset_ids","participants","metrics_categories"],
+	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","dataset_ids","participants"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

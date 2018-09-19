@@ -20,6 +20,10 @@
 			"minLength": 1,
 			"type": "string"
 		},
+		"is_automated": {
+			"title": "Is this an automated event?",
+			"type": "boolean"
+		},
 		"dates": {
 			"title": "Relevant dates for this benchmarking event",
 			"type": "object",

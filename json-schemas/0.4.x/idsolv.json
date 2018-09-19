@@ -12,7 +12,7 @@
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/idSolv" ]
 		},
 		"description": {
 			"title": "Long description of the namespace",

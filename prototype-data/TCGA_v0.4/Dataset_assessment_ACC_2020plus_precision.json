@@ -1,0 +1,38 @@
+{
+    "_id": "TCGA:2018-04-05_ACC_A_precision_2020plus",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "TCGA",
+    "datalink": {
+        "attrs": [
+            "inline"
+        ],
+        "status": "ok",
+        "uri": "data:application/json;charset=us-ascii;base64,MC4zODQ2MTUzODQ2MTUzODQ2NA==",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:PPV",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_ACC_I"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_ACC_M"
+            }
+        ],
+        "tool_id": "TCGA:2020plus"
+    },
+    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to 2020plus predictions in Adrenocortical Carcinoma",
+    "name": "Assesment of Metric precision-PPV in 2020plus",
+    "type": "assessment",
+    "version": "1"
+}
