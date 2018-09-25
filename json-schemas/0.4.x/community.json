@@ -168,7 +168,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","acronym","status_id","community_contacts"],
+	"required": ["_id","_schema","name","acronym","status","community_contacts"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

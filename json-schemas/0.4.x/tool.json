@@ -130,7 +130,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status_id","tool_access"],
+	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
