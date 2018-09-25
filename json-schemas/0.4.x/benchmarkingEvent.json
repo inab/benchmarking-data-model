@@ -103,7 +103,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","is_automated","dates","community_id","bench_contact_ids"],
+	"required": ["_id","_schema","name","dates","community_id","bench_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
