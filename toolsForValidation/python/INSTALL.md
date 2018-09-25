@@ -12,7 +12,7 @@ In order to install the dependencies you need `virtualenv` or `venv`, and `pip`.
 - *Python2* The creation and activation of a virtual environment and installation of the dependencies in that environment is done running:
 
   ```bash
-  virtualenv .py2env
+  virtualenv -p python2 .py2env
   source .py2env/bin/activate
   ```
   
