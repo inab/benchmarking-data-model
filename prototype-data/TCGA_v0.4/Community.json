@@ -2,7 +2,7 @@
    "_id":"TCGA",
    "name":"The Cancer Genome Atlas",
    "acronym":"TCGA",
-   "status_id":"active",
+   "status":"active",
    "description":"TCGA is a comprehensive and coordinated effort to accelerate our understanding of the molecular basis of cancer through the application of genome analysis technologies, including large-scale genome sequencing. ",
    "links":[
       {
