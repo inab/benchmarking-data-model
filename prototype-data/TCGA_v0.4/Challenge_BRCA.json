@@ -1,0 +1,195 @@
+{
+    "_id": "TCGA:2018-04-05_BRCA",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Challenge",
+    "benchmarking_event_id": "TCGA:2018-04-05",
+    "challenge_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "community_id": "TCGA",
+    "dataset_ids": [
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_I",
+            "role": "input"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_M",
+            "role": "metrics_reference"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_MutSig2CV",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_MutSig2CV",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_MutSig2CV",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_MutSig2CV_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_compositeDriver",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_compositeDriver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_compositeDriver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_compositeDriver_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_2020plus",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_2020plus",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_2020plus",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_2020plus_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_OncodriveFM",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_OncodriveFM",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_OncodriveFM",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_OncodriveFM_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_ActiveDriver",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_ActiveDriver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_ActiveDriver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_ActiveDriver_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_e-Driver",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_e-Driver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_e-Driver",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_e-Driver_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_OncodriveCLUST",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_OncodriveCLUST",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_OncodriveCLUST",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_OncodriveCLUST_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_P_MuSiC",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_TPR_MuSiC",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_A_precision_MuSiC",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_BRCA_MuSiC_Summary",
+            "role": "challenge"
+        }
+    ],
+    "dates": {
+        "benchmark_start": "2018-04-05T05:00:00Z",
+        "benchmark_stop": "2018-04-05T02:00:00Z",
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "is_automated": false,
+    "metrics": [
+        {
+            "metrics_id": "TCGA:TPR"
+        },
+        {
+            "metrics_id": "TCGA:PPV"
+        }
+    ],
+    "name": "Cancer Driver Genes Prediction Benchmark in Breast Invasive Carcinoma",
+    "participants": [
+        {
+            "tool_id": "TCGA:MutSig2CV"
+        },
+        {
+            "tool_id": "TCGA:compositeDriver"
+        },
+        {
+            "tool_id": "TCGA:2020plus"
+        },
+        {
+            "tool_id": "TCGA:OncodriveFM"
+        },
+        {
+            "tool_id": "TCGA:ActiveDriver"
+        },
+        {
+            "tool_id": "TCGA:e-Driver"
+        },
+        {
+            "tool_id": "TCGA:OncodriveCLUST"
+        },
+        {
+            "tool_id": "TCGA:MuSiC"
+        }
+    ],
+    "references": [
+        "10.1016/j.cell.2018.02.060"
+    ],
+    "url": "https://cancergenome.nih.gov/"
+}

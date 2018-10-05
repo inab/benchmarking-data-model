@@ -1,0 +1,7 @@
+{
+   "_id":"10.1016/j.cell.2018.02.060",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Reference",
+   "title":"Comprehensive Characterization of Cancer Driver Genes and Mutations",
+   "bibliographic_ids":["https://www.ncbi.nlm.nih.gov/pubmed/29625053", "http://dx.doi.org/10.1016/j.cell.2018.02.060"],
+   "abstract": "Identifying molecular cancer drivers is critical for precision oncology. Multiple advanced algorithms to identify drivers now exist, but systematic attempts to combine and optimize them on large datasets are few. We report a PanCancer and PanSoftware analysis spanning 9,423 tumor exomes (comprising all 33 of The Cancer Genome Atlas projects) and using 26 computational tools to catalog driver genes and mutations. We identify 299 driver genes with implications regarding their anatomical sites and cancer/cell types. Sequence- and structure-based analyses identified >3,400 putative missense driver mutations supported by multiple lines of evidence. Experimental validation confirmed 60%–85% of predicted mutations as likely drivers. We found that >300 MSI tumors are associated with high PD-1/PD-L1, and 57% of tumors analyzed harbor putative clinically actionable events. Our study represents the most comprehensive discovery of cancer genes and mutations to date and will serve as a blueprint for future biological and clinical endeavors."
+}

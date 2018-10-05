@@ -1,0 +1,26 @@
+{
+    "_id": "TCGA:2018-04-05_ESCA_I",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "TCGA",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://portal.gdc.cancer.gov/",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "description": "Input dataset for ESCA cancer benchmark",
+    "name": "Sequencing data from Esophageal Carcinoma (ESCA) samples",
+    "type": "input",
+    "version": "v12.0"
+}

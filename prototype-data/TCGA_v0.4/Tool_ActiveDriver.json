@@ -1,0 +1,23 @@
+{
+    "_id": "TCGA:ActiveDriver",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool",
+    "activation": "2018-04-05T00:00:00.000+0000",
+    "community_id": [
+        "TCGA"
+    ],
+    "description": "Cancer Driver Genes prediction",
+    "is_automated": true,
+    "name": "ActiveDriver",
+    "references": [
+        "10.1016/j.cell.2018.02.060"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "tool_access_type_id": "other"
+        }
+    ],
+    "tool_contact_id": [
+        "Eduard.Porta"
+    ]
+}
