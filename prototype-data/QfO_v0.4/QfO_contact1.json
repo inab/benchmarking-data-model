@@ -1,0 +1,11 @@
+{
+	"_id": "unknown",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+	"contact_type": "other",
+	"givenName": "Christophe",
+	"surname": "Dessimoz",
+	"email": [
+		"Christophe.Dessimoz@unil.ch"
+	],
+	"notes": "The contact for this tool has not been provided. The community contact will be used instead."
+}

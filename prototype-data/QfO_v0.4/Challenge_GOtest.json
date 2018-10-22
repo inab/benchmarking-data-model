@@ -1,0 +1,335 @@
+{
+    "_id": "QfO:2015-01-01_GOtest",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Challenge",
+    "benchmarking_event_id": "QfO:2015-01-01",
+    "challenge_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "community_id": "QfO",
+    "dataset_ids": [
+        {
+            "dataset_id": "QfO:2015-01-01_I",
+            "role": "input"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_M",
+            "role": "metrics_reference"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_EggNOG",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_EggNOG",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_EggNOG",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_EggNOG_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_PANTHER-all",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_PANTHER-all",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_PANTHER-all",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_PANTHER-all_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_RBH-BBH",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_RBH-BBH",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_RBH-BBH",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_RBH-BBH_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_RSD",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_RSD",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_RSD",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_RSD_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_MetaPhOrs",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_MetaPhOrs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_MetaPhOrs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_MetaPhOrs_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_Orthoinspector",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_Orthoinspector",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_Orthoinspector",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_Orthoinspector_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_PhylomeDB",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_PhylomeDB",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_PhylomeDB",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_PhylomeDB_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_EnsemblCompara",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_EnsemblCompara",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_EnsemblCompara",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_EnsemblCompara_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_Hieranoid2",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_Hieranoid2",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_Hieranoid2",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_Hieranoid2_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_InParanoid",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_InParanoid",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_InParanoid",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_InParanoid_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_InParanoidCore",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_InParanoidCore",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_InParanoidCore",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_InParanoidCore_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_OMA-GETHOGs",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_OMA-GETHOGs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_OMA-GETHOGs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_OMA-GETHOGs_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_OMA-Groups",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_OMA-Groups",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_OMA-Groups",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_OMA-Groups_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_PANTHER-LDO",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_PANTHER-LDO",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_PANTHER-LDO",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_PANTHER-LDO_Summary",
+            "role": "challenge"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_OMA-Pairs",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_recall_OMA-Pairs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_A_precision_OMA-Pairs",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_GOtest_OMA-Pairs_Summary",
+            "role": "challenge"
+        }
+    ],
+    "dates": {
+        "benchmark_start": "2015-01-01T00:00:01Z",
+        "benchmark_stop": "2015-04-14T23:59:59Z",
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "is_automated": true,
+    "metrics": [
+        {
+            "metrics_id": "QfO:GOConservationTest-recall"
+        },
+        {
+            "metrics_id": "QfO:GOConservationTest-precision"
+        },
+        {
+            "metrics_id": "QfO:recall_error"
+        },
+        {
+            "metrics_id": "QfO:precision_error"
+        }
+    ],
+    "name": "Gene Ontology Conservation Test benchmark",
+    "participants": [
+        {
+            "tool_id": "QfO:EggNOG"
+        },
+        {
+            "tool_id": "QfO:PANTHER-all"
+        },
+        {
+            "tool_id": "QfO:RBH-BBH"
+        },
+        {
+            "tool_id": "QfO:RSD"
+        },
+        {
+            "tool_id": "QfO:MetaPhOrs"
+        },
+        {
+            "tool_id": "QfO:Orthoinspector"
+        },
+        {
+            "tool_id": "QfO:PhylomeDB"
+        },
+        {
+            "tool_id": "QfO:EnsemblCompara"
+        },
+        {
+            "tool_id": "QfO:Hieranoid2"
+        },
+        {
+            "tool_id": "QfO:InParanoid"
+        },
+        {
+            "tool_id": "QfO:InParanoidCore"
+        },
+        {
+            "tool_id": "QfO:OMA-GETHOGs"
+        },
+        {
+            "tool_id": "QfO:OMA-Groups"
+        },
+        {
+            "tool_id": "QfO:PANTHER-LDO"
+        },
+        {
+            "tool_id": "QfO:OMA-Pairs"
+        }
+    ],
+    "references": [
+        "10.1038/nmeth.3830"
+    ],
+    "url": "http://orthology.benchmarkservice.org/cgi-bin/gateway.pl?f=CheckResults&p1=72d29d4aebb02e0d396fcad2"
+}

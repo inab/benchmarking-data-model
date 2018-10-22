@@ -1,0 +1,27 @@
+{
+    "_id": "QfO:2015-01-01_STD_Fungi_testEvent_PANTHER-all",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction",
+    "action_type": "TestEvent",
+    "challenge_id": "QfO:2015-01-01_STD_Fungi",
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "reception": "2015-01-01T00:00:01Z"
+    },
+    "received_datasets": [
+        {
+            "dataset_id": "QfO:2015-01-01_I",
+            "role": "input"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_PANTHER-all",
+            "role": "participant"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:PANTHER-all"
+}

@@ -1,0 +1,32 @@
+{
+    "_id": "QfO:PANTHER-all",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool",
+    "activation": "2015-01-01T00:00:01Z",
+    "community_id": [
+        "QfO"
+    ],
+    "description": "The PANTHER (Protein ANalysis THrough Evolutionary Relationships) Classification System was designed to classify proteins (and their genes) in order to facilitate high-throughput analysis. PANTHER ALL will return all orthologs if more than one",
+    "is_automated": true,
+    "name": "PANTHER 8.0 (all)",
+    "references": [
+		"10.1093/nar/gkw1138",
+		"10.1093/nar/gkv1194",
+		"10.1093/nar/gkp1019",
+		"10.1093/nar/gks1118",
+		"10.1038/nprot.2013.092",
+		"10.1093/nar/gkl869",
+		"https://www.ncbi.nlm.nih.gov/pubmed/12520017",
+		"10.1093/nar/gki078",
+		"10.1101/gr.772403"
+    ],
+    "status": "unknown",
+    "tool_access": [
+		{
+			"tool_access_type_id": "REST/OpenAPI",
+			"link": "http://pantherdb.org/help/PANTHERhelp.jsp#V."
+		}
+	],
+    "tool_contact_id": [
+        "Paul.Thomas"
+    ]
+}

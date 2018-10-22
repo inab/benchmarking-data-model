@@ -1,0 +1,27 @@
+{
+    "_id": "QfO:2015-01-01_I",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/previous_releases/qfo_release-2011_04/",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Reference proteome input dataset for orthologs prediction",
+    "name": "Quest for Orthologs Reference Proteome",
+    "type": "input",
+    "version": "2011"
+}

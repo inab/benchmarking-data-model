@@ -1,0 +1,39 @@
+{
+    "_id": "QfO:2015-01-01_ECtest_A_recall_MetaPhOrs",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "inline"
+        ],
+        "status": "ok",
+        "uri": "data:application/json;charset=us-ascii;base64,OTg4Mjk=",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:ECConservationTest-recall",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_ECtest_M"
+            }
+        ],
+        "tool_id": "QfO:MetaPhOrs"
+    },
+    "description": "Assessment dataset for applying Metric ECConservationTest-recall to MetaPhOrs ortholog predictions",
+    "name": "Assesment of Metric ECConservationTest-recall in MetaPhOrs",
+    "type": "assessment",
+    "version": "1"
+}
