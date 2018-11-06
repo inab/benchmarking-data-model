@@ -1,5 +1,5 @@
 {
-    "_id": "server4",
+    "_id": "CAMEO-3D:server4",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Tool",
     "bioTools_id": "",
     "name": "HHpred",
@@ -7,8 +7,7 @@
     "is_automated": true,
     "community_id":
       [
-        "CAMEO-3D", 
-        "Structure Prediction"
+        "CAMEO-3D" 
       ],
     "tool_contact_id": [
       "help-cameo3d@unibas.ch"
@@ -20,7 +19,7 @@
     "tool_access": 
       [
         {
-          "tool_access_type_id":"Web",
+          "tool_access_type_id":"REST/API",
           "link":"https://toolkit.tuebingen.mpg.de/"
         }
       ]
