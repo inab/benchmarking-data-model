@@ -1,0 +1,23 @@
+{
+   "_id":"TCGA",
+   "name":"The Cancer Genome Atlas",
+   "acronym":"TCGA",
+   "status":"active",
+   "description":"TCGA is a comprehensive and coordinated effort to accelerate our understanding of the molecular basis of cancer through the application of genome analysis technologies, including large-scale genome sequencing. ",
+   "links":[
+      {
+         "label":"MainSite",
+         "uri":"https://cancergenome.nih.gov/"
+      },
+      {
+         "label":"PublicationDOI",
+         "uri":"http://dx.doi.org/10.1016/j.cell.2018.02.060"
+      }
+   ],
+   "community_contacts":[
+      "Matthew.Bailey",
+      "Eduard.Porta",
+      "Collin.Tokheim"
+   ],
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Community"
+}

@@ -1,0 +1,175 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Community",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the community. It should be something unique of the community (for instance, an acronym)",
+			"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Community" ]
+		},
+		"name": {
+			"title": "Short community name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"acronym": {
+			"title": "Unique community acronym",
+			"minLength": 1,
+			"type": "string"
+		},
+		"status": {
+			"title": "_id(s) of the current community status(es)",
+			"type": "string",
+			"enum": [ "abandoned","active","unknown" ]
+		},
+		"description": {
+			"title": "Long community name or description",
+			"type": "string"
+		},
+		"links": {
+			"title": "Optional links related to the community",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"uri": {
+						"title": "The URI of the link related to the community",
+						"type": "string",
+						"format": "uri"
+					},
+					"label": {
+						"title": "The type of URI",
+						"type": "string",
+						"enum": ["PublicationDOI","LinkedInGroup","MainSite","DataSite"]
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"uri",
+					"label"
+				]
+			}
+		},
+		"community_contacts": {
+			"title": "_id of the contacts of the responsible researchers in charge of the community coordination",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"community_namespaces": {
+			"title": "_id of the isSolv (aka CURIE) prefixes defined by the community",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "idSolv",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+				
+		},
+		"metrics_categories": {
+			"title": "The metric(s) (defined as tools) which must be run over all the results provided by the participants",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"title": "The metrics (and maybe the tool) for this challenge",
+				"type": "object",
+				"properties": {
+					"category_id": {
+						"title": "The local metrics category id, composed by 1 or more metrics",
+						"type": "string"
+					},
+					"description": {
+						"title": "The optional category description",
+						"type": "string"
+					},
+					"metrics": {
+						"title": "The list of metrics in this category",
+						"type": "array",
+						"minLength": 1,
+						"items": {
+							"type": "object",
+							"properties": {
+								"metrics_id": {
+									"title": "The metrics id",
+									"type": "string",
+									"foreign_keys": [
+										{
+											"schema_id": "Metrics",
+											"members": [ "." ]
+										}
+									]
+								},
+								"tool_id": {
+									"title": "The optional tool id which computes this metric(s)",
+									"type": "string",
+									"foreign_keys": [
+										{
+											"schema_id": "Tool",
+											"members": [ "." ]
+										}
+									]
+								}
+							},
+							"required": [ "metrics_id" ]
+						}
+					}
+				},
+				"required": [ "category_id", "metrics" ]
+			}
+		},
+		"reference_tools": {
+			"title": "The tools which are considered as reference/baseline on this community",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_id": {
+						"title": "The tool id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"description": {
+						"title": "An optional, brief description about why this tool is a baseline or reference in this community",
+						"type": "string"
+					}
+				},
+				"required": [ "tool_id" ]
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","name","acronym","status","community_contacts"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
+

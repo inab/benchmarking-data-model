@@ -1,0 +1,39 @@
+{
+    "_id": "QfO:2015-01-01_STD_Eukaryota_A_precision_Hieranoid2",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "inline"
+        ],
+        "status": "ok",
+        "uri": "data:application/json;charset=us-ascii;base64,IjAuMDU4NSI=",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD-precision",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_STD_Eukaryota_M"
+            }
+        ],
+        "tool_id": "QfO:Hieranoid2"
+    },
+    "description": "Assessment dataset for applying Metric STD-precision to Hieranoid2 ortholog predictions",
+    "name": "Assesment of Metric STD-precision in Hieranoid2",
+    "type": "assessment",
+    "version": "1"
+}

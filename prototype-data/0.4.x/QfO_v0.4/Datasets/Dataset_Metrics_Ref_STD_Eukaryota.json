@@ -1,0 +1,27 @@
+{
+    "_id": "QfO:2015-01-01_STD_Eukaryota_M",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "http://orthology.benchmarkservice.org",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "description": "Eukaryota Species Tree that can be used in the Species Tree Discordance benchmark as reference to assess the accuracy of orthologs predicted ",
+    "name": "Metrics Reference Dataset for Species Tree Discordance",
+    "type": "metrics_reference",
+    "version": "unknown"
+}

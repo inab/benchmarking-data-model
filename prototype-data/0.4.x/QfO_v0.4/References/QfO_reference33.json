@@ -1,0 +1,7 @@
+{
+	"_id": "10.1101/gr.073585.107",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Reference",
+	"title": "EnsemblCompara GeneTrees: Complete, duplication-aware phylogenetic trees in vertebrates",
+	"bibliographic_ids":["http://dx.doi.org/10.1101/gr.073585.107"],
+	"abstract": "We have developed a comprehensive gene orientated phylogenetic resource, EnsemblCompara GeneTrees, based on a computational pipeline to handle clustering, multiple alignment, and tree generation, including the handling of large gene families. We developed two novel non-sequence-based metrics of gene tree correctness and benchmarked a number of tree methods. The TreeBeST method from TreeFam shows the best performance in our hands. We also compared this phylogenetic approach to clustering approaches for ortholog prediction, showing a large increase in coverage using the phylogenetic approach. All data are made available in a number of formats and will be kept up to date with the Ensembl project."
+}

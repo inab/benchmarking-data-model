@@ -1,0 +1,32 @@
+{
+    "_id": "QfO:2015-01-01_ECtest_metricsEvent_InParanoidCore_precision",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2015-01-01_ECtest",
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "metrics_id": "QfO:ECConservationTest-precision",
+    "received_datasets": [
+        {
+            "dataset_id": "QfO:2015-01-01_ECtest_M",
+            "role": "metrics_reference"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_InParanoidCore",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_ECtest_A_precision_InParanoidCore",
+            "role": "assessment"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:InParanoidCore"
+}

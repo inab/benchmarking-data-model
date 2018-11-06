@@ -1,0 +1,196 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
+	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the dataset. If it is possible, it should be something meaningful",
+			"type": "string",
+			"minLength": 1
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset" ]
+		},
+		"community_id": {
+			"title": "The community where this dataset was generated or used",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			]
+		},
+		"visibility": {
+			"title": "The visibility of this dataset, which must be acknowledged by the APIs",
+			"type": "string",
+			"enum": [ "public", "community", "challenge", "participant" ]
+		},
+		"name": {
+			"title": "Short dataset name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"version": {
+			"title": "Version (or relelase date) of the dataset",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long dataset description",
+			"type": "string"
+		},
+		"dates": {
+			"title": "Relevant dates for this dataset",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the dataset",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the dataset",
+					"type": "string",
+					"format": "date-time"
+				},
+				"public": {
+					"title": "The date when this dataset becomes public",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation","modification"]
+		},
+		"type": {
+			"title": "Type of dataset",
+			"type": "string",
+			"mingLength": 1,
+			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
+		},
+		"datalink": {
+			"title": "The link to reach the dataset",
+			"type": "object",
+			"properties": {
+				"uri": {
+					"title": "Either inline, encoded data URI, or download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
+					"type": "string",
+					"format": "uri"
+				},
+				"attrs": {
+					"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
+					"type": "array",
+					"minLength": 1,
+					"items": {
+						"type": "string",
+						"enum": [ "inline", "curie","compressed", "archive", "metalink", "sums" ]
+					}
+				},
+				"validation_date": {
+					"title": "Last validation date of the datalink",
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
+					"type": "string",
+					"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+				}
+			},
+			"required": [ "uri", "attrs" ]
+		},
+		"dataset_contact_ids": {
+			"title": "The contact id(s) of the depositor(s)/creator(s) of this dataset",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"depends_on": {
+			"title": "The causal, direct dependencies of this dataset on a tool and other datasets, if available",
+			"type": "object",
+			"properties": {
+				"metrics_id": {
+					"title": "The id of the metrics tied to the tool id",
+					"type": "string",
+					"foreign_keys": [
+						{
+							"schema_id": "Metrics",
+							"members": [ "." ]
+						}
+					],
+					"minLength": 1
+				},
+				"tool_id": {
+					"title": "The id of the tool which generated this dataset",
+					"type": "string",
+					"foreign_keys": [
+						{
+							"schema_id": "Tool",
+							"members": [ "." ]
+						}
+					],
+					"minLength": 1
+				},
+				"rel_dataset_ids": {
+					"type": "array",
+					"minLength": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"dataset_id": {
+								"title": "The id of a dataset which was used to generate this new dataset",
+								"type": "string",
+								"foreign_keys": [
+									{
+										"schema_id": "Dataset",
+										"members": [ "." ]
+									}
+								],
+								"minLength": 1
+							},
+							"role": {
+								"title": "The role of the referenced dataset generating the current one (used to generate the current dataset, superseded by the generated dataset, ....)",
+								"type": "string",
+								"enum": [ "dependency", "superseded", "report" ],
+								"default": "dependency"
+							}
+						},
+						"required": [ "dataset_id" ]
+					}
+				}
+			},
+			"required": [ "rel_dataset_ids" ]
+		},
+		"references": {
+			"title": "The reference id(s) of this dataset (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","community_id","name","version","type","dates","datalink","dataset_contact_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}

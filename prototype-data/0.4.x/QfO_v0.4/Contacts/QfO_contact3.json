@@ -1,0 +1,21 @@
+{
+	"_id": "Paul.Thomas",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+	"contact_type": "person",
+	"givenName": "Paul",
+	"surname": "Thomas",
+	"email": [
+		"pdthomas@med.usc.edu"
+	],
+	"notes": "QfO4 organizer",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://sites.google.com/usc.edu/thomaslab"
+		},
+		{
+			"label": "ORCID",
+			"uri": "https://orcid.org/0000-0002-0883-9068"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+    "_id": "TCGA:2018-04-05_DLBC_ActiveDriver_Summary",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "TCGA",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://cancergenome.nih.gov/",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_DLBC_I"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_DLBC_M"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_DLBC_A_TPR_ActiveDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_DLBC_A_precision_ActiveDriver"
+            }
+        ],
+        "tool_id": "TCGA:ActiveDriver"
+    },
+    "description": "Summary dataset with information about challenge Lymphoid Neoplasm Diffuse Large B-cell Lymphoma (e.g. input/output datasets, metrics...) in participant ActiveDriver",
+    "name": "Summary dataset for challenge: Lymphoid Neoplasm Diffuse Large B-cell Lymphoma",
+    "type": "challenge",
+    "version": "unknown"
+}

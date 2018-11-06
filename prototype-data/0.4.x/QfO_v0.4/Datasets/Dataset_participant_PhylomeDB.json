@@ -1,0 +1,33 @@
+{
+    "_id": "QfO:2015-01-01_P_PhylomeDB",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "access": "unknown",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "http://orthology.benchmarkservice.org/cgi-bin/gateway.pl?f=ShowProject",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+	"Toni.Gabaldon"
+],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            }
+        ],
+        "tool_id": "QfO:PhylomeDB"
+    },
+    "description": "List of orthologous pairs predicted by tool PhylomeDB using the QfO refernce proteome dataset",
+    "name": "Pairwise orthologous predictions",
+    "type": "participant",
+    "version": "unknown"
+}

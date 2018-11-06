@@ -1,0 +1,26 @@
+{
+    "_id": "QfO:PhylomeDB",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool",
+    "activation": "2015-01-01T00:00:01Z",
+    "community_id": [
+        "QfO"
+    ],
+    "description": "PhylomeDB is a public database for complete catalogs of gene phylogenies (phylomes).",
+    "is_automated": true,
+    "name": "PhylomeDB",
+    "references": [
+        "10.1093/nar/gkt1177",
+	"10.1093/nar/gkq1109",
+	"10.1093/nar/gkm899"
+    ],
+    "status": "unknown",
+    "tool_access": [
+		{
+			"tool_access_type_id": "REST/OpenAPI",
+			"link": "http://beta.phylomedb.org/web_api"
+		}
+	],
+    "tool_contact_id": [
+        "Toni.Gabaldon"
+    ]
+}

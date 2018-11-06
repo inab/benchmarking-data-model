@@ -1,0 +1,11 @@
+{
+   "_id":"Matthew.Bailey",
+   "givenName":"Matthew",
+   "surname":"Bailey",
+   "email":[
+      "unknown@email.es"
+   ],
+   "notes":"Unknown",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+   "contact_type":"person"
+}

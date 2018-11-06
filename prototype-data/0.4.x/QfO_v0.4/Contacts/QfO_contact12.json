@@ -1,0 +1,17 @@
+{
+	"_id": "Mateusz.Kaduk",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+	"contact_type": "person",
+	"givenName": "Mateusz",
+	"surname": "Kaduk",
+	"email": [
+		"mateusz.kaduk@scilifelab.se"
+	],
+	"notes": "Contact for Hieranoid 2 tool",
+	"links": [
+		{
+			"label": "LinkedIn",
+			"uri": "https://www.linkedin.com/in/mateusz-kaduk-94240222/"
+		}
+	]
+}

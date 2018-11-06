@@ -1,0 +1,20 @@
+{
+	"perl": "6",
+	"name": "BenchmarkingValidator",
+	"version": "0.4.0",
+	"description": "EXCELERATE WP2 Benchmarking Schemas JSON Validator",
+	"authors": [
+		"José María Fernández <jose.m.fernandez@bsc.es>"
+	],
+	"provides": {
+		"BenchmarkingValidator": "lib/BenchmarkingValidator.pm6"
+	},
+	"resources": [
+		"draft-04-schema"
+	],
+	"depends": [
+		"JSON::Fast",
+		"URI",
+		"OpenAPI::Schema::Validate"
+	]
+}

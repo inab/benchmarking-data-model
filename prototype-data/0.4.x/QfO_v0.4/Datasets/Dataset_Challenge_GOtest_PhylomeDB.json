@@ -1,0 +1,44 @@
+{
+    "_id": "QfO:2015-01-01_GOtest_PhylomeDB_Summary",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "http://orthology.benchmarkservice.org",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_GOtest_M"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_GOtest_A_recall_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_GOtest_A_precision_PhylomeDB"
+            }
+        ],
+        "tool_id": "QfO:PhylomeDB"
+    },
+    "description": "Summary dataset with information about benchmark Gene Ontology Conservation Test (e.g. input/output datasets, metrics...) in participant PhylomeDB",
+    "name": "Summary dataset for benchmark: Gene Ontology Conservation Test",
+    "type": "challenge",
+    "version": "unknown"
+}

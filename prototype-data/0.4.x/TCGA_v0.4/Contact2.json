@@ -1,0 +1,11 @@
+{
+   "_id":"Eduard.Porta",
+   "givenName":"Eduard",
+   "surname":"Porta-Pardo",
+   "email":[
+      "eduard.porta@bsc.es"
+   ],
+   "notes":"Unknown",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+   "contact_type":"person"
+}
