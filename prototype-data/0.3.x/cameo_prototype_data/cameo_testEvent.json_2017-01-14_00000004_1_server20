@@ -1,8 +1,8 @@
 {
-    "_id": "2017-01-14_00000004_1",
+    "_id": "2017-01-14_00000004_1_server20",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/TestEvent",
     "tool_id": "server20",
-    "input_dataset_id": "2017-01-14_00000004_1_20",
+    "input_dataset_id": "2017-01-14_00000004_1",
     "benchmarking_event_id": "2017-01-14T00:00:00Z",
     "result_report": [
       {
@@ -13,7 +13,7 @@
     ],
     "dates": 
       {
-        "creation":"2017-01-14T05:30:00",
-        "reception":"2017-01-14T05:45:00"
+        "creation":"2017-01-14T05:30:00+01:00",
+        "reception":"2017-01-14T05:45:00+01:00"
       }
 }

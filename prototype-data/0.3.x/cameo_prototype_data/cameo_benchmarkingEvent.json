@@ -1,5 +1,5 @@
 {
-    "_id": "2017-01-14",
+    "_id": "2017-01-14T00:00:00Z",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/BenchmarkingEvent",
     "name": "CAMEO-week-263",
     "is_automated": true,

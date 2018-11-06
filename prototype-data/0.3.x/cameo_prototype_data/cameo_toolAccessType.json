@@ -1,5 +1,5 @@
 {
-		"_id": "Web/API",
+		"_id": "Web",
 		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/ToolAccessType",
-		"description": "http://swissmodel.expasy.org/docs/help"
+		"description": "Prediction Method is accessible via its web interface"
 }

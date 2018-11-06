@@ -1,6 +1,7 @@
 {
 		"_id": "Torsten.Schwede",
 		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.3/Contact",
+		"contact_type": "person",
 		"givenName": "Torsten",
 		"surname": "Schwede",
 		"email": 
@@ -14,7 +15,7 @@
 				"uri":"http://proteinmodelportal.org"
 			},
 			{
-				"label":"PublicationDOI",
+				"label":"Other",
 				"uri":"http://dx.doi.org/10.1093/database/bat031"
 			}
 		]
