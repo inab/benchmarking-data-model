@@ -1,0 +1,56 @@
+{
+    "_id": "QfO:OMA-Groups",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool",
+    "activation": "2015-01-01T00:00:01Z",
+    "community_id": [
+        "QfO"
+    ],
+    "description": "OMA is a publicly available resource (http://omabrowser.org/) that provides orthology predictions among thousands of proteomes from all domains of life. OMA uses evolutionary distance estimates from Smith–Waterman alignments to infer orthologs. A distinct feature among graph-based methods is the witness of nonorthology step in its pipeline, where cases of differential gene losses get detected. OMA provides three different groupings of orthologs: Pairs, Groups, and HOGs. OMA Groups consists of groups of genes in which all pairs are orthologs. In a graph representation with genes as nodes and orthology relations as edge, OMA groups correspond to fully connected subgraphs. Due to this definition, each OMA group includes at most one sequence per species. The primary intended application of these groups is to provide input data for phylogenetic inference.",
+    "is_automated": true,
+    "name": "OMA Groups",
+    "references": [
+        "10.1093/bioinformatics/btm295",
+	"10.1007/978-1-61779-582-4_9",
+	"10.1093/nar/gku1158"
+    ],
+    "status": "unknown",
+    "tool_access": [
+		{
+			"tool_access_type_id": "SOAP/WSDL",
+			"link": "http://omabrowser.org/oma/APISOAP/",
+			"techdocs": [
+				{
+					"uri": "http://omabrowser.org/omabrowser.wsdl",
+					"label": "WSDL"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "command-line",
+			"link": "http://omabrowser.org/standalone/OMA.2.1.1.tgz",
+			"techdocs": [
+				{
+					"uri": "http://omabrowser.org/standalone/release_notes.txt",
+					"label": "doc"
+				},
+				{
+					"uri": "http://omabrowser.org/standalone/",
+					"label": "doc"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "Web",
+			"link": "http://omabrowser.org/oma/landOMA/"
+		},
+		{
+			"tool_access_type_id": "other",
+			"link": "http://omabrowser.org/oma/current/"
+		}
+	],
+    "tool_contact_id": [
+        "Christophe.Dessimoz",
+	"Adrian.Altenhoff",
+	"OMA.ContactMail"
+    ]
+}

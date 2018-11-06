@@ -1,0 +1,21 @@
+{
+	"_id": "ToddF.DeLuca",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+	"contact_type": "person",
+	"givenName": "Todd F.",
+	"surname": "DeLuca",
+	"email": [
+		"todd_deluca@hms.harvard.edu"
+	],
+	"notes": "Roundup contact",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://www.todddeluca.com/"
+		},
+		{
+			"label": "Other",
+			"uri": "https://github.com/todddeluca"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"_id": "Christophe.Dessimoz",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Contact",
+	"contact_type": "person",
+	"givenName": "Christophe",
+	"surname": "Dessimoz",
+	"email": [
+		"Christophe.Dessimoz@unil.ch",
+		"c.dessimoz@ucl.ac.uk"
+	],
+	"notes": "Main organizer and principal contact",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://lab.dessimoz.org/people/christophe-dessimoz"
+		},
+		{
+			"label": "LinkedIn",
+			"uri": "http://uk.linkedin.com/in/dessimoz"
+		},
+		{
+			"label": "ORCID",
+			"uri": "https://orcid.org/0000-0002-2170-853X"
+		},
+		{
+			"label": "Other",
+			"uri": "http://dx.doi.org/10.1038/nmeth.3830"
+		},
+		{
+			"label": "Other",
+			"uri": "http://dx.doi.org/10.1093/bioinformatics/btu492"
+		},
+		{
+			"label": "Other",
+			"uri": "http://dx.doi.org/10.1093/bioinformatics/bts050"
+		},
+		{
+			"label": "Other",
+			"uri": "http://dx.doi.org/10.1186/gb-2009-10-9-403"
+		}
+	]
+}

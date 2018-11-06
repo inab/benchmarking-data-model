@@ -1,0 +1,9 @@
+{
+	"_id": "10.1038/nmeth.3830",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Reference",
+	"title": "Standardized benchmarking in the quest for orthologs",
+	"bibliographic_ids":["http://dx.doi.org/10.1038/nmeth.3830"],
+	"abstract": "Achieving high accuracy in orthology inference is essential for many comparative, evolutionary and functional genomic analyses, yet the true evolutionary history of genes is generally unknown and orthologs are used for very different applications across phyla, requiring different precision–recall trade-offs. As a result, it is difficult to assess the performance of orthology inference methods. Here, we present a community effort to establish standards and an automated web-based service to facilitate orthology benchmarking. Using this service, we characterize 15 well-established inference methods and resources on a battery of 20 different benchmarks. Standardized benchmarking provides a way for users to identify the most effective methods for the problem at hand, sets a minimum requirement for new tools and resources, and guides the development of more accurate orthology inference methods."
+}
+
+

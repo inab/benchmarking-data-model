@@ -1,0 +1,66 @@
+{
+    "_id": "QfO:EnsemblCompara",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Tool",
+    "activation": "2015-01-01T00:00:01Z",
+    "community_id": [
+        "QfO"
+    ],
+    "description": "Ensembl Compara pipeline (version 81) provides cross-species resources and analyses, at both the sequence level and the gene level, with modifications to only use amino-acid models in treebest",
+    "is_automated": true,
+    "name": "EnsemblCompara (e81)",
+    "references": [
+        "10.1101/gr.073585.107"
+    ],
+    "status": "unknown",
+    "tool_access": [
+		{
+			"tool_access_type_id": "REST/OpenAPI",
+			"link": "http://rest.ensembl.org/",
+			"techdocs": [
+				{
+					"uri": "http://www.ensembl.org/info/docs/api/",
+					"label": "WADL"
+				},
+				{
+					"uri": "http://www.ensembl.org/info/docs/Doxygen/compara-api/",
+					"label": "doc"
+				},
+				{
+					"uri": "hhttps://github.com/Ensembl/ensembl-rest/wiki",
+					"label": "doc"
+				},
+				{
+					"uri": "https://github.com/Ensembl/ensembl-compara",
+					"label": "source"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "other",
+			"link": "ftp://ftp.ensembl.org/pub/current_virtual_machine",
+			"techdocs": [
+				{
+					"uri": "http://www.ensembl.org/info/data/virtual_machine.html",
+					"label": "doc"
+				}
+			]
+		},
+		{
+			"tool_access_type_id": "Web",
+			"link": "https://github.com/Ensembl/ensembl-git-tools.git",
+			"techdocs": [
+				{
+					"uri": "http://www.ensembl.org/info/docs/webcode/index.html",
+					"label": "doc"
+				},
+				{
+					"uri": "https://github.com/Ensembl/ensembl-webcode",
+					"label": "source"
+				}
+			]
+		}
+	],
+    "tool_contact_id": [
+        "Albert.Vilella"
+    ]
+}

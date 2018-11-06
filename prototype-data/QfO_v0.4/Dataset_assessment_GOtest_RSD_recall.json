@@ -1,0 +1,39 @@
+{
+    "_id": "QfO:2015-01-01_GOtest_A_recall_RSD",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "inline"
+        ],
+        "status": "ok",
+        "uri": "data:application/json;charset=us-ascii;base64,NjMwNzA=",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:GOConservationTest-recall",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_GOtest_M"
+            }
+        ],
+        "tool_id": "QfO:RSD"
+    },
+    "description": "Assessment dataset for applying Metric GOConservationTest-recall to RSD ortholog predictions",
+    "name": "Assesment of Metric GOConservationTest-recall in RSD",
+    "type": "assessment",
+    "version": "1"
+}

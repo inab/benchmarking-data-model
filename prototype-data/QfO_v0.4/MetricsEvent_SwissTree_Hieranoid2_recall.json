@@ -1,0 +1,32 @@
+{
+    "_id": "QfO:2015-01-01_SwissTree_metricsEvent_Hieranoid2_recall",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2015-01-01_SwissTree",
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "metrics_id": "QfO:referenceSwissTree_recall",
+    "received_datasets": [
+        {
+            "dataset_id": "QfO:2015-01-01_SwissTree_M",
+            "role": "metrics_reference"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_P_Hieranoid2",
+            "role": "participant"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_SwissTree_A_recall_Hieranoid2",
+            "role": "assessment"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:Hieranoid2"
+}

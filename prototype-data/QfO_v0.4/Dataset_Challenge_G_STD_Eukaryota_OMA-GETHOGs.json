@@ -1,0 +1,44 @@
+{
+    "_id": "QfO:2015-01-01_G_STD_Eukaryota_OMA-GETHOGs_Summary",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Dataset",
+    "community_id": "QfO",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "http://orthology.benchmarkservice.org",
+        "validation_date": "2015-01-01T00:00:01Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "modification": "2015-01-01T00:00:01Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2015-01-01_I"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_G_STD_Eukaryota_M"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_G_STD_Eukaryota_A_recall_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2015-01-01_G_STD_Eukaryota_A_precision_OMA-GETHOGs"
+            }
+        ],
+        "tool_id": "QfO:OMA-GETHOGs"
+    },
+    "description": "Summary dataset with information about benchmark Generalized Species Tree Discordance (e.g. input/output datasets, metrics...) in participant OMA-GETHOGs",
+    "name": "Summary dataset for benchmark: Generalized Species Tree Discordance",
+    "type": "challenge",
+    "version": "unknown"
+}

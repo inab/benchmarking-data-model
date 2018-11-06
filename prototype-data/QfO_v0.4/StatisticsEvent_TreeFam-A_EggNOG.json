@@ -1,0 +1,39 @@
+{
+    "_id": "QfO:2015-01-01_TreeFam-A_EggNOG_do_summary",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction",
+    "action_type": "StatisticsEvent",
+    "challenge_id": "QfO:2015-01-01_TreeFam-A",
+    "dates": {
+        "creation": "2015-01-01T00:00:01Z",
+        "reception": "2015-01-01T00:00:01Z"
+    },
+    "received_datasets": [
+        {
+            "dataset_id": "QfO:2015-01-01_I",
+            "role": "input"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_TreeFam-A_M",
+            "role": "metrics_reference"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_TreeFam-A_A_recall_EggNOG",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_TreeFam-A_A_precision_EggNOG",
+            "role": "assessment"
+        },
+        {
+            "dataset_id": "QfO:2015-01-01_TreeFam-A_EggNOG_Summary",
+            "role": "challenge"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:EggNOG"
+}
