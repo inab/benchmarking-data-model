@@ -25,6 +25,17 @@
 				}
 			]
 		},
+		"challenge_id": {
+			"title": "The challenge where this dataset was generated or used",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Challenge",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
 		"visibility": {
 			"title": "The visibility of this dataset, which must be acknowledged by the APIs",
 			"type": "string",
@@ -190,7 +201,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","community_id","name","version","type","dates","datalink","dataset_contact_ids"],
+	"required": ["_id","_schema","community_id","challenge_id","name","version","type","dates","datalink","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
