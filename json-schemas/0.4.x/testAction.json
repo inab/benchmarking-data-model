@@ -31,8 +31,8 @@
 			"type": "string",
 			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "TestEvent" ]
 		},
-		"received_datasets": {
-			"title": "The output, report and metrics datasets received for this test action",
+		"involved_datasets": {
+			"title": "The incoming, outgoing and settings datasets involved in this test action",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -52,12 +52,8 @@
 						"title": "The kind of dataset received for this action (report, metrics_reference, etc...)",
 						"type": "string",
 						"enum": [
-							"input",
-							"participant",
-							"public_reference",
-							"metrics_reference",
-							"challenge",
-							"assessment",
+							"incoming",
+							"outgoing",
 							"settings"
 						]
 					},
@@ -129,7 +125,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","tool_id","received_datasets","challenge_id","test_contact_ids","dates"],
+	"required": ["_id","_schema","tool_id","involved_datasets","challenge_id","test_contact_ids","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
