@@ -74,22 +74,6 @@
 				"minLength": 1
 			}
 		},
-		"community_namespaces": {
-			"title": "_id of the isSolv (aka CURIE) prefixes defined by the community",
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "idSolv",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
-				
-		},
 		"metrics_categories": {
 			"title": "The metric(s) (defined as tools) which must be run over all the results provided by the participants",
 			"type": "array",
