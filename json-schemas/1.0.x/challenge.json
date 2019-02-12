@@ -1,0 +1,118 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Challenge concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the challenge, according to the rules",
+			"type": "string",
+			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$"
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge" ]
+		},
+		"orig_id": {
+			"title": "The community provided id for the challenge, used by the community",
+			"type": "string",
+			"minLength": 1
+		},
+		"name": {
+			"title": "Short challenge name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"benchmarking_event_id": {
+			"title": "The parent benchmarking event",
+			"minLength": 1,
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "BenchmarkingEvent",
+					"members": [ "." ]
+				}
+			]
+		},
+		"is_automated": {
+			"title": "Is this an automated challenge?",
+			"type": "boolean"
+		},
+		"dates": {
+			"title": "Relevant dates for this challenge",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the challenge",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the challenge",
+					"type": "string",
+					"format": "date-time"
+				},
+				"public": {
+					"title": "The date when this challenge becomes public",
+					"type": "string",
+					"format": "date-time"
+				},
+				"challenge_start": {
+					"title": "When starts the challenge?",
+					"type": "string",
+					"format": "date-time"
+				},
+				"challenge_stop": {
+					"title": "When stops the challenge?",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation","modification"],
+			"dependencies": {
+				"challenge_start": ["challenge_stop"],
+				"challenge_stop": ["challenge_start"]
+			}
+		},
+		"url": {
+			"title": "The link to an specific challenge page",
+			"type": "string",
+			"format": "uri"
+		},
+		"challenge_contact_ids": {
+			"title": "The challenge contact id(s)",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"references": {
+			"title": "The challenge reference id(s) (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}

@@ -1,0 +1,118 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Benchmarking Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the benchmarking event, according to the rules",
+			"type": "string",
+			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$"
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent" ]
+		},
+		"orig_id": {
+			"title": "The community provided id for the benchmarking event, used by the community",
+			"type": "string",
+			"minLength": 1
+		},
+		"name": {
+			"title": "Short benchmarking event name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"is_automated": {
+			"title": "Is this an automated event?",
+			"type": "boolean"
+		},
+		"dates": {
+			"title": "Relevant dates for this benchmarking event",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the benchmarking event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the benchmarking event",
+					"type": "string",
+					"format": "date-time"
+				},
+				"public": {
+					"title": "The date when this benchmarking event becomes public",
+					"type": "string",
+					"format": "date-time"
+				},
+				"benchmark_start": {
+					"title": "When starts the benchmarking event?",
+					"type": "string",
+					"format": "date-time"
+				},
+				"benchmark_stop": {
+					"title": "When stops the benchmarking event?",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation","modification"],
+			"dependencies": {
+				"benchmark_start": ["benchmark_stop"],
+				"benchmark_stop": ["benchmark_start"]
+			}
+		},
+		"url": {
+			"title": "The link to the benchmarking event",
+			"type": "string",
+			"format": "uri"
+		},
+		"community_id": {
+			"title": "The community id where this benchmarking event belongs",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
+		"bench_contact_ids": {
+			"title": "The benchmarking event contact id(s)",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"references": {
+			"title": "The benchmarking event reference id(s) (if any)",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","_schema","orig_id","name","dates","community_id","bench_contact_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}

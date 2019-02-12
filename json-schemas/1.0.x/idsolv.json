@@ -1,0 +1,37 @@
+{
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Simple Namespace resolver for CURIE ids",
+	"type": "object",
+	"properties" : {
+		"_id": {
+			"title": "Namespace acronym, corresponds to the namespace part of Curie (ns:id), so it should not contain invalid patterns",
+			"type": "string"
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv" ]
+		},
+		"description": {
+			"title": "Long description of the namespace",
+			"type": "string"
+		},
+		"pattern": {
+			"title": "The validation pattern to be used. The regex group is used to build the equivalent URL"
+		},
+		"endpoints": {
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"title": "URL mask for transforming ids. {id} is replaced by the id part of Curie (ns:id)",
+				"type": "string",
+				"format": "uri-template"
+			}
+		}
+	},
+	"additionalProperties": true,
+	"required": ["_id","pattern","endpoints"],
+	"primary_key": ["_id"]
+}
