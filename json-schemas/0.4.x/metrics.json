@@ -124,9 +124,15 @@
 				],
 				"minLength": 1
 			}
+		},
+		"representation_hints": {
+			"title": "The optional representation hints which can be used or ignored by any data browser / viewer",
+			"type": "object",
+			"additionalProperties": true,
+			"minProperties": 1
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","title","metrics_contact_id"],
 	"primary_key": ["_id"],
 	"dependencies": {}
