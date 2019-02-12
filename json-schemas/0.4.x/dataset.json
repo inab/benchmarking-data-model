@@ -93,8 +93,30 @@
 			"properties": {
 				"uri": {
 					"title": "Either inline, encoded data URI, or download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
-					"type": "string",
-					"format": "uri"
+					"oneOf": [
+						{
+							"type": "string",
+							"format": "uri"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"inline_data": {
+									"title": "Inline data in JSON format",
+									"type": "object",
+									"minProperties": 1,
+									"additionalProperties": true
+								},
+								"schema_url": {
+									"title": "The optional URL to the JSON Schema which validates the inline data",
+									"type": "string",
+									"format": "url"
+								}
+							},
+							"required": [ "inline_data" ]
+						}
+					]
 				},
 				"attrs": {
 					"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
