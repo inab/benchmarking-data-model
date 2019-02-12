@@ -5,9 +5,9 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the challenge. If it is possible, it should be something meaningful, like an URL",
+			"title": "The unique id of the challenge, according to the rules",
 			"type": "string",
-			"minLength": 1
+			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",

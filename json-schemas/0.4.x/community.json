@@ -5,9 +5,9 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the community. It should be something unique of the community (for instance, an acronym)",
+			"title": "The unique id of the community, according to the rules",
 			"type": "string",
-			"minLength": 1
+			"pattern": "^OEBC[0-9]{3}$"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",

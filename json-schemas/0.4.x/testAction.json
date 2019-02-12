@@ -5,9 +5,9 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the test action.",
+			"title": "The unique id of the test action, according to the rules",
 			"type": "string",
-			"minLength": 1
+			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
