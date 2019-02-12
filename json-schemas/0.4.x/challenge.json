@@ -15,6 +15,11 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Challenge" ]
 		},
+		"orig_id": {
+			"title": "The community provided id for the challenge, used by the community",
+			"type": "string",
+			"minLength": 1
+		},
 		"name": {
 			"title": "Short challenge name",
 			"minLength": 1,
@@ -107,7 +112,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
+	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

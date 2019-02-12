@@ -15,6 +15,11 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/Metrics" ]
 		},
+		"orig_id": {
+			"title": "The community provided id for the set of metric values, used by the community",
+			"type": "string",
+			"minLength": 1
+		},
 		"title": {
 			"title": "Short metrics name",
 			"minLength": 1,
@@ -133,7 +138,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","title","metrics_contact_id"],
+	"required": ["_id","_schema","orig_id","title","metrics_contact_id"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

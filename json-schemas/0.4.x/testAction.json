@@ -15,6 +15,11 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/0.4/TestAction" ]
 		},
+		"orig_id": {
+			"title": "When the community has an id for the test action, used by the community",
+			"type": "string",
+			"minLength": 1
+		},
 		"tool_id": {
 			"title": "The tool id which takes the input and reference datasets declared in the challenge",
 			"type": "string",
