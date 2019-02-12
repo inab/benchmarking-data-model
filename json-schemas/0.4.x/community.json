@@ -34,6 +34,15 @@
 			"title": "Long community name or description",
 			"type": "string"
 		},
+		"keywords": {
+			"title": "A list of keywords defining the community. They can be either strings or URIs of ontology terms",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			},
+			"minLength": 1
+		},
 		"links": {
 			"title": "Optional links related to the community",
 			"type": "array",
