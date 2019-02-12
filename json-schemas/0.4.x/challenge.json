@@ -76,61 +76,6 @@
 			"type": "string",
 			"format": "uri"
 		},
-		"dataset_ids": {
-			"title": "The datasets which every participant in this event must take into account",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"dataset_id": {
-						"title": "The id of a dataset which was used to generate this new dataset",
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Dataset",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
-					},
-					"role": {
-						"title": "The role of this dataset in the benchmarking event",
-						"type": "string",
-						"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
-					}
-				},
-				"required": [ "dataset_id", "role" ]
-			}
-		},
-		"test_actions": {
-			"title": "The initial test actions of this challenge (it shouldn't change after the challenge ends). There will be a test action for each participant",
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"test_action_id": {
-						"title": "The unique identifier of the test action for this participant",
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "TestAction",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
-					},
-					"name": {
-						"title": "A symbolic name of the participant",
-						"type": "string"
-					},
-					"metrics_category_id": {
-						"title": "Metrics category id where the participant is going to be evaluated",
-						"type": "string"
-					}
-				},
-				"required": [ "tool_id", "contact_ids", "metrics_category_id" ]
-			}
-		},
 		"challenge_contact_ids": {
 			"title": "The challenge contact id(s)",
 			"type": "array",
@@ -162,7 +107,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","dataset_ids","participants"],
+	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
