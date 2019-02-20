@@ -124,12 +124,12 @@
 				},
 				"additionalProperties": true,
 				"required": [
-					"tool_access_type_id"
+					"tool_access_type"
 				]
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
