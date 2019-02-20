@@ -231,7 +231,7 @@
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","community_id","name","version","type","dates","datalink","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}

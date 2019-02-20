@@ -71,7 +71,7 @@
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": [
 		"_id",
 		"_schema",

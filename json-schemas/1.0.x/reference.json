@@ -85,7 +85,7 @@
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","title","bibliographic_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}

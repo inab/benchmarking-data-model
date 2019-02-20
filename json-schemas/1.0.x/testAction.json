@@ -129,7 +129,7 @@
 			"type": "object"
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","tool_id","involved_datasets","challenge_id","test_contact_ids","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
