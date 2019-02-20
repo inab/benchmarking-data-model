@@ -7,7 +7,7 @@
 		"_id": {
 			"title": "The unique id of the tool, according to the rules",
 			"type": "string",
-			"pattern": "^OEBT[0-9]{3}[tA-Z0-9][A-Z0-9]{6}$"
+			"pattern": "^OEBT[tA-Z0-9][A-Z0-9]{6}$"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -130,7 +130,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","name","is_automated","community_id","tool_contact_id","status","tool_access"],
+	"required": ["_id","_schema","name","is_automated","tool_contact_id","status","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
