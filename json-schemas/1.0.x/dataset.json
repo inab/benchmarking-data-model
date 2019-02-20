@@ -116,7 +116,7 @@
 								"schema_url": {
 									"title": "The optional URL to the JSON Schema which validates the inline data",
 									"type": "string",
-									"format": "url"
+									"format": "uri"
 								}
 							},
 							"required": [ "inline_data" ]
