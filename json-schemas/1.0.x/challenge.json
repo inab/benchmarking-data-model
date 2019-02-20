@@ -112,7 +112,7 @@
 		}
 	},
 	"additionalProperties": true,
-	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
+	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
