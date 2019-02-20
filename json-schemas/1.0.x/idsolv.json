@@ -19,7 +19,8 @@
 			"type": "string"
 		},
 		"pattern": {
-			"title": "The validation pattern to be used. The regex group is used to build the equivalent URL"
+			"title": "The validation pattern to be used. The regex group is used to build the equivalent URL",
+			"type": "string"
 		},
 		"endpoints": {
 			"type": "array",
