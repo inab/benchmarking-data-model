@@ -29,7 +29,7 @@
 			"title": "Long metrics description",
 			"type": "string"
 		},
-		"metrics_contact_id": {
+		"metrics_contact_ids": {
 			"title": "The contact id(s) of the creators of this metrics",
 			"type": "array",
 			"minLength": 1,
@@ -138,7 +138,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","orig_id","title","metrics_contact_id"],
+	"required": ["_id","_schema","orig_id","title","metrics_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

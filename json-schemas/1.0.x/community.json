@@ -68,7 +68,7 @@
 				]
 			}
 		},
-		"community_contacts": {
+		"community_contact_ids": {
 			"title": "_id of the contacts of the responsible researchers in charge of the community coordination",
 			"type": "array",
 			"minLength": 1,
@@ -160,8 +160,8 @@
 			}
 		}
 	},
-	"additionalProperties": true,
-	"required": ["_id","_schema","name","acronym","status","community_contacts"],
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","acronym","status","community_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
