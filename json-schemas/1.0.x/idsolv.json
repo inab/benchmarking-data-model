@@ -23,17 +23,13 @@
 			"type": "string",
 			"format": "regex"
 		},
-		"endpoints": {
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"title": "URL mask for transforming ids. {id} is replaced by the id part of Curie (ns:id)",
-				"type": "string",
-				"format": "uri-template"
-			}
+		"endpoint": {
+			"title": "URL mask for transforming ids. The URI template must follow RFC 6570, and {id} is replaced by the id part of the canonical CURIE (ns:id)",
+			"type": "string",
+			"format": "uri-template"
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","pattern","endpoints"],
+	"required": ["_id","pattern","endpoint"],
 	"primary_key": ["_id"]
 }
