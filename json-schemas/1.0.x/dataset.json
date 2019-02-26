@@ -116,7 +116,7 @@
 								}
 							},
 							"required": [ "inline_data" ]
-						},
+						}
 					},
 					"required": [ "uri" ]
 				},
