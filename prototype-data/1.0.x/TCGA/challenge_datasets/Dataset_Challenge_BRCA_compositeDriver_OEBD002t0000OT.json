@@ -1,0 +1,47 @@
+{
+    "_id": "OEBD002t0000OT",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t000003"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "uri": {
+            "inline_data": {
+                "metricX": 0.40625,
+                "metricY": 0.6190476190476191
+            }
+        }
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002000000L"
+            },
+            {
+                "dataset_id": "OEBD002t00007V"
+            },
+            {
+                "dataset_id": "OEBD002t00009Q"
+            },
+            {
+                "dataset_id": "OEBD002t00009R"
+            }
+        ],
+        "tool_id": "OEBT0020000003"
+    },
+    "description": "Summary dataset with information about challenge Breast Invasive Carcinoma (e.g. input/output datasets, metrics...) in participant compositeDriver",
+    "name": "Summary dataset for challenge: Breast Invasive Carcinoma",
+    "orig_id": "TCGA:2018-04-05_BRCA_compositeDriver_Summary",
+    "type": "challenge",
+    "version": "unknown"
+}

@@ -1,0 +1,31 @@
+{
+    "_id": "OEBA002t0000DV",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "OEBX002t00000E",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "OEBD002t000086",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "OEBD002t000032",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "OEBD002t0000EU",
+            "role": "outgoing"
+        }
+    ],
+    "orig_id": "TCGA:2018-04-05_LAML_metricsEvent_e-Driver_TPR",
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "OEBT0020000004"
+}

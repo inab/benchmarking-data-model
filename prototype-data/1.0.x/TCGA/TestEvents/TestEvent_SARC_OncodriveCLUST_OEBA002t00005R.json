@@ -1,0 +1,27 @@
+{
+    "_id": "OEBA002t00005R",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "TestEvent",
+    "challenge_id": "OEBX002t00000Q",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "OEBD002000000L",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "OEBD002t00005R",
+            "role": "outgoing"
+        }
+    ],
+    "orig_id": "TCGA:2018-04-05_SARC_testEvent_OncodriveCLUST",
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "OEBT0020000007"
+}
