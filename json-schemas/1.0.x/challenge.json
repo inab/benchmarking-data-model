@@ -5,9 +5,18 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the challenge, according to the rules",
+			"title": "The unique id of the challenge, according to the rules. For submissions there are temporary identifiers",
 			"type": "string",
-			"pattern": "^OEBX[0-9]{3}[tA-Z0-9][A-Z0-9]{6}$"
+			"oneOf": [
+				{
+					"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
+					"writeOnly": true
+				},
+				{
+					"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
+					"readOnly": true
+				}
+			]
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
