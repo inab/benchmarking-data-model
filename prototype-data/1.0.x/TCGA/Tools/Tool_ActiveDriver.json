@@ -1,0 +1,20 @@
+{
+    "_id":"OEBT0020000002",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2018-04-05T00:00:00.000+0000",
+    "description": "Cancer Driver Genes prediction",
+    "is_automated": true,
+    "name": "ActiveDriver",
+    "references": [
+        "doi:10.1038/msb.2012.68"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Juri.Reimand"
+    ]
+}

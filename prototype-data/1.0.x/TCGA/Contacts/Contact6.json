@@ -1,0 +1,11 @@
+{
+   "_id":"Michael.Lawrence",
+   "givenName":"Michael",
+   "surname":"Lawrence",
+   "email":[
+      "lawrence@broadinstitute.org"
+   ],
+   "notes":"Unknown",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+   "contact_type":"person"
+}

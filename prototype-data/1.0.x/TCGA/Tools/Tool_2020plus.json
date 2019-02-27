@@ -1,0 +1,20 @@
+{
+    "_id":"OEBT0020000001",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2018-04-05T00:00:00.000+0000",
+    "description": "Cancer Driver Genes prediction",
+    "is_automated": true,
+    "name": "2020plus",
+    "references": [
+        "doi:10.1073/pnas.1616440113"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Collin.Tokheim"
+    ]
+}

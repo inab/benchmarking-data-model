@@ -1,0 +1,47 @@
+{
+    "_id": "OEBD002t0000QM",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t00000B"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "uri": {
+            "inline_data": {
+                "metricX": 1.0,
+                "metricY": 0.2857142857142857
+            }
+        }
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002000000L"
+            },
+            {
+                "dataset_id": "OEBD002t000083"
+            },
+            {
+                "dataset_id": "OEBD002t0000DC"
+            },
+            {
+                "dataset_id": "OEBD002t0000DD"
+            }
+        ],
+        "tool_id": "OEBT0020000001"
+    },
+    "description": "Summary dataset with information about challenge Kidney Chromophobe (e.g. input/output datasets, metrics...) in participant 2020plus",
+    "name": "Summary dataset for challenge: Kidney Chromophobe",
+    "orig_id": "TCGA:2018-04-05_KICH_2020plus_Summary",
+    "type": "challenge",
+    "version": "unknown"
+}

@@ -1,0 +1,11 @@
+{
+   "_id":"David.Tamborero",
+   "givenName":"David",
+   "surname":"Tamborero",
+   "email":[
+      "david.tamborero@irbbarcelona.org"
+   ],
+   "notes":"Unknown",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+   "contact_type":"person"
+}

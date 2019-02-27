@@ -1,0 +1,38 @@
+{
+    "_id": "OEBD002t00000A",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t000002"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/bee64811-952a-4fac-b011-9cd28c0bd8d1",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002000000L"
+            }
+        ],
+        "tool_id": "OEBT0020000003"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool compositeDriver in Bladder Urothelial Carcinoma",
+    "name": "Cancer Driver Genes in Bladder Urothelial Carcinoma",
+    "orig_id": "TCGA:2018-04-05_BLCA_P_compositeDriver",
+    "type": "participant",
+    "version": "unknown"
+}

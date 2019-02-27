@@ -1,0 +1,41 @@
+{
+    "_id": "OEBD002t000090",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t000001"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "uri": {
+            "inline_data": {
+                "value": 0.16666666666666666
+            }
+        }
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "OEBM0020000002",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002t000005"
+            },
+            {
+                "dataset_id": "OEBD002t00007T"
+            }
+        ],
+        "tool_id": "OEBT0020000002"
+    },
+    "description": "Assessment dataset for applying Metric 'True Positive Rate' to ActiveDriver predictions in Adrenocortical Carcinoma",
+    "name": "Assesment of Metric TPR in ActiveDriver",
+    "orig_id": "TCGA:2018-04-05_ACC_A_TPR_ActiveDriver",
+    "type": "assessment",
+    "version": "1"
+}
