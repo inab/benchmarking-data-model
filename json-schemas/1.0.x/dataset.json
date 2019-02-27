@@ -17,7 +17,6 @@
 					"readOnly": true
 				}
 			]
-			"pattern": "^OEBD[0-9]{3}[tA-Z0-9][A-Z0-9]{6}$"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -103,34 +102,29 @@
 			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
 		},
 		"datalink": {
-			"title": "The link to reach the dataset",
+			"title": "The data itself, either linked or embedded",
 			"type": "object",
+			"additionalProperties": false,
 			"oneOf": [
 				{
+					"title": "Inline, embedded data",
 					"properties": {
-						"uri": {
-							"title": "Inline, embedded data",
+						"inline_data": {
+							"title": "Inline data in JSON format",
 							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"inline_data": {
-									"title": "Inline data in JSON format",
-									"type": "object",
-									"minProperties": 1,
-									"additionalProperties": true
-								},
-								"schema_url": {
-									"title": "The optional URL to the JSON Schema which validates the inline data",
-									"type": "string",
-									"format": "uri"
-								}
-							},
-							"required": [ "inline_data" ]
+							"minProperties": 1,
+							"additionalProperties": true
+						},
+						"schema_url": {
+							"title": "The optional URL to the JSON Schema which validates the inline data. It could be embedded, using the data: protocol encoding",
+							"type": "string",
+							"format": "uri"
 						}
 					},
-					"required": [ "uri" ]
+					"required": [ "inline_data" ]
 				},
 				{
+					"title": "The link to reach the dataset",
 					"properties": {
 						"uri": {
 							"title": "Either inline, encoded data URI; or an official CURIE; or download link to the dataset itself; or a link to a Metalink describing the dataset; or a link to a MD5/SHA1 sums file with relative paths",
