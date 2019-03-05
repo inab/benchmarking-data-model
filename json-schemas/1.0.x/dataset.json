@@ -104,7 +104,6 @@
 		"datalink": {
 			"title": "The data itself, either linked or embedded",
 			"type": "object",
-			"additionalProperties": false,
 			"oneOf": [
 				{
 					"title": "Inline, embedded data",
@@ -121,6 +120,7 @@
 							"format": "uri"
 						}
 					},
+					"additionalProperties": false,
 					"required": [ "inline_data" ]
 				},
 				{
@@ -162,6 +162,7 @@
 							"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
 						}
 					},
+					"additionalProperties": false,
 					"required": [ "uri", "attrs" ]
 				}
 			]
