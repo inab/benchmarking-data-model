@@ -6,10 +6,8 @@
     ],
     "community_id": "OEBC002",
     "datalink": {
-        "uri": {
-            "inline_data": {
-                "value": 0.9545454545454546
-            }
+        "inline_data": {
+            "value": 0.9545454545454546
         }
     },
     "dataset_contact_ids": [

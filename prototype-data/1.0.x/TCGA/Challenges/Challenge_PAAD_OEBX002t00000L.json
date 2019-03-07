@@ -1,6 +1,7 @@
 {
     "_id": "OEBX002t00000L",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
+    "acronym": "PAAD",
     "benchmarking_event_id": "OEBE0020000001",
     "challenge_contact_ids": [
         "Matthew.Bailey",
@@ -19,5 +20,5 @@
     "references": [
         "doi:10.1016/j.cell.2018.02.060"
     ],
-    "url": "https://cancergenome.nih.gov/"
+    "url": "https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga/studied-cancers/pancreatic"
 }
