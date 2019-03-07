@@ -34,6 +34,15 @@
 			"minLength": 1,
 			"type": "string"
 		},
+		"acronym": {
+			"title": "Friendly challenge acronym",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long description of the challenge",
+			"type": "string"
+		},
 		"benchmarking_event_id": {
 			"title": "The parent benchmarking event",
 			"minLength": 1,
