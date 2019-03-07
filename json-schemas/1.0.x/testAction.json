@@ -135,7 +135,9 @@
 		},
 		"metadata": {
 			"title": "Relevant metadata used to call the tool",
-			"type": "object"
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": true
 		}
 	},
 	"additionalProperties": false,
