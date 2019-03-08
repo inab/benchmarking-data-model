@@ -6,7 +6,8 @@
 	"properties" : {
 		"_id": {
 			"title": "Namespace acronym, corresponds to the namespace part of Curie (ns:id), so it should not contain invalid patterns",
-			"type": "string"
+			"type": "string",
+			"minLength": 1
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",

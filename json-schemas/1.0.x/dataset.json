@@ -5,15 +5,22 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the dataset, according to the rules. For submissions there are temporary identifiers",
+			"title": "The unique id of the dataset, according to the rules",
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$",
+					"pattern": "^(?!(?i)OEB)",
+					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
 				{
+					"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
 					"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
 					"readOnly": true
 				}
 			]
@@ -39,8 +46,8 @@
 				}
 			]
 		},
-		"challenge_id": {
-			"title": "The challenge where this dataset was generated or used",
+		"challenge_ids": {
+			"title": "The challenge(s) where this dataset was generated or used",
 			"type": "array",
 			"minLength": 1,
 			"items": {
