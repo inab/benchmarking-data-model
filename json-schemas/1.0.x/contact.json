@@ -42,6 +42,17 @@
 				"format": "email"
 			}
 		},
+		"community_id": {
+			"title": "The community id where this benchmarking event belongs",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 7
+		},
 		"notes": {
 			"title": "Comments about the contact",
 			"type": "string"
@@ -76,7 +87,8 @@
 		"_id",
 		"_schema",
 		"contact_type",
-		"email"
+		"email",
+		"community_id"
 	],
 	"primary_key": ["_id"],
 	"dependencies": {}
