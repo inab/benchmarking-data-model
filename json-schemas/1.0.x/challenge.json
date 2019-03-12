@@ -32,7 +32,10 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge" ]
 		},
 		"orig_id": {
-			"title": "The community provided id for the challenge, used by the community",
+			"title": "The challenge original id",
+			"description": "The field is filled in on server side, and it contains the original id used on data submission for this challenge, used by the community",
+			"readOnly": true,
+			"pattern": "^(?!(?i)OEB)",
 			"type": "string",
 			"minLength": 1
 		},
