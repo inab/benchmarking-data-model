@@ -38,6 +38,21 @@
 			"title": "Long tool name or description",
 			"type": "string"
 		},
+		"community_id": {
+					"title": "The community/es where this tool is participating",
+					"type": "array",
+					"minLength": 1,
+					"items": {
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Community",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					}
+		},
 		"is_automated": {
 			"title": "Can this tool be automatically invoked?",
 			"type": "boolean"
@@ -139,7 +154,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","name","is_automated","tool_contact_ids","status","tool_access"],
+	"required": ["_id","_schema","name","community_id", "is_automated","tool_contact_ids","status","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

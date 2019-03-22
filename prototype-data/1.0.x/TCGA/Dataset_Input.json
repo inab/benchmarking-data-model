@@ -43,13 +43,15 @@
             "archive"
         ],
         "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc",
+        "uri": "https://doi.org/10.5281/zenodo.2594757",
         "validation_date": "2018-04-05T00:00:00Z"
     },
     "dataset_contact_ids": [
 	"Kyle.Ellrott",
-        "Matthew.Bailey",
-	"Li.Ding"
+	"Li.Ding",
+	"Matthew.Bailey",
+      	"Eduard.Porta",
+      	"Collin.Tokheim"
 
     ],
     "dates": {
