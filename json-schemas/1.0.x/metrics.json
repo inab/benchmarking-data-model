@@ -157,7 +157,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","orig_id","title","metrics_contact_ids"],
+	"required": ["_id","_schema","title","metrics_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
