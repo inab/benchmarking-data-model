@@ -70,6 +70,7 @@
 		"implementations": {
 			"title": "The different implementations of this metrics",
 			"type": "array",
+			"minLength": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -100,7 +101,7 @@
 						}
 					}
 				},
-				"required": [ "tool_id" ]
+				"required": [ "tool_id", "community_ids" ]
 			}
 		},
 		"execution_type": {
