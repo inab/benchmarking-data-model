@@ -9,7 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^(?!(?i)OEB)",
+					"pattern": "^(?!(?i)OEB).+$",
 					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
@@ -35,7 +35,7 @@
 			"title": "The challenge original id",
 			"description": "The field is filled in on server side, and it contains the original id used on data submission for this challenge, used by the community",
 			"readOnly": true,
-			"pattern": "^(?!OEB).+",
+			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
@@ -140,7 +140,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
+	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

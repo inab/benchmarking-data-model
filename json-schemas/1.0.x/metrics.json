@@ -9,7 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^(?!(?i)OEB)",
+					"pattern": "^(?!(?i)OEB).+$",
 					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
@@ -35,7 +35,7 @@
 			"title": "The metrics original id",
 			"description": "The field is filled in on server side, and it contains the original id used on data submission for this set of metrics values, used by the community",
 			"readOnly": true,
-			"pattern": "^(?!(?i)OEB)",
+			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
@@ -70,6 +70,7 @@
 		"implementations": {
 			"title": "The different implementations of this metrics",
 			"type": "array",
+			"minLength": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -100,7 +101,7 @@
 						}
 					}
 				},
-				"required": [ "tool_id" ]
+				"required": [ "tool_id", "community_ids" ]
 			}
 		},
 		"execution_type": {
@@ -157,7 +158,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","orig_id","title","metrics_contact_ids"],
+	"required": ["_id","_schema","title","metrics_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

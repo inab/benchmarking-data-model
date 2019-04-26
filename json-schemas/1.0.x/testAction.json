@@ -9,7 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^(?!(?i)OEB)",
+					"pattern": "^(?!(?i)OEB).+$",
 					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
@@ -35,7 +35,7 @@
 			"title": "The test action original id",
 			"description": "The field is filled in on server side, and it contains the original id used on data submission for this test action, used by the community",
 			"readOnly": true,
-			"pattern": "^(?!(?i)OEB)",
+			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
@@ -151,7 +151,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","tool_id","involved_datasets","challenge_id","test_contact_ids","dates"],
+	"required": ["_id","_schema","involved_datasets","challenge_id","test_contact_ids","dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
