@@ -9,7 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^(?!(?i)OEB)",
+					"pattern": "^(?!(?i)OEB).+$",
 					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
@@ -35,7 +35,7 @@
 			"title": "The benchmarking event original id",
 			"description": "The field is filled in on server side, and it contains the original id used on data submission for this benchmarking event, used by the community",
 			"readOnly": true,
-			"pattern": "^(?!(?i)OEB)",
+			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
