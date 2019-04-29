@@ -109,6 +109,21 @@
 			"type": "string",
 			"format": "uri"
 		},
+		"metrics_category_ids": {
+			"title": "The metrics category/ies appliable to all or part of the participants of this challenge",
+			"type": "array",
+			"minLength": 1,
+			"items": {
+				"title": "The metrics category id",
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "MetricsCategory",
+						"members": [ "." ]
+					}
+				]
+			}
+		},
 		"challenge_contact_ids": {
 			"title": "The challenge contact id(s)",
 			"type": "array",
