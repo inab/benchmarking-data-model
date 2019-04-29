@@ -74,26 +74,26 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"tool_id": {
-						"title": "The tool id of an implementation of this metric",
+					"community_id": {
+						"title": "The communities where this implementation is used",
 						"type": "string",
 						"foreign_keys": [
 							{
-								"schema_id": "Tool",
+								"schema_id": "Community",
 								"members": [ "." ]
 							}
 						],
 						"minLength": 1
 					},
-					"community_ids": {
-						"title": "The communities where this implementation is used",
+					"tool_ids": {
+						"title": "The tool ids of an implementation of this metric",
 						"type": "array",
 						"minLength": 1,
 						"items": {
 							"type": "string",
 							"foreign_keys": [
 								{
-									"schema_id": "Community",
+									"schema_id": "Tool",
 									"members": [ "." ]
 								}
 							],
@@ -101,7 +101,7 @@
 						}
 					}
 				},
-				"required": [ "tool_id", "community_ids" ]
+				"required": [ "tool_ids", "community_id" ]
 			}
 		},
 		"execution_type": {
