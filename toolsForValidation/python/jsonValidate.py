@@ -83,13 +83,39 @@ def findFKs(jsonSchema,jsonSchemaURI,prefix=""):
 	
 	return FKs
 
+# Augmenting the supported types
+#from libs.curie_search import CurieSearch
+#from libs.ontology_term import OntologyTerm
+
+CustomTypes = {
+#	'curie': CurieSearch.IsCurie,
+#	'term': OntologyTerm.IsTerm
+}
+
+CustomValidators = {
+#	'namespace': CurieSearch.IsValidCurie,
+#	'ontology': OntologyTerm.IsValidTerm
+}
+
+def extendValidator(validator):
+	extendedValidators = validator.VALIDATORS.copy()
+	extendedValidators.update(CustomValidators)
+	
+	extendedChecker = validator.TYPE_CHECKER.redefine_many(CustomTypes)
+	
+	return JSV.validators.extend(validator, validators=extendedValidators , type_checker=extendedChecker)
+	
+ExtendedDraft4Validator = extendValidator(JSV.validators.Draft4Validator)
+ExtendedDraft6Validator = extendValidator(JSV.validators.Draft6Validator)
+ExtendedDraft7Validator = extendValidator(JSV.validators.Draft7Validator)
+
 VALIDATOR_MAPPER = {
-	'http://json-schema.org/draft-04/schema#': JSV.validator.Draft4Validator,
-	'http://json-schema.org/draft-04/hyper-schema#': JSV.validator.Draft4Validator,
-	'http://json-schema.org/draft-06/schema#': JSV.validator.Draft6Validator,
-	'http://json-schema.org/draft-06/hyper-schema#': JSV.validator.Draft6Validator,
-	'http://json-schema.org/draft-07/schema#': JSV.validator.Draft7Validator,
-	'http://json-schema.org/draft-07/hyper-schema#': JSV.validator.Draft7Validator
+	'http://json-schema.org/draft-04/schema#': ExtendedDraft4Validator,
+	'http://json-schema.org/draft-04/hyper-schema#': ExtendedDraft4Validator,
+	'http://json-schema.org/draft-06/schema#': ExtendedDraft6Validator,
+	'http://json-schema.org/draft-06/hyper-schema#': ExtendedDraft6Validator,
+	'http://json-schema.org/draft-07/schema#': ExtendedDraft7Validator,
+	'http://json-schema.org/draft-07/hyper-schema#': ExtendedDraft7Validator
 }
 
 def loadJSONSchemas(p_schemaHash,*args):
@@ -145,8 +171,10 @@ def loadJSONSchemas(p_schemaHash,*args):
 						# my $jsonSchemaP = $v->schema($jsonSchema)->schema;
 						# This step is done, so we fetch a complete schema
 						# $jsonSchema = $jsonSchemaP->data;
-						if 'id' in jsonSchema:
-							jsonSchemaURI = jsonSchema['id']
+						idKey = '$id'  if '$id' in jsonSchema else 'id'
+						
+						if idKey in jsonSchema:
+							jsonSchemaURI = jsonSchema[idKey]
 							if jsonSchemaURI in p_schemaHash:
 								print("\tERROR: validated, but schema in {0} and schema in {1} have the same id".format(jsonSchemaFile,p_schemaHash[jsonSchemaURI]['file']),file=sys.stderr)
 								numFileFail += 1

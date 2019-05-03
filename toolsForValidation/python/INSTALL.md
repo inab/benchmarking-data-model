@@ -30,5 +30,5 @@ In order to install the dependencies you need `virtualenv` or `venv`, and `pip`.
 Within the activated environment, the installation of the dependencies is done with next commands:
   ```bash
   pip install --upgrade pip
-  pip install -r requirements.txt
+  pip install -r requirements.txt -c constraints.txt
   ```
