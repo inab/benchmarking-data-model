@@ -4,9 +4,11 @@ use warnings 'all';
 use strict;
 
 use File::Spec qw();
+use FindBin;
+use lib File::Spec->catdir($FindBin::Bin,'deps','lib','perl5');
 
 use JSON::MaybeXS;
-use JSON::Validator 0.95;
+use JSON::Validator 3.00;
 
 use URI;
 
@@ -65,6 +67,15 @@ sub findFKs($$;$) {
 	return @FKs;
 }
 
+my %VALIDATOR_MAPPER = (
+	'http://json-schema.org/draft-04/schema#' => 'id',
+	'http://json-schema.org/draft-04/hyper-schema#' => 'id',
+	'http://json-schema.org/draft-06/schema#' => '@id',
+	'http://json-schema.org/draft-06/hyper-schema#' => '@id',
+	'http://json-schema.org/draft-07/schema#' => '@id',
+	'http://json-schema.org/draft-07/hyper-schema#' => '@id'
+);
+
 sub loadJSONSchemas(\%@) {
 	my($p_schemaHash,@jsonSchemaFiles) = @_;
 	my $p = JSON->new->convert_blessed;
@@ -102,18 +113,32 @@ sub loadJSONSchemas(\%@) {
 				close($S);
 				
 				my $jsonSchema = $p->decode($jsonSchemaText);
+				unless(exists($jsonSchema->{'$schema'})) {
+					print "\tIGNORE: $jsonSchemaFile does not have the mandatory '\$schema' attribute, so it cannot be validated\n";
+					$numFileIgnore ++;
+					next;
+				}
+				
+				my $schemaValId = $jsonSchema->{'$schema'};
+				unless(exists($VALIDATOR_MAPPER{$schemaValId})) {
+					print "\tIGNORE/FIXME: The JSON Schema id $schemaValId is not being acknowledged by this validator\n";
+					$numFileIgnore ++;
+					next;
+				}
+				
 				my $v = JSON::Validator->new();
-				my @valErrors = $v->schema(JSON::Validator::SPECIFICATION_URL)->validate($jsonSchema);
+				my @valErrors = $v->schema($schemaValId)->validate($jsonSchema);
 				if(scalar(@valErrors) > 0) {
 					print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
 					$numFileFail++;
 				} else {
 					# Getting the JSON Pointer object instance of the augmented schema
 					my $jsonSchemaP = $v->schema($jsonSchema)->schema;
+					my $idKey = exists($jsonSchema->{'$id'}) ? '$id' : 'id';
 					# This step is done, so we fetch a complete schema
 					$jsonSchema = $jsonSchemaP->data;
-					if(exists($jsonSchema->{'id'})) {
-						my $jsonSchemaURI = $jsonSchema->{'id'};
+					if(exists($jsonSchema->{$idKey})) {
+						my $jsonSchemaURI = $jsonSchema->{$idKey};
 						if(exists($p_schemaHash->{$jsonSchemaURI})) {
 							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchemaURI}[1]." have the same id\n";
 							$numFileFail++;
