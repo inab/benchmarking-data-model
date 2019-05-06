@@ -106,10 +106,10 @@
 			"required": ["creation","modification"]
 		},
 		"type": {
-			"title": "Type of dataset",
+			"title": "Type of dataset. Aggregation datasets are combinations of other aggregations or assessments.",
 			"type": "string",
 			"mingLength": 1,
-			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
+			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "aggregation", "other" ]
 		},
 		"datalink": {
 			"title": "The data itself, either linked or embedded",
