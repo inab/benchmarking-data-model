@@ -1,11 +1,11 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/MetricsCategory",
+	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/MetricsAggregate",
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Metrics category concept, where the list of metrics to be applied together for an specific community and their implementations are related (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"title": "Metrics aggregate concept, where the list of metrics to be applied together for an specific community and their implementations are related (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the metrics category, according to the rules",
+			"title": "The unique id of the metrics aggregate, according to the rules",
 			"type": "string",
 			"oneOf": [
 				{
@@ -29,18 +29,18 @@
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/MetricsCategory" ]
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/MetricsAggregate" ]
 		},
 		"orig_id": {
-			"title": "The metrics category original id",
-			"description": "The field is filled in on server side, and it contains the original id used on data submission for this metrics category, used by the community",
+			"title": "The metrics aggregate original id",
+			"description": "The field is filled in on server side, and it contains the original id used on data submission for this metrics aggregate, used by the community",
 			"readOnly": true,
 			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
 		"community_id": {
-			"title": "The community id, owner of this metrics category",
+			"title": "The community id, owner of this metrics aggregate",
 			"type": "string",
 			"foreign_keys": [
 				{
@@ -50,16 +50,16 @@
 			]
 		},
 		"name": {
-			"title": "Short metrics category name",
+			"title": "Short metrics aggregate name",
 			"minLength": 1,
 			"type": "string"
 		},
 		"description": {
-			"title": "Description of the metrics category",
+			"title": "Description of the metrics aggregate",
 			"type": "string"
 		},
-		"metrics_category_contact_ids": {
-			"title": "_id of the contacts of the responsible researchers in charge of the metrics category coordination",
+		"metrics_aggregate_contact_ids": {
+			"title": "_id of the contacts of the responsible researchers in charge of the metrics aggregate coordination",
 			"type": "array",
 			"minLength": 1,
 			"items": {
@@ -74,7 +74,7 @@
 			}
 		},
 		"metrics": {
-			"title": "The list of metrics in this category",
+			"title": "The list of metrics in this aggregation",
 			"type": "array",
 			"minLength": 1,
 			"items": {

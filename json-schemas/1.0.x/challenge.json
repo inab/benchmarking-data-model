@@ -109,16 +109,16 @@
 			"type": "string",
 			"format": "uri"
 		},
-		"metrics_category_ids": {
-			"title": "The metrics category/ies appliable to all or part of the participants of this challenge",
+		"metrics_aggregate_ids": {
+			"title": "The metrics aggregate/s appliable to all or part of the participants of this challenge",
 			"type": "array",
 			"minLength": 1,
 			"items": {
-				"title": "The metrics category id",
+				"title": "The metrics aggregate id",
 				"type": "string",
 				"foreign_keys": [
 					{
-						"schema_id": "MetricsCategory",
+						"schema_id": "MetricsAggregate",
 						"members": [ "." ]
 					}
 				]
