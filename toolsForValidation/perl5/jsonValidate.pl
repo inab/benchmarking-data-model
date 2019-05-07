@@ -5,6 +5,8 @@ use strict;
 
 use File::Spec qw();
 use FindBin;
+# We cannot use local::lib because at this point we cannot be sure
+# about having it installed
 use lib File::Spec->catdir($FindBin::Bin,'deps','lib','perl5');
 
 use JSON::MaybeXS;
