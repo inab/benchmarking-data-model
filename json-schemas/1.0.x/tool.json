@@ -53,20 +53,20 @@
 			"title": "Long tool name or description",
 			"type": "string"
 		},
-		"community_id": {
-					"title": "The community/es where this tool is participating",
-					"type": "array",
-					"minLength": 1,
-					"items": {
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Community",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
+		"community_ids": {
+			"title": "The community/es where this tool are being used",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Community",
+						"members": [ "." ]
 					}
+				],
+				"minLength": 1
+			}
 		},
 		"is_automated": {
 			"title": "Can this tool be automatically invoked?",
@@ -75,7 +75,7 @@
 		"tool_contact_ids": {
 			"title": "The tool's contact id(s), i.e. the creators",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -106,7 +106,7 @@
 		"references": {
 			"title": "The tool's reference id(s)",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -121,7 +121,7 @@
 		"tool_access": {
 			"title": "Methods to access the tool",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -139,6 +139,7 @@
 					"techdocs": {
 						"title": "Optional technical documentation of the tool access",
 						"type": "array",
+						"minItems": 1,
 						"items": {
 							"type": "object",
 							"properties": {
@@ -169,7 +170,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","name","community_id", "is_automated","tool_contact_ids","status","tool_access"],
+	"required": ["_id","_schema","name","community_ids","is_automated","tool_contact_ids","status","tool_access"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
