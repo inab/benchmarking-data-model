@@ -51,7 +51,7 @@
 		"metrics_contact_ids": {
 			"title": "The contact id(s) of the creators of this metrics",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -78,7 +78,7 @@
 		"links": {
 			"title": "Optional links related to the metrics",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -102,6 +102,7 @@
 		"references": {
 			"title": "The metrics reference id(s) (if any)",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [

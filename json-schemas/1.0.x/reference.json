@@ -29,7 +29,7 @@
 		"bibliographic_ids": {
 			"title": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"title": "Currently, the accepted ids are pmid, doi and pmc",
 				"type": "string",
@@ -44,6 +44,7 @@
 		"authors": {
 			"title": "Optional list of authors of the referenced material",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {

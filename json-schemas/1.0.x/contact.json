@@ -60,6 +60,7 @@
 		"links": {
 			"title": "Optional links related to the contact",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
