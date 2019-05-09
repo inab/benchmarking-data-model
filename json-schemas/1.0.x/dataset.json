@@ -10,7 +10,7 @@
 			"oneOf": [
 				{
 					"pattern": "^(?!(?i)OEB).+$",
-					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
+					"description": "If it is a public dataset, an identifiers.org basd CURIE defining the dataset (for instance, a DOI) should be used\nIdentifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
 					"writeOnly": true
 				},
 				{
@@ -33,26 +33,31 @@
 		},
 		"orig_id": {
 			"title": "The dataset original id",
-			"description": "The field is filled in on server side, and it contains the original id used on data submission for this dataset, used by the community",
+			"description": "If it is a public dataset, an identifiers.org basd CURIE defining the dataset (for instance, a DOI) should be used\nThe field is filled in on server side, and it contains the original id used on data submission for this dataset, used by the community",
 			"readOnly": true,
 			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
 			"minLength": 1
 		},
-		"community_id": {
-			"title": "The community where this dataset was generated or used",
-			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "Community",
-					"members": [ "." ]
-				}
-			]
+		"community_ids": {
+			"title": "The communities where this dataset was generated or used",
+			"description": "This field is redundant, as it can be obtained from the challenges",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Community",
+						"members": [ "." ]
+					}
+				]
+			}
 		},
 		"challenge_ids": {
 			"title": "The challenge(s) where this dataset was generated or used",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -144,7 +149,7 @@
 						"attrs": {
 							"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink (RFC 5854, RFC 6249, https://en.wikipedia.org/wiki/Metalink) or a standard sums (MD5, SHA1) file",
 							"type": "array",
-							"minLength": 1,
+							"minItems": 1,
 							"uniqueItems": true,
 							"anyOf": [
 								{
@@ -180,7 +185,7 @@
 		"dataset_contact_ids": {
 			"title": "The contact id(s) of the depositor(s)/creator(s) of this dataset",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -220,7 +225,7 @@
 				},
 				"rel_dataset_ids": {
 					"type": "array",
-					"minLength": 1,
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -251,6 +256,7 @@
 		"references": {
 			"title": "The reference id(s) of this dataset (if any)",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -264,7 +270,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","community_id","visibility","name","version","type","dates","datalink","dataset_contact_ids"],
+	"required": ["_id","_schema","challenge_ids","visibility","name","version","type","dates","datalink","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
