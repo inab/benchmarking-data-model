@@ -1,0 +1,17 @@
+{
+    "_id":"OEBM0020000001",
+    "orig_id":"TCGA:PPR",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics",
+    "title":"Precision / Positive Predictive Value (PPV)",
+    "description":"Agreement (specificity) with Consensus Driver Genes List over the total set of predicted genes, measured through the precision/PPV",
+    "metrics_contact_ids":[
+       "Matthew.Bailey",
+      "Eduard.Porta",
+      "Collin.Tokheim"
+    ],
+    "formal_definition":"PPV = TP / (TP + FP)",
+    "references":[
+        "doi:10.1016/j.cell.2018.02.060"
+     ]
+
+ }

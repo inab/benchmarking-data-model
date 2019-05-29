@@ -1,13 +1,27 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Benchmarking Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the benchmarking event, according to the rules",
+			"title": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers",
 			"type": "string",
-			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$"
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBE[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -15,10 +29,12 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent" ]
 		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
 		"orig_id": {
-			"title": "The community provided id for the benchmarking event, used by the community",
-			"type": "string",
-			"minLength": 1
+			"title": "The benchmarking event original id",
+			"$ref": "_shared#/definitions/OriginalId"
 		},
 		"name": {
 			"title": "Short benchmarking event name",
@@ -66,7 +82,7 @@
 			}
 		},
 		"url": {
-			"title": "The link to the benchmarking event",
+			"title": "The public link to the benchmarking event",
 			"type": "string",
 			"format": "uri"
 		},
@@ -84,7 +100,7 @@
 		"bench_contact_ids": {
 			"title": "The benchmarking event contact id(s)",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -99,6 +115,7 @@
 		"references": {
 			"title": "The benchmarking event reference id(s) (if any)",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -111,8 +128,8 @@
 			}
 		}
 	},
-	"additionalProperties": true,
-	"required": ["_id","_schema","orig_id","name","dates","community_id","bench_contact_ids"],
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","dates","community_id","bench_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

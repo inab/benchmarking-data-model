@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Challenge concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -7,7 +7,21 @@
 		"_id": {
 			"title": "The unique id of the challenge, according to the rules",
 			"type": "string",
-			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$"
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -15,14 +29,25 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge" ]
 		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
 		"orig_id": {
-			"title": "The community provided id for the challenge, used by the community",
-			"type": "string",
-			"minLength": 1
+			"title": "The challenge original id",
+			"$ref": "_shared#/definitions/OriginalId"
 		},
 		"name": {
 			"title": "Short challenge name",
 			"minLength": 1,
+			"type": "string"
+		},
+		"acronym": {
+			"title": "Friendly challenge acronym",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long description of the challenge",
 			"type": "string"
 		},
 		"benchmarking_event_id": {
@@ -77,14 +102,69 @@
 			}
 		},
 		"url": {
-			"title": "The link to an specific challenge page",
+			"title": "The public link to an specific challenge page",
 			"type": "string",
 			"format": "uri"
+		},
+		"metrics_categories": {
+			"title": "The metrics category/es appliable to all or part of the participants of this challenge",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"category": {
+						"title": "Metrics category",
+						"minLength": 1,
+						"type": "string",
+						"enum": ["aggregation","assessment"]
+					},
+					"description": {
+						"title": "Description of the metrics category",
+						"type": "string"
+					},
+					"metrics": {
+						"title": "The list of metrics in this category",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "object",
+							"properties": {
+								"metrics_id": {
+									"title": "The metrics id",
+									"type": "string",
+									"foreign_keys": [
+										{
+											"schema_id": "Metrics",
+											"members": [ "." ]
+										}
+									]
+								},
+								"tool_id": {
+									"title": "The optional tool id which computes this metric(s)",
+									"type": "string",
+									"foreign_keys": [
+										{
+											"schema_id": "Tool",
+											"members": [ "." ]
+										}
+									]
+								}
+							},
+							"required": [ "metrics_id" ]
+						}
+					}
+				},
+				"required": [
+					"metrics",
+					"category"
+				]
+			}
 		},
 		"challenge_contact_ids": {
 			"title": "The challenge contact id(s)",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -99,6 +179,7 @@
 		"references": {
 			"title": "The challenge reference id(s) (if any)",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -111,8 +192,8 @@
 			}
 		}
 	},
-	"additionalProperties": true,
-	"required": ["_id","_schema","orig_id","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","participants"],
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

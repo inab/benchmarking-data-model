@@ -83,16 +83,52 @@ def findFKs(jsonSchema,jsonSchemaURI,prefix=""):
 	
 	return FKs
 
+# Augmenting the supported types
+#from libs.curie_search import CurieSearch
+#from libs.ontology_term import OntologyTerm
 
-def loadJSONSchemas(p_schemaHash,*args):
+CustomTypes = {
+#	'curie': CurieSearch.IsCurie,
+#	'term': OntologyTerm.IsTerm
+}
+
+CustomValidators = {
+#	'namespace': CurieSearch.IsValidCurie,
+#	'ontology': OntologyTerm.IsValidTerm
+}
+
+def extendValidator(validator):
+	extendedValidators = validator.VALIDATORS.copy()
+	extendedValidators.update(CustomValidators)
+	
+	extendedChecker = validator.TYPE_CHECKER.redefine_many(CustomTypes)
+	
+	return JSV.validators.extend(validator, validators=extendedValidators , type_checker=extendedChecker)
+	
+ExtendedDraft4Validator = extendValidator(JSV.validators.Draft4Validator)
+ExtendedDraft6Validator = extendValidator(JSV.validators.Draft6Validator)
+ExtendedDraft7Validator = extendValidator(JSV.validators.Draft7Validator)
+
+VALIDATOR_MAPPER = {
+	'http://json-schema.org/draft-04/schema#': ExtendedDraft4Validator,
+	'http://json-schema.org/draft-04/hyper-schema#': ExtendedDraft4Validator,
+	'http://json-schema.org/draft-06/schema#': ExtendedDraft6Validator,
+	'http://json-schema.org/draft-06/hyper-schema#': ExtendedDraft6Validator,
+	'http://json-schema.org/draft-07/schema#': ExtendedDraft7Validator,
+	'http://json-schema.org/draft-07/hyper-schema#': ExtendedDraft7Validator
+}
+
+def cacheJSONSchemas(*args):
 	# Schema validation stats
 	numDirOK = 0
 	numDirFail = 0
 	numFileOK = 0
+	uriLoad = []
+	uriSet = set()
 	numFileIgnore = 0
 	numFileFail = 0
 	
-	print("PASS 0.a: JSON schema loading and validation")
+	print("PASS 0.a: JSON schema cache linking")
 	jsonSchemaFiles = list(args)
 	for jsonSchemaFile in jsonSchemaFiles:
 		if os.path.isdir(jsonSchemaFile):
@@ -112,56 +148,115 @@ def loadJSONSchemas(p_schemaHash,*args):
 		else:
 			try:
 				with open(jsonSchemaFile,mode="r",encoding="utf-8") as sHandle:
-					print("* Loading schema {0}".format(jsonSchemaFile))
+					print("* Analyzing schema {0}".format(jsonSchemaFile))
 					
 					jsonSchema = json.load(sHandle)
 					
-					valErrors = [ error  for error in JSV.validators.Draft4Validator(JSV.validators.Draft4Validator.META_SCHEMA).iter_errors(jsonSchema) ]
-					if len(valErrors) > 0:
-						print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format("/"+"/".join(map(lambda e: str(e),se.path)),se.message) , valErrors))+"\n")
-						numFileFail += 1
-					else:
-						# Getting the JSON Pointer object instance of the augmented schema
-						# my $jsonSchemaP = $v->schema($jsonSchema)->schema;
-						# This step is done, so we fetch a complete schema
-						# $jsonSchema = $jsonSchemaP->data;
-						if 'id' in jsonSchema:
-							jsonSchemaURI = jsonSchema['id']
-							if jsonSchemaURI in p_schemaHash:
-								print("\tERROR: validated, but schema in {0} and schema in {1} have the same id".format(jsonSchemaFile,p_schemaHash[jsonSchemaURI][1]),file=sys.stderr)
-								numFileFail += 1
-							else:
-								print("\t- Validated {0}".format(jsonSchemaURI))
-								
-								# Curating the primary key
-								p_PK = None
-								if 'primary_key' in jsonSchema:
-									p_PK = jsonSchema['primary_key']
-									if isinstance(p_PK,(list,tuple)):
-										for key in p_PK:
-											#if type(key) not in ALLOWED_ATOMIC_VALUE_TYPES:
-											if type(key) not in ALLOWED_KEY_TYPES:
-												print("\tWARNING: primary key in {0} is not composed by strings defining its attributes. Ignoring it".format(jsonSchemaFile),file=sys.stderr)
-												p_PK = None
-												break
-									else:
-										p_PK = None
-								
-								# Gather foreign keys
-								FKs = findFKs(jsonSchema,jsonSchemaURI)
-								
-								#print(FKs,file=sys.stderr)
-								
-								p_schemaHash[jsonSchemaURI] = (jsonSchema,jsonSchemaFile,p_PK,FKs)
-								numFileOK += 1
+					# Getting the JSON Pointer object instance of the augmented schema
+					# my $jsonSchemaP = $v->schema($jsonSchema)->schema;
+					# This step is done, so we fetch a complete schema
+					# $jsonSchema = $jsonSchemaP->data;
+					idKey = '$id'  if '$id' in jsonSchema else 'id'
+					
+					if idKey in jsonSchema:
+						jsonSchemaURI = jsonSchema[idKey]
+						
+						numFileOK += 1
+						
+						if jsonSchemaURI in uriSet:
+							print("\t- Skipped due duplicate URI {0}".format(jsonSchemaURI))
 						else:
-							print("\tIGNORE: validated, but schema in {0} has no id attribute".format(jsonSchemaFile),file=sys.stderr)
-							numFileIgnore += 1
+							uriLoad.append((jsonSchemaURI,jsonSchema,jsonSchemaFile))
+							uriSet.add(jsonSchemaURI)
+							print("\t- Cached URI {0}".format(jsonSchemaURI))
+					else:
+						print("\tIGNORE: {0} does not have the mandatory '$id' or 'id' attribute".format(jsonSchemaFile),file=sys.stderr)
+						numFileIgnore += 1
 			except IOError as ioe:
 				print("FATAL ERROR: Unable to open schema file {0}. Reason: {1}".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
 				numFileFail += 1
 	
-	print("\nSCHEMA VALIDATION STATS: loaded {0} schemas from {1} directories, ignored {2} schemas, failed {3} schemas and {4} directories".format(numFileOK,numDirOK,numFileIgnore,numFileFail,numDirFail))
+	print("\nSCHEMA LINKING STATS: linked {0} schemas from {1} directories, {2} schemas to be loaded, ignored {3} schemas, failed {4} schemas and {5} directories".format(numFileOK,numDirOK,len(uriLoad),numFileIgnore,numFileFail,numDirFail))
+	
+	return uriLoad
+
+def loadJSONSchemas(p_schemaHash,uriLoad):
+	# Schema validation stats
+	numFileOK = 0
+	numFileIgnore = 0
+	numFileFail = 0
+	
+	print("\nPASS 0.a: JSON schema loading and validation")
+	for _,jsonSchema,jsonSchemaFile in uriLoad:
+		try:
+			print("* Loading schema {0}".format(jsonSchemaFile))
+			
+			schemaValId = jsonSchema.get('$schema')
+			if schemaValId is None:
+				print("\tIGNORE: {0} does not have the mandatory '$schema' attribute, so it cannot be validated".format(jsonSchemaFile))
+				numFileIgnore += 1
+				continue
+			
+			validator = VALIDATOR_MAPPER.get(schemaValId)
+			if validator is None:
+				print("\tIGNORE/FIXME: The JSON Schema id {0} is not being acknowledged by this validator".format(schemaValId))
+				numFileIgnore += 1
+				continue
+			
+			valErrors = [ error  for error in validator(validator.META_SCHEMA).iter_errors(jsonSchema) ]
+			if len(valErrors) > 0:
+				print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format("/"+"/".join(map(lambda e: str(e),se.path)),se.message) , valErrors))+"\n")
+				numFileFail += 1
+			else:
+				# Getting the JSON Pointer object instance of the augmented schema
+				# my $jsonSchemaP = $v->schema($jsonSchema)->schema;
+				# This step is done, so we fetch a complete schema
+				# $jsonSchema = $jsonSchemaP->data;
+				idKey = '$id'  if '$id' in jsonSchema else 'id'
+				
+				if idKey in jsonSchema:
+					jsonSchemaURI = jsonSchema[idKey]
+					if jsonSchemaURI in p_schemaHash:
+						print("\tERROR: validated, but schema in {0} and schema in {1} have the same id".format(jsonSchemaFile,p_schemaHash[jsonSchemaURI]['file']),file=sys.stderr)
+						numFileFail += 1
+					else:
+						print("\t- Validated {0}".format(jsonSchemaURI))
+						
+						# Curating the primary key
+						p_PK = None
+						if 'primary_key' in jsonSchema:
+							p_PK = jsonSchema['primary_key']
+							if isinstance(p_PK,(list,tuple)):
+								for key in p_PK:
+									#if type(key) not in ALLOWED_ATOMIC_VALUE_TYPES:
+									if type(key) not in ALLOWED_KEY_TYPES:
+										print("\tWARNING: primary key in {0} is not composed by strings defining its attributes. Ignoring it".format(jsonSchemaFile),file=sys.stderr)
+										p_PK = None
+										break
+							else:
+								p_PK = None
+						
+						# Gather foreign keys
+						FKs = findFKs(jsonSchema,jsonSchemaURI)
+						
+						#print(FKs,file=sys.stderr)
+						
+						p_schemaHash[jsonSchemaURI] = {
+							'schema': jsonSchema,
+							'validator': validator,
+							'file': jsonSchemaFile,
+							'pk': p_PK,
+							'fk': FKs
+						}
+						numFileOK += 1
+				else:
+					print("\tIGNORE: validated, but schema in {0} has no id attribute".format(jsonSchemaFile),file=sys.stderr)
+					numFileIgnore += 1
+		except IOError as ioe:
+			print("FATAL ERROR: Unable to open schema file {0}. Reason: {1}".format(jsonSchemaFile,ioe.strerror),file=sys.stderr)
+			numFileFail += 1
+	
+	print("\nSCHEMA VALIDATION STATS: loaded {0} schemas, ignored {1} schemas, failed {2} schemas".format(numFileOK,numFileIgnore,numFileFail))
 	
 	print("\nPASS 0.b: JSON schema set consistency checks")
 	
@@ -169,8 +264,8 @@ def loadJSONSchemas(p_schemaHash,*args):
 	numSchemaConsistent = 0
 	numSchemaInconsistent = 0
 	for jsonSchemaURI , p_schema in p_schemaHash.items():
-		jsonSchemaFile = p_schema[1]
-		p_FKs = p_schema[3]
+		jsonSchemaFile = p_schema['file']
+		p_FKs = p_schema['fk']
 		print("* Checking {0}".format(jsonSchemaFile))
 		
 		isValid = True
@@ -280,9 +375,12 @@ def genKeyStrings(keyTuple):
 	return tuple(map(lambda pkString: json.dumps(pkString, sort_keys=True, separators=(',',':')) , pkStrings))
 
 
-def jsonValidate(p_schemaHash,*args):
+def jsonValidate(p_schemaHash,uriLoad,*args):
 	# A two level hash, in order to check primary key restrictions
 	PKvals = dict()
+	
+	# Let's build the dict to be used by the resolver
+	uri2schema = dict((jsonSchemaURI,jsonSchema) for jsonSchemaURI,jsonSchema,_ in uriLoad)
 	
 	# JSON validation stats
 	numDirOK = 0
@@ -328,9 +426,12 @@ def jsonValidate(p_schemaHash,*args):
 						if jsonSchemaId in p_schemaHash:
 							print("\t- Using {0} schema".format(jsonSchemaId))
 							
-							jsonSchema = p_schemaHash[jsonSchemaId][0]
+							jsonSchema = p_schemaHash[jsonSchemaId]['schema']
+							validator = p_schemaHash[jsonSchemaId]['validator']
 							
-							valErrors = [ error  for error in JSV.validators.Draft4Validator(jsonSchema).iter_errors(jsonDoc) ]
+							schemaSetResolver = JSV.RefResolver.from_schema(jsonSchema,store=uri2schema)
+	
+							valErrors = [ error  for error in validator(jsonSchema,resolver=schemaSetResolver).iter_errors(jsonDoc) ]
 							
 							if len(valErrors) > 0:
 								print("\t- ERRORS:\n"+"\n".join(map(lambda se: "\t\tPath: {0} . Message: {1}".format("/"+"/".join(map(lambda e: str(e),se.path)),se.message) , valErrors))+"\n")
@@ -341,7 +442,7 @@ def jsonValidate(p_schemaHash,*args):
 							else:
 								# Does the schema contain a PK declaration?
 								isValid = True
-								p_PK_def = p_schemaHash[jsonSchemaId][2]
+								p_PK_def = p_schemaHash[jsonSchemaId]['pk']
 								if p_PK_def is not None:
 									p_PK = None
 									if jsonSchemaId in PKvals:
@@ -410,7 +511,7 @@ def jsonValidate(p_schemaHash,*args):
 					if jsonSchemaId in p_schemaHash:
 						print("\t- Using {0} schema".format(jsonSchemaId))
 						
-						p_FKs = p_schemaHash[jsonSchemaId][3]
+						p_FKs = p_schemaHash[jsonSchemaId]['fk']
 						
 						isValid = True
 						#print(p_schemaHash[jsonSchemaId])
@@ -461,10 +562,10 @@ def jsonValidate(p_schemaHash,*args):
 if len(sys.argv) > 1:
 	jsonSchemaDir = sys.argv[1]
 	
-	jsonSchema = None
+	uriLoad = cacheJSONSchemas(jsonSchemaDir)
 	
 	schemaHash = {}
-	loadJSONSchemas(schemaHash,jsonSchemaDir)
+	loadJSONSchemas(schemaHash,uriLoad)
 	
 	if len(sys.argv) > 2:
 		if len(schemaHash) == 0:
@@ -472,7 +573,7 @@ if len(sys.argv) > 1:
 			sys.exit(1)
 		
 		args = tuple(sys.argv[2:])
-		jsonValidate(schemaHash,*args)
+		jsonValidate(schemaHash,uriLoad,*args)
 else:
 	print("Usage: {0} {{JSON schema}} {{JSON file}}*".format(sys.argv[0]),file=sys.stderr)
 	sys.exit(1)

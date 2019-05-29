@@ -1,0 +1,39 @@
+{
+    "_id": "OEBD002t0000ND",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t00000X"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "inline_data": {
+            "value": 1.0
+        }
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "OEBM0020000001",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002t00007B"
+            },
+            {
+                "dataset_id": "OEBD002t00008P"
+            }
+        ],
+        "tool_id": "OEBT0020000007"
+    },
+    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to OncodriveCLUST predictions in Uterine Carcinosarcoma",
+    "name": "Assesment of Metric precision-PPV in OncodriveCLUST",
+    "orig_id": "TCGA:2018-04-05_UCS_A_precision_OncodriveCLUST",
+    "type": "assessment",
+    "version": "1"
+}

@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -7,7 +7,21 @@
 		"_id": {
 			"title": "The unique id of the dataset, according to the rules",
 			"type": "string",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$"
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -15,25 +29,32 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset" ]
 		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
 		"orig_id": {
-			"title": "When the community provided a dataset which has an internal id used by the community",
-			"type": "string",
-			"minLength": 1
+			"title": "The dataset original id",
+			"$ref": "_shared#/definitions/OriginalId"
 		},
-		"community_id": {
-			"title": "The community where this dataset was generated or used",
-			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "Community",
-					"members": [ "." ]
-				}
-			]
-		},
-		"challenge_id": {
-			"title": "The challenge where this dataset was generated or used",
+		"community_ids": {
+			"title": "The communities where this dataset was generated or used",
+			"description": "This field is redundant, as it can be obtained from the challenges",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Community",
+						"members": [ "." ]
+					}
+				]
+			}
+		},
+		"challenge_ids": {
+			"title": "The challenge(s) where this dataset was generated or used",
+			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -87,68 +108,81 @@
 			"required": ["creation","modification"]
 		},
 		"type": {
-			"title": "Type of dataset",
+			"title": "Type of dataset. Aggregation datasets are combinations of other aggregations or assessments.",
 			"type": "string",
 			"mingLength": 1,
-			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "challenge", "other" ]
+			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "aggregation", "other" ]
 		},
 		"datalink": {
-			"title": "The link to reach the dataset",
+			"title": "The data itself, either linked or embedded",
 			"type": "object",
-			"properties": {
-				"uri": {
-					"title": "Either inline, encoded data URI, or download link to the dataset itself, or to a Metalink, a MD5/SHA1 sums file, or an official CURIE",
-					"oneOf": [
-						{
+			"oneOf": [
+				{
+					"title": "Inline, embedded data",
+					"properties": {
+						"inline_data": {
+							"title": "Inline data in JSON format",
+							"type": "object",
+							"minProperties": 1,
+							"additionalProperties": true
+						},
+						"schema_url": {
+							"title": "The optional URL to the JSON Schema which validates the inline data. It could be embedded, using the data: protocol encoding",
+							"type": "string",
+							"format": "uri"
+						}
+					},
+					"additionalProperties": false,
+					"required": [ "inline_data" ]
+				},
+				{
+					"title": "The link to reach the dataset",
+					"properties": {
+						"uri": {
+							"title": "Either inline, encoded data URI; or an official CURIE; or download link to the dataset itself; or a link to a Metalink describing the dataset; or a link to a MD5/SHA1 sums file with relative paths",
 							"type": "string",
 							"format": "uri"
 						},
-						{
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"inline_data": {
-									"title": "Inline data in JSON format",
-									"type": "object",
-									"minProperties": 1,
-									"additionalProperties": true
+						"attrs": {
+							"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink (RFC 5854, RFC 6249, https://en.wikipedia.org/wiki/Metalink) or a standard sums (MD5, SHA1) file",
+							"type": "array",
+							"minItems": 1,
+							"uniqueItems": true,
+							"anyOf": [
+								{
+									"items": {
+										"type": "string",
+										"enum": [ "inline","compressed", "archive", "metalink", "sums" ]
+									}
 								},
-								"schema_url": {
-									"title": "The optional URL to the JSON Schema which validates the inline data",
-									"type": "string",
-									"format": "url"
+								{
+									"items": {
+										"type": "string",
+										"enum": [ "curie", "compressed", "archive", "metalink" ]
+									}
 								}
-							},
-							"required": [ "inline_data" ]
+							]
+						},
+						"validation_date": {
+							"title": "Last validation date of the datalink",
+							"type": "string",
+							"format": "date-time"
+						},
+						"status": {
+							"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
+							"type": "string",
+							"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
 						}
-					]
-				},
-				"attrs": {
-					"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink o a standard sums (MD5, SHA1) file",
-					"type": "array",
-					"minLength": 1,
-					"items": {
-						"type": "string",
-						"enum": [ "inline", "curie","compressed", "archive", "metalink", "sums" ]
-					}
-				},
-				"validation_date": {
-					"title": "Last validation date of the datalink",
-					"type": "string",
-					"format": "date-time"
-				},
-				"status": {
-					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
-					"type": "string",
-					"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+					},
+					"additionalProperties": false,
+					"required": [ "uri", "attrs" ]
 				}
-			},
-			"required": [ "uri", "attrs" ]
+			]
 		},
 		"dataset_contact_ids": {
 			"title": "The contact id(s) of the depositor(s)/creator(s) of this dataset",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -188,7 +222,7 @@
 				},
 				"rel_dataset_ids": {
 					"type": "array",
-					"minLength": 1,
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
@@ -219,6 +253,7 @@
 		"references": {
 			"title": "The reference id(s) of this dataset (if any)",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -231,8 +266,8 @@
 			}
 		}
 	},
-	"additionalProperties": true,
-	"required": ["_id","_schema","community_id","name","version","type","dates","datalink","dataset_contact_ids"],
+	"additionalProperties": false,
+	"required": ["_id","_schema","challenge_ids","visibility","name","version","type","dates","datalink","dataset_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

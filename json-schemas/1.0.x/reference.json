@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -12,7 +12,7 @@
 					"pattern": "^doi:[0-9]{2}\\.[0-9]{4}/"
 				},
 				{
-					"pattern": "^pmid:[1-9][0-9]*$"
+					"pattern": "^pubmed:[1-9][0-9]*$"
 				}
 			]
 		},
@@ -22,6 +22,9 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference" ]
 		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
 		"title": {
 			"title": "The title of the referenced material",
 			"type": "string"
@@ -29,7 +32,7 @@
 		"bibliographic_ids": {
 			"title": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"title": "Currently, the accepted ids are pmid, doi and pmc",
 				"type": "string",
@@ -44,6 +47,7 @@
 		"authors": {
 			"title": "Optional list of authors of the referenced material",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -85,7 +89,7 @@
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": ["_id","_schema","title","bibliographic_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}

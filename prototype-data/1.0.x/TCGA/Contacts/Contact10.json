@@ -1,0 +1,11 @@
+{
+   "_id":"Li.Ding",
+   "givenName":"Li",
+   "surname":"Ding",
+   "email":[
+      "lding@wustl.edu"
+   ],
+   "notes":"Unknown",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+   "contact_type":"person"
+}

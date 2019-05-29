@@ -1,0 +1,38 @@
+{
+    "_id": "OEBD002t00006T",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_id": [
+        "OEBX002t00000V"
+    ],
+    "community_id": "OEBC002",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/357d9cf5-b0ee-4a6e-851f-a58ff9ec716d",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "OEBD002000000L"
+            }
+        ],
+        "tool_id": "OEBT0020000002"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool ActiveDriver in Thymoma",
+    "name": "Cancer Driver Genes in Thymoma",
+    "orig_id": "TCGA:2018-04-05_THYM_P_ActiveDriver",
+    "type": "participant",
+    "version": "unknown"
+}

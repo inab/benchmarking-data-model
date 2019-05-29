@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Contact concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -14,6 +14,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"contact_type": {
 			"title": "Type of contact: physical person, helpdesk, other",
@@ -42,6 +45,17 @@
 				"format": "email"
 			}
 		},
+		"community_id": {
+			"title": "The community id where this benchmarking event belongs",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 7
+		},
 		"notes": {
 			"title": "Comments about the contact",
 			"type": "string"
@@ -49,6 +63,7 @@
 		"links": {
 			"title": "Optional links related to the contact",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -71,12 +86,13 @@
 			}
 		}
 	},
-	"additionalProperties": true,
+	"additionalProperties": false,
 	"required": [
 		"_id",
 		"_schema",
 		"contact_type",
-		"email"
+		"email",
+		"community_id"
 	],
 	"primary_key": ["_id"],
 	"dependencies": {}

@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -14,6 +14,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"name": {
 			"title": "Short community name",
@@ -41,12 +44,12 @@
 				"type": "string",
 				"minLength": 1
 			},
-			"minLength": 1
+			"minItems": 1
 		},
 		"links": {
 			"title": "Optional links related to the community",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -58,7 +61,11 @@
 					"label": {
 						"title": "The type of URI",
 						"type": "string",
-						"enum": ["PublicationDOI","LinkedInGroup","MainSite","DataSite"]
+						"enum": ["LinkedInGroup","MainSite","DataSite","other"]
+					},
+					"comment": {
+						"title": "Internal comment about this URI (useful when the type of URI is other)",
+						"type": "string"
 					}
 				},
 				"additionalProperties": false,
@@ -68,10 +75,25 @@
 				]
 			}
 		},
-		"community_contacts": {
+		"references": {
+			"title": "The community reference id(s) (if any)",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"community_contact_ids": {
 			"title": "_id of the contacts of the responsible researchers in charge of the community coordination",
 			"type": "array",
-			"minLength": 1,
+			"minItems": 1,
 			"items": {
 				"type": "string",
 				"foreign_keys": [
@@ -83,60 +105,10 @@
 				"minLength": 1
 			}
 		},
-		"metrics_categories": {
-			"title": "The metric(s) (defined as tools) which must be run over all the results provided by the participants",
-			"type": "array",
-			"minLength": 1,
-			"items": {
-				"title": "The metrics (and maybe the tool) for this challenge",
-				"type": "object",
-				"properties": {
-					"category_id": {
-						"title": "The local metrics category id, composed by 1 or more metrics",
-						"type": "string"
-					},
-					"description": {
-						"title": "The optional category description",
-						"type": "string"
-					},
-					"metrics": {
-						"title": "The list of metrics in this category",
-						"type": "array",
-						"minLength": 1,
-						"items": {
-							"type": "object",
-							"properties": {
-								"metrics_id": {
-									"title": "The metrics id",
-									"type": "string",
-									"foreign_keys": [
-										{
-											"schema_id": "Metrics",
-											"members": [ "." ]
-										}
-									]
-								},
-								"tool_id": {
-									"title": "The optional tool id which computes this metric(s)",
-									"type": "string",
-									"foreign_keys": [
-										{
-											"schema_id": "Tool",
-											"members": [ "." ]
-										}
-									]
-								}
-							},
-							"required": [ "metrics_id" ]
-						}
-					}
-				},
-				"required": [ "category_id", "metrics" ]
-			}
-		},
 		"reference_tools": {
 			"title": "The tools which are considered as reference/baseline on this community",
 			"type": "array",
+			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -160,8 +132,8 @@
 			}
 		}
 	},
-	"additionalProperties": true,
-	"required": ["_id","_schema","name","acronym","status","community_contacts"],
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","acronym","status","community_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
