@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -14,6 +14,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"name": {
 			"title": "Short community name",

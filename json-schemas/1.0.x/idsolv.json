@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Simple Namespace resolver for CURIE ids",
 	"type": "object",
@@ -14,6 +14,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"description": {
 			"title": "Long description of the namespace",

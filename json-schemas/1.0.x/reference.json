@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -21,6 +21,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"title": {
 			"title": "The title of the referenced material",

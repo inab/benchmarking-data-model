@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Challenge concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -9,9 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^(?!(?i)OEB).+$",
-					"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
-					"writeOnly": true
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
 				},
 				{
 					"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
@@ -31,13 +29,12 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge" ]
 		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
 		"orig_id": {
 			"title": "The challenge original id",
-			"description": "The field is filled in on server side, and it contains the original id used on data submission for this challenge, used by the community",
-			"readOnly": true,
-			"pattern": "^(?!(?i)OEB).+$",
-			"type": "string",
-			"minLength": 1
+			"$ref": "_shared#/definitions/OriginalId"
 		},
 		"name": {
 			"title": "Short challenge name",

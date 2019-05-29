@@ -1,0 +1,29 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/_shared",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "ELIXIR-EXCELERATE WP2 Benchmarking shared schema definitions",
+	"definitions": {
+		"Metadata": {
+			"title": "Platform metadata",
+			"description": "This object contains all the metadata needed in the different OpenEBench processing and platform steps. Its contents should be only generated, validated or managed by OpenEBench programs. The keys of the properties in this object must start either with an underscore or with a namespace. This last case could be considered in the future to identify accesory JSON Schemas which help on further validation",
+			"type": "object",
+			"additionalProperties": true,
+			"propertyNames": {
+				"pattern": "^(?:[A-Za-z][A-Za-z0-9_-]*:|_)[A-Za-z][A-Za-z0-9_-]*$"
+			}
+		},
+		"OriginalId": {
+			"title": "The original id of the entry",
+			"description": "The field is filled in on server side, and it contains the original id in '_id' used on data submission, used by the community",
+			"readOnly": true,
+			"pattern": "^(?!(?i)OEB).+$",
+			"type": "string",
+			"minLength": 1
+		},
+		"OriginalIdOnSub": {
+			"pattern": "^(?!(?i)OEB).+$",
+			"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
+			"writeOnly": true
+		}
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Contact concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"type": "object",
@@ -14,6 +14,9 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
 		},
 		"contact_type": {
 			"title": "Type of contact: physical person, helpdesk, other",
