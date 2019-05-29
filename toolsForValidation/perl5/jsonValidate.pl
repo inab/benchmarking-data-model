@@ -9,8 +9,11 @@ use FindBin;
 # about having it installed
 use lib File::Spec->catdir($FindBin::Bin,'deps','lib','perl5');
 
+use File::Temp qw();
 use JSON::MaybeXS;
 use JSON::Validator 3.00;
+
+use Mojo::Util qw();
 
 use URI;
 
@@ -78,18 +81,20 @@ my %VALIDATOR_MAPPER = (
 	'http://json-schema.org/draft-07/hyper-schema#' => '@id'
 );
 
-sub loadJSONSchemas(\%@) {
-	my($p_schemaHash,@jsonSchemaFiles) = @_;
+
+sub cacheJSONSchemas($@) {
+	my($cacheDirPath,@jsonSchemaFiles) = @_;
 	my $p = JSON->new->convert_blessed;
 	
 	# Schema validation stats
 	my $numDirOK = 0;
 	my $numDirFail = 0;
 	my $numFileOK = 0;
+	my @uriLoad = ();
 	my $numFileIgnore = 0;
 	my $numFileFail = 0;
 	
-	print "PASS 0.a: JSON schema loading and validation\n";
+	print "PASS 0.0: JSON schema cache linking\n";
 	foreach my $jsonSchemaFile (@jsonSchemaFiles) {
 		if(-d $jsonSchemaFile) {
 			# It's a possible JSON Schema directory, not a JSON Schema file
@@ -109,75 +114,45 @@ sub loadJSONSchemas(\%@) {
 			}
 		} else {
 			if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
-				print "* Loading schema $jsonSchemaFile\n";
+				print "* Analyzing schema $jsonSchemaFile\n";
 				local $/;
 				my $jsonSchemaText = <$S>;
 				close($S);
 				
 				my $jsonSchema = $p->decode($jsonSchemaText);
-				unless(exists($jsonSchema->{'$schema'})) {
-					print "\tIGNORE: $jsonSchemaFile does not have the mandatory '\$schema' attribute, so it cannot be validated\n";
+				unless(exists($jsonSchema->{'$id'}) || exists($jsonSchema->{'id'})) {
+					print "\tIGNORE: $jsonSchemaFile does not have the mandatory '\$id' or 'id' attribute, so it cannot be cached\n";
 					$numFileIgnore ++;
 					next;
 				}
 				
-				my $schemaValId = $jsonSchema->{'$schema'};
-				unless(exists($VALIDATOR_MAPPER{$schemaValId})) {
-					print "\tIGNORE/FIXME: The JSON Schema id $schemaValId is not being acknowledged by this validator\n";
-					$numFileIgnore ++;
-					next;
-				}
+				$numFileOK++;
 				
-				my $v = JSON::Validator->new();
-				my @valErrors = $v->schema($schemaValId)->validate($jsonSchema);
-				if(scalar(@valErrors) > 0) {
-					print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
-					$numFileFail++;
+				# Build the caching id from the schema's id
+				my $id = $jsonSchema->{exists($jsonSchema->{'$id'}) ? '$id' : 'id'};
+				my $idUri = URI->new($id);
+				
+				# Let's remove the fragment
+				$idUri->fragment(undef);
+				my $idUriStr = $idUri->as_string();
+				
+				# And compute the MD5 from the id without the fragment,
+				# as JSON::Validator expects that
+				# We are using Mojo::Util::md5_sum for that as it
+				# is the same method used inside JSON::Validator
+				my $idMD5 = Mojo::Util::md5_sum($idUriStr);
+				
+				# Now, let's create a symlink, whose name is the $id
+				my $cachedSymlink = File::Spec->catfile($cacheDirPath,$idMD5);
+				
+				# Skipping duplicates on symlinks
+				unless(-e $cachedSymlink) {
+					symlink(File::Spec->rel2abs($jsonSchemaFile),$cachedSymlink);
+					print "\t- Cached URI $idUriStr\n";
+					
+					push(@uriLoad,[$idUriStr,$jsonSchemaFile])  if(exists($jsonSchema->{'$schema'}));
 				} else {
-					# Getting the JSON Pointer object instance of the augmented schema
-					my $jsonSchemaP = $v->schema($jsonSchema)->schema;
-					my $idKey = exists($jsonSchema->{'$id'}) ? '$id' : 'id';
-					# This step is done, so we fetch a complete schema
-					$jsonSchema = $jsonSchemaP->data;
-					if(exists($jsonSchema->{$idKey})) {
-						my $jsonSchemaURI = $jsonSchema->{$idKey};
-						if(exists($p_schemaHash->{$jsonSchemaURI})) {
-							print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchemaURI}[1]." have the same id\n";
-							$numFileFail++;
-						} else {
-							print "\t- Validated $jsonSchemaURI\n";
-							
-							# Curating the primary key
-							my $p_PK = undef;
-							if(exists($jsonSchema->{'primary_key'})) {
-								$p_PK = $jsonSchema->{'primary_key'};
-								if(ref($p_PK) eq 'ARRAY') {
-									foreach my $key (@{$p_PK}) {
-										if(ref(\$key) ne 'SCALAR') {
-											print STDERR "\tWARNING: primary key in $jsonSchemaFile is not composed by strings defining its attributes. Ignoring it\n";
-											$p_PK = undef;
-											last;
-										}
-									}
-								} else {
-									$p_PK = undef;
-								}
-							}
-							
-							# Gather foreign keys 
-							my @FKs = findFKs($jsonSchema,$jsonSchemaURI);
-							
-							#use Data::Dumper;
-							#
-							#print STDERR Dumper(\@FKs),"\n";
-							
-							$p_schemaHash->{$jsonSchemaURI} = [$jsonSchema,$jsonSchemaFile,$p_PK,\@FKs];
-							$numFileOK++;
-						}
-					} else {
-						print STDERR "\tIGNORE: validated, but schema in $jsonSchemaFile has no id attribute\n";
-						$numFileIgnore++;
-					}
+					print "\t- Skipped due duplicate URI $idUriStr\n";
 				}
 			} else {
 				print STDERR "FATAL ERROR: Unable to open schema file $jsonSchemaFile. Reason: $!\n";
@@ -186,7 +161,114 @@ sub loadJSONSchemas(\%@) {
 		}
 	}
 	
-	print "\nSCHEMA VALIDATION STATS: loaded $numFileOK schemas from $numDirOK directories, ignored $numFileIgnore schemas, failed $numFileFail schemas and $numDirFail directories\n";
+	print "\nSCHEMA LINKING STATS: linked $numFileOK schemas from $numDirOK directories, ",scalar(@uriLoad)," schemas to be loaded, ignored $numFileIgnore schemas, failed $numFileFail schemas and $numDirFail directories\n";
+	
+	return \@uriLoad;
+}
+
+sub loadJSONSchemas($\%\@) {
+	my($cacheDirPath,$p_schemaHash,$p_uriLoad) = @_;
+	my $p = JSON->new->convert_blessed;
+	
+	# Schema validation stats
+	my $numFileOK = 0;
+	my $numFileIgnore = 0;
+	my $numFileFail = 0;
+	
+	print "\nPASS 0.a: JSON schema loading and validation\n";
+	foreach my $uriPair (@{$p_uriLoad}) {
+		my($jsonSchemaURI,$jsonSchemaFile) = @{$uriPair};
+		if(open(my $S,'<:encoding(UTF-8)',$jsonSchemaFile)) {
+			print "* Loading schema $jsonSchemaFile\n";
+			local $/;
+			my $jsonSchemaText = <$S>;
+			close($S);
+			
+			my $jsonSchema = $p->decode($jsonSchemaText);
+			unless(exists($jsonSchema->{'$schema'})) {
+				print "\tIGNORE: $jsonSchemaFile does not have the mandatory '\$schema' attribute, so it cannot be validated\n";
+				$numFileIgnore ++;
+				next;
+			}
+			
+			my $schemaValId = $jsonSchema->{'$schema'};
+			unless(exists($VALIDATOR_MAPPER{$schemaValId})) {
+				print "\tIGNORE/FIXME: The JSON Schema id $schemaValId is not being acknowledged by this validator\n";
+				$numFileIgnore ++;
+				next;
+			}
+			
+			my $v = JSON::Validator->new();
+			# The path to the cached modules must be pushed
+			my $p_paths = $v->cache_paths();
+			unshift(@{$p_paths},$cacheDirPath);
+			$v->cache_paths($p_paths);
+			
+			my @valErrors = $v->schema($schemaValId)->validate($jsonSchema);
+			if(scalar(@valErrors) > 0) {
+				print "\t- ERRORS:\n".join("\n",map { "\t\tPath: ".$_->{'path'}.' . Message: '.$_->{'message'}} @valErrors)."\n";
+				$numFileFail++;
+			} else {
+				# Getting the JSON Pointer object instance of the augmented schema
+				
+				#$v->schema($jsonSchema);
+				#my $jsonSchemaP = $v->schema;
+				
+				#my $jsonSchemaP = $v->schema($jsonSchema)->schema;
+				
+				my $idKey = exists($jsonSchema->{'$id'}) ? '$id' : 'id';
+				# Loading the schema through the schema cache, as it is the only way
+				# to get a proper relative JSON Pointer resolution
+				my $jsonSchemaP = $v->schema($jsonSchema->{$idKey})->schema;
+				# This step is done, so we fetch a complete schema
+				$jsonSchema = $jsonSchemaP->data;
+				if(exists($jsonSchema->{$idKey})) {
+					my $jsonSchemaURI = $jsonSchema->{$idKey};
+					if(exists($p_schemaHash->{$jsonSchemaURI})) {
+						print STDERR "\tERROR: validated, but schema in $jsonSchemaFile and schema in ".$p_schemaHash->{$jsonSchemaURI}[1]." have the same id\n";
+						$numFileFail++;
+					} else {
+						print "\t- Validated $jsonSchemaURI\n";
+						
+						# Curating the primary key
+						my $p_PK = undef;
+						if(exists($jsonSchema->{'primary_key'})) {
+							$p_PK = $jsonSchema->{'primary_key'};
+							if(ref($p_PK) eq 'ARRAY') {
+								foreach my $key (@{$p_PK}) {
+									if(ref(\$key) ne 'SCALAR') {
+										print STDERR "\tWARNING: primary key in $jsonSchemaFile is not composed by strings defining its attributes. Ignoring it\n";
+										$p_PK = undef;
+										last;
+									}
+								}
+							} else {
+								$p_PK = undef;
+							}
+						}
+						
+						# Gather foreign keys 
+						my @FKs = findFKs($jsonSchema,$jsonSchemaURI);
+						
+						#use Data::Dumper;
+						#
+						#print STDERR Dumper(\@FKs),"\n";
+						
+						$p_schemaHash->{$jsonSchemaURI} = [$jsonSchema,$jsonSchemaFile,$p_PK,\@FKs];
+						$numFileOK++;
+					}
+				} else {
+					print STDERR "\tIGNORE: validated, but schema in $jsonSchemaFile has no id attribute\n";
+					$numFileIgnore++;
+				}
+			}
+		} else {
+			print STDERR "FATAL ERROR: Unable to open schema file $jsonSchemaFile. Reason: $!\n";
+			$numFileFail++;
+		}
+	}
+	
+	print "\nSCHEMA VALIDATION STATS: loaded $numFileOK schemas, ignored $numFileIgnore schemas, failed $numFileFail schemas\n";
 	
 	print "\nPASS 0.b: JSON schema set consistency checks\n";
 	
@@ -531,7 +613,15 @@ if(scalar(@ARGV) > 0) {
 	my $jsonSchema;
 	
 	my %schemaHash = ();
-	loadJSONSchemas(%schemaHash,$jsonSchemaDir);
+	
+	# The temporal directory where the symlinks to the schemas being validated
+	# are being stored
+	
+	my $cacheDir = File::Temp->newdir('_jsonvalXXXXXX','TMPDIR' => 1);
+	
+	my $p_uriLoad = cacheJSONSchemas($cacheDir->dirname(),$jsonSchemaDir);
+	
+	loadJSONSchemas($cacheDir->dirname(),%schemaHash,@{$p_uriLoad});
 	
 	if(scalar(@ARGV) > 0) {
 		if(scalar(keys(%schemaHash))==0) {
