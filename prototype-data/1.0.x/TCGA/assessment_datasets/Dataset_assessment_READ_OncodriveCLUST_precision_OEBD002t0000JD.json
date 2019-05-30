@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_READ_A_precision_OncodriveCLUST",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_READ"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "value": 0.15151515151515152
+        }
+    },
+    "dataset_contact_ids": [
+        "David.Tamborero"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:precision",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_READ_P_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_READ_M"
+            }
+        ],
+        "tool_id": "TCGA:OncodriveCLUST"
+    },
+    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to OncodriveCLUST predictions in Rectum Adenocarcinoma",
+    "name": "Assesment of Metric precision-PPV in OncodriveCLUST",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

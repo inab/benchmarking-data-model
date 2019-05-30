@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_SARC_A_TPR_OncodriveCLUST",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_SARC"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "value": 0.0
+        }
+    },
+    "dataset_contact_ids": [
+        "David.Tamborero"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:TPR",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_SARC_P_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_SARC_M"
+            }
+        ],
+        "tool_id": "TCGA:OncodriveCLUST"
+    },
+    "description": "Assessment dataset for applying Metric 'True Positive Rate' to OncodriveCLUST predictions in Sarcoma",
+    "name": "Assesment of Metric TPR in OncodriveCLUST",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

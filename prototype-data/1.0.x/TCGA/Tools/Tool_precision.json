@@ -1,0 +1,24 @@
+{
+    "_id":"TCGA:compute_precision",  
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2018-04-05T00:00:00Z",
+    "description": "Docker container that computes the precision (positive predictive value) for a list of predicted cancer driver genes",
+    "is_automated": true,
+    "name": "compute_precision_driver_genes",
+    "references": [
+        "doi:10.1016/j.cell.2018.02.060"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "tool_access_type": "other",
+	    "link": "https://github.com/inab/TCGA_visualizer/tree/master/tcga_metrics"
+        }
+    ],
+    "tool_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "community_ids": ["OEBC001"]
+}

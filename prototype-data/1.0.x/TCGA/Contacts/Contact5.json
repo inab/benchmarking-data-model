@@ -7,5 +7,6 @@
    ],
    "notes":"Unknown",
    "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
-   "contact_type":"person"
+   "contact_type":"person",
+   "community_id": "OEBC001"
 }

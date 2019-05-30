@@ -1,39 +1,39 @@
 {
-    "_id": "OEBD002t0000BU",
+    "_id": "TCGA:2018-04-05_DLBC_A_TPR_MuSiC",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
-    "challenge_id": [
-        "OEBX002t000007"
+    "challenge_ids": [
+        "TCGA:2018-04-05_DLBC"
     ],
-    "community_id": "OEBC002",
+    "community_ids": [
+        "OEBC001"
+    ],
     "datalink": {
         "inline_data": {
             "value": 0.7692307692307693
         }
     },
     "dataset_contact_ids": [
-        "Matthew.Bailey",
-        "Eduard.Porta",
-        "Collin.Tokheim"
+        "Nathan.Dees"
     ],
     "dates": {
         "creation": "2018-04-05T00:00:00Z",
         "modification": "2018-04-05T14:00:00Z"
     },
     "depends_on": {
-        "metrics_id": "OEBM0020000002",
+        "metrics_id": "TCGA:TPR",
         "rel_dataset_ids": [
             {
-                "dataset_id": "OEBD002t00001K"
+                "dataset_id": "TCGA:2018-04-05_DLBC_P_MuSiC"
             },
             {
-                "dataset_id": "OEBD002t00007Z"
+                "dataset_id": "TCGA:2018-04-05_DLBC_M"
             }
         ],
-        "tool_id": "OEBT0020000005"
+        "tool_id": "TCGA:MuSiC"
     },
     "description": "Assessment dataset for applying Metric 'True Positive Rate' to MuSiC predictions in Lymphoid Neoplasm Diffuse Large B-cell Lymphoma",
     "name": "Assesment of Metric TPR in MuSiC",
-    "orig_id": "TCGA:2018-04-05_DLBC_A_TPR_MuSiC",
     "type": "assessment",
-    "version": "1"
+    "version": "1",
+    "visibility": "public"
 }

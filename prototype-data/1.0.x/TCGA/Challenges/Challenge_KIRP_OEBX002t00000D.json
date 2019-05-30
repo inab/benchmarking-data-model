@@ -1,8 +1,8 @@
 {
-    "_id": "OEBX002t00000D",
+    "_id": "TCGA:2018-04-05_KIRP",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge",
     "acronym": "KIRP",
-    "benchmarking_event_id": "OEBE0020000001",
+    "benchmarking_event_id": "TCGA:2018-04-05",
     "challenge_contact_ids": [
         "Matthew.Bailey",
         "Eduard.Porta",
@@ -15,8 +15,33 @@
         "modification": "2018-04-05T14:00:00Z"
     },
     "is_automated": false,
+    "metrics_categories": [
+        {
+            "category": "assessment",
+            "description": "metrics used to benchmark the performance of cancer genes predictors in Challenge Kidney Renal Papillary Cell Carcinoma, generating the assessment datatseta",
+            "metrics": [
+                {
+                    "metrics_id": "TCGA:TPR",
+                    "tool_id": "TCGA:compute_TPR"
+                },
+                {
+                    "metrics_id": "TCGA:precision",
+                    "tool_id": "TCGA:compute_precision"
+                }
+            ]
+        },
+        {
+            "category": "aggregation",
+            "description": "metrics used to aggregate the assessment data of all cancer genes predictors participating in challenge Kidney Renal Papillary Cell Carcinoma in a consolidated Aggregation dataset",
+            "metrics": [
+                {
+                    "metrics_id": "TCGA:aggregation",
+                    "tool_id": "TCGA:aggregate_benchmark"
+                }
+            ]
+        }
+    ],
     "name": "Cancer Driver Genes Prediction Benchmark in Kidney Renal Papillary Cell Carcinoma",
-    "orig_id": "TCGA:2018-04-05_KIRP",
     "references": [
         "doi:10.1016/j.cell.2018.02.060"
     ],

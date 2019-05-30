@@ -1,0 +1,38 @@
+{
+    "_id": "TCGA:2018-04-05_TGCT_P_e-Driver",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_TGCT"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/5bd22660-40a1-42ac-a791-0a8c5ef8f978",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Eduard.Porta"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            }
+        ],
+        "tool_id": "TCGA:e-Driver"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool e-Driver in Testicular Germ Cell Tumors",
+    "name": "Cancer Driver Genes in Testicular Germ Cell Tumors",
+    "type": "participant",
+    "version": "unknown",
+    "visibility": "public"
+}

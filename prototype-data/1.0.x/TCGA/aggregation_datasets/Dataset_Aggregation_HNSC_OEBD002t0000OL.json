@@ -1,0 +1,139 @@
+{
+    "_id": "TCGA:2018-04-05_HNSC_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_HNSC"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 0.8484848484848485,
+                    "metric_y": 0.875,
+                    "tool_id": "TCGA:MutSig2CV"
+                },
+                {
+                    "metric_x": 0.5151515151515151,
+                    "metric_y": 0.5862068965517241,
+                    "tool_id": "TCGA:compositeDriver"
+                },
+                {
+                    "metric_x": 0.7575757575757576,
+                    "metric_y": 0.44642857142857145,
+                    "tool_id": "TCGA:2020plus"
+                },
+                {
+                    "metric_x": 0.696969696969697,
+                    "metric_y": 0.4423076923076923,
+                    "tool_id": "TCGA:OncodriveFM"
+                },
+                {
+                    "metric_x": 0.0,
+                    "metric_y": 0.0,
+                    "tool_id": "TCGA:ActiveDriver"
+                },
+                {
+                    "metric_x": 0.21212121212121213,
+                    "metric_y": 0.875,
+                    "tool_id": "TCGA:e-Driver"
+                },
+                {
+                    "metric_x": 0.0,
+                    "metric_y": 0,
+                    "tool_id": "TCGA:OncodriveCLUST"
+                },
+                {
+                    "metric_x": 0.5151515151515151,
+                    "metric_y": 0.5483870967741935,
+                    "tool_id": "TCGA:MuSiC"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM0020000002",
+                "y_axis": "OEBM0020000001"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "Eduard.Porta",
+        "Matthew.Bailey",
+        "Collin.Tokheim",
+        "Loris.Mularoni",
+        "Juri.Reimand",
+        "David.Tamborero",
+        "Nathan.Dees"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_MutSig2CV"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_MutSig2CV"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_compositeDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_compositeDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_2020plus"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_2020plus"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_OncodriveFM"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_OncodriveFM"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_ActiveDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_ActiveDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_e-Driver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_e-Driver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_TPR_MuSiC"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_A_precision_MuSiC"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_HNSC_M"
+            }
+        ],
+        "tool_id": "TCGA:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Head and Neck Squamous Cell Carcinoma (e.g. input/output datasets, metrics...) in participant MuSiC",
+    "name": "Summary dataset for challenge: Head and Neck Squamous Cell Carcinoma",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}

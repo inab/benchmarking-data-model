@@ -1,0 +1,38 @@
+{
+    "_id": "TCGA:2018-04-05_SKCM_P_OncodriveFM",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_SKCM"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/12c99bfe-ec49-4c99-994a-1000a33280c9",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Loris.Mularoni"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            }
+        ],
+        "tool_id": "TCGA:OncodriveFM"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool OncodriveFM in Skin Cutaneous Melanoma",
+    "name": "Cancer Driver Genes in Skin Cutaneous Melanoma",
+    "type": "participant",
+    "version": "unknown",
+    "visibility": "public"
+}

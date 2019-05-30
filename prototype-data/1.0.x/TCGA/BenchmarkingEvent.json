@@ -1,6 +1,5 @@
 {
-   "_id":"OEBE0020000001",
-   "orig_id":"TCGA:2018-04-05",
+   "_id":"TCGA:2018-04-05",
    "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
    "name":"2018 PanCancer data - Driver Genes prediction benchmark",
    "is_automated": false,
@@ -11,7 +10,7 @@
       "benchmark_stop":"2018-04-05T02:00:00Z"
    },
    "url":"https://cancergenome.nih.gov/newsevents/newsannouncements/pancancer_atlas",
-   "community_id":"OEBC002",
+   "community_id":"OEBC001",
    "bench_contact_ids":[
       "Matthew.Bailey",
       "Eduard.Porta",

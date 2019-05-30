@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_READ_M",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_READ"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://portal.gdc.cancer.gov/",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            }
+        ]
+    },
+    "description": "List of genes (described by TCGA community) that can be used as 'gold standard' in Rectum Adenocarcinoma benchmark ",
+    "name": "Metrics Reference Dataset for Rectum Adenocarcinoma",
+    "type": "metrics_reference",
+    "version": "unknown",
+    "visibility": "public"
+}

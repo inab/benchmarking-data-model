@@ -1,0 +1,16 @@
+{
+    "_id":"TCGA:aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics",
+    "title":"TCGA benchmark consolidattion",
+    "description":"Aggregation of TCGA benchmarking data from a single challenge into a consolidated aggregation dataset",
+    "metrics_contact_ids":[
+       "Matthew.Bailey",
+      "Eduard.Porta",
+      "Collin.Tokheim"
+    ],
+    "formal_definition":"1...N assessment datasets --> aggregation dataset",
+    "references":[
+        "doi:10.1016/j.cell.2018.02.060"
+     ]
+
+ }

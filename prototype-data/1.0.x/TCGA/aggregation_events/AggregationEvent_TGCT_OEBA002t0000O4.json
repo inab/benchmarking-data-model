@@ -1,0 +1,86 @@
+{
+    "_id": "TCGA:2018-04-05_TGCT_do_aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "AggregationEvent",
+    "challenge_id": "TCGA:2018-04-05_TGCT",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_MutSig2CV",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_MutSig2CV",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_compositeDriver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_compositeDriver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_2020plus",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_2020plus",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_OncodriveFM",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_OncodriveFM",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_ActiveDriver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_ActiveDriver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_e-Driver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_e-Driver",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_OncodriveCLUST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_OncodriveCLUST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_TPR_MuSiC",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_A_precision_MuSiC",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_TGCT_Aggregation",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "TCGA:aggregate_benchmark"
+}

@@ -1,0 +1,30 @@
+{
+    "_id": "TCGA:2018-04-05_THYM_metricsEvent_MuSiC_precision",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "TCGA:2018-04-05_THYM",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "TCGA:2018-04-05_THYM_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_THYM_P_MuSiC",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_THYM_A_precision_MuSiC",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "TCGA:MuSiC"
+}

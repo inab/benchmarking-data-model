@@ -1,39 +1,39 @@
 {
-    "_id": "OEBD002t0000A5",
+    "_id": "TCGA:2018-04-05_CESC_A_precision_MutSig2CV",
     "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
-    "challenge_id": [
-        "OEBX002t000004"
+    "challenge_ids": [
+        "TCGA:2018-04-05_CESC"
     ],
-    "community_id": "OEBC002",
+    "community_ids": [
+        "OEBC001"
+    ],
     "datalink": {
         "inline_data": {
             "value": 1.0
         }
     },
     "dataset_contact_ids": [
-        "Matthew.Bailey",
-        "Eduard.Porta",
-        "Collin.Tokheim"
+        "Eduard.Porta"
     ],
     "dates": {
         "creation": "2018-04-05T00:00:00Z",
         "modification": "2018-04-05T14:00:00Z"
     },
     "depends_on": {
-        "metrics_id": "OEBM0020000001",
+        "metrics_id": "TCGA:precision",
         "rel_dataset_ids": [
             {
-                "dataset_id": "OEBD002t00000P"
+                "dataset_id": "TCGA:2018-04-05_CESC_P_MutSig2CV"
             },
             {
-                "dataset_id": "OEBD002t00007W"
+                "dataset_id": "TCGA:2018-04-05_CESC_M"
             }
         ],
-        "tool_id": "OEBT0020000006"
+        "tool_id": "TCGA:MutSig2CV"
     },
     "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to MutSig2CV predictions in Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma",
     "name": "Assesment of Metric precision-PPV in MutSig2CV",
-    "orig_id": "TCGA:2018-04-05_CESC_A_precision_MutSig2CV",
     "type": "assessment",
-    "version": "1"
+    "version": "1",
+    "visibility": "public"
 }

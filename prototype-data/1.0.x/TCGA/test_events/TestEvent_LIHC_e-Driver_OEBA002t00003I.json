@@ -1,0 +1,26 @@
+{
+    "_id": "TCGA:2018-04-05_LIHC_testEvent_e-Driver",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "TestEvent",
+    "challenge_id": "TCGA:2018-04-05_LIHC",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "TCGA:2018-04-05_input",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_LIHC_P_e-Driver",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "TCGA:e-Driver"
+}

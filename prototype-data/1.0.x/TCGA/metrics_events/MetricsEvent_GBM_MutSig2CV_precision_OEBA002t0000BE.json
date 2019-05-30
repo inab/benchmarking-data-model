@@ -1,0 +1,30 @@
+{
+    "_id": "TCGA:2018-04-05_GBM_metricsEvent_MutSig2CV_precision",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "TCGA:2018-04-05_GBM",
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "reception": "2018-04-05T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "TCGA:2018-04-05_GBM_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_GBM_P_MutSig2CV",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "TCGA:2018-04-05_GBM_A_precision_MutSig2CV",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Matthew.Bailey",
+        "Eduard.Porta",
+        "Collin.Tokheim"
+    ],
+    "tool_id": "TCGA:MutSig2CV"
+}
