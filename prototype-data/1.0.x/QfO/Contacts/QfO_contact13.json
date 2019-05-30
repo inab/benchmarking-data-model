@@ -1,0 +1,11 @@
+{
+	"_id": "Inparanoid.MailingList",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "other",
+	"givenName": "Mailing List",
+	"email": [
+		"inparanoid@sbc.su.se"
+	],
+	"community_id":"OEBC002",
+	"notes": "Mailing list"
+}

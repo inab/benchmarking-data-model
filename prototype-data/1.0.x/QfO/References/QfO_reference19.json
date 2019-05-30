@@ -1,0 +1,7 @@
+{
+	"_id": "pubmed:10077608",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
+	"title": "The use of gene clusters to infer functional coupling",
+	"bibliographic_ids": ["pmid:10077608"],
+	"abstract": "Previously, we presented evidence that it is possible to predict functional coupling between genes based on conservation of gene clusters between genomes. With the rapid increase in the availability of prokaryotic sequence data, it has become possible to verify and apply the technique. In this paper, we extend our characterization of the parameters that determine the utility of the approach, and we generalize the approach in a way that supports detection of common classes of functionally coupled genes (e.g., transport and signal transduction clusters). Now that the analysis includes over 30 complete or nearly complete genomes, it has become clear that this approach will play a significant role in supporting efforts to assign functionality to the remaining uncharacterized genes in sequenced genomes."
+}

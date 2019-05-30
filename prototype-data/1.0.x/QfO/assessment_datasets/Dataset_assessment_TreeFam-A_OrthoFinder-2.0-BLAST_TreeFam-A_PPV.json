@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OrthoFinder-2.0-BLAST",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_TreeFam-A"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.004642",
+            "value": "0.707400"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:TreeFam-A_PPV",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_M"
+            }
+        ],
+        "tool_id": "QfO:OrthoFinder-2.0-BLAST"
+    },
+    "description": "Assessment dataset for applying Metric 'TreeFam-A_PPV' to OrthoFinder-2.0-BLAST predictions in Agreement with Reference Gene Phylogenies: TreeFam-A",
+    "name": "Assesment of TreeFam-A_PPV in OrthoFinder-2.0-BLAST",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

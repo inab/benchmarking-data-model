@@ -1,0 +1,31 @@
+{
+    "_id": "QfO:2011-07-07_GOtest_metricsEvent_EnsemblCompara-e56_GOTest_ortholog_relations",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2011-07-07_GOtest",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_P_EnsemblCompara-e56",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e56",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:EnsemblCompara-e56"
+}

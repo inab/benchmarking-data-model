@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:EnsemblCompara-e56",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "Modified version of the vanilla pipeline to build trees with protein sequences only (no nucleotide sequence, no chromosome coordinates).Please be aware that the Xenopus tropicalis genes homologies are mostly wrong due to an error in the species tree used in the pipeline ",
+    "is_automated": true,
+    "name": "EnsemblCompara-e56",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://www.ensembl.org",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Christophe.Dessimoz"
+    ]
+}

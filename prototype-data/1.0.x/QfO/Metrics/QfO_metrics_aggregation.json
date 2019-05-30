@@ -1,0 +1,17 @@
+{
+    "_id":"QfO:aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics",
+    "title":" Benchmark consolidation",
+    "description":"Aggregation of benchmarking data from a single challenge into a consolidated aggregation dataset",
+    "metrics_contact_ids":[
+       "Christophe.Dessimoz",
+      "Paul.Thomas",
+      "Toni.Gabaldon",
+      "Erik.Sonnhammer"
+    ],
+    "formal_definition":"1...N assessment datasets --> aggregation dataset",
+    "references":[
+        "doi:10.1186/gb-2009-10-9-403"
+     ]
+
+ }

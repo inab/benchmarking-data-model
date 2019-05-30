@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:OMA-Groups-2.0",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "OMA Groups consists of groups of genes in which all pairs are orthologs. In a graph representation with genes as nodes and orthology relations as edge, OMA groups correspond to fully connected subgraphs. Due to this definition, each OMA group includes at most one sequence per species. The primary intended application of these groups is to provide input data for phylogenetic inference.In this instance of OMA Groups, the pairwise orthologs are based on the relations obtained with the refinements described in OMA 2.0. Additionally, the quasi-cliques that are compatible (no overlapping species) and where at least 50% of the maximal possible edges among the clusters are present, have been merged.",
+    "is_automated": true,
+    "name": "OMA-Groups-2.0",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://omabrowser.org",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Christophe.Dessimoz"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:OrthoFinder-2.0-DIAMOND",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "OrthoFinder 2.0 using DIAMOND and with default options. Command: \"orthofinder -S diamond_more_sensitive -f 2011_04_reference_proteomes/\" (defaults: DendroBLAST trees, species tree rooted by STRIDE, new OrthoFinder 2 orthologue inference method from gene trees)",
+    "is_automated": true,
+    "name": "OrthoFinder-2.0-DIAMOND",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://https://github.com/davidemms/OrthoFinder",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Christophe.Dessimoz"
+    ]
+}

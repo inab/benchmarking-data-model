@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_Vertebrata_A_STD_num_orthologs_PANTHER-all",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_Vertebrata"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": 0,
+            "value": 1779771.0
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_num_orthologs",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_Vertebrata_M"
+            }
+        ],
+        "tool_id": "QfO:PANTHER-all"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_num_orthologs' to PANTHER-all predictions in Generalized Species Tree Discordance in Vertebrata",
+    "name": "Assesment of STD_num_orthologs in PANTHER-all",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

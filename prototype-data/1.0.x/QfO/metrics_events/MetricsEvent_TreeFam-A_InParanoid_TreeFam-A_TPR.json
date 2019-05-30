@@ -1,0 +1,31 @@
+{
+    "_id": "QfO:2011-07-07_TreeFam-A_metricsEvent_InParanoid_TreeFam-A_TPR",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2011-07-07_TreeFam-A",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_TreeFam-A_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_P_InParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_InParanoid",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:InParanoid"
+}

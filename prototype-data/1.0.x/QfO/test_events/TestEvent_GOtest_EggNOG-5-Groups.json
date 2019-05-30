@@ -1,0 +1,27 @@
+{
+    "_id": "QfO:2011-07-07_testEvent_GOtest_EggNOG-5-Groups",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "TestEvent",
+    "challenge_id": "QfO:2011-07-07_GOtest",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_I",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_P_EggNOG-5-Groups",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:EggNOG-5-Groups"
+}

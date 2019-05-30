@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_Vertebrata_A_STD_incorrect_trees_EggNOG-5-Fine-grained",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_Vertebrata"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.016296",
+            "value": "0.707000"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_incorrect_trees",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_Vertebrata_M"
+            }
+        ],
+        "tool_id": "QfO:EggNOG-5-Fine-grained"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_incorrect_trees' to EggNOG-5-Fine-grained predictions in Generalized Species Tree Discordance in Vertebrata",
+    "name": "Assesment of STD_incorrect_trees in EggNOG-5-Fine-grained",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

@@ -1,0 +1,18 @@
+{
+	"_id": "Andreas.Schlicker",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "person",
+	"givenName": "Andreas",
+	"surname": "Schlicker",
+	"email": [
+		"schlandi@mpi-inf.mpg.de"
+	],
+	"community_id":"OEBC002",
+	"notes": "Contact for Schlicker's semantic similarity metric",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://bioinf.mpi-inf.mpg.de/homepage/index.php?&account=schlandi"
+		}
+	]
+}

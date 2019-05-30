@@ -1,0 +1,14 @@
+{
+	"_id": "QfO:SwissTree_PPV",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics",
+	"title": "Precision for Reference Gene Phylogenies: SwissTree",
+	"description": "Agreement (specificity) with Reference Gene Phylogenies - SwissTree measured through the Positive Predictive Value (PPV) rate",
+	"metrics_contact_ids": ["Christophe.Dessimoz",
+            "Paul.Thomas",
+            "Toni.Gabaldon",
+            "Erik.Sonnhammer"],
+	"formal_definition": "PPV = TP / (TP + FP)",
+	"references": [
+		"doi:10.1093/bib/bbr034"
+	]
+}

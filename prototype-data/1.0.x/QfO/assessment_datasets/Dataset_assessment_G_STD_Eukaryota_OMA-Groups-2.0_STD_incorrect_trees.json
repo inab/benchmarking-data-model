@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_Eukaryota_A_STD_incorrect_trees_OMA-Groups-2.0",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_Eukaryota"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.027739",
+            "value": "0.444175"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_incorrect_trees",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_Eukaryota_M"
+            }
+        ],
+        "tool_id": "QfO:OMA-Groups-2.0"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_incorrect_trees' to OMA-Groups-2.0 predictions in Generalized Species Tree Discordance in Eukaryota",
+    "name": "Assesment of STD_incorrect_trees in OMA-Groups-2.0",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

@@ -1,0 +1,22 @@
+{
+	"_id": "DennisP.Wall",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "person",
+	"givenName": "Dennis P.",
+	"surname": "Wall",
+	"email": [
+		"dpwall@stanford.edu"
+	],
+	"community_id":"OEBC002",
+	"notes": "Roundup contact",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://wall-lab.stanford.edu/"
+		},
+		{
+			"label": "Other",
+			"uri": "https://github.com/todddeluca"
+		}
+	]
+}

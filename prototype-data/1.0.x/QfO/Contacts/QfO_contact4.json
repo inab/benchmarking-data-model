@@ -1,0 +1,22 @@
+{
+	"_id": "Toni.Gabaldon",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "person",
+	"givenName": "Toni",
+	"surname": "Gabaldon",
+	"email": [
+		"toni.gabaldon@crg.eu"
+	],
+	"community_id":"OEBC002",
+	"notes": "QfO4 organizer",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://www.crg.eu/es/programmes-groups/comparative-genomics"
+		},
+		{
+			"label": "ORCID",
+			"uri": "https://orcid.org/0000-0003-0019-1735"
+		}
+	]
+}

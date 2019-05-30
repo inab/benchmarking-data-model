@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_RBH-BBH",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_STD_Eukaryota"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.003557",
+            "value": "0.067164"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_RF_distance",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_M"
+            }
+        ],
+        "tool_id": "QfO:RBH-BBH"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_RF_distance' to RBH-BBH predictions in Species Tree Discordance in Eukaryota",
+    "name": "Assesment of STD_RF_distance in RBH-BBH",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

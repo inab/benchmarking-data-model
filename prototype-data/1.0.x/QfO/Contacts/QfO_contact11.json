@@ -1,0 +1,18 @@
+{
+	"_id": "Albert.Vilella",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "person",
+	"givenName": "Albert",
+	"surname": "Vilella",
+	"email": [
+		"avilella@gmail.com"
+	],
+	"community_id":"OEBC002",
+	"notes": "Contact for Ensembl Compara tool",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://github.com/avilella"
+		}
+	]
+}

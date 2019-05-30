@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:EggNOG-5-Groups",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "All-vs-all orthologous pair prediction using the smallest compatible OG in the eggNOG level hierarchy for each pair of reference species. Three missing species were mapped using eggNOG 4.5. ",
+    "is_automated": true,
+    "name": "EggNOG-5-Groups",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://eggnogdb.embl.de",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "Christophe.Dessimoz"
+    ]
+}

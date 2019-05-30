@@ -1,0 +1,22 @@
+{
+	"_id": "Adrian.Altenhoff",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "person",
+	"givenName": "Adrian",
+	"surname": "Altenhoff",
+	"email": [
+		"adrian.altenhoff@inf.ethz.ch"
+	],
+	"community_id":"OEBC002",
+	"notes": "OMA contact",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://people.inf.ethz.ch/adriaal/"
+		},
+		{
+			"label": "LinkedIn",
+			"uri": "https://www.linkedin.com/in/adrian-altenhoff-596a874/"
+		}
+	]
+}

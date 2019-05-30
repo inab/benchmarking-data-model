@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_LUCA_A_STD_RF_distance_MetaPhOrs",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_LUCA"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.014968",
+            "value": "0.230796"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_RF_distance",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_LUCA_M"
+            }
+        ],
+        "tool_id": "QfO:MetaPhOrs"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_RF_distance' to MetaPhOrs predictions in Generalized Species Tree Discordance in LUCA",
+    "name": "Assesment of STD_RF_distance in MetaPhOrs",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

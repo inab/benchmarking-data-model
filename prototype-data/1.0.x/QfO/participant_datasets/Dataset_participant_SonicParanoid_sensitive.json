@@ -1,0 +1,47 @@
+{
+    "_id": "QfO:2011-07-07_P_SonicParanoid_sensitive",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_SwissTree",
+        "QfO:2011-07-07_STD_Fungi",
+        "QfO:2011-07-07_STD_Eukaryota",
+        "QfO:2011-07-07_GOtest",
+        "QfO:2011-07-07_TreeFam-A",
+        "QfO:2011-07-07_G_STD_Fungi",
+        "QfO:2011-07-07_G_STD_Eukaryota",
+        "QfO:2011-07-07_G_STD_LUCA",
+        "QfO:2011-07-07_G_STD_Vertebrata",
+        "QfO:2011-07-07_ECtest"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://orthology.benchmarkservice.org/raw/SonicParanoid_sensitive-.995.rels.raw.gz",
+        "validation_date": "2011-07-07T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            }
+        ],
+        "tool_id": "QfO:SonicParanoid_sensitive"
+    },
+    "description": "List of orthologs pairs predicted by SonicParanoid_sensitive using the Quest for Orthologs reference proteome",
+    "name": "Orthologs predicted by SonicParanoid_sensitive",
+    "type": "participant",
+    "version": "unknown",
+    "visibility": "public"
+}

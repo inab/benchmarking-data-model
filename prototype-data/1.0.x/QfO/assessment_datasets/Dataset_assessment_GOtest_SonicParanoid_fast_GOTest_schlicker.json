@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid_fast",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_GOtest"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.001392",
+            "value": "0.482488"
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:GOTest_schlicker",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_M"
+            }
+        ],
+        "tool_id": "QfO:SonicParanoid_fast"
+    },
+    "description": "Assessment dataset for applying Metric 'GOTest_schlicker' to SonicParanoid_fast predictions in Gene Ontology Conservation Test",
+    "name": "Assesment of GOTest_schlicker in SonicParanoid_fast",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

@@ -1,0 +1,31 @@
+{
+    "_id": "QfO:2011-07-07_SwissTree_metricsEvent_OMA-Groups-RefSet5_SwissTree_TPR",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2011-07-07_SwissTree",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_P_OMA-Groups-RefSet5",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-Groups-RefSet5",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:OMA-Groups-RefSet5"
+}

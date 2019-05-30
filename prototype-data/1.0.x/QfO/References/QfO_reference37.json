@@ -1,0 +1,7 @@
+{
+	"_id":"doi:10.1093/bioinformatics/btu642",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference",
+	"title": "OrthoInspector 2.0: Software and database updates",
+	"bibliographic_ids":["doi:10.1093/bioinformatics/btu642"],
+	"abstract": "SUMMARY: We previously developed OrthoInspector, a package incorporating an original algorithm for the detection of orthology and inparalogy relations between different species. We have added new functionalities to the package. While its original algorithm was not modified, performing similar orthology predictions, we facilitated the prediction of very large databases (thousands of proteomes), refurbished its graphical interface, added new visualization tools for comparative genomics/protein family analysis and facilitated its deployment in a network environment. Finally, we have released three online databases of precomputed orthology relationships. AVAILABILITY: Package and databases are freely available at http://lbgi.fr/orthoinspector with all major browsers supported. CONTACT: odile.lecompte@unistra.fr. SUPPLEMENTARY INFORMATION:Supplementary data are available at Bioinformatics online."
+}

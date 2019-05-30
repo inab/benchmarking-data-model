@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e81",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_GOtest"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": 0,
+            "value": 90848.0
+        }
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:GOTest_ortholog_relations",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_M"
+            }
+        ],
+        "tool_id": "QfO:EnsemblCompara-e81"
+    },
+    "description": "Assessment dataset for applying Metric 'GOTest_ortholog_relations' to EnsemblCompara-e81 predictions in Gene Ontology Conservation Test",
+    "name": "Assesment of GOTest_ortholog_relations in EnsemblCompara-e81",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

@@ -1,0 +1,11 @@
+{
+	"_id": "QfO:ECTest_schlicker",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics",
+	"title": "Enzyme Commission Conservation test - Precision",
+	"description": "Evaluation of orthology in terms of functional similarity using the Enzyme Commission (EC) Conservation test. Functional similarity is assessed based on experimentally backed annotations from the Enzyme Commission (EC) numbers from the ENZYME database. Precision is measured as the average Schlicker semantic similarity of functional annotations associated with orthologs",
+	"metrics_contact_ids": ["Andreas.Schlicker"],
+	"formal_definition": "The Schlicker semantic similarity is a functional similarity measure for comparing two terms with each other and it is calculated based on the annotation statistics of their common ancestor terms. It uses the probability of annotation of the most informative common ancestor (MIA) as a weighting factor to provide graph placement This score ranges from 0 for terms that have no similarity to 1 for terms with maximum similarity. It is calculated as follows: sim (t1, t2) = 2*log p (MIA) / log p(t1) + log p(t2) * (1 - p(MIA)), where t1 and t2 are two terms, and S(t1, t2) is the set of their common ancestors in the ontology",
+	"references": [
+		"doi:10.1371/journal.pcbi.1000262"
+	]
+}

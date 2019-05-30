@@ -1,0 +1,11 @@
+{
+	"_id": "OMA.ContactMail",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+	"contact_type": "helpdesk",
+	"givenName": "OMA Contact Mail",
+	"email": [
+		"contact@omabrowser.org"
+	],
+	"community_id":"OEBC002",
+	"notes": "Contact mail"
+}

@@ -1,0 +1,23 @@
+{
+   "_id":"QfO:2011-07-07",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
+   "name":"Quest for Orthologs - 2011 Reference Proteomes",
+   "is_automated": true,
+   "dates":{
+      "benchmark_start": "2011-07-07T00:00:00Z",
+        "benchmark_stop": "2011-07-07T00:00:00Z",
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T00:00:00Z"
+   },
+   "url":"http://genome.crg.es/~tgabaldon/QfO4/index.html",
+   "community_id":"OEBC002",
+   "bench_contact_ids":[
+      "Christophe.Dessimoz",
+      "Paul.Thomas",
+      "Toni.Gabaldon",
+      "Erik.Sonnhammer"
+   ],
+   "references":[
+	"doi:10.1038/nmeth.3830"
+   ]
+}
