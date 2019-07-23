@@ -1,0 +1,372 @@
+{
+    "_id": "QfO:2011-07-07_STD_Fungi_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_STD_Fungi"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 2062.0,
+                    "metric_y": 0.237391,
+                    "stderr_y": "0.013455",
+                    "tool_id": "EggNOG"
+                },
+                {
+                    "metric_x": 2502.0,
+                    "metric_y": 0.257194,
+                    "stderr_y": "0.012512",
+                    "tool_id": "EggNOG-5-Fine-grained"
+                },
+                {
+                    "metric_x": 2352.0,
+                    "metric_y": 0.254252,
+                    "stderr_y": "0.012891",
+                    "tool_id": "EggNOG-5-Groups"
+                },
+                {
+                    "metric_x": 1867.0,
+                    "metric_y": 0.259507,
+                    "stderr_y": "0.014636",
+                    "tool_id": "EnsemblCompara-e56"
+                },
+                {
+                    "metric_x": 1945.0,
+                    "metric_y": 0.2509,
+                    "stderr_y": "0.014122",
+                    "tool_id": "EnsemblCompara-e81"
+                },
+                {
+                    "metric_x": 2144.0,
+                    "metric_y": 0.228312,
+                    "stderr_y": "0.012922",
+                    "tool_id": "Hieranoid2"
+                },
+                {
+                    "metric_x": 2315.0,
+                    "metric_y": 0.240605,
+                    "stderr_y": "0.012723",
+                    "tool_id": "InParanoid"
+                },
+                {
+                    "metric_x": 1673.0,
+                    "metric_y": 0.216677,
+                    "stderr_y": "0.014228",
+                    "tool_id": "InParanoidCore"
+                },
+                {
+                    "metric_x": 1827.0,
+                    "metric_y": 0.227422,
+                    "stderr_y": "0.014032",
+                    "tool_id": "OMA-GETHOGs"
+                },
+                {
+                    "metric_x": 1400.0,
+                    "metric_y": 0.208929,
+                    "stderr_y": "0.015586",
+                    "tool_id": "GETHOGs-2.0"
+                },
+                {
+                    "metric_x": 529.0,
+                    "metric_y": 0.193762,
+                    "stderr_y": "0.024625",
+                    "tool_id": "OMA-Groups-RefSet5"
+                },
+                {
+                    "metric_x": 945.0,
+                    "metric_y": 0.196296,
+                    "stderr_y": "0.018449",
+                    "tool_id": "OMA-Groups-2.0"
+                },
+                {
+                    "metric_x": 1524.0,
+                    "metric_y": 0.215223,
+                    "stderr_y": "0.015283",
+                    "tool_id": "OMA-Pairs-2.0"
+                },
+                {
+                    "metric_x": 2768.0,
+                    "metric_y": 0.265715,
+                    "stderr_y": "0.012103",
+                    "tool_id": "OrthoFinder-2.0-BLAST"
+                },
+                {
+                    "metric_x": 2730.0,
+                    "metric_y": 0.265934,
+                    "stderr_y": "0.012116",
+                    "tool_id": "OrthoFinder-2.0-DIAMOND"
+                },
+                {
+                    "metric_x": 2760.0,
+                    "metric_y": 0.267572,
+                    "stderr_y": "0.012125",
+                    "tool_id": "OrthoFinder-2.0-MSA"
+                },
+                {
+                    "metric_x": 2034.0,
+                    "metric_y": 0.242625,
+                    "stderr_y": "0.013519",
+                    "tool_id": "PANTHER-LDO"
+                },
+                {
+                    "metric_x": 2572.0,
+                    "metric_y": 0.283826,
+                    "stderr_y": "0.012981",
+                    "tool_id": "PANTHER-all"
+                },
+                {
+                    "metric_x": 2210.0,
+                    "metric_y": 0.255656,
+                    "stderr_y": "0.013300",
+                    "tool_id": "RBH-BBH"
+                },
+                {
+                    "metric_x": 1945.0,
+                    "metric_y": 0.2491,
+                    "stderr_y": "0.014050",
+                    "tool_id": "RSD"
+                },
+                {
+                    "metric_x": 1971.0,
+                    "metric_y": 0.229833,
+                    "stderr_y": "0.013478",
+                    "tool_id": "SonicParanoid"
+                },
+                {
+                    "metric_x": 1579.0,
+                    "metric_y": 0.20836,
+                    "stderr_y": "0.014355",
+                    "tool_id": "SonicParanoid_fast"
+                },
+                {
+                    "metric_x": 2256.0,
+                    "metric_y": 0.236259,
+                    "stderr_y": "0.012795",
+                    "tool_id": "SonicParanoid_sensitive"
+                },
+                {
+                    "metric_x": 2347.0,
+                    "metric_y": 0.255859,
+                    "stderr_y": "0.013097",
+                    "tool_id": "MetaPhOrs"
+                },
+                {
+                    "metric_x": 2208.0,
+                    "metric_y": 0.239583,
+                    "stderr_y": "0.012973",
+                    "tool_id": "Orthoinspector-1.30"
+                },
+                {
+                    "metric_x": 2380.0,
+                    "metric_y": 0.244118,
+                    "stderr_y": "0.012597",
+                    "tool_id": "PhylomeDB"
+                },
+                {
+                    "metric_x": 1314.0,
+                    "metric_y": 0.211568,
+                    "stderr_y": "0.016305",
+                    "tool_id": "OMA-Pairs"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM0020000006",
+                "y_axis": "OEBM0020000007"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T00:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_comp_trees_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_A_STD_RF_distance_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Fungi_M"
+            }
+        ],
+        "tool_id": "QfO:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Species Tree Discordance in Fungi (e.g. input/output datasets, metrics...) in participant OMA-Pairs",
+    "name": "Summary dataset for challenge: STD_Fungi",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}

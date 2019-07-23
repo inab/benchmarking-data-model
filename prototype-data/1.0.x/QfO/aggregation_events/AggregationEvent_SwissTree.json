@@ -1,0 +1,239 @@
+{
+    "_id": "QfO:2011-07-07_SwissTree_do_aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+    "action_type": "AggregationEvent",
+    "challenge_id": "QfO:2011-07-07_SwissTree",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_EggNOG",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_EggNOG",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_EggNOG-5-Fine-grained",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_EggNOG-5-Fine-grained",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_EggNOG-5-Groups",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_EggNOG-5-Groups",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_EnsemblCompara-e56",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_EnsemblCompara-e56",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_EnsemblCompara-e81",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_EnsemblCompara-e81",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_Hieranoid2",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_Hieranoid2",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_InParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_InParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_InParanoidCore",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_InParanoidCore",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-GETHOGs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OMA-GETHOGs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_GETHOGs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_GETHOGs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-Groups-RefSet5",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OMA-Groups-RefSet5",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-Groups-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OMA-Groups-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-Pairs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OMA-Pairs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OrthoFinder-2.0-BLAST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OrthoFinder-2.0-BLAST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OrthoFinder-2.0-DIAMOND",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OrthoFinder-2.0-DIAMOND",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OrthoFinder-2.0-MSA",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OrthoFinder-2.0-MSA",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_PANTHER-LDO",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_PANTHER-LDO",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_PANTHER-all",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_PANTHER-all",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_RBH-BBH",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_RBH-BBH",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_RSD",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_RSD",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_SonicParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_SonicParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_SonicParanoid_fast",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_SonicParanoid_fast",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_SonicParanoid_sensitive",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_SonicParanoid_sensitive",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_MetaPhOrs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_MetaPhOrs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_Orthoinspector-1.30",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_Orthoinspector-1.30",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_PhylomeDB",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_PhylomeDB",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_OMA-Pairs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_OMA-Pairs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_Aggregation",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "tool_id": "QfO:aggregate_benchmark"
+}

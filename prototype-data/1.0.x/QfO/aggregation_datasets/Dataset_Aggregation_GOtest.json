@@ -1,0 +1,372 @@
+{
+    "_id": "QfO:2011-07-07_GOtest_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_GOtest"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 77973.0,
+                    "metric_y": 0.499081,
+                    "stderr_y": "0.001603",
+                    "tool_id": "EggNOG"
+                },
+                {
+                    "metric_x": 70393.0,
+                    "metric_y": 0.5017,
+                    "stderr_y": "0.001710",
+                    "tool_id": "EggNOG-5-Fine-grained"
+                },
+                {
+                    "metric_x": 240192.0,
+                    "metric_y": 0.450251,
+                    "stderr_y": "0.000904",
+                    "tool_id": "EggNOG-5-Groups"
+                },
+                {
+                    "metric_x": 72387.0,
+                    "metric_y": 0.499745,
+                    "stderr_y": "0.001688",
+                    "tool_id": "EnsemblCompara-e56"
+                },
+                {
+                    "metric_x": 90848.0,
+                    "metric_y": 0.494002,
+                    "stderr_y": "0.001489",
+                    "tool_id": "EnsemblCompara-e81"
+                },
+                {
+                    "metric_x": 104159.0,
+                    "metric_y": 0.493258,
+                    "stderr_y": "0.001386",
+                    "tool_id": "Hieranoid2"
+                },
+                {
+                    "metric_x": 126903.0,
+                    "metric_y": 0.482381,
+                    "stderr_y": "0.001249",
+                    "tool_id": "InParanoid"
+                },
+                {
+                    "metric_x": 66163.0,
+                    "metric_y": 0.50979,
+                    "stderr_y": "0.001733",
+                    "tool_id": "InParanoidCore"
+                },
+                {
+                    "metric_x": 123176.0,
+                    "metric_y": 0.481484,
+                    "stderr_y": "0.001247",
+                    "tool_id": "OMA-GETHOGs"
+                },
+                {
+                    "metric_x": 126262.0,
+                    "metric_y": 0.462178,
+                    "stderr_y": "0.001252",
+                    "tool_id": "GETHOGs-2.0"
+                },
+                {
+                    "metric_x": 38341.0,
+                    "metric_y": 0.520188,
+                    "stderr_y": "0.002298",
+                    "tool_id": "OMA-Groups-RefSet5"
+                },
+                {
+                    "metric_x": 47767.0,
+                    "metric_y": 0.515602,
+                    "stderr_y": "0.002065",
+                    "tool_id": "OMA-Groups-2.0"
+                },
+                {
+                    "metric_x": 88996.0,
+                    "metric_y": 0.49102,
+                    "stderr_y": "0.001502",
+                    "tool_id": "OMA-Pairs-2.0"
+                },
+                {
+                    "metric_x": 124952.0,
+                    "metric_y": 0.48376,
+                    "stderr_y": "0.001273",
+                    "tool_id": "OrthoFinder-2.0-BLAST"
+                },
+                {
+                    "metric_x": 117641.0,
+                    "metric_y": 0.483541,
+                    "stderr_y": "0.001315",
+                    "tool_id": "OrthoFinder-2.0-DIAMOND"
+                },
+                {
+                    "metric_x": 119019.0,
+                    "metric_y": 0.486471,
+                    "stderr_y": "0.001299",
+                    "tool_id": "OrthoFinder-2.0-MSA"
+                },
+                {
+                    "metric_x": 61595.0,
+                    "metric_y": 0.511821,
+                    "stderr_y": "0.001824",
+                    "tool_id": "PANTHER-LDO"
+                },
+                {
+                    "metric_x": 174752.0,
+                    "metric_y": 0.465784,
+                    "stderr_y": "0.001059",
+                    "tool_id": "PANTHER-all"
+                },
+                {
+                    "metric_x": 74024.0,
+                    "metric_y": 0.507615,
+                    "stderr_y": "0.001647",
+                    "tool_id": "RBH-BBH"
+                },
+                {
+                    "metric_x": 63070.0,
+                    "metric_y": 0.512118,
+                    "stderr_y": "0.001795",
+                    "tool_id": "RSD"
+                },
+                {
+                    "metric_x": 113834.0,
+                    "metric_y": 0.483458,
+                    "stderr_y": "0.001339",
+                    "tool_id": "SonicParanoid"
+                },
+                {
+                    "metric_x": 102624.0,
+                    "metric_y": 0.482488,
+                    "stderr_y": "0.001392",
+                    "tool_id": "SonicParanoid_fast"
+                },
+                {
+                    "metric_x": 121654.0,
+                    "metric_y": 0.483616,
+                    "stderr_y": "0.001287",
+                    "tool_id": "SonicParanoid_sensitive"
+                },
+                {
+                    "metric_x": 135207.0,
+                    "metric_y": 0.475585,
+                    "stderr_y": "0.001207",
+                    "tool_id": "MetaPhOrs"
+                },
+                {
+                    "metric_x": 103398.0,
+                    "metric_y": 0.495691,
+                    "stderr_y": "0.001378",
+                    "tool_id": "Orthoinspector-1.30"
+                },
+                {
+                    "metric_x": 104302.0,
+                    "metric_y": 0.490048,
+                    "stderr_y": "0.001387",
+                    "tool_id": "PhylomeDB"
+                },
+                {
+                    "metric_x": 75621.0,
+                    "metric_y": 0.500505,
+                    "stderr_y": "0.001624",
+                    "tool_id": "OMA-Pairs"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM0020000004",
+                "y_axis": "OEBM0020000003"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "Christophe.Dessimoz",
+        "Paul.Thomas",
+        "Toni.Gabaldon",
+        "Erik.Sonnhammer"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T00:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_GOtest_M"
+            }
+        ],
+        "tool_id": "QfO:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Gene Ontology Conservation Test (e.g. input/output datasets, metrics...) in participant OMA-Pairs",
+    "name": "Summary dataset for challenge: GOtest",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}
