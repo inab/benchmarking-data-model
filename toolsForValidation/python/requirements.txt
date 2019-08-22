@@ -1,4 +1,0 @@
-#json
-jsonschema[format] >= 3.0.0
-uritools
-dateparser

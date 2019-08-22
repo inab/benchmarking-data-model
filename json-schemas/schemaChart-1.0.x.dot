@@ -1,0 +1,622 @@
+digraph schemas {
+	rankdir=LR;
+	node [shape=plaintext];
+
+	s0 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">idSolv</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="240bf022e685b0ee30ad9fe9e1fb5d5b">pattern</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ad65d91ba5fc5f4494e00822c04e583b">endpoint</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+</TABLE>
+>];
+	s1 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">BenchmarkingEvent</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="74e8fcb116df3bd8f7fb0770cf103803">bench_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="e167e7325f511965a873b3a08c46b18d">community_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="7877adcb96eb8221c075f0008093bbf7">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="eed6f154e57cf07c0fc730f33b95e884">benchmark_start</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a789b19716bd5c322615c5240a313570">modification</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7ef35ac9fbf7949773117473d8337797">public</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7617b570b5634ee5b9d05c4f1081d3d7">creation</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="968a72ca29a55d1c2e1b4c0d0f807c72">benchmark_stop</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b9e5c1346a5d1012e7a168ad886c821">is_automated</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b068931cc450442b63f5b3d276ea4297">name</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="572d4e421e5e6b9bc11d815e8a027112">url</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+</TABLE>
+>];
+	s2 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">TestAction</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3043bb0bfff8335c44be054068a71c40">involved_datasets[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7720efb7222be98663ef692ad7cbcc57">dataset_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="9d2fc5e3f8fa33185eb9e6382ba4b8a4">role</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="674a878c4bc70a4d66574707fc2a85a0">received</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="7877adcb96eb8221c075f0008093bbf7">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7617b570b5634ee5b9d05c4f1081d3d7">creation</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a789b19716bd5c322615c5240a313570">modification</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7ef35ac9fbf7949773117473d8337797">public</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="903d30269447dd0e76bc74093f48fdf8">challenge_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1c56fb74f15c0a955b589170527b6e97">test_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ca47336a02cc24b1a0cb33783c88a68a">action_type</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="9f81f3c07476a0d97f6793673dd8e475">metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="9acb44549b41563697bb490144ec6258">status</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="44f8684801aaa55cdbdac95cd00be015">tool_id</TD>
+	</TR>
+</TABLE>
+>];
+	s3 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Dataset</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="2af72f100c356273d46284f6fd1dfc08">version</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e46acef2bdc2a82e52b7aa0a082be24">community_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="f79b1d64a8d8b02b86d797765a6a1fe4">visibility</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="627f0e5dabc4192d92b054f3aef66028">challenge_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b3fff19354ecaf5f779935648ba2fa2f">dataset_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="c5b97064b55952a471e9b12d4d5596b1">datalink{}</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="7877adcb96eb8221c075f0008093bbf7">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7ef35ac9fbf7949773117473d8337797">public</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a789b19716bd5c322615c5240a313570">modification</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7617b570b5634ee5b9d05c4f1081d3d7">creation</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1f903a40778aa70f6dc335701320e277">depends_on{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="aa45c0b146d84ccfd7b259ed668e9c7c">rel_dataset_ids[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="c90ebef85ed14c919ee7e8adc270aa69">dataset_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1c5e4c7313362171c4a189ad39d42fee">role</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="521be390a6bf3c771d8e44937d40cdeb">tool_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="acf68f5e856cc34673e641c148a3de44">metrics_id</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="599dcce2998a6b40b1e38e8c6006cb0a">type</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b068931cc450442b63f5b3d276ea4297">name</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+</TABLE>
+>];
+	s4 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Challenge</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="7877adcb96eb8221c075f0008093bbf7">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1349b7f02116e6afc41627f619f2f535">challenge_start</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7617b570b5634ee5b9d05c4f1081d3d7">creation</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a789b19716bd5c322615c5240a313570">modification</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="7ef35ac9fbf7949773117473d8337797">public</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ef960db4cb5f62898b430be153b51109">challenge_stop</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b9e5c1346a5d1012e7a168ad886c821">is_automated</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b068931cc450442b63f5b3d276ea4297">name</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ba0d36033ddc48629ce9eac9f30ba334">challenge_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="38898d356973de0d99bf910061d39c11">benchmarking_event_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="162c7a3f5e48f2b787b232eba385b71c">acronym</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="fc1bd3cec8430e103e1d85e88f6091f6">metrics_categories[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="8600da111b11734eb5d02d298aa3100d">metrics[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="5a0d29dc619e902b1824073e68e1f327">tool_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="258a164908b9a94dd4ca9a6ee37d9bdb">metrics_id</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="af2ace80002748172eb9357658101f43">category</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="615777e70cd4d523dbfa60bf083dc337">description</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="572d4e421e5e6b9bc11d815e8a027112">url</TD>
+	</TR>
+</TABLE>
+>];
+	s5 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Community</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="3b969d8053dfca87438174969b9a41e0">community_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="89cf79ee653b51ea6fc239642652c1ef">keywords[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b068931cc450442b63f5b3d276ea4297">name</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="05280fb217525ccc08ecc76f2afa5595">reference_tools[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b406be4e66038218756036cb63f4f448">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a5b2759ae6be8e66d76509f2f8bd7fd0">tool_id</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="9acb44549b41563697bb490144ec6258">status</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="162c7a3f5e48f2b787b232eba385b71c">acronym</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c76aeb300d627cc03f4ce5a39f71aa15">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="300bfefbc00d91fa78c53404db0966af">comment</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ab2db20f74934d3c075d0162205dba98">label</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4925df67567aff73b75e86de55228576">uri</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+</TABLE>
+>];
+	s6 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Contact</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4358b5009c67d0e31d7fbf1663fcd3bf">notes</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1dab6079455f35bf6281b999006bf178">email[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c76aeb300d627cc03f4ce5a39f71aa15">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4925df67567aff73b75e86de55228576">uri</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ab2db20f74934d3c075d0162205dba98">label</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ae3aa7567459433735d3e5eeadefa06f">givenName</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="e167e7325f511965a873b3a08c46b18d">community_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b88c5d5c0fd8703d3e2f4a26b698b53e">contact_type</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="e8911889a7780cdaf79c3d6ae86834b2">surname</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+</TABLE>
+>];
+	s7 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Metrics</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="e4b65134e0c291106baced9f02059032">metrics_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="52530dcef8dd538324115f42d0a50daf">data_schemas</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="dbce3a923c6c52ff9a5b948cfef55b89">execution_type</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="d5d3db1765287eef77d7927cc956f50a">title</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="eb9657ce4429cfc1c2f88c02c80975c9">formal_definition</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c76aeb300d627cc03f4ce5a39f71aa15">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ab2db20f74934d3c075d0162205dba98">label</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4925df67567aff73b75e86de55228576">uri</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="37e71c18c3e08e48b5574f272d621735">representation_hints{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+</TABLE>
+>];
+	s8 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Reference</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e4460cf1220b83a8913e75138706083f">authors[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="90065400f7d9753acd0f92d5e7a32463">surname[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="85a708a1e2bc7da617f132212bc86618">contact_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="48b1e2becd7c9b76fd2665d72b8f7486">givenName[]</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="d5d3db1765287eef77d7927cc956f50a">title</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="dd2fa7af1c3d88f1eafc94a9e84e1554">bibliographic_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="ce28071e1a0424ba1b7956dd3853c7fb">abstract</TD>
+	</TR>
+</TABLE>
+>];
+	s9 [label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER"><FONT POINT-SIZE="20">Tool</FONT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="911bb8e73724fe9b06a7e1e3e3176c7e">_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="a5be73d9b4d112ad65dc2735755c226b">tool_contact_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b4c7fb31bb42f9a523f6cadccf21cbf">references[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="67daf92c833c41c95db874e18fcb2786">description</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8b9e5c1346a5d1012e7a168ad886c821">is_automated</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="90324e17d8dfdd856024dce2aa642ce4">tool_access[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="3067711a3d192b4e1091248eff7fa98f">tool_access_type</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="db5af04b8196783c6fdd65cc5521ee47">link</TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b382e276611b2e8327ad51b01635d826">techdocs[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="c72f31773582d42cd981578a08bfcd6d">label</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="800832f18fb8b69f91e4290a35571856">uri</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e2b027fc18ae46d4df664d8234fb6dc">_metadata{}</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="b068931cc450442b63f5b3d276ea4297">name</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="8f5165870c7edf106fbe43ec9ab7d354">deactivation</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="4e46acef2bdc2a82e52b7aa0a082be24">community_ids[]</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="0023a34b3cbbee68c41536cf2ae62829">registry_tool_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="9acb44549b41563697bb490144ec6258">status</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="82af9a2672cbfe72134964ba3af1bb07">orig_id</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="1f50c4fb2a0bcd19660a0784bf82821f">_schema</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="2" ALIGN="LEFT" PORT="24eed33ee38027d124839f0fcdf6adcb">activation</TD>
+	</TR>
+</TABLE>
+>];
+	s1:"74e8fcb116df3bd8f7fb0770cf103803" -> s6;
+	s1:"e167e7325f511965a873b3a08c46b18d" -> s5;
+	s1:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s2:"7720efb7222be98663ef692ad7cbcc57" -> s3;
+	s2:"903d30269447dd0e76bc74093f48fdf8" -> s4;
+	s2:"1c56fb74f15c0a955b589170527b6e97" -> s6;
+	s2:"44f8684801aaa55cdbdac95cd00be015" -> s9;
+	s3:"4e46acef2bdc2a82e52b7aa0a082be24" -> s5;
+	s3:"627f0e5dabc4192d92b054f3aef66028" -> s4;
+	s3:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s3:"b3fff19354ecaf5f779935648ba2fa2f" -> s6;
+	s3:"c90ebef85ed14c919ee7e8adc270aa69" -> s3;
+	s3:"521be390a6bf3c771d8e44937d40cdeb" -> s9;
+	s3:"acf68f5e856cc34673e641c148a3de44" -> s7;
+	s4:"ba0d36033ddc48629ce9eac9f30ba334" -> s6;
+	s4:"38898d356973de0d99bf910061d39c11" -> s1;
+	s4:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s4:"5a0d29dc619e902b1824073e68e1f327" -> s9;
+	s4:"258a164908b9a94dd4ca9a6ee37d9bdb" -> s7;
+	s5:"3b969d8053dfca87438174969b9a41e0" -> s6;
+	s5:"a5b2759ae6be8e66d76509f2f8bd7fd0" -> s9;
+	s5:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s6:"e167e7325f511965a873b3a08c46b18d" -> s5;
+	s7:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s7:"e4b65134e0c291106baced9f02059032" -> s6;
+	s8:"85a708a1e2bc7da617f132212bc86618" -> s6;
+	s9:"a5be73d9b4d112ad65dc2735755c226b" -> s6;
+	s9:"8b4c7fb31bb42f9a523f6cadccf21cbf" -> s8;
+	s9:"4e46acef2bdc2a82e52b7aa0a082be24" -> s5;
+}
