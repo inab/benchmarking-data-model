@@ -1,0 +1,37 @@
+{
+	"id": "https://github.com/inab/benchmarking-data-model/",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Metadata schema for OpenEBench Datasets submitted to EUDAT",
+	"type": "object",
+	"properties": {
+		"oeb_id": {
+			"title": "The unique id of the dataset, provided by OEB API",
+			"type": "string",
+			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$",
+			"description": "Identifiers returned by the APIs must follow this pattern"
+		},
+		"type": {
+			"title": "Type of dataset within OEB",
+			"type": "string",
+			"mingLength": 1,
+			"enum": [
+				"public_reference",
+				"metrics_reference",
+				"input",
+				"participant",
+				"assessment",
+				"aggregation",
+				"other"
+			]
+		},
+		"oeb_community": {
+			"title": "Acronym defined in OEB for the benchmarking community",
+			"description": "Acronym defined in OEB for the benchmarking community - ideally, should match the one used in the benchmarking data model",
+			"type": "string",
+			"mingLength": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [ "oeb_id", "type", "oeb_community"],
+	"dependencies": {}
+}
