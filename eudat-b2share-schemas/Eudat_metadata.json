@@ -1,5 +1,5 @@
 {
-	"id": "https://inb-elixir.es/benchmarking/json-schemas/1.0/eudat-b2share-metadata",
+	"id": "https://inb-elixir.es/benchmarking/json-schemas/eudat-b2share-metadata/1.0",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Metadata schema for OpenEBench Datasets submitted to EUDAT",
 	"type": "object",
