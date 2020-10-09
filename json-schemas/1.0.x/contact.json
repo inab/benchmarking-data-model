@@ -87,7 +87,7 @@
 								"members": [ "." ]
 							}
 						],
-						"minLength": 7
+						"minLength": 1
 					}
 				}
 			}
