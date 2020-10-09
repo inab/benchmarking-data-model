@@ -56,6 +56,42 @@
 			],
 			"minLength": 7
 		},
+		"roles" : {
+			"title": "The roles assigned to this contact",
+			"type": "array",
+  			"items": {
+				"type": "object",
+				"properties": {
+					"role": {
+						"title": "The role assigned to the contact",
+						"type": "string",
+						"enum":  [ "manager", "contributor", "member" ]
+					},
+					"community_id": {
+						"title": "The community the role is assigned to",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Community",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 7
+					},
+					"challenge_id": {
+ 						"title": "The challenge the role is assigned to",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Challenge",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					}
+				}
+			}
+		},
 		"notes": {
 			"title": "Comments about the contact",
 			"type": "string"
