@@ -161,21 +161,6 @@
 				]
 			}
 		},
-		"challenge_contact_ids": {
-			"title": "The challenge contact id(s)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Contact",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
-		},
 		"references": {
 			"title": "The challenge reference id(s) (if any)",
 			"type": "array",
@@ -193,7 +178,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
+	"required": ["_id", "_schema", "name", "benchmarking_event_id", "is_automated", "dates"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
