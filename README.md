@@ -1,6 +1,7 @@
-# EXCELERATE WP2 Benchmarking Data Model repository
+# OpenEBench Benchmarking Data Model repository
+_(born from EXCELERATE WP2)_
 
-This repository contains all the developments around the benchmarking data model which is being developed by ELIXIR-EXCELERATE WP2.
+This repository contains all the developments around the OpenEBench benchmarking data model which was borned from ELIXIR-EXCELERATE WP2.
 
 * Folder [early-drafts](early-drafts) contains the initial ideas around what it is needed to be stored in order to model benchmarking events and metrics.
 
