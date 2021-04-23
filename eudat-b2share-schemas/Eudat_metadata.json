@@ -29,6 +29,11 @@
 			"description": "Acronym defined in OEB for the benchmarking community - ideally, should match the one used in the benchmarking data model",
 			"type": "string",
 			"mingLength": 1
+		},
+		"version": {
+			"title": "Version (or relelase date) of the metadata",
+			"minLength": 1,
+			"type": "string"
 		}
 	},
 	"additionalProperties": false,

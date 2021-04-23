@@ -1,6 +1,7 @@
-# EXCELERATE WP2 Benchmarking Data Model repository
+# OpenEBench Benchmarking Data Model repository
+_(born from EXCELERATE WP2)_
 
-This repository contains all the developments around the benchmarking data model which is being developed by ELIXIR-EXCELERATE WP2.
+This repository contains all the developments around the OpenEBench benchmarking data model which was borned from ELIXIR-EXCELERATE WP2.
 
 * Folder [early-drafts](early-drafts) contains the initial ideas around what it is needed to be stored in order to model benchmarking events and metrics.
 
@@ -11,4 +12,4 @@ This repository contains all the developments around the benchmarking data model
 
 * Folder [prototype-data](prototype-data) contains several JSON data sets, which validate against the benchmarking JSON schemas.
 
-* Folder [toolsForValidation](toolsForValidation) contains several reference programs, which validate the JSON data sets against the benchmarking JSON schemas.
+* Both [fairtracks_validator](https://github.com/fairtracks/fairtracks_validator/tree/master/python) and [extended-json-schema-validators](https://github.com/inab/extended-json-schema-validators) contain several reference programs, which validate the JSON data sets against the benchmarking JSON schemas. See [Tools for validation](toolsForValidation.md) in order to learn their lineage.
