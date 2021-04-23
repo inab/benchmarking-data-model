@@ -12,4 +12,4 @@ This repository contains all the developments around the OpenEBench benchmarking
 
 * Folder [prototype-data](prototype-data) contains several JSON data sets, which validate against the benchmarking JSON schemas.
 
-* Both [fairtracks_validator](https://github.com/fairtracks/fairtracks_validator/tree/master/python) and [extended-json-schema-validators](https://github.com/inab/extended-json-schema-validators) Folder [toolsForValidation](toolsForValidation) contain several reference programs, which validate the JSON data sets against the benchmarking JSON schemas.
+* Both [fairtracks_validator](https://github.com/fairtracks/fairtracks_validator/tree/master/python) and [extended-json-schema-validators](https://github.com/inab/extended-json-schema-validators) contain several reference programs, which validate the JSON data sets against the benchmarking JSON schemas. See [Tools for validation](toolsForValidation.md) in order to learn their lineage.

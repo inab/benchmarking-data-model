@@ -1,9 +1,8 @@
 # Extended JSON Schema validators
 
 Originally, validation tools were available in this repository. They
-have been recently moved to [their own repository](//github.com/inab/extended-json-schema-validators/),
+were moved to [their own repository](//github.com/inab/extended-json-schema-validators/),
 so dependency and package management is simplified.
 
-The validation tools are at:
+Later, that repo was forked to add the extensions currently being used by FAIRTracks Validator, at [fairtracks_validator](//github.com/fairtracks/fairtracks_validator/).
 
-https://github.com/inab/extended-json-schema-validators/
