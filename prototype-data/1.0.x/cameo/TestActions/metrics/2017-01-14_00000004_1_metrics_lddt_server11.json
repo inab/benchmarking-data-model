@@ -1,0 +1,26 @@
+{
+  "_id": "CAMEO:2017-01-14_00000004_1_metrics_iddt_server11",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction",
+  "action_type": "MetricsEvent",
+  "challenge_id": "CAMEO:CAMEO-3D_2017-01-14",
+  "tool_id": "CAMEO:server11",
+  "involved_datasets": [
+    {
+      "dataset_id": "CAMEO:2017-01-14_00000004_1_M",
+      "role": "incoming"
+    },
+    {
+      "dataset_id": "CAMEO:2017-01-14_00000004_1_P_server11",
+      "role": "incoming"
+    },
+    {
+      "dataset_id": "CAMEO:2017-01-14_00000004_1_A_IDDT_server11",
+      "role": "outgoing"
+    }
+  ],
+  "dates": {
+    "creation": "2017-01-14T05:30:00Z",
+    "reception": "2017-01-14T05:45:00Z"
+  },
+  "test_contact_ids": ["help.CAMEO-3D"]
+}

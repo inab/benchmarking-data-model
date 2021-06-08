@@ -1,0 +1,12 @@
+{
+  "_id": "help.CAMEO-3D",
+  "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+  "community_id" : "OEBC003",
+  "contact_type": "helpdesk",
+  "givenName": "help",
+  "surname": "CAMEO-3D",
+  "email": [
+    "help-cameo3d@unibas.ch"
+  ],
+  "notes": "HelpDesk at CAMEO-3D"
+}

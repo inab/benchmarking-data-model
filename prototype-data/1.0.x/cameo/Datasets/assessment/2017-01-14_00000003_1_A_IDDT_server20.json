@@ -1,0 +1,36 @@
+{
+  "_id": "CAMEO:2017-01-14_00000003_1_A_IDDT_server20",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+  "type": "assessment",
+  "challenge_ids": ["CAMEO:CAMEO-3D_2017-01-14"],
+  "name": "Solution structure of a PWWP doamin from Trypanosoma brucei",
+  "description": "Target 3_1 of week 2017-01-14, IDDT, server20",
+  "version": "1",
+  "visibility": "public",
+  "datalink": {
+    "inline_data": {
+      "value": 36.82
+    }
+  },
+  "dates": {
+    "creation": "2017-01-14T00:00:00Z",
+    "modification": "2017-01-18T00:00:00Z"
+  },
+  "depends_on": {
+    "tool_id": "CAMEO:server20",
+    "metrics_id": "CAMEO:lDDT",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "CAMEO:2017-01-14_00000003_1_I",
+        "role": "dependency"
+      },
+      {
+        "dataset_id": "CAMEO:2017-01-14_00000003_1_M",
+        "role": "dependency"
+      }
+    ]
+  },
+  "dataset_contact_ids": [
+    "help.CAMEO-3D"
+  ]
+}
