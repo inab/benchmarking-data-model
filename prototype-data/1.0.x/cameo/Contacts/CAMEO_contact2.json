@@ -1,7 +1,7 @@
 {
   "_id": "Torsten.Schwede",
   "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
-  "community_id" : "OEBC003",
+  "community_id" : "OEBC008",
   "contact_type": "person",
   "givenName": "Torsten",
   "surname": "Schwede",

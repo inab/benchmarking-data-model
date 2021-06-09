@@ -2,7 +2,7 @@
   "_id": "CAMEO:2017-01-14",
   "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent",
   "name": "CAMEO week 2017-01-14",
-  "community_id":"OEBC003",
+  "community_id":"OEBC008",
   "is_automated": true,
   "dates": {
     "creation": "2017-01-14T00:00:00Z",

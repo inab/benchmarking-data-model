@@ -1,7 +1,7 @@
 {
   "_id": "CAMEO:server20",
   "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
-  "community_ids": ["OEBC003"],
+  "community_ids": ["OEBC008"],
   "name": "SWISS-MODEL",
   "is_automated": true,
   "tool_contact_ids": [
