@@ -1,0 +1,140 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the community, according to the rules",
+			"type": "string",
+			"pattern": "^OEBC[0-9]{3}$"
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
+		"name": {
+			"title": "Short community name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"acronym": {
+			"title": "Unique community acronym",
+			"minLength": 1,
+			"type": "string"
+		},
+		"status": {
+			"title": "_id(s) of the current community status(es)",
+			"type": "string",
+			"enum": [ "abandoned","active","unknown" ]
+		},
+		"description": {
+			"title": "Long community name or description",
+			"type": "string"
+		},
+		"keywords": {
+			"title": "A list of keywords defining the community. They can be either strings or URIs of ontology terms",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"minLength": 1
+			},
+			"minItems": 1
+		},
+		"links": {
+			"title": "Optional links related to the community",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"uri": {
+						"title": "The URI of the link related to the community",
+						"type": "string",
+						"format": "uri"
+					},
+					"label": {
+						"title": "The type of URI",
+						"type": "string",
+						"enum": ["LinkedInGroup","MainSite","DataSite","other"]
+					},
+					"comment": {
+						"title": "Internal comment about this URI (useful when the type of URI is other)",
+						"type": "string"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"uri",
+					"label"
+				]
+			}
+		},
+		"references": {
+			"title": "The community reference id(s) (if any)",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"community_contact_ids": {
+			"title": "_id of the contacts of the responsible researchers in charge of the community coordination",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"reference_tools": {
+			"title": "The tools which are considered as reference/baseline on this community",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_id": {
+						"title": "The tool id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"description": {
+						"title": "An optional, brief description about why this tool is a baseline or reference in this community",
+						"type": "string"
+					}
+				},
+				"required": [ "tool_id" ]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","acronym","status","community_contact_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
+

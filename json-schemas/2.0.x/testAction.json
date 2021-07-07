@@ -1,0 +1,159 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Test Action concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the test action, according to the rules",
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBA[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
+		"orig_id": {
+			"title": "The test action original id",
+			"$ref": "_shared#/definitions/OriginalId"
+		},
+		"tool_id": {
+			"title": "The id of the processing tool",
+			"description": "The id of the tool which processes a set of datasets for this action. Most of the time is a participant's tool, but in the case of aggregation or statistic events, is a tool related to a kind of challenge's metrics",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Tool",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
+		"action_type": {
+			"title": "The type of action",
+			"description": "The type of action performed by the tool, also describing the kind of input datasets.\nTest Event = Input + Tool -> Participant Data\nMetrics event = Participant Data + Metrics -> Assessment Data\nStatistics event = Assessment Data + Metrics -> Challenge Data\n",
+			"type": "string",
+			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "AggregationEvent", "TestEvent" ]
+		},
+		"involved_datasets": {
+			"title": "The incoming, outgoing and settings datasets involved in this test action",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dataset_id": {
+						"title": "A received dataset, with this id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Dataset",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"role": {
+						"title": "The kind of dataset received for this action (report, metrics_reference, etc...)",
+						"type": "string",
+						"enum": [
+							"incoming",
+							"outgoing",
+							"settings",
+							"unknown"
+						]
+					},
+					"received": {
+						"title": "Reception date of the dataset (redundant, as the output dataset already has this date)",
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [ "dataset_id", "role" ]
+			}
+		},
+		"challenge_id": {
+			"title": "The id of the challenge where this test action was generated",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Challenge",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
+		"test_contact_ids": {
+			"title": "Contact id(s) related to the action",
+			"description": "The test action contact id(s), i.e. the runners of the tool and depositors of the results",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"status": {
+			"title": "The lifecicle of the testAction will be managed by the API, validating it is progressing forward instead of backward",
+			"type": "string",
+			"enum": [ "scheduled", "sent", "incomplete", "complete", "failed" ]
+		},
+		"dates": {
+			"title": "Relevant dates for this test action",
+			"type": "object",
+			"properties": {
+				"creation": {
+					"title": "Creation date of the test action",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modification": {
+					"title": "Last modification date of the test action",
+					"type": "string",
+					"format": "date-time"
+				},
+				"public": {
+					"title": "The date when this test action becomes public",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": ["creation"]
+		},
+		"metadata": {
+			"title": "Relevant metadata used to call the tool",
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": true
+		}
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema","involved_datasets","challenge_id","test_contact_ids","dates"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}

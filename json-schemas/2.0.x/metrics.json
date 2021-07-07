@@ -1,0 +1,125 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Metrics concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the metrics",
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBM[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
+		"orig_id": {
+			"title": "The metrics original id",
+			"$ref": "_shared#/definitions/OriginalId"
+		},
+		"title": {
+			"title": "Short metrics name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long metrics description",
+			"type": "string"
+		},
+		"metrics_contact_ids": {
+			"title": "The contact id(s) of the creators of this metrics",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"formal_definition": {
+			"title": "Formal definition of the metrics",
+			"type": "string"
+		},
+		"execution_type": {
+			"title": "Type of execution",
+			"type": "string"
+		},
+		"data_schemas": {
+			"title": "Data schemas",
+			"type": "string"
+		},
+		"links": {
+			"title": "Optional links related to the metrics",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"uri": {
+						"title": "The URI of the link related to the metrics",
+						"type": "string",
+						"format": "uri"
+					},
+					"label": {
+						"title": "The type of URI",
+						"type": "string"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"uri",
+					"label"
+				]
+			}
+		},
+		"references": {
+			"title": "The metrics reference id(s) (if any)",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"representation_hints": {
+			"title": "The optional representation hints which can be used or ignored by any data browser / viewer",
+			"type": "object",
+			"additionalProperties": true,
+			"minProperties": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema","title","metrics_contact_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}

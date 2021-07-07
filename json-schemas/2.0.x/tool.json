@@ -1,0 +1,173 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Tool concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the tool, according to the rules",
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"pattern": "^OEBT[0-9]{3}t[A-Z0-9]{6}$",
+					"description": "Temporary identifiers internally used must follow this pattern",
+					"readOnly": true
+				},
+				{
+					"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$",
+					"description": "Identifiers returned by the APIs must follow this pattern",
+					"readOnly": true
+				}
+			]
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool" ]
+		},
+		"_metadata": {
+			"$ref": "_shared#/definitions/Metadata"
+		},
+		"orig_id": {
+			"title": "The tool original id",
+			"$ref": "_shared#/definitions/OriginalId"
+		},
+		"registry_tool_id": {
+			"title": "The unique id of the tool (in bio.tools, bioconda, biocontainers, OpenEBench, etc...), in CURIE format",
+			"type": "string",
+			"format": "uri"
+		},
+		"name": {
+			"title": "Short tool name",
+			"minLength": 1,
+			"type": "string"
+		},
+		"description": {
+			"title": "Long tool name or description",
+			"type": "string"
+		},
+		"community_ids": {
+			"title": "The community/es where this tool are being used",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Community",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"is_automated": {
+			"title": "Can this tool be automatically invoked?",
+			"type": "boolean"
+		},
+		"tool_contact_ids": {
+			"title": "The tool's contact id(s), i.e. the creators",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"status": {
+			"title": "Current tool status",
+			"type": "string",
+			"enum": ["unknown","online","offline","unmaintained"],
+			"minLength": 1
+		},
+		"activation": {
+			"title": "Activation by the benchmarking community",
+			"type": "string",
+			"format": "date-time"
+		},
+		"deactivation": {
+			"title": "Deactivation by the benchmarking community",
+			"type": "string",
+			"format": "date-time"
+		},
+		"references": {
+			"title": "The tool's reference id(s)",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Reference",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
+		"tool_access": {
+			"title": "Methods to access the tool",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"tool_access_type": {
+						"title": "The tool access type",
+						"type": "string",
+						"enum": [ "command-line", "REST/OpenAPI", "SOAP/WSDL", "Web", "other" ],
+						"minLength": 1
+					},
+					"link": {
+						"title": "The base link to the access point (when it is not a local algorithm)",
+						"type": "string",
+						"format": "uri"
+					},
+					"techdocs": {
+						"title": "Optional technical documentation of the tool access",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "object",
+							"properties": {
+								"uri": {
+									"title": "The URI of the technical documentation",
+									"type": "string",
+									"format": "uri"
+								},
+								"label": {
+									"title": "The type of URI (WSDL, WADL, OpenAPI/Swagger, Source code, Miscellaneous documentation)",
+									"type": "string",
+									"enum": ["WSDL","WADL","OpenAPI","API","source","doc"]
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"uri",
+								"label"
+							]
+						}
+					}
+				},
+				"additionalProperties": true,
+				"required": [
+					"tool_access_type"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema","name","community_ids","is_automated","tool_contact_ids","status","tool_access"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
