@@ -1,0 +1,35 @@
+{
+  "_id": "Torsten.Schwede",
+  "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact",
+  "community_id" : "OEBC008",
+  "contact_type": "person",
+  "givenName": "Torsten",
+  "surname": "Schwede",
+  "email": [
+    "torsten.schwede@sib.swiss",
+    "torsten.schwede@unibas.ch"
+  ],
+  "notes": "Responsible for CAMEO project",
+  "links": [
+    {
+      "label": "LinkedIn",
+      "uri": "https://ch.linkedin.com/in/schwede"
+    },
+    {
+      "label": "ORCID",
+      "uri": "https://orcid.org/0000-0003-2715-335X"
+    },
+    {
+      "label": "Twitter",
+      "uri": "https://twitter.com/torstenschwede?lang=en"
+    },
+    {
+      "label": "MainSite",
+      "uri": "https://www.sib.swiss/torsten-schwede-group"
+    },
+    {
+      "label": "MainSite",
+      "uri": "https://www.biozentrum.unibas.ch/research/researchgroups/group/unit/schwede/research-group-torsten-schwede-related-to-prof-torsten-schwede/"
+    }
+  ]
+}

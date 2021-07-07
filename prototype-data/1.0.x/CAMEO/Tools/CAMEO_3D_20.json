@@ -1,0 +1,18 @@
+{
+  "_id": "CAMEO:server20",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool",
+  "community_ids": ["OEBC008"],
+  "name": "SWISS-MODEL",
+  "is_automated": true,
+  "tool_contact_ids": [
+    "Torsten.Schwede"
+  ],
+  "status": "online",
+  "activation": "2013-07-05T00:00:00.000+0000",
+  "tool_access": [
+    {
+      "tool_access_type": "Web",
+      "link": "http://swissmodel.expasy.org"
+    }
+  ]
+}

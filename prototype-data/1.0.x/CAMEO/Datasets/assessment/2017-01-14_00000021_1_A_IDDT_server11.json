@@ -1,0 +1,36 @@
+{
+  "_id": "CAMEO:2017-01-14_00000021_1_A_IDDT_server11",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset",
+  "type": "assessment",
+  "challenge_ids": ["CAMEO:CAMEO-3D_2017-01-14"],
+  "name": "Crystal structure of UfSP from C.elegans Score for IDDT. server20",
+  "description": "Target 21_1 of week 2017-01-14, IDDT, Server11",
+  "version": "1",
+  "visibility": "public",
+  "datalink": {
+    "inline_data": {
+      "value": 37.18
+    }
+  },
+  "dates": {
+    "creation": "2017-01-14T00:00:00Z",
+    "modification": "2017-01-18T00:00:00Z"
+  },
+  "depends_on": {
+    "tool_id": "CAMEO:server11",
+    "metrics_id": "CAMEO:lDDT",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "CAMEO:2017-01-14_00000021_1_I",
+        "role": "dependency"
+      },
+      {
+        "dataset_id": "CAMEO:2017-01-14_00000021_1_M",
+        "role": "dependency"
+      }
+    ]
+  },
+  "dataset_contact_ids": [
+    "help.CAMEO-3D"
+  ]
+}
