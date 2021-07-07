@@ -30,8 +30,8 @@
 			"type": "string",
 			"mingLength": 1
 		},
-		"version": {
-			"title": "Version (or relelase date) of the metadata",
+		"oeb_dataset_version": {
+			"title": "openEBench version of the dataset",
 			"minLength": 1,
 			"type": "string"
 		}
