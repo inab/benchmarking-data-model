@@ -297,8 +297,18 @@
 				}
 			}
 		},
-		"LinksProp": {
+		"LinksDescProp": {
 			"properties": {
+				"name": {
+					"title": "Short community name",
+					"minLength": 1,
+					"type": "string"
+				},
+				"description": {
+					"title": "Long community, benchmarking event or challenge description, written in Markdown",
+					"minLength": 1,
+					"type": "string"
+				},
 				"links": {
 					"title": "Ways to contact the community. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ...",
 					"type": "array",
@@ -309,7 +319,7 @@
 							"uri": {
 								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 								"type": "string",
-								"pattern": "^(?:mailto|http|https|data):.*$",
+								"pattern": "^(?:mailto|http|https|data|ftp):.*$",
 								"format": "uri"
 							},
 							"label": {
