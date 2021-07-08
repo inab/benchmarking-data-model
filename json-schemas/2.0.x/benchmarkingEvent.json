@@ -12,6 +12,9 @@
 		},
 		{
 			"$ref": "_shared#/definitions/ReferencesProp"
+		},
+		{
+			"$ref": "_shared#/definitions/LinksProp"
 		}
 	],
 	"type": "object",
@@ -62,6 +65,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The benchmarking event reference id(s) (if any)"
 		},
+		"links": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
+			"title": "Ways to contact the benchmarking event reponsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
+		},
 		
 		"name": {
 			"title": "Short benchmarking event name",
@@ -107,11 +114,6 @@
 				"benchmark_start": ["benchmark_stop"],
 				"benchmark_stop": ["benchmark_start"]
 			}
-		},
-		"url": {
-			"title": "The public link to the benchmarking event",
-			"type": "string",
-			"format": "uri"
 		},
 		"community_id": {
 			"title": "The community id where this benchmarking event belongs",

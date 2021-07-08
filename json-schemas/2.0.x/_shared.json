@@ -296,6 +296,47 @@
 					}
 				}
 			}
+		},
+		"LinksProp": {
+			"properties": {
+				"links": {
+					"title": "Ways to contact the community. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ...",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"uri": {
+								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
+								"type": "string",
+								"pattern": "^(?:mailto|http|https):.*$",
+								"format": "uri"
+							},
+							"label": {
+								"title": "The type of URI",
+								"type": "string",
+								"enum": [
+									"HelpDesk",
+									"SocialMedia",
+									"PublicChat",
+									"MainSite",
+									"DataSite",
+									"other"
+								]
+							},
+							"comment": {
+								"title": "Internal comment about this URI (useful when the type of URI is other)",
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"uri",
+							"label"
+						]
+					}
+				}
+			}
 		}
 	}
 }

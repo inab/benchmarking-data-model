@@ -12,6 +12,9 @@
 		},
 		{
 			"$ref": "_shared#/definitions/ReferencesProp"
+		},
+		{
+			"$ref": "_shared#/definitions/LinksProp"
 		}
 	],
 	"type": "object",
@@ -61,6 +64,10 @@
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The challenge reference id(s) (if any)"
+		},
+		"links": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
+			"title": "Ways to contact the challenge responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
 		
 		"name": {
@@ -127,11 +134,6 @@
 				"challenge_start": ["challenge_stop"],
 				"challenge_stop": ["challenge_start"]
 			}
-		},
-		"url": {
-			"title": "The public link to an specific challenge page",
-			"type": "string",
-			"format": "uri"
 		},
 		"metrics_categories": {
 			"title": "The metrics category/es appliable to all or part of the participants of this challenge",
