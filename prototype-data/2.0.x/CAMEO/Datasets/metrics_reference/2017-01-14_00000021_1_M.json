@@ -1,0 +1,21 @@
+{
+  "_id": "CAMEO:2017-01-14_00000021_1_M",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "type": "metrics_reference",
+  "challenge_ids": ["CAMEO:CAMEO-3D_2017-01-14"],
+  "name": "Crystal structure of UfSP from C.elegans",
+  "description": "Target 21_1 of week 2017-01-14",
+  "version": "1",
+  "visibility": "public",
+  "datalink": {
+    "uri": "https://www.cameo3d.org/static/data/modeling/2017.01.14/5EJJ_B/target.pdb",
+    "attrs": ["inline"]
+  },
+  "dates": {
+    "creation": "2017-01-14T00:00:00Z",
+    "modification": "2017-01-18T00:00:00Z"
+  },
+  "dataset_contact_ids": [
+    "orcid:0000-0002-6813-3200"
+  ]
+}

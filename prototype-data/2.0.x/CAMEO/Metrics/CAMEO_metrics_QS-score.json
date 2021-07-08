@@ -1,0 +1,13 @@
+{
+  "_id": "CAMEO:QS-score",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+  "title": "Quarternary Structure Score (QS-score)",
+  "description": "Evaluates protein complex interface contact similarity by a two-step approach, resolving first the inter-complex chain mapping and subsequently the inter-complex residue mapping.",
+  "metrics_contact_ids": [
+    "orcid:0000-0003-2715-335X"
+  ],
+  "formal_definition": "QS-score considers the assembly interface as a whole and is suitable for comparing homo- or hetero-oligomers with identical or different stoichiometries, alternative relative orientations of chains, and distinct amino acid sequences (i.e. homologous complexes). To unequivocally identify the residues of all protein chains in complexes, QS-score first establishes a mapping between equivalent polypeptide chains of the compared structures by exploiting complex symmetries where possible. The resulting QS-score expresses the fraction of shared interface contacts (residues on different chains with a Cβ-Cβ distance < 12 Å) between two assemblies. A  QS-score close to 1 translates to very similar interfaces, matching stoichiometry and a majority of identical interfacial contacts. A QS-score close to 0 indicates a radically diverse quaternary structure, indicating different stoichiometries and potentially representing alternative binding conformations.",
+  "references": [
+    "doi:10.1038/s41598-017-09654-8"
+  ]
+}

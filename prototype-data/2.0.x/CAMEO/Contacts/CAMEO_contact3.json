@@ -1,0 +1,21 @@
+{
+  "_id": "orcid:0000-0002-6813-3200",
+  "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+  "community_id" : "OEBC008",
+  "givenName": "Xavier",
+  "surname": "Robin",
+  "email": [
+    "Xavier.Robin@sib.swiss"
+  ],
+  "notes": "Community manager for CAMEO project",
+  "links": [
+    {
+      "label": "ORCID",
+      "uri": "https://orcid.org/0000-0002-6813-3200"
+    },
+    {
+      "label": "MainSite",
+      "uri": "https://xavier.robin.name/"
+    }
+  ]
+}

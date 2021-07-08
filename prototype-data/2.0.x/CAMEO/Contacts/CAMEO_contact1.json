@@ -1,0 +1,10 @@
+{
+  "_id": "orcid:0000-0001-7896-6217",
+  "_schema" : "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+  "community_id" : "OEBC008",
+  "givenName": "David",
+  "surname": "Baker",
+  "email": [
+    "dabaker@u.washington.edu"
+  ]
+}
