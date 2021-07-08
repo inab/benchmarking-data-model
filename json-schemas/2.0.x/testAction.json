@@ -2,6 +2,15 @@
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Test Action concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		},
+		{
+			"$ref": "_shared#/definitions/OrigIdProp"
+		}
+	],
 	"type": "object",
 	"properties": {
 		"_id": {
@@ -12,14 +21,10 @@
 					"$ref": "_shared#/definitions/OriginalIdOnSub"
 				},
 				{
-					"pattern": "^OEBA[0-9]{3}t[A-Z0-9]{6}$",
-					"description": "Temporary identifiers internally used must follow this pattern",
-					"readOnly": true
+					"$ref": "_shared#/definitions/TestActionTemporaryId"
 				},
 				{
-					"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$",
-					"description": "Identifiers returned by the APIs must follow this pattern",
-					"readOnly": true
+					"$ref": "_shared#/definitions/TestActionId"
 				}
 			]
 		},
@@ -29,13 +34,28 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction" ]
 		},
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/TestActionCanonicalId"
+		},
 		"_metadata": {
-			"$ref": "_shared#/definitions/Metadata"
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"orig_id": {
-			"title": "The test action original id",
-			"$ref": "_shared#/definitions/OriginalId"
+			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
+			"title": "The test action original id"
 		},
+		
 		"tool_id": {
 			"title": "The id of the processing tool",
 			"description": "The id of the tool which processes a set of datasets for this action. Most of the time is a participant's tool, but in the case of aggregation or statistic events, is a tool related to a kind of challenge's metrics",
