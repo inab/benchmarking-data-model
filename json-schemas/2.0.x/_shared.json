@@ -309,7 +309,7 @@
 							"uri": {
 								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 								"type": "string",
-								"pattern": "^(?:mailto|http|https):.*$",
+								"pattern": "^(?:mailto|http|https|data):.*$",
 								"format": "uri"
 							},
 							"label": {
@@ -321,6 +321,8 @@
 									"PublicChat",
 									"MainSite",
 									"DataSite",
+									"Icon",
+									"Wallpaper",
 									"other"
 								]
 							},
