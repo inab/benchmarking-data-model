@@ -39,6 +39,13 @@
 			"type": "string",
 			"format": "date-time"
 		},
+		"Deleted": {
+			"title": "Entries' deletion timestamp (internal to the database)",
+			"description": "date-time",
+			"readOnly": true,
+			"type": "string",
+			"format": "date-time"
+		},
 		"Updated": {
 			"title": "Entries' last update's timestamp (internal to the database)",
 			"description": "date-time",
@@ -264,6 +271,9 @@
 				},
 				"@updated": {
 					"$ref": "#/definitions/Updated"
+				},
+				"@deleted": {
+					"$ref": "#/definitions/Deleted"
 				},
 				"@created": {
 					"$ref": "#/definitions/Created"

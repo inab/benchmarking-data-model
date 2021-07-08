@@ -51,6 +51,9 @@
 		"@updated": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
+		"@deleted": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
 		"@created": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
