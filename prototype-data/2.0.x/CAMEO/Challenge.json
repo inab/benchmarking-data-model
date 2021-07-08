@@ -16,6 +16,20 @@
       "uri": "http://cameo3d.org/sp/2017-01-14"
     }
   ],
+  "metrics_categories": [
+    {
+      "category": "assessment",
+      "description": "Challenge metrics",
+      "metrics": [
+        {
+          "metrics_id": "CAMEO:lDDT"
+        },
+        {
+          "metrics_id": "CAMEO:QS-score"
+        }
+      ]
+    }
+  ],
   "challenge_contact_ids": [
     "orcid:0000-0002-6813-3200"
   ]

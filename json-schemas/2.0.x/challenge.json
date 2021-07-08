@@ -209,7 +209,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids"],
+	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","metrics_categories"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
