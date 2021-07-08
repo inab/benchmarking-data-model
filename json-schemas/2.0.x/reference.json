@@ -2,19 +2,16 @@
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		}
+	],
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
-			"type": "string",
-			"oneOf": [
-				{
-					"pattern": "^doi:[0-9]{2}\\.[0-9]{4,}/"
-				},
-				{
-					"pattern": "^pubmed:[1-9][0-9]*$"
-				}
-			]
+			"$ref": "_shared#/definitions/ReferenceCanonicalId"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -22,9 +19,24 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference" ]
 		},
-		"_metadata": {
-			"$ref": "_shared#/definitions/Metadata"
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/ReferenceCanonicalId"
 		},
+		"_metadata": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		
 		"title": {
 			"title": "The title of the referenced material",
 			"type": "string"
