@@ -12,6 +12,9 @@
 		},
 		{
 			"$ref": "_shared#/definitions/ReferencesProp"
+		},
+		{
+			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
 	"type": "object",
@@ -65,20 +68,23 @@
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The reference id(s) of this tool (if any)"
 		},
+		"links": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Optional links related to the metrics"
+		},
+		"name": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Short tool name"
+		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Long tool description, in Markdown format"
+		},
 		
 		"registry_tool_id": {
 			"title": "The unique id of the tool (in bio.tools, bioconda, biocontainers, OpenEBench, etc...), in CURIE format",
 			"type": "string",
 			"format": "uri"
-		},
-		"name": {
-			"title": "Short tool name",
-			"minLength": 1,
-			"type": "string"
-		},
-		"description": {
-			"title": "Long tool name or description",
-			"type": "string"
 		},
 		"community_ids": {
 			"title": "The community/es where this tool is being used",
