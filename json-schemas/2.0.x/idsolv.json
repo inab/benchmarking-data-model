@@ -2,12 +2,16 @@
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Simple Namespace resolver for CURIE ids",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		}
+	],
 	"type": "object",
 	"properties" : {
 		"_id": {
-			"title": "Namespace acronym, corresponds to the namespace part of Curie (ns:id), so it should not contain invalid patterns",
-			"type": "string",
-			"minLength": 1
+			"$ref": "_shared#/definitions/SchemeCanonicalId"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
@@ -15,9 +19,24 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv" ]
 		},
-		"_metadata": {
-			"$ref": "_shared#/definitions/Metadata"
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/SchemeCanonicalId"
 		},
+		"_metadata": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		
 		"description": {
 			"title": "Long description of the namespace",
 			"type": "string"
