@@ -14,7 +14,7 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$ref": "_shared#/definitions/LinksProp"
+			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
 	"type": "object",
@@ -66,22 +66,21 @@
 			"title": "The challenge reference id(s) (if any)"
 		},
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Ways to contact the challenge responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
-		
 		"name": {
-			"title": "Short challenge name",
-			"minLength": 1,
-			"type": "string"
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Short challenge name"
 		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Long challenge description, written in Markdown"
+		},
+		
 		"acronym": {
 			"title": "Friendly challenge acronym",
 			"minLength": 1,
-			"type": "string"
-		},
-		"description": {
-			"title": "Long description of the challenge",
 			"type": "string"
 		},
 		"benchmarking_event_id": {

@@ -11,7 +11,7 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$ref": "_shared#/definitions/LinksProp"
+			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
 	"type": "object",
@@ -47,15 +47,18 @@
 			"title": "The community reference id(s) (if any)"
 		},
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Ways to contact the community. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
-
 		"name": {
-			"title": "Short community name",
-			"minLength": 1,
-			"type": "string"
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Short community name"
 		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Long community description, written in Markdown"
+		},
+		
 		"acronym": {
 			"title": "Unique community acronym",
 			"minLength": 1,
@@ -65,10 +68,6 @@
 			"title": "_id(s) of the current community status(es)",
 			"type": "string",
 			"enum": [ "abandoned","active","unknown" ]
-		},
-		"description": {
-			"title": "Long community name or description",
-			"type": "string"
 		},
 		"keywords": {
 			"title": "A list of keywords defining the community. They can be either strings or URIs of ontology terms",
