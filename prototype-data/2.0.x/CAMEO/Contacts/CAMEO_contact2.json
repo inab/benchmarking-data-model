@@ -11,15 +11,18 @@
   "notes": "Responsible for CAMEO project",
   "links": [
     {
-      "label": "LinkedIn",
+      "label": "SocialMedia",
+      "comment": "LinkedIn",
       "uri": "https://ch.linkedin.com/in/schwede"
     },
     {
-      "label": "ORCID",
+      "label": "SocialMedia",
+      "comment": "ORCID",
       "uri": "https://orcid.org/0000-0003-2715-335X"
     },
     {
-      "label": "Twitter",
+      "label": "SocialMedia",
+      "comment": "Twitter",
       "uri": "https://twitter.com/torstenschwede?lang=en"
     },
     {
