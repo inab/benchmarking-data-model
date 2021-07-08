@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0002-1825-0090",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"Nathan",
+   "surname":"Dees",
+   "email":[
+      "unknown@example.com"
+   ],
+   "notes":"Left science: https://www.linkedin.com/in/nathan-dees/ . Unknown ORCID, unknown e-mail",
+   "community_id": "OEBC001"
+}

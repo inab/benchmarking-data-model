@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0002-6573-5900",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"Kyle",
+   "surname":"Ellrott",
+   "email":[
+      "ellrott@ohsu.edu"
+   ],
+   "notes":"Curated",
+   "community_id": "OEBC001"
+}

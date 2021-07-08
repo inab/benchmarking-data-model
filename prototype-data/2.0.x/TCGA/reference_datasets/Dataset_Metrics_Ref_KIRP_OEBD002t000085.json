@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_KIRP_M",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_KIRP"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://portal.gdc.cancer.gov/",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0003-4526-9727",
+        "orcid:0000-0001-7900-4239",
+        "orcid:0000-0003-1395-5378"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            }
+        ]
+    },
+    "description": "List of genes (described by TCGA community) that can be used as 'gold standard' in Kidney Renal Papillary Cell Carcinoma benchmark ",
+    "name": "Metrics Reference Dataset for Kidney Renal Papillary Cell Carcinoma",
+    "type": "metrics_reference",
+    "version": "unknown",
+    "visibility": "public"
+}

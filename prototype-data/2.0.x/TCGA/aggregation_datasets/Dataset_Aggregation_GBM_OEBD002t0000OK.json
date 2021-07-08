@@ -1,0 +1,139 @@
+{
+    "_id": "TCGA:2018-04-05_GBM_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_GBM"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 0.7058823529411765,
+                    "metric_y": 0.8571428571428571,
+                    "tool_id": "TCGA:MutSig2CV"
+                },
+                {
+                    "metric_x": 0.47058823529411764,
+                    "metric_y": 0.7272727272727273,
+                    "tool_id": "TCGA:compositeDriver"
+                },
+                {
+                    "metric_x": 0.7058823529411765,
+                    "metric_y": 0.36363636363636365,
+                    "tool_id": "TCGA:2020plus"
+                },
+                {
+                    "metric_x": 0.6470588235294118,
+                    "metric_y": 0.6111111111111112,
+                    "tool_id": "TCGA:OncodriveFM"
+                },
+                {
+                    "metric_x": 0.17647058823529413,
+                    "metric_y": 0.3333333333333333,
+                    "tool_id": "TCGA:ActiveDriver"
+                },
+                {
+                    "metric_x": 0.11764705882352941,
+                    "metric_y": 0.5,
+                    "tool_id": "TCGA:e-Driver"
+                },
+                {
+                    "metric_x": 0.35294117647058826,
+                    "metric_y": 0.08,
+                    "tool_id": "TCGA:OncodriveCLUST"
+                },
+                {
+                    "metric_x": 0.7058823529411765,
+                    "metric_y": 0.6,
+                    "tool_id": "TCGA:MuSiC"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM0020000002",
+                "y_axis": "OEBM0020000001"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0001-7900-4239",
+        "orcid:0000-0003-4526-9727",
+        "orcid:0000-0003-1395-5378",
+        "orcid:0000-0001-7053-7717",
+        "orcid:0000-0002-2299-2309",
+        "orcid:0000-0002-7218-2806",
+        "orcid:0000-0002-1825-0090"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_MutSig2CV"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_MutSig2CV"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_compositeDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_compositeDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_2020plus"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_2020plus"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_OncodriveFM"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_OncodriveFM"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_ActiveDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_ActiveDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_e-Driver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_e-Driver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_OncodriveCLUST"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_TPR_MuSiC"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_A_precision_MuSiC"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_GBM_M"
+            }
+        ],
+        "tool_id": "TCGA:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Glioblastoma Multiforme (e.g. input/output datasets, metrics...) in participant MuSiC",
+    "name": "Summary dataset for challenge: Glioblastoma Multiforme",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}

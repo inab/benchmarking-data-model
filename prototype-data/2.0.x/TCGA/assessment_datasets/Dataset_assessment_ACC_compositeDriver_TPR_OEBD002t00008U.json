@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_ACC_A_TPR_compositeDriver",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_ACC"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "value": 0.3333333333333333
+        }
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0003-4526-9727"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:TPR",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_ACC_P_compositeDriver"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_ACC_M"
+            }
+        ],
+        "tool_id": "TCGA:compositeDriver"
+    },
+    "description": "Assessment dataset for applying Metric 'True Positive Rate' to compositeDriver predictions in Adrenocortical Carcinoma",
+    "name": "Assesment of Metric TPR in compositeDriver",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

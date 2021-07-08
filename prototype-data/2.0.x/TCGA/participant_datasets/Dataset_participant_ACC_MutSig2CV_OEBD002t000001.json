@@ -1,0 +1,38 @@
+{
+    "_id": "TCGA:2018-04-05_ACC_P_MutSig2CV",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_ACC"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/2e8d4650-5498-4288-a461-23667ff553e2",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0001-7900-4239"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_input"
+            }
+        ],
+        "tool_id": "TCGA:MutSig2CV"
+    },
+    "description": "List of Cancer Driver Genes predicted by tool MutSig2CV in Adrenocortical Carcinoma",
+    "name": "Cancer Driver Genes in Adrenocortical Carcinoma",
+    "type": "participant",
+    "version": "unknown",
+    "visibility": "public"
+}

@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0001-7053-7717",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"Loris",
+   "surname":"Mularoni",
+   "email":[
+      "loris.mularoni@irbbarcelona.org"
+   ],
+   "notes":"Curated",
+   "community_id": "OEBC001"
+}

@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0002-1307-459X",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"Michael",
+   "surname":"Lawrence",
+   "email":[
+      "lawrence@broadinstitute.org"
+   ],
+   "notes":"Curated",
+   "community_id": "OEBC001"
+}

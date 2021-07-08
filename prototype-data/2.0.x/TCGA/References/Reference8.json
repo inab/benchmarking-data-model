@@ -1,0 +1,7 @@
+{
+   "_id":"doi:10.1186/s13059-016-0994-0",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+   "title":"OncodriveFML: a general framework to identify coding and non-coding regions with cancer driver mutations.",
+   "bibliographic_ids":["pmid:27311963", "doi:10.1186/s13059-016-0994-0"],
+   "abstract": "Distinguishing the driver mutations from somatic mutations in a tumor genome is one of the major challenges of cancer research. This challenge is more acute and far from solved for non-coding mutations. Here we present OncodriveFML, a method designed to analyze the pattern of somatic mutations across tumors in both coding and non-coding genomic regions to identify signals of positive selection, and therefore, their involvement in tumorigenesis. We describe the method and illustrate its usefulness to identify protein-coding genes, promoters, untranslated regions, intronic splice regions, and lncRNAs-containing driver mutations in several malignancies."
+}

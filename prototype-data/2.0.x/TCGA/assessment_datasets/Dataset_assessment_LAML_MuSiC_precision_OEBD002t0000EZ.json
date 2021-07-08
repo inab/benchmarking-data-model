@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_LAML_A_precision_MuSiC",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_LAML"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "value": 0.7
+        }
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-1825-0090"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:precision",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_LAML_P_MuSiC"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_LAML_M"
+            }
+        ],
+        "tool_id": "TCGA:MuSiC"
+    },
+    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to MuSiC predictions in Acute Myeloid Leukemia",
+    "name": "Assesment of Metric precision-PPV in MuSiC",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

@@ -1,0 +1,66 @@
+{
+    "_id": "TCGA:2018-04-05_input",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "community_ids": ["OEBC001"],
+    "visibility": "public",
+    "challenge_ids": [
+	"TCGA:2018-04-05_ALL",
+	"TCGA:2018-04-05_ACC", 
+	"TCGA:2018-04-05_BLCA", 
+	"TCGA:2018-04-05_BRCA", 
+	"TCGA:2018-04-05_CESC", 
+	"TCGA:2018-04-05_CHOL", 
+	"TCGA:2018-04-05_COAD", 
+	"TCGA:2018-04-05_DLBC", 
+	"TCGA:2018-04-05_ESCA", 
+	"TCGA:2018-04-05_GBM", 
+	"TCGA:2018-04-05_HNSC", 
+	"TCGA:2018-04-05_KICH", 
+	"TCGA:2018-04-05_KIRC", 
+	"TCGA:2018-04-05_KIRP", 
+	"TCGA:2018-04-05_LAML", 
+	"TCGA:2018-04-05_LGG", 
+	"TCGA:2018-04-05_LIHC", 
+	"TCGA:2018-04-05_LUAD", 
+	"TCGA:2018-04-05_LUSC", 
+	"TCGA:2018-04-05_MESO", 
+	"TCGA:2018-04-05_OV", 
+	"TCGA:2018-04-05_PAAD",  
+	"TCGA:2018-04-05_PCPG", 
+	"TCGA:2018-04-05_PRAD", 
+	"TCGA:2018-04-05_READ", 
+	"TCGA:2018-04-05_SARC", 
+	"TCGA:2018-04-05_SKCM", 
+	"TCGA:2018-04-05_STAD", 
+	"TCGA:2018-04-05_TGCT", 
+	"TCGA:2018-04-05_THCA", 
+	"TCGA:2018-04-05_THYM", 
+	"TCGA:2018-04-05_UCEC", 
+	"TCGA:2018-04-05_UCS", 
+	"TCGA:2018-04-05_UVM" 
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc",
+        "validation_date": "2018-04-05T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+	"orcid:0000-0002-6573-5900",
+	"orcid:0000-0003-1517-2975",
+	"orcid:0000-0003-4526-9727",
+      	"orcid:0000-0001-7900-4239",
+      	"orcid:0000-0003-1395-5378"
+
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "description": "MAF file with set of 1,457,702 mutations from the 2018 Pancancer analysis across 33 cancer types (coming from 9,423 tumour samples). It was compiled by the Multi-Center Mutation Calling in Multiple Cancers (MC3) working group ",
+    "name": "Input dataset for 2018 Pancancer analysis driver genes and mutations prediction",
+    "type": "input",
+    "version": "v0.28"
+}

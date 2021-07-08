@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0002-7218-2806",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"David",
+   "surname":"Tamborero",
+   "email":[
+      "david.tamborero@irbbarcelona.org"
+   ],
+   "notes":"Curated",
+   "community_id": "OEBC001"
+}

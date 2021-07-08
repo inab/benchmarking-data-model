@@ -1,0 +1,11 @@
+{
+   "_id":"orcid:0000-0003-4526-9727",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+   "givenName":"Matthew",
+   "surname":"Bailey",
+   "email":[
+      "m.hawkins.bailey@gmail.com"
+   ],
+   "notes":"Curated",
+   "community_id": "OEBC001"
+}

@@ -1,0 +1,27 @@
+{
+   "_id":"TCGA:2018-04-05",
+   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent",
+   "name":"2018 PanCancer data - Driver Genes prediction benchmark",
+   "is_automated": false,
+   "dates":{
+      "creation":"2018-04-05T00:00:00Z",
+      "modification":"2018-04-05T14:00:00Z",
+      "benchmark_start":"2018-04-05T05:00:00Z",
+      "benchmark_stop":"2018-04-05T02:00:00Z"
+   },
+   "links":[
+      {
+         "label":"MainSite",
+         "uri":"https://cancergenome.nih.gov/newsevents/newsannouncements/pancancer_atlas"
+      }
+   ],
+   "community_id":"OEBC001",
+   "bench_contact_ids":[
+      "orcid:0000-0003-4526-9727",
+      "orcid:0000-0001-7900-4239",
+      "orcid:0000-0003-1395-5378"
+   ],
+   "references":[
+      "doi:10.1016/j.cell.2018.02.060"
+   ]
+}

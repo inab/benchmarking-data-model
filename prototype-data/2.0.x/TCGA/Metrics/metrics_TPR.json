@@ -1,0 +1,16 @@
+{
+    "_id":"TCGA:TPR",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+    "name":"True Positive Rate (TPR)",
+    "description":"Agreement (sensitivity) with Consensus Driver Genes List, measured through the True Positives Rate (TPR)",
+    "metrics_contact_ids":[
+       "orcid:0000-0003-4526-9727",
+      "orcid:0000-0001-7900-4239",
+      "orcid:0000-0003-1395-5378"
+    ],
+    "formal_definition":"TPR = TP / (TP + FN)",
+    "references":[
+        "doi:10.1016/j.cell.2018.02.060"
+     ]
+
+ }

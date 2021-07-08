@@ -1,0 +1,39 @@
+{
+    "_id": "TCGA:2018-04-05_UCEC_A_precision_MutSig2CV",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "TCGA:2018-04-05_UCEC"
+    ],
+    "community_ids": [
+        "OEBC001"
+    ],
+    "datalink": {
+        "inline_data": {
+            "value": 0.15946843853820597
+        }
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0001-7900-4239"
+    ],
+    "dates": {
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "TCGA:precision",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "TCGA:2018-04-05_UCEC_P_MutSig2CV"
+            },
+            {
+                "dataset_id": "TCGA:2018-04-05_UCEC_M"
+            }
+        ],
+        "tool_id": "TCGA:MutSig2CV"
+    },
+    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to MutSig2CV predictions in Uterine Corpus Endometrial Carcinoma",
+    "name": "Assesment of Metric precision-PPV in MutSig2CV",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

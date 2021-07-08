@@ -1,0 +1,54 @@
+{
+    "_id": "TCGA:2018-04-05_CESC",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge",
+    "acronym": "CESC",
+    "benchmarking_event_id": "TCGA:2018-04-05",
+    "challenge_contact_ids": [
+        "orcid:0000-0003-4526-9727",
+        "orcid:0000-0001-7900-4239",
+        "orcid:0000-0003-1395-5378"
+    ],
+    "dates": {
+        "benchmark_start": "2018-04-05T05:00:00Z",
+        "benchmark_stop": "2018-04-05T02:00:00Z",
+        "creation": "2018-04-05T00:00:00Z",
+        "modification": "2018-04-05T14:00:00Z"
+    },
+    "is_automated": false,
+    "metrics_categories": [
+        {
+            "category": "assessment",
+            "description": "metrics used to benchmark the performance of cancer genes predictors in Challenge Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma, generating the assessment datatseta",
+            "metrics": [
+                {
+                    "metrics_id": "TCGA:TPR",
+                    "tool_id": "TCGA:compute_TPR"
+                },
+                {
+                    "metrics_id": "TCGA:precision",
+                    "tool_id": "TCGA:compute_precision"
+                }
+            ]
+        },
+        {
+            "category": "aggregation",
+            "description": "metrics used to aggregate the assessment data of all cancer genes predictors participating in challenge Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma in a consolidated Aggregation dataset",
+            "metrics": [
+                {
+                    "metrics_id": "TCGA:aggregation",
+                    "tool_id": "TCGA:aggregate_benchmark"
+                }
+            ]
+        }
+    ],
+    "name": "Cancer Driver Genes Prediction Benchmark in Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma",
+    "references": [
+        "doi:10.1016/j.cell.2018.02.060"
+    ],
+    "links": [
+        {
+            "label":"MainSite",
+            "uri": "https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga/studied-cancers/cervical"
+        }
+    ]
+}

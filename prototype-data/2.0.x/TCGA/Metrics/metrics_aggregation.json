@@ -1,0 +1,16 @@
+{
+    "_id":"TCGA:aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+    "name":"TCGA benchmark consolidattion",
+    "description":"Aggregation of TCGA benchmarking data from a single challenge into a consolidated aggregation dataset",
+    "metrics_contact_ids":[
+       "orcid:0000-0003-4526-9727",
+      "orcid:0000-0001-7900-4239",
+      "orcid:0000-0003-1395-5378"
+    ],
+    "formal_definition":"1...N assessment datasets --> aggregation dataset",
+    "references":[
+        "doi:10.1016/j.cell.2018.02.060"
+     ]
+
+ }
