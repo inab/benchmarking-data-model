@@ -2,22 +2,48 @@
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		},
+		{
+			"$ref": "_shared#/definitions/ReferencesProp"
+		}
+	],
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the community, according to the rules",
-			"type": "string",
-			"pattern": "^OEBC[0-9]{3}$"
+			"$ref": "_shared#/definitions/CommunityCanonicalId"
 		},
 		"_schema": {
-			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"title": "The JSON schema absolute URI. It must match the value of '$id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community" ]
 		},
-		"_metadata": {
-			"$ref": "_shared#/definitions/Metadata"
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/CommunityCanonicalId"
 		},
+		"_metadata": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"references": {
+			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
+			"title": "The community reference id(s) (if any)"
+		},
+
 		"name": {
 			"title": "Short community name",
 			"minLength": 1,
@@ -47,21 +73,29 @@
 			"minItems": 1
 		},
 		"links": {
-			"title": "Optional links related to the community",
+			"title": "Ways to contact the community. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ...",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
 					"uri": {
-						"title": "The URI of the link related to the community",
+						"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 						"type": "string",
+						"pattern": "^(?:mailto|http|https):.*$",
 						"format": "uri"
 					},
 					"label": {
 						"title": "The type of URI",
 						"type": "string",
-						"enum": ["LinkedInGroup","MainSite","DataSite","other"]
+						"enum": [
+							"HelpDesk",
+							"SocialMedia",
+							"PublicChat",
+							"MainSite",
+							"DataSite",
+							"other"
+						]
 					},
 					"comment": {
 						"title": "Internal comment about this URI (useful when the type of URI is other)",
@@ -75,23 +109,8 @@
 				]
 			}
 		},
-		"references": {
-			"title": "The community reference id(s) (if any)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Reference",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
-		},
 		"community_contact_ids": {
-			"title": "_id of the contacts of the responsible researchers in charge of the community coordination",
+			"title": "_id of the contacts of the responsible researchers in charge of the community coordination in OpenEBench",
 			"type": "array",
 			"minItems": 1,
 			"items": {
