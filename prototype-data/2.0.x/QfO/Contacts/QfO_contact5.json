@@ -1,0 +1,22 @@
+{
+	"_id": "orcid:0000-0002-9015-5588",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+	"givenName": "Erik",
+	"surname": "Sonnhammer",
+	"email": [
+		"orcid:0000-0002-9015-5588@scilifelab.se"
+	],
+	"community_id":"OEBC002",
+	"notes": "QfO4 organizer",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "http://sonnhammer.org/"
+		},
+		{
+			"label": "SocialMedia",
+			"comment": "ORCID",
+			"uri": "https://orcid.org/0000-0002-9015-5588"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+    "_id": "QfO:2011-07-07_SwissTree_metricsEvent_PANTHER-all_SwissTree_TPR",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+    "action_type": "MetricsEvent",
+    "challenge_id": "QfO:2011-07-07_SwissTree",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_M",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_P_PANTHER-all",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_SwissTree_A_SwissTree_TPR_PANTHER-all",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "tool_id": "QfO:PANTHER-all"
+}

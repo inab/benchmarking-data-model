@@ -1,0 +1,25 @@
+{
+    "_id":"QfO:aggregate_benchmark",  
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "description": "Docker container that gathers benchmarking data for a QfO challenge",
+    "is_automated": true,
+    "name": "QfO benchmark consolidation",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "tool_access_type": "other",
+	    "link": "https://github.com/qfo/benchmark-webservice/tree/elixir"
+        }
+    ],
+    "tool_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+      "orcid:0000-0002-9074-3507",
+      "orcid:0000-0003-0019-1735",
+      "orcid:0000-0002-9015-5588"
+    ],
+    "community_ids": ["OEBC002"]
+}

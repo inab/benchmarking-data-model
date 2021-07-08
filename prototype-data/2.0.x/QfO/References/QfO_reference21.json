@@ -1,0 +1,7 @@
+{
+	"_id":"doi:10.1093/bioinformatics/bts006",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+	"title": "Roundup 2.0: enabling comparative genomics for over 1800 genomes",
+	"bibliographic_ids":["pmid:22247275", "doi:10.1093/bioinformatics/bts006"],
+	"abstract": "Roundup is an online database of gene orthologs for over 1800 genomes, including 226 Eukaryota, 1447 Bacteria, 113 Archaea and 21 Viruses. Orthologs are inferred using the Reciprocal Smallest Distance algorithm. Users may query Roundup for single-linkage clusters of orthologous genes based on any group of genomes. Annotated query results may be viewed in a variety of ways including as clusters of orthologs and as phylogenetic profiles. Genomic results may be downloaded in formats suitable for functional as well as phylogenetic analysis, including the recent OrthoXML standard. In addition, gene IDs can be retrieved using FASTA sequence search. All source code and orthologs are freely available."
+}

@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:GETHOGs-2.0",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "Hierarchical Orthologous Groups based on pairwise orthologs infered by OMA. The ideas and methodology are described in here, where as this version 2.0 makes use of the new bottom-up algorithm described in here. ",
+    "is_automated": true,
+    "name": "GETHOGs-2.0",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://omabrowser.org",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "orcid:0000-0002-2170-853X"
+    ]
+}

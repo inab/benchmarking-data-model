@@ -1,0 +1,7 @@
+{
+	"_id":"doi:10.1016/0025-5564(81)90043-2",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+	"title": "Comparison of phylogenetic trees",
+	"bibliographic_ids":["doi:10.1016/0025-5564(81)90043-2"],
+	"abstract": "A metric on general phylogenetic trees is presented. This extends the work of most previous authors, who constructed metrics for binary trees. The metric presented in this paper makes possible the comparison of the many nonbinary phylogenetic trees appearing in the literature. This provides an objective procedure for comparing the different methods for constructing phylogenetic trees. The metric is based on elementary operations which transform one tree into another. Various results obtained in applying these operations are given. They enable the distance between any pair of trees to be calculated efficiently. This generalizes previous work by Bourque to the case where interior vertices can be labeled, and labels may contain more than one element or may be empty."
+}

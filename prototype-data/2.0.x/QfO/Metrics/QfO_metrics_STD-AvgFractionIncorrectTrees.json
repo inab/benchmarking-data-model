@@ -1,0 +1,13 @@
+{
+	"_id": "QfO:STD_incorrect_trees",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+	"name": "Species Tree Discordance test / Average fraction of incorrect trees",
+	"description": "The species tree discordance test assesses the accuracy (precision) of orthologs in terms of the accuracy of the species tree that can be reconstructed from them. This metric represents the average fraction of incorrect trees",
+	"metrics_contact_ids": ["orcid:0000-0002-2170-853X",
+            "orcid:0000-0002-9074-3507",
+            "orcid:0000-0003-0019-1735",
+			"orcid:0000-0002-9015-5588"],
+	"references": [
+		"doi:10.1371/journal.pcbi.1000262"
+	]
+}

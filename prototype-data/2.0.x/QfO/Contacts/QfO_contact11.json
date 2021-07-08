@@ -1,0 +1,17 @@
+{
+	"_id": "orcid:0000-0002-2005-2516",
+	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact",
+	"givenName": "Albert",
+	"surname": "Vilella",
+	"email": [
+		"avilella@gmail.com"
+	],
+	"community_id":"OEBC002",
+	"notes": "Contact for Ensembl Compara tool",
+	"links": [
+		{
+			"label": "MainSite",
+			"uri": "https://github.com/avilella"
+		}
+	]
+}

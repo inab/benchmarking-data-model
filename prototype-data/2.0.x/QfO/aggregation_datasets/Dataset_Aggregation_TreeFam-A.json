@@ -1,0 +1,399 @@
+{
+    "_id": "QfO:2011-07-07_TreeFam-A_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_TreeFam-A"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 0.9342,
+                    "metric_y": 0.5657,
+                    "stderr_x": "0.003250",
+                    "stderr_y": "0.005057",
+                    "tool_id": "EggNOG"
+                },
+                {
+                    "metric_x": 0.9368,
+                    "metric_y": 0.5297,
+                    "stderr_x": "0.003302",
+                    "stderr_y": "0.005092",
+                    "tool_id": "EggNOG-5-Fine-grained"
+                },
+                {
+                    "metric_x": 0.8673,
+                    "metric_y": 0.6927,
+                    "stderr_x": "0.003873",
+                    "stderr_y": "0.004707",
+                    "tool_id": "EggNOG-5-Groups"
+                },
+                {
+                    "metric_x": 0.9142,
+                    "metric_y": 0.4517,
+                    "stderr_x": "0.004065",
+                    "stderr_y": "0.005077",
+                    "tool_id": "EnsemblCompara-e56"
+                },
+                {
+                    "metric_x": 0.9132,
+                    "metric_y": 0.5052,
+                    "stderr_x": "0.003861",
+                    "stderr_y": "0.005101",
+                    "tool_id": "EnsemblCompara-e81"
+                },
+                {
+                    "metric_x": 0.9255,
+                    "metric_y": 0.6035,
+                    "stderr_x": "0.003317",
+                    "stderr_y": "0.004991",
+                    "tool_id": "Hieranoid2"
+                },
+                {
+                    "metric_x": 0.9285,
+                    "metric_y": 0.6317,
+                    "stderr_x": "0.003186",
+                    "stderr_y": "0.004921",
+                    "tool_id": "InParanoid"
+                },
+                {
+                    "metric_x": 0.9523,
+                    "metric_y": 0.4764,
+                    "stderr_x": "0.003075",
+                    "stderr_y": "0.005096",
+                    "tool_id": "InParanoidCore"
+                },
+                {
+                    "metric_x": 0.89,
+                    "metric_y": 0.5959,
+                    "stderr_x": "0.003902",
+                    "stderr_y": "0.005007",
+                    "tool_id": "OMA-GETHOGs"
+                },
+                {
+                    "metric_x": 0.8355,
+                    "metric_y": 0.6096,
+                    "stderr_x": "0.004428",
+                    "stderr_y": "0.004977",
+                    "tool_id": "GETHOGs-2.0"
+                },
+                {
+                    "metric_x": 0.9506,
+                    "metric_y": 0.3323,
+                    "stderr_x": "0.003741",
+                    "stderr_y": "0.004806",
+                    "tool_id": "OMA-Groups-RefSet5"
+                },
+                {
+                    "metric_x": 0.946,
+                    "metric_y": 0.3895,
+                    "stderr_x": "0.003593",
+                    "stderr_y": "0.004975",
+                    "tool_id": "OMA-Groups-2.0"
+                },
+                {
+                    "metric_x": 0.903,
+                    "metric_y": 0.578,
+                    "stderr_x": "0.003774",
+                    "stderr_y": "0.005039",
+                    "tool_id": "OMA-Pairs-2.0"
+                },
+                {
+                    "metric_x": 0.9274,
+                    "metric_y": 0.7074,
+                    "stderr_x": "0.003031",
+                    "stderr_y": "0.004642",
+                    "tool_id": "OrthoFinder-2.0-BLAST"
+                },
+                {
+                    "metric_x": 0.9177,
+                    "metric_y": 0.6843,
+                    "stderr_x": "0.003248",
+                    "stderr_y": "0.004742",
+                    "tool_id": "OrthoFinder-2.0-DIAMOND"
+                },
+                {
+                    "metric_x": 0.9305,
+                    "metric_y": 0.6928,
+                    "stderr_x": "0.003006",
+                    "stderr_y": "0.004707",
+                    "tool_id": "OrthoFinder-2.0-MSA"
+                },
+                {
+                    "metric_x": 0.9494,
+                    "metric_y": 0.4388,
+                    "stderr_x": "0.003289",
+                    "stderr_y": "0.005063",
+                    "tool_id": "PANTHER-LDO"
+                },
+                {
+                    "metric_x": 0.8743,
+                    "metric_y": 0.6765,
+                    "stderr_x": "0.003845",
+                    "stderr_y": "0.004773",
+                    "tool_id": "PANTHER-all"
+                },
+                {
+                    "metric_x": 0.948,
+                    "metric_y": 0.4926,
+                    "stderr_x": "0.003142",
+                    "stderr_y": "0.005101",
+                    "tool_id": "RBH-BBH"
+                },
+                {
+                    "metric_x": 0.9489,
+                    "metric_y": 0.4515,
+                    "stderr_x": "0.003256",
+                    "stderr_y": "0.005077",
+                    "tool_id": "RSD"
+                },
+                {
+                    "metric_x": 0.9248,
+                    "metric_y": 0.6253,
+                    "stderr_x": "0.003272",
+                    "stderr_y": "0.004938",
+                    "tool_id": "SonicParanoid"
+                },
+                {
+                    "metric_x": 0.9273,
+                    "metric_y": 0.5908,
+                    "stderr_x": "0.003319",
+                    "stderr_y": "0.005016",
+                    "tool_id": "SonicParanoid_fast"
+                },
+                {
+                    "metric_x": 0.926,
+                    "metric_y": 0.6411,
+                    "stderr_x": "0.003210",
+                    "stderr_y": "0.004894",
+                    "tool_id": "SonicParanoid_sensitive"
+                },
+                {
+                    "metric_x": 0.9484,
+                    "metric_y": 0.6894,
+                    "stderr_x": "0.002648",
+                    "stderr_y": "0.004721",
+                    "tool_id": "MetaPhOrs"
+                },
+                {
+                    "metric_x": 0.9268,
+                    "metric_y": 0.6551,
+                    "stderr_x": "0.003160",
+                    "stderr_y": "0.004850",
+                    "tool_id": "Orthoinspector-1.30"
+                },
+                {
+                    "metric_x": 0.9491,
+                    "metric_y": 0.6232,
+                    "stderr_x": "0.002768",
+                    "stderr_y": "0.004944",
+                    "tool_id": "PhylomeDB"
+                },
+                {
+                    "metric_x": 0.9191,
+                    "metric_y": 0.5206,
+                    "stderr_x": "0.003696",
+                    "stderr_y": "0.005097",
+                    "tool_id": "OMA-Pairs"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM002000000C",
+                "y_axis": "OEBM002000000B"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T00:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_TPR_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_A_TreeFam-A_PPV_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_TreeFam-A_M"
+            }
+        ],
+        "tool_id": "QfO:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Agreement with Reference Gene Phylogenies: TreeFam-A (e.g. input/output datasets, metrics...) in participant OMA-Pairs",
+    "name": "Summary dataset for challenge: TreeFam-A",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}

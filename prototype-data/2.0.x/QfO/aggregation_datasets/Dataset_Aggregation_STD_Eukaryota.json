@@ -1,0 +1,372 @@
+{
+    "_id": "QfO:2011-07-07_STD_Eukaryota_Aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_STD_Eukaryota"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "challenge_participants": [
+                {
+                    "metric_x": 8341.0,
+                    "metric_y": 0.074871,
+                    "stderr_y": "0.004020",
+                    "tool_id": "EggNOG"
+                },
+                {
+                    "metric_x": 9118.0,
+                    "metric_y": 0.070118,
+                    "stderr_y": "0.003700",
+                    "tool_id": "EggNOG-5-Fine-grained"
+                },
+                {
+                    "metric_x": 9204.0,
+                    "metric_y": 0.072251,
+                    "stderr_y": "0.003662",
+                    "tool_id": "EggNOG-5-Groups"
+                },
+                {
+                    "metric_x": 9673.0,
+                    "metric_y": 0.084462,
+                    "stderr_y": "0.004017",
+                    "tool_id": "EnsemblCompara-e56"
+                },
+                {
+                    "metric_x": 10974.0,
+                    "metric_y": 0.08713,
+                    "stderr_y": "0.003709",
+                    "tool_id": "EnsemblCompara-e81"
+                },
+                {
+                    "metric_x": 10038.0,
+                    "metric_y": 0.058494,
+                    "stderr_y": "0.003246",
+                    "tool_id": "Hieranoid2"
+                },
+                {
+                    "metric_x": 11925.0,
+                    "metric_y": 0.054745,
+                    "stderr_y": "0.002819",
+                    "tool_id": "InParanoid"
+                },
+                {
+                    "metric_x": 7808.0,
+                    "metric_y": 0.055862,
+                    "stderr_y": "0.003596",
+                    "tool_id": "InParanoidCore"
+                },
+                {
+                    "metric_x": 8490.0,
+                    "metric_y": 0.056203,
+                    "stderr_y": "0.003447",
+                    "tool_id": "OMA-GETHOGs"
+                },
+                {
+                    "metric_x": 7902.0,
+                    "metric_y": 0.061356,
+                    "stderr_y": "0.003726",
+                    "tool_id": "GETHOGs-2.0"
+                },
+                {
+                    "metric_x": 4899.0,
+                    "metric_y": 0.049976,
+                    "stderr_y": "0.004397",
+                    "tool_id": "OMA-Groups-RefSet5"
+                },
+                {
+                    "metric_x": 6370.0,
+                    "metric_y": 0.050811,
+                    "stderr_y": "0.003882",
+                    "tool_id": "OMA-Groups-2.0"
+                },
+                {
+                    "metric_x": 9051.0,
+                    "metric_y": 0.057673,
+                    "stderr_y": "0.003455",
+                    "tool_id": "OMA-Pairs-2.0"
+                },
+                {
+                    "metric_x": 12075.0,
+                    "metric_y": 0.074907,
+                    "stderr_y": "0.003267",
+                    "tool_id": "OrthoFinder-2.0-BLAST"
+                },
+                {
+                    "metric_x": 11540.0,
+                    "metric_y": 0.072516,
+                    "stderr_y": "0.003328",
+                    "tool_id": "OrthoFinder-2.0-DIAMOND"
+                },
+                {
+                    "metric_x": 12535.0,
+                    "metric_y": 0.083819,
+                    "stderr_y": "0.003407",
+                    "tool_id": "OrthoFinder-2.0-MSA"
+                },
+                {
+                    "metric_x": 6666.0,
+                    "metric_y": 0.049805,
+                    "stderr_y": "0.003645",
+                    "tool_id": "PANTHER-LDO"
+                },
+                {
+                    "metric_x": 13653.0,
+                    "metric_y": 0.073931,
+                    "stderr_y": "0.002997",
+                    "tool_id": "PANTHER-all"
+                },
+                {
+                    "metric_x": 9234.0,
+                    "metric_y": 0.067164,
+                    "stderr_y": "0.003557",
+                    "tool_id": "RBH-BBH"
+                },
+                {
+                    "metric_x": 8880.0,
+                    "metric_y": 0.069914,
+                    "stderr_y": "0.003742",
+                    "tool_id": "RSD"
+                },
+                {
+                    "metric_x": 10446.0,
+                    "metric_y": 0.060406,
+                    "stderr_y": "0.003187",
+                    "tool_id": "SonicParanoid"
+                },
+                {
+                    "metric_x": 10124.0,
+                    "metric_y": 0.058327,
+                    "stderr_y": "0.003166",
+                    "tool_id": "SonicParanoid_fast"
+                },
+                {
+                    "metric_x": 10891.0,
+                    "metric_y": 0.062039,
+                    "stderr_y": "0.003155",
+                    "tool_id": "SonicParanoid_sensitive"
+                },
+                {
+                    "metric_x": 13702.0,
+                    "metric_y": 0.084817,
+                    "stderr_y": "0.003251",
+                    "tool_id": "MetaPhOrs"
+                },
+                {
+                    "metric_x": 10385.0,
+                    "metric_y": 0.06243,
+                    "stderr_y": "0.003272",
+                    "tool_id": "Orthoinspector-1.30"
+                },
+                {
+                    "metric_x": 11866.0,
+                    "metric_y": 0.064947,
+                    "stderr_y": "0.003096",
+                    "tool_id": "PhylomeDB"
+                },
+                {
+                    "metric_x": 8239.0,
+                    "metric_y": 0.053668,
+                    "stderr_y": "0.003440",
+                    "tool_id": "OMA-Pairs"
+                }
+            ],
+            "visualization": {
+                "type": "2D-plot",
+                "x_axis": "OEBM0020000006",
+                "y_axis": "OEBM0020000007"
+            }
+        },
+        "schema_url": "https://raw.githubusercontent.com/inab/OpenEBench_scientific_visualizer/js/benchmarking_data_model/inline_data_visualizer.json"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T00:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_EggNOG-5-Fine-grained"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_EggNOG-5-Groups"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_EnsemblCompara-e56"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_EnsemblCompara-e81"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_Hieranoid2"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_InParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_InParanoidCore"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OMA-GETHOGs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_GETHOGs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OMA-Groups-RefSet5"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OMA-Groups-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OMA-Pairs-2.0"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OrthoFinder-2.0-BLAST"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OrthoFinder-2.0-DIAMOND"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OrthoFinder-2.0-MSA"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_PANTHER-LDO"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_PANTHER-all"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_RSD"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_SonicParanoid"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_SonicParanoid_fast"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_SonicParanoid_sensitive"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_MetaPhOrs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_Orthoinspector-1.30"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_PhylomeDB"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_comp_trees_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_A_STD_RF_distance_OMA-Pairs"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_STD_Eukaryota_M"
+            }
+        ],
+        "tool_id": "QfO:aggregate_benchmark"
+    },
+    "description": "Summary dataset with information about challenge Species Tree Discordance in Eukaryota (e.g. input/output datasets, metrics...) in participant OMA-Pairs",
+    "name": "Summary dataset for challenge: STD_Eukaryota",
+    "type": "aggregation",
+    "version": "unknown",
+    "visibility": "public"
+}

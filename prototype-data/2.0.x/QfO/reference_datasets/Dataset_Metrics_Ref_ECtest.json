@@ -1,0 +1,40 @@
+{
+    "_id": "QfO:2011-07-07_ECtest_M",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_ECtest"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "https://enzyme.expasy.org/",
+        "validation_date": "2011-07-07T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_I"
+            }
+        ]
+    },
+    "description": "Functional Annotations from the Enzyme Commission (EC) numbers database that can be used in the Enzyme Classification Conservation benchmark as reference to assess the accuracy of orthologs predicted",
+    "name": "Metrics Reference Dataset for Enzyme Classification Conservation Test benchmark",
+    "type": "metrics_reference",
+    "version": "unknown",
+    "visibility": "community"
+}

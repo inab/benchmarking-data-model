@@ -1,0 +1,239 @@
+{
+    "_id": "QfO:2011-07-07_GOtest_do_aggregation",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+    "action_type": "AggregationEvent",
+    "challenge_id": "QfO:2011-07-07_GOtest",
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "reception": "2011-07-07T00:00:00Z"
+    },
+    "involved_datasets": [
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG-5-Fine-grained",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG-5-Fine-grained",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EggNOG-5-Groups",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EggNOG-5-Groups",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e56",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EnsemblCompara-e56",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_EnsemblCompara-e81",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_EnsemblCompara-e81",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_Hieranoid2",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_Hieranoid2",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_InParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_InParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_InParanoidCore",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_InParanoidCore",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-GETHOGs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-GETHOGs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_GETHOGs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_GETHOGs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Groups-RefSet5",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Groups-RefSet5",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Groups-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Groups-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Pairs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Pairs-2.0",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-BLAST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-BLAST",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-DIAMOND",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-DIAMOND",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OrthoFinder-2.0-MSA",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OrthoFinder-2.0-MSA",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PANTHER-LDO",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PANTHER-LDO",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PANTHER-all",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PANTHER-all",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_RBH-BBH",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_RBH-BBH",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_RSD",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_RSD",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid_fast",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid_fast",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_SonicParanoid_sensitive",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_SonicParanoid_sensitive",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_MetaPhOrs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_MetaPhOrs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_Orthoinspector-1.30",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_Orthoinspector-1.30",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_PhylomeDB",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_PhylomeDB",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_ortholog_relations_OMA-Pairs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Pairs",
+            "role": "incoming"
+        },
+        {
+            "dataset_id": "QfO:2011-07-07_GOtest_Aggregation",
+            "role": "outgoing"
+        }
+    ],
+    "test_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "tool_id": "QfO:aggregate_benchmark"
+}

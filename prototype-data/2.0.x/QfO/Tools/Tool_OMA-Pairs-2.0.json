@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:OMA-Pairs-2.0",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "The OMA Pairs are the primary product of the OMA pipeline. It is a list of high-confidence pairs of orthologous genes.OMA is based on an algorithm that compares genes on the basis of evolutionary distances, considers distance inference uncertainty, and accounts for differential gene losses.The version 2.0 has better support for fast evolving inparalogs. The changes are described in here. ",
+    "is_automated": true,
+    "name": "OMA-Pairs-2.0",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://omabrowser.org",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "orcid:0000-0002-2170-853X"
+    ]
+}

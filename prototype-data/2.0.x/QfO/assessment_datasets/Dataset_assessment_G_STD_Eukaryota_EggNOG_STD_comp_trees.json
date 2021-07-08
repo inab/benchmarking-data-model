@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_Eukaryota_A_STD_comp_trees_EggNOG",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_Eukaryota"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": 0,
+            "value": 4182.0
+        }
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_comp_trees",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_EggNOG"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_Eukaryota_M"
+            }
+        ],
+        "tool_id": "QfO:EggNOG"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_comp_trees' to EggNOG predictions in Generalized Species Tree Discordance in Eukaryota",
+    "name": "Assesment of STD_comp_trees in EggNOG",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

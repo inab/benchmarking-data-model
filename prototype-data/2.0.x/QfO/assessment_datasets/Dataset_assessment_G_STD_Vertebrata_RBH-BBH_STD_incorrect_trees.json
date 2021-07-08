@@ -1,0 +1,43 @@
+{
+    "_id": "QfO:2011-07-07_G_STD_Vertebrata_A_STD_incorrect_trees_RBH-BBH",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "challenge_ids": [
+        "QfO:2011-07-07_G_STD_Vertebrata"
+    ],
+    "community_ids": [
+        "OEBC002"
+    ],
+    "datalink": {
+        "inline_data": {
+            "error": "0.016792",
+            "value": "0.673333"
+        }
+    },
+    "dataset_contact_ids": [
+        "orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "depends_on": {
+        "metrics_id": "QfO:STD_incorrect_trees",
+        "rel_dataset_ids": [
+            {
+                "dataset_id": "QfO:2011-07-07_P_RBH-BBH"
+            },
+            {
+                "dataset_id": "QfO:2011-07-07_G_STD_Vertebrata_M"
+            }
+        ],
+        "tool_id": "QfO:RBH-BBH"
+    },
+    "description": "Assessment dataset for applying Metric 'STD_incorrect_trees' to RBH-BBH predictions in Generalized Species Tree Discordance in Vertebrata",
+    "name": "Assesment of STD_incorrect_trees in RBH-BBH",
+    "type": "assessment",
+    "version": "1",
+    "visibility": "public"
+}

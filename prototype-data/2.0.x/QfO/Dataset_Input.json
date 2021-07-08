@@ -1,0 +1,41 @@
+{
+    "_id": "QfO:2011-07-07_I",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+    "community_ids": ["OEBC002"],
+    "visibility": "public",
+    "challenge_ids": [
+	"QfO:2011-07-07_SwissTree",
+	"QfO:2011-07-07_STD_Fungi",
+	"QfO:2011-07-07_STD_Eukaryota",
+	"QfO:2011-07-07_GOtest",
+	"QfO:2011-07-07_TreeFam-A",
+	"QfO:2011-07-07_G_STD_Fungi",
+	"QfO:2011-07-07_G_STD_Eukaryota",
+	"QfO:2011-07-07_G_STD_LUCA",
+	"QfO:2011-07-07_G_STD_Vertebrata",
+	"QfO:2011-07-07_ECtest"
+    ],
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "uri": "ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/previous_releases/qfo_release-2011_04/",
+        "validation_date": "2011-07-07T00:00:00Z"
+    },
+    "dataset_contact_ids": [
+	"orcid:0000-0002-2170-853X",
+        "orcid:0000-0002-9074-3507",
+        "orcid:0000-0003-0019-1735",
+        "orcid:0000-0002-9015-5588"
+
+    ],
+    "dates": {
+        "creation": "2011-07-07T00:00:00Z",
+        "modification": "2011-07-07T14:00:00Z"
+    },
+    "description": "Reference proteome used by QfO participants as input dataset for orthologs prediction ",
+    "name": "Quest for Orthologs Reference Proteome - 2011",
+    "type": "input",
+    "version": "2011"
+}

@@ -1,0 +1,24 @@
+{
+    "_id": "QfO:OrthoFinder-2.0-BLAST",
+    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "activation": "2011-07-07T00:00:00Z",
+    "community_ids": [
+        "OEBC002"
+    ],
+    "description": "OrthoFinder 2.0 using BLAST and with default options. Command: \"orthofinder -S blast -f 2011_04_reference_proteomes/\" (defaults: DendroBLAST trees, species tree rooted by STRIDE, new OrthoFinder 2 orthologue inference from gene trees) ",
+    "is_automated": true,
+    "name": "OrthoFinder-2.0-BLAST",
+    "references": [
+        "doi:10.1038/nmeth.3830"
+    ],
+    "status": "unknown",
+    "tool_access": [
+        {
+            "link": "http://https://github.com/davidemms/OrthoFinder",
+            "tool_access_type": "other"
+        }
+    ],
+    "tool_contact_ids": [
+        "orcid:0000-0002-2170-853X"
+    ]
+}
