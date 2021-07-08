@@ -2,6 +2,18 @@
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Challenge concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		},
+		{
+			"$ref": "_shared#/definitions/OrigIdProp"
+		},
+		{
+			"$ref": "_shared#/definitions/ReferencesProp"
+		}
+	],
 	"type": "object",
 	"properties": {
 		"_id": {
@@ -12,30 +24,45 @@
 					"$ref": "_shared#/definitions/OriginalIdOnSub"
 				},
 				{
-					"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
-					"description": "Temporary identifiers internally used must follow this pattern",
-					"readOnly": true
+					"$ref": "_shared#/definitions/ChallengeTemporaryId"
 				},
 				{
-					"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
-					"description": "Identifiers returned by the APIs must follow this pattern",
-					"readOnly": true
+					"$ref": "_shared#/definitions/ChallengeId"
 				}
 			]
 		},
 		"_schema": {
-			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"title": "The JSON schema absolute URI. It must match the value of '$id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge" ]
 		},
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/ChallengeCanonicalId"
+		},
 		"_metadata": {
-			"$ref": "_shared#/definitions/Metadata"
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"orig_id": {
-			"title": "The challenge original id",
-			"$ref": "_shared#/definitions/OriginalId"
+			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
+			"title": "The challenge original id"
 		},
+		"references": {
+			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
+			"title": "The challenge reference id(s) (if any)"
+		},
+		
 		"name": {
 			"title": "Short challenge name",
 			"minLength": 1,
@@ -170,21 +197,6 @@
 				"foreign_keys": [
 					{
 						"schema_id": "Contact",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
-		},
-		"references": {
-			"title": "The challenge reference id(s) (if any)",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Reference",
 						"members": [ "." ]
 					}
 				],
