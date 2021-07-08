@@ -99,7 +99,7 @@
 		"visibility": {
 			"title": "The visibility of this dataset, which must be acknowledged by the APIs",
 			"type": "string",
-			"enum": [ "public", "community", "challenge", "participant" ]
+			"enum": [ "public", "community", "challenge" ]
 		},
 		"name": {
 			"title": "Short dataset name",
