@@ -75,7 +75,7 @@
 			"title": "The type of action",
 			"description": "The type of action performed by the tool, also describing the kind of input datasets.\nTest Event = Input + Tool -> Participant Data\nMetrics event = Participant Data + Metrics -> Assessment Data\nStatistics event = Assessment Data + Metrics -> Challenge Data\n",
 			"type": "string",
-			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "AggregationEvent", "TestEvent" ]
+			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "ParticipantAssessmentsEvent", "AggregationEvent", "TestEvent" ]
 		},
 		"involved_datasets": {
 			"title": "The incoming, outgoing and settings datasets involved in this test action",

@@ -12,6 +12,9 @@
 		},
 		{
 			"$ref": "_shared#/definitions/ReferencesProp"
+		},
+		{
+			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
 	"type": "object",
@@ -65,6 +68,14 @@
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The reference id(s) of this dataset (if any)"
 		},
+		"name": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Short dataset name"
+		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Long dataset description, written in Markdown"
+		},
 		
 		"community_ids": {
 			"title": "The communities where this dataset was generated or used",
@@ -101,18 +112,9 @@
 			"type": "string",
 			"enum": [ "public", "community", "challenge" ]
 		},
-		"name": {
-			"title": "Short dataset name",
-			"minLength": 1,
-			"type": "string"
-		},
 		"version": {
 			"title": "Version (or relelase date) of the dataset",
 			"minLength": 1,
-			"type": "string"
-		},
-		"description": {
-			"title": "Long dataset description",
 			"type": "string"
 		},
 		"dates": {
@@ -141,7 +143,7 @@
 			"title": "Type of dataset. Aggregation datasets are combinations of other aggregations or assessments.",
 			"type": "string",
 			"mingLength": 1,
-			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "aggregation", "other" ]
+			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "participant_assessments", "aggregation", "other" ]
 		},
 		"datalink": {
 			"title": "The data itself, either linked or embedded",
