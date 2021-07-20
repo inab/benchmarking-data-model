@@ -145,69 +145,42 @@
 			"mingLength": 1,
 			"enum": [ "public_reference", "metrics_reference", "input", "participant", "assessment", "participant_assessments", "aggregation", "other" ]
 		},
-		"datalink": {
-			"title": "The data itself, either linked or embedded",
-			"type": "object",
+		"datalinks": {
+			"title": "The data itself, either linked or embedded, and mirrors to it",
+			"type": "array",
+			"minItems": 1,
 			"oneOf": [
 				{
 					"title": "Inline, embedded data",
-					"properties": {
-						"inline_data": {
-							"title": "Inline data in JSON format",
-							"type": "object",
-							"minProperties": 1,
-							"additionalProperties": true
-						},
-						"schema_url": {
-							"title": "The optional URL to the JSON Schema which validates the inline data. It could be embedded, using the data: protocol encoding",
-							"type": "string",
-							"format": "uri"
+					"items": [
+						{
+							"properties": {
+								"inline_data": {
+									"title": "Inline data in JSON format",
+									"type": "object",
+									"minProperties": 1,
+									"additionalProperties": true
+								},
+								"schema_url": {
+									"title": "The optional URL to the JSON Schema which validates the inline data. It could be embedded, using the 'data:' protocol encoding",
+									"type": "string",
+									"pattern": "^(?:http|https|data):.*$",
+									"format": "uri"
+								}
+							},
+							"additionalProperties": false,
+							"required": [ "inline_data" ]
 						}
-					},
-					"additionalProperties": false,
-					"required": [ "inline_data" ]
+					],
+					"additionalItems": {
+						"$ref": "#/definitions/DataLink"
+					}
 				},
 				{
 					"title": "The link to reach the dataset",
-					"properties": {
-						"uri": {
-							"title": "Either inline, encoded data URI; or an official CURIE; or download link to the dataset itself; or a link to a Metalink describing the dataset; or a link to a MD5/SHA1 sums file with relative paths",
-							"type": "string",
-							"format": "uri"
-						},
-						"attrs": {
-							"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink (RFC 5854, RFC 6249, https://en.wikipedia.org/wiki/Metalink) or a standard sums (MD5, SHA1) file",
-							"type": "array",
-							"minItems": 1,
-							"uniqueItems": true,
-							"anyOf": [
-								{
-									"items": {
-										"type": "string",
-										"enum": [ "inline","compressed", "archive", "metalink", "sums" ]
-									}
-								},
-								{
-									"items": {
-										"type": "string",
-										"enum": [ "curie", "compressed", "archive", "metalink" ]
-									}
-								}
-							]
-						},
-						"validation_date": {
-							"title": "Last validation date of the datalink",
-							"type": "string",
-							"format": "date-time"
-						},
-						"status": {
-							"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
-							"type": "string",
-							"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
-						}
-					},
-					"additionalProperties": false,
-					"required": [ "uri", "attrs" ]
+					"items": {
+						"$ref": "#/definitions/DataLink"
+					}
 				}
 			]
 		},
@@ -283,8 +256,68 @@
 			"required": [ "rel_dataset_ids" ]
 		}
 	},
+	"definitions": {
+		"DataLink": {
+			"title": "The link to reach the dataset",
+			"properties": {
+				"uri": {
+					"title": "Either inline, encoded data URI; or an official CURIE; or download link to the dataset itself, like an FTP directory or archive, an S3 bucket, a WebDAV directory, an HTTP REST link, etc...; or a link to a Metalink describing the dataset; or a link to a MD5/SHA1 sums file with relative paths",
+					"type": "string",
+					"format": "uri"
+				},
+				"attrs": {
+					"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink (RFC 5854, RFC 6249, https://en.wikipedia.org/wiki/Metalink) or a standard sums (MD5, SHA1) file",
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"anyOf": [
+						{
+							"items": {
+								"type": "string",
+								"enum": [ "inline","compressed", "archive", "metalink", "sums" ]
+							}
+						},
+						{
+							"items": {
+								"type": "string",
+								"enum": [ "curie", "compressed", "archive", "metalink" ]
+							}
+						}
+					]
+				},
+				"kind": {
+					"documentation": "Nature of the pointed resource. It can be the authoritative (primary) source, a mirror, or a permanent fixed URI, like Zenodo, B2DROP or similar",
+					"type": "string",
+					"enum": [ "mirror", "authoritative", "pid" ]
+				},
+				"validation_date": {
+					"title": "Last validation date of the datalink",
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
+					"type": "string",
+					"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+				}
+			},
+			"additionalProperties": false,
+			"required": [ "uri", "attrs" ]
+		}
+	},
 	"additionalProperties": false,
-	"required": ["_id","_schema","challenge_ids","visibility","name","version","type","dates","datalink","dataset_contact_ids"],
+	"required": [
+		"_id",
+		"_schema",
+		"challenge_ids",
+		"visibility",
+		"name",
+		"version",
+		"type",
+		"dates",
+		"datalinks",
+		"dataset_contact_ids"
+	],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
