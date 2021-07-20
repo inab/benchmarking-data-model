@@ -1,38 +1,40 @@
 {
-    "_id": "TCGA:2018-04-05_KICH_P_OncodriveFM",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_KICH"
+  "_id": "TCGA:2018-04-05_KICH_P_OncodriveFM",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_KICH"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0001-7053-7717"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_input"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/12c99bfe-ec49-4c99-994a-1000a33280c9",
-        "validation_date": "2018-04-05T00:00:00Z"
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0001-7053-7717"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_input"
-            }
-        ],
-        "tool_id": "TCGA:OncodriveFM"
-    },
-    "description": "List of Cancer Driver Genes predicted by tool OncodriveFM in Kidney Chromophobe",
-    "name": "Cancer Driver Genes in Kidney Chromophobe",
-    "type": "participant",
-    "version": "unknown",
-    "visibility": "public"
+    "tool_id": "TCGA:OncodriveFM"
+  },
+  "description": "List of Cancer Driver Genes predicted by tool OncodriveFM in Kidney Chromophobe",
+  "name": "Cancer Driver Genes in Kidney Chromophobe",
+  "type": "participant",
+  "version": "unknown",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "attrs": [
+        "archive"
+      ],
+      "status": "ok",
+      "uri": "https://api.gdc.cancer.gov/data/12c99bfe-ec49-4c99-994a-1000a33280c9",
+      "validation_date": "2018-04-05T00:00:00Z"
+    }
+  ]
 }

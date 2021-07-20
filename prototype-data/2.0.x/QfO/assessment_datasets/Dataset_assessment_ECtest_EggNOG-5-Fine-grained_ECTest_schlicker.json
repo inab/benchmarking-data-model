@@ -1,43 +1,45 @@
 {
-    "_id": "QfO:2011-07-07_ECtest_A_ECTest_schlicker_EggNOG-5-Fine-grained",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "QfO:2011-07-07_ECtest"
+  "_id": "QfO:2011-07-07_ECtest_A_ECTest_schlicker_EggNOG-5-Fine-grained",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "QfO:2011-07-07_ECtest"
+  ],
+  "community_ids": [
+    "OEBC002"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-2170-853X",
+    "orcid:0000-0002-9074-3507",
+    "orcid:0000-0003-0019-1735",
+    "orcid:0000-0002-9015-5588"
+  ],
+  "dates": {
+    "creation": "2011-07-07T00:00:00Z",
+    "modification": "2011-07-07T14:00:00Z"
+  },
+  "depends_on": {
+    "metrics_id": "QfO:ECTest_schlicker",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "QfO:2011-07-07_P_EggNOG-5-Fine-grained"
+      },
+      {
+        "dataset_id": "QfO:2011-07-07_ECtest_M"
+      }
     ],
-    "community_ids": [
-        "OEBC002"
-    ],
-    "datalink": {
-        "inline_data": {
-            "error": "0.000968",
-            "value": "0.981010"
-        }
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-2170-853X",
-        "orcid:0000-0002-9074-3507",
-        "orcid:0000-0003-0019-1735",
-        "orcid:0000-0002-9015-5588"
-    ],
-    "dates": {
-        "creation": "2011-07-07T00:00:00Z",
-        "modification": "2011-07-07T14:00:00Z"
-    },
-    "depends_on": {
-        "metrics_id": "QfO:ECTest_schlicker",
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "QfO:2011-07-07_P_EggNOG-5-Fine-grained"
-            },
-            {
-                "dataset_id": "QfO:2011-07-07_ECtest_M"
-            }
-        ],
-        "tool_id": "QfO:EggNOG-5-Fine-grained"
-    },
-    "description": "Assessment dataset for applying Metric 'ECTest_schlicker' to EggNOG-5-Fine-grained predictions in Enzyme Classification Conservation Test",
-    "name": "Assesment of ECTest_schlicker in EggNOG-5-Fine-grained",
-    "type": "assessment",
-    "version": "1",
-    "visibility": "public"
+    "tool_id": "QfO:EggNOG-5-Fine-grained"
+  },
+  "description": "Assessment dataset for applying Metric 'ECTest_schlicker' to EggNOG-5-Fine-grained predictions in Enzyme Classification Conservation Test",
+  "name": "Assesment of ECTest_schlicker in EggNOG-5-Fine-grained",
+  "type": "assessment",
+  "version": "1",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "inline_data": {
+        "error": "0.000968",
+        "value": "0.981010"
+      }
+    }
+  ]
 }

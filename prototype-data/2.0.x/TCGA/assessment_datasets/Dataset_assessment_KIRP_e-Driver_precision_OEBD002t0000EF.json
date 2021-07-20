@@ -1,39 +1,41 @@
 {
-    "_id": "TCGA:2018-04-05_KIRP_A_precision_e-Driver",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_KIRP"
+  "_id": "TCGA:2018-04-05_KIRP_A_precision_e-Driver",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_KIRP"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0001-7900-4239"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "metrics_id": "TCGA:precision",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_KIRP_P_e-Driver"
+      },
+      {
+        "dataset_id": "TCGA:2018-04-05_KIRP_M"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "inline_data": {
-            "value": 0.5
-        }
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0001-7900-4239"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "metrics_id": "TCGA:precision",
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_KIRP_P_e-Driver"
-            },
-            {
-                "dataset_id": "TCGA:2018-04-05_KIRP_M"
-            }
-        ],
-        "tool_id": "TCGA:e-Driver"
-    },
-    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to e-Driver predictions in Kidney Renal Papillary Cell Carcinoma",
-    "name": "Assesment of Metric precision-PPV in e-Driver",
-    "type": "assessment",
-    "version": "1",
-    "visibility": "public"
+    "tool_id": "TCGA:e-Driver"
+  },
+  "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to e-Driver predictions in Kidney Renal Papillary Cell Carcinoma",
+  "name": "Assesment of Metric precision-PPV in e-Driver",
+  "type": "assessment",
+  "version": "1",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "inline_data": {
+        "value": 0.5
+      }
+    }
+  ]
 }

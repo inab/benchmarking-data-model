@@ -39,14 +39,16 @@
 	"TCGA:2018-04-05_UCS", 
 	"TCGA:2018-04-05_UVM" 
     ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc",
-        "validation_date": "2018-04-05T00:00:00Z"
-    },
+    "datalinks": [
+        {
+	    "attrs": [
+	        "archive"
+	    ],
+	    "status": "ok",
+	    "uri": "https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc",
+	    "validation_date": "2018-04-05T00:00:00Z"
+        }
+    ],
     "dataset_contact_ids": [
 	"orcid:0000-0002-6573-5900",
 	"orcid:0000-0003-1517-2975",

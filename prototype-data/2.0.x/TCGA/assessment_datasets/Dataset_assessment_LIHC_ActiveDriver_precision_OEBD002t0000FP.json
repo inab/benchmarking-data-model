@@ -1,39 +1,41 @@
 {
-    "_id": "TCGA:2018-04-05_LIHC_A_precision_ActiveDriver",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_LIHC"
+  "_id": "TCGA:2018-04-05_LIHC_A_precision_ActiveDriver",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_LIHC"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-2299-2309"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "metrics_id": "TCGA:precision",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_LIHC_P_ActiveDriver"
+      },
+      {
+        "dataset_id": "TCGA:2018-04-05_LIHC_M"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "inline_data": {
-            "value": 0.5
-        }
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-2299-2309"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "metrics_id": "TCGA:precision",
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_LIHC_P_ActiveDriver"
-            },
-            {
-                "dataset_id": "TCGA:2018-04-05_LIHC_M"
-            }
-        ],
-        "tool_id": "TCGA:ActiveDriver"
-    },
-    "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to ActiveDriver predictions in Liver Hepatocellular Carcinoma",
-    "name": "Assesment of Metric precision-PPV in ActiveDriver",
-    "type": "assessment",
-    "version": "1",
-    "visibility": "public"
+    "tool_id": "TCGA:ActiveDriver"
+  },
+  "description": "Assessment dataset for applying Metric 'Positive Predictive Value' to ActiveDriver predictions in Liver Hepatocellular Carcinoma",
+  "name": "Assesment of Metric precision-PPV in ActiveDriver",
+  "type": "assessment",
+  "version": "1",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "inline_data": {
+        "value": 0.5
+      }
+    }
+  ]
 }

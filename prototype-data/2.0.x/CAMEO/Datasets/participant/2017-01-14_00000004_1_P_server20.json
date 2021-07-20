@@ -7,10 +7,12 @@
   "description": "Target 04_1 of week 2017-01-14. Server11. IDDT",
   "version": "1",
   "visibility": "public",
-  "datalink": {
-    "uri": "https://www.cameo3d.org/static/data/modeling/2017.01.14/5EJJ_B/servers/server11/model-1/model-1.pdb",
-    "attrs": ["inline"]
-  },
+  "datalinks": [
+    {
+      "uri": "https://www.cameo3d.org/static/data/modeling/2017.01.14/5EJJ_B/servers/server11/model-1/model-1.pdb",
+      "attrs": ["inline"]
+    }
+  ],
   "dates": {
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-18T00:00:00Z"

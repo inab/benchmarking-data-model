@@ -1,38 +1,40 @@
 {
-    "_id": "TCGA:2018-04-05_THYM_P_2020plus",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_THYM"
+  "_id": "TCGA:2018-04-05_THYM_P_2020plus",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_THYM"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0003-1395-5378"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_input"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/5fa7121d-2f4b-40e5-822d-7b5c037a7641",
-        "validation_date": "2018-04-05T00:00:00Z"
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0003-1395-5378"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_input"
-            }
-        ],
-        "tool_id": "TCGA:2020plus"
-    },
-    "description": "List of Cancer Driver Genes predicted by tool 2020plus in Thymoma",
-    "name": "Cancer Driver Genes in Thymoma",
-    "type": "participant",
-    "version": "unknown",
-    "visibility": "public"
+    "tool_id": "TCGA:2020plus"
+  },
+  "description": "List of Cancer Driver Genes predicted by tool 2020plus in Thymoma",
+  "name": "Cancer Driver Genes in Thymoma",
+  "type": "participant",
+  "version": "unknown",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "attrs": [
+        "archive"
+      ],
+      "status": "ok",
+      "uri": "https://api.gdc.cancer.gov/data/5fa7121d-2f4b-40e5-822d-7b5c037a7641",
+      "validation_date": "2018-04-05T00:00:00Z"
+    }
+  ]
 }

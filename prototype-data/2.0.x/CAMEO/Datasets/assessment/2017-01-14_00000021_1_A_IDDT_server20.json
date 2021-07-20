@@ -7,11 +7,13 @@
   "description": "Target 21_1 of week 2017-01-14, IDDT, Server20",
   "version": "1",
   "visibility": "public",
-  "datalink": {
-    "inline_data": {
-      "value": 40.88
+  "datalinks": [
+    {
+      "inline_data": {
+        "value": 40.88
+      }
     }
-  },
+  ],
   "dates": {
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-18T00:00:00Z"

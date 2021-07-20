@@ -15,14 +15,16 @@
 	"QfO:2011-07-07_G_STD_Vertebrata",
 	"QfO:2011-07-07_ECtest"
     ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/previous_releases/qfo_release-2011_04/",
-        "validation_date": "2011-07-07T00:00:00Z"
-    },
+    "datalinks": [
+	{
+	    "attrs": [
+		"archive"
+	    ],
+	    "status": "ok",
+	    "uri": "ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/previous_releases/qfo_release-2011_04/",
+	    "validation_date": "2011-07-07T00:00:00Z"
+	}
+    ],
     "dataset_contact_ids": [
 	"orcid:0000-0002-2170-853X",
         "orcid:0000-0002-9074-3507",

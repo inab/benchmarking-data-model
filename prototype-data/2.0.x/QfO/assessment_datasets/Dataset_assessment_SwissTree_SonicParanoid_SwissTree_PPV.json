@@ -1,43 +1,45 @@
 {
-    "_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_SonicParanoid",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "QfO:2011-07-07_SwissTree"
+  "_id": "QfO:2011-07-07_SwissTree_A_SwissTree_PPV_SonicParanoid",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "QfO:2011-07-07_SwissTree"
+  ],
+  "community_ids": [
+    "OEBC002"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-2170-853X",
+    "orcid:0000-0002-9074-3507",
+    "orcid:0000-0003-0019-1735",
+    "orcid:0000-0002-9015-5588"
+  ],
+  "dates": {
+    "creation": "2011-07-07T00:00:00Z",
+    "modification": "2011-07-07T14:00:00Z"
+  },
+  "depends_on": {
+    "metrics_id": "QfO:SwissTree_PPV",
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "QfO:2011-07-07_P_SonicParanoid"
+      },
+      {
+        "dataset_id": "QfO:2011-07-07_SwissTree_M"
+      }
     ],
-    "community_ids": [
-        "OEBC002"
-    ],
-    "datalink": {
-        "inline_data": {
-            "error": "0.065768",
-            "value": "0.688444"
-        }
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-2170-853X",
-        "orcid:0000-0002-9074-3507",
-        "orcid:0000-0003-0019-1735",
-        "orcid:0000-0002-9015-5588"
-    ],
-    "dates": {
-        "creation": "2011-07-07T00:00:00Z",
-        "modification": "2011-07-07T14:00:00Z"
-    },
-    "depends_on": {
-        "metrics_id": "QfO:SwissTree_PPV",
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "QfO:2011-07-07_P_SonicParanoid"
-            },
-            {
-                "dataset_id": "QfO:2011-07-07_SwissTree_M"
-            }
-        ],
-        "tool_id": "QfO:SonicParanoid"
-    },
-    "description": "Assessment dataset for applying Metric 'SwissTree_PPV' to SonicParanoid predictions in Agreement with Reference Gene Phylogenies: SwissTree",
-    "name": "Assesment of SwissTree_PPV in SonicParanoid",
-    "type": "assessment",
-    "version": "1",
-    "visibility": "public"
+    "tool_id": "QfO:SonicParanoid"
+  },
+  "description": "Assessment dataset for applying Metric 'SwissTree_PPV' to SonicParanoid predictions in Agreement with Reference Gene Phylogenies: SwissTree",
+  "name": "Assesment of SwissTree_PPV in SonicParanoid",
+  "type": "assessment",
+  "version": "1",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "inline_data": {
+        "error": "0.065768",
+        "value": "0.688444"
+      }
+    }
+  ]
 }

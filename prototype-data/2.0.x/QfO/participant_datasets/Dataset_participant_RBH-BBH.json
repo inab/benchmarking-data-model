@@ -1,47 +1,49 @@
 {
-    "_id": "QfO:2011-07-07_P_RBH-BBH",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "QfO:2011-07-07_SwissTree",
-        "QfO:2011-07-07_STD_Fungi",
-        "QfO:2011-07-07_STD_Eukaryota",
-        "QfO:2011-07-07_GOtest",
-        "QfO:2011-07-07_TreeFam-A",
-        "QfO:2011-07-07_G_STD_Fungi",
-        "QfO:2011-07-07_G_STD_Eukaryota",
-        "QfO:2011-07-07_G_STD_LUCA",
-        "QfO:2011-07-07_G_STD_Vertebrata",
-        "QfO:2011-07-07_ECtest"
+  "_id": "QfO:2011-07-07_P_RBH-BBH",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "QfO:2011-07-07_SwissTree",
+    "QfO:2011-07-07_STD_Fungi",
+    "QfO:2011-07-07_STD_Eukaryota",
+    "QfO:2011-07-07_GOtest",
+    "QfO:2011-07-07_TreeFam-A",
+    "QfO:2011-07-07_G_STD_Fungi",
+    "QfO:2011-07-07_G_STD_Eukaryota",
+    "QfO:2011-07-07_G_STD_LUCA",
+    "QfO:2011-07-07_G_STD_Vertebrata",
+    "QfO:2011-07-07_ECtest"
+  ],
+  "community_ids": [
+    "OEBC002"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-2170-853X"
+  ],
+  "dates": {
+    "creation": "2011-07-07T00:00:00Z",
+    "modification": "2011-07-07T14:00:00Z"
+  },
+  "depends_on": {
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "QfO:2011-07-07_I"
+      }
     ],
-    "community_ids": [
-        "OEBC002"
-    ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://orthology.benchmarkservice.org/raw/RBH__BBH-.621.rels.raw.gz",
-        "validation_date": "2011-07-07T00:00:00Z"
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-2170-853X"
-    ],
-    "dates": {
-        "creation": "2011-07-07T00:00:00Z",
-        "modification": "2011-07-07T14:00:00Z"
-    },
-    "depends_on": {
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "QfO:2011-07-07_I"
-            }
-        ],
-        "tool_id": "QfO:RBH-BBH"
-    },
-    "description": "List of orthologs pairs predicted by RBH-BBH using the Quest for Orthologs reference proteome",
-    "name": "Orthologs predicted by RBH-BBH",
-    "type": "participant",
-    "version": "unknown",
-    "visibility": "public"
+    "tool_id": "QfO:RBH-BBH"
+  },
+  "description": "List of orthologs pairs predicted by RBH-BBH using the Quest for Orthologs reference proteome",
+  "name": "Orthologs predicted by RBH-BBH",
+  "type": "participant",
+  "version": "unknown",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "attrs": [
+        "archive"
+      ],
+      "status": "ok",
+      "uri": "https://orthology.benchmarkservice.org/raw/RBH__BBH-.621.rels.raw.gz",
+      "validation_date": "2011-07-07T00:00:00Z"
+    }
+  ]
 }

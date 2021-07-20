@@ -11,10 +11,12 @@
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-18T00:00:00Z"
   },
-  "datalink": {
-    "uri": "https://www.cameo3d.org/sp/targets/3-months/target/2017-01-14/5FQL_A/fasta/",
-    "attrs": ["inline"]
-  },
+  "datalinks": [
+    {
+      "uri": "https://www.cameo3d.org/sp/targets/3-months/target/2017-01-14/5FQL_A/fasta/",
+      "attrs": ["inline"]
+    }
+  ],
   "dataset_contact_ids": [
     "orcid:0000-0002-6813-3200"
   ]

@@ -11,11 +11,13 @@
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-18T00:00:00Z"
   },
-  "datalink": {
-    "inline_data": {
-      "value": 51.65
+  "datalinks": [
+    {
+      "inline_data": {
+        "value": 51.65
+      }
     }
-  },
+  ],
   "depends_on": {
     "tool_id": "CAMEO:server20",
     "metrics_id": "CAMEO:lDDT",

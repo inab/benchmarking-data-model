@@ -1,38 +1,40 @@
 {
-    "_id": "TCGA:2018-04-05_BRCA_P_ActiveDriver",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_BRCA"
+  "_id": "TCGA:2018-04-05_BRCA_P_ActiveDriver",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_BRCA"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-2299-2309"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_input"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/357d9cf5-b0ee-4a6e-851f-a58ff9ec716d",
-        "validation_date": "2018-04-05T00:00:00Z"
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-2299-2309"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_input"
-            }
-        ],
-        "tool_id": "TCGA:ActiveDriver"
-    },
-    "description": "List of Cancer Driver Genes predicted by tool ActiveDriver in Breast Invasive Carcinoma",
-    "name": "Cancer Driver Genes in Breast Invasive Carcinoma",
-    "type": "participant",
-    "version": "unknown",
-    "visibility": "public"
+    "tool_id": "TCGA:ActiveDriver"
+  },
+  "description": "List of Cancer Driver Genes predicted by tool ActiveDriver in Breast Invasive Carcinoma",
+  "name": "Cancer Driver Genes in Breast Invasive Carcinoma",
+  "type": "participant",
+  "version": "unknown",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "attrs": [
+        "archive"
+      ],
+      "status": "ok",
+      "uri": "https://api.gdc.cancer.gov/data/357d9cf5-b0ee-4a6e-851f-a58ff9ec716d",
+      "validation_date": "2018-04-05T00:00:00Z"
+    }
+  ]
 }

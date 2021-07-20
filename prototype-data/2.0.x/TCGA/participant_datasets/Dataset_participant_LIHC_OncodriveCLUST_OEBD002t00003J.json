@@ -1,38 +1,40 @@
 {
-    "_id": "TCGA:2018-04-05_LIHC_P_OncodriveCLUST",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-    "challenge_ids": [
-        "TCGA:2018-04-05_LIHC"
+  "_id": "TCGA:2018-04-05_LIHC_P_OncodriveCLUST",
+  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "challenge_ids": [
+    "TCGA:2018-04-05_LIHC"
+  ],
+  "community_ids": [
+    "OEBC001"
+  ],
+  "dataset_contact_ids": [
+    "orcid:0000-0002-7218-2806"
+  ],
+  "dates": {
+    "creation": "2018-04-05T00:00:00Z",
+    "modification": "2018-04-05T14:00:00Z"
+  },
+  "depends_on": {
+    "rel_dataset_ids": [
+      {
+        "dataset_id": "TCGA:2018-04-05_input"
+      }
     ],
-    "community_ids": [
-        "OEBC001"
-    ],
-    "datalink": {
-        "attrs": [
-            "archive"
-        ],
-        "status": "ok",
-        "uri": "https://api.gdc.cancer.gov/data/bea607fe-0d7e-4a7a-a839-84f5ba0ee4ff",
-        "validation_date": "2018-04-05T00:00:00Z"
-    },
-    "dataset_contact_ids": [
-        "orcid:0000-0002-7218-2806"
-    ],
-    "dates": {
-        "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
-    },
-    "depends_on": {
-        "rel_dataset_ids": [
-            {
-                "dataset_id": "TCGA:2018-04-05_input"
-            }
-        ],
-        "tool_id": "TCGA:OncodriveCLUST"
-    },
-    "description": "List of Cancer Driver Genes predicted by tool OncodriveCLUST in Liver Hepatocellular Carcinoma",
-    "name": "Cancer Driver Genes in Liver Hepatocellular Carcinoma",
-    "type": "participant",
-    "version": "unknown",
-    "visibility": "public"
+    "tool_id": "TCGA:OncodriveCLUST"
+  },
+  "description": "List of Cancer Driver Genes predicted by tool OncodriveCLUST in Liver Hepatocellular Carcinoma",
+  "name": "Cancer Driver Genes in Liver Hepatocellular Carcinoma",
+  "type": "participant",
+  "version": "unknown",
+  "visibility": "public",
+  "datalinks": [
+    {
+      "attrs": [
+        "archive"
+      ],
+      "status": "ok",
+      "uri": "https://api.gdc.cancer.gov/data/bea607fe-0d7e-4a7a-a839-84f5ba0ee4ff",
+      "validation_date": "2018-04-05T00:00:00Z"
+    }
+  ]
 }

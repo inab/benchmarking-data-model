@@ -7,10 +7,12 @@
   "description": "Target 21_1 of week 2017-01-14",
   "version": "1",
   "visibility": "public",
-  "datalink": {
-    "uri": "https://www.cameo3d.org/sp/targets/3-months/target/2017-01-14/5EJJ_B/fasta/",
-    "attrs": ["inline"]
-  },
+  "datalinks": [
+    {
+      "uri": "https://www.cameo3d.org/sp/targets/3-months/target/2017-01-14/5EJJ_B/fasta/",
+      "attrs": ["inline"]
+    }
+  ],
   "dates": {
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-18T00:00:00Z"
