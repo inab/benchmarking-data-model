@@ -23,6 +23,8 @@
 		"OriginalIdOnSub": {
 			"pattern": "^(?!(?i)OEB).+$",
 			"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
+			"type": "string",
+			"minLength": 1,
 			"writeOnly": true
 		},
 		"Revision": {

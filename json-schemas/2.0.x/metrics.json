@@ -42,8 +42,7 @@
 		},
 		
 		"@canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
-			"$ref": "_shared#/definitions/MetricsCanonicalId"
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"_metadata": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
