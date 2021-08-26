@@ -60,14 +60,12 @@
 			"title": "The temporary id of a benchmarking event entry",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBE[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBE[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"BenchmarkingEventId": {
 			"title": "The id of a benchmarking event entry",
 			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"BenchmarkingEventCanonicalId": {
 			"title": "The canonical id of a benchmarking event entry",
