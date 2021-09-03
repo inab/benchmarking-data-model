@@ -15,7 +15,6 @@
 		"OriginalId": {
 			"title": "The original id of the entry",
 			"description": "The field is filled in on server side, and it contains the original id in '_id' used on data submission, used by the community",
-			"readOnly": true,
 			"pattern": "^(?![Oo][Ee][Bb]).+$",
 			"type": "string",
 			"minLength": 1
@@ -79,30 +78,26 @@
 			"title": "The temporary id of a challenge",
 			"type": "string",
 			"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
-			"description": "Temporary identifiers internally used must follow this pattern",
-			"readOnly": true
+			"description": "Temporary identifiers internally used must follow this pattern"
 		},
 		"ChallengeId": {
 			"title": "The id of a challenge",
 			"type": "string",
 			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"ChallengeCanonicalId": {
 			"title": "The canonical id of a challenge",
 			"type": "string",
 			"description": "Canonical challenge identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"CommunityCanonicalId": {
 			"title": "The canonical id of a community",
 			"type": "string",
 			"description": "Canonical community identifiers returned by the APIs must follow this pattern, and they do not include the revision",
-			"pattern": "^OEBC[0-9]{3}$",
-			"readOnly": true
+			"pattern": "^OEBC[0-9]{3}$"
 		},
 		
 		"ContactCanonicalId": {
@@ -116,22 +111,19 @@
 			"title": "The temporary id of a dataset",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"DatasetId": {
 			"title": "The id of a dataset",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"DatasetCanonicalId": {
 			"title": "The canonical id of a dataset",
 			"type": "string",
 			"description": "Canonical dataset identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"SchemeCanonicalId": {
@@ -144,21 +136,20 @@
 		"MetricsTemporaryId": {
 			"title": "The temporary id of a metrics definition",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"type": "string",
+			"pattern": "^OEBM[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"MetricsId": {
 			"title": "The id of a metrics definition",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"type": "string",
+			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"MetricsCanonicalId": {
 			"title": "The canonical id of a metrics definition",
 			"type": "string",
 			"description": "Canonical metrics identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"ReferenceCanonicalId": {
@@ -172,44 +163,38 @@
 			"title": "The temporary id of a test action",
 			"type": "string",
 			"pattern": "^OEBA[0-9]{3}t[A-Z0-9]{6}$",
-			"description": "Temporary identifiers internally used must follow this pattern",
-			"readOnly": true
+			"description": "Temporary identifiers internally used must follow this pattern"
 		},
 		"TestActionId": {
 			"title": "The id of a test action",
 			"type": "string",
 			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"TestActionCanonicalId": {
 			"title": "The canonical id of a test action",
 			"type": "string",
 			"description": "Canonical test action identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"ToolTemporaryId": {
 			"title": "The temporary id of a tool",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"ToolId": {
 			"title": "The id of a tool",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"ToolCanonicalId": {
 			"title": "The canonical id of a tool",
 			"type": "string",
 			"description": "Canonical tool identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"CommonKeys": {
