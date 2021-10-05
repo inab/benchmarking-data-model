@@ -1,0 +1,338 @@
+{
+  "$id": "https://b2share.eudat.eu/api/communities/e9b9792e-79fb-4b07-b6b4-b9c2bd06d095/schemas/0#/json_schema",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Edit Metadata file",
+  "type": "object",
+  "description": "New file to upload to EUDAT",
+  "properties": {
+    "community": {
+      "title": "Community",
+      "description": "The community to which the record has been submitted.",
+      "type": "string",
+      "readonly": true,
+      "default": "b3b2f331-7cf8-44c5-a15a-1dae9dca48f6",
+      "options": {
+        "inputAttributes": {
+          "value":"b3b2f331-7cf8-44c5-a15a-1dae9dca48f6"
+        },
+        "hidden": true
+        
+      }
+    },
+    "titles": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            }
+          },
+          "required": [
+            "title"
+          ]
+        }
+      ],
+      "minItems": 1,
+      "maxItems":1,
+      "title": "Titles",
+      "uniqueItems": true
+    },
+    "descriptions": {
+      "description": "A more elaborate description of the resource. Focus on a content description that makes it easy for others to find, and to interpret its relevance.",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
+            "description_type": {
+            "enum": [
+              "Abstract",
+              "Methods",
+              "SeriesInformation",
+              "TableOfContents",
+              "TechnicalInfo",
+              "Other"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+          "required": [
+            "description",
+            "description_type"
+          ]
+        }
+      ],
+      "type": "array",
+      "title": "Descriptions",
+      "minItems": 1,
+      "maxItems":1,
+      "uniqueItems": true
+    },
+    "creators": {
+      "description": "The full name of the creators. The personal name format should be: family, given (e.g.: Smith, John).",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "creator_name": {
+              "type": "string",
+              "title": "Creator name",
+              "default": "username"
+            }
+          },
+          "required": [
+            "creator_name"
+          ]
+        }
+      ],
+      "title": "Creators",
+      "uniqueItems": true
+    },
+    "contributors": {
+      "description": "The list of all other contributors. Please mention all persons that were relevant in the creation of the resource.",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "contributor_name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "contributor_type": {
+            "enum": [
+              "ContactPerson",
+              "DataCollector",
+              "DataCurator",
+              "DataManager",
+              "Distributor",
+              "Editor",
+              "HostingInstitution",
+              "Producer",
+              "ProjectLeader",
+              "ProjectManager",
+              "ProjectMember",
+              "RegistrationAgency",
+              "RegistrationAuthority",
+              "RelatedPerson",
+              "Researcher",
+              "ResearchGroup",
+              "RightsHolder",
+              "Sponsor",
+              "Supervisor",
+              "WorkPackageLeader",
+              "Other"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "contributor_name",
+          "contributor_type"
+        ],
+        "type": "object"
+      },
+      "title": "Contributors",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "open_access": {
+      "description": "Indicate whether the record's files are publicly accessible or not. In case of restricted access the uploaded files will only be accessible by the record's owner and the community administrators. Please note that the record's metadata is always publicly accessible. ",
+      "title": "Open Access",
+      "type": "boolean",
+      "default": true,
+      "readonly": true,
+      "options": {
+         "hidden": true
+       }
+    },
+    "license": {
+      "title": "License",
+      "description": "Specify the license under which this data set is available to the users (e.g. GPL, Apache v2 or Commercial). Please use the License Selector for help and additional information.",
+      "type": "object",
+      "properties": {
+        "license": {
+          "enum": [
+            "Apache License 2.0",
+            "GNU Public License v3.0",
+            "Creative Commons (CC)  4.0 International"
+          ],
+          "title": "License",
+          "type": "string",
+          "default":"Creative Commons (CC)  4.0 International"
+        },
+        "license_uri": {
+          "format": "uri",
+          "title": "URL",
+          "readonly": true,
+          "default":"http://creativecommons.org/licenses/by/4.0/",
+          "type": "string"
+        }
+      },
+      "required": [
+        "license"
+      ]
+    },
+    "contact_email": {
+      "description": "Contact email information for this record.",
+      "format": "email",
+      "title": "Contact Email",
+      "type": "string"
+    },
+    "resource_types": {
+      "description": "The type(s) of the resource.",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "resource_type": {
+              "title": "Description",
+              "type": "string",
+              "default" : "OpenEBench",
+              "readonly": true,
+              "options": {
+                "hidden": true
+                }
+            },
+            "resource_type_general": {
+            "enum": [
+              "Audiovisual",
+              "Collection",
+              "Dataset",
+              "Event",
+              "Image",
+              "InteractiveResource",
+              "Model",
+              "PhysicalObject",
+              "Service",
+              "Software",
+              "Sound",
+              "Text",
+              "Workflow",
+              "Other"
+            ],
+            "title": "Category",
+            "type": "string",
+            "default": "Dataset",
+            "readonly": true,
+            "options": {
+                "hidden": true
+            }
+              
+          }
+         },
+          "required": [
+            "resource_type_general"
+          ]
+        }
+      ],
+      "minItems": 1,
+      "maxItems": 1,
+      "title": "Resource Type",
+      "uniqueItems": true,
+      "options": {
+         "hidden": true
+       }
+    },
+    "version": {
+      "description": "Denote the version of the resource.",
+      "title": "Version",
+      "type": "string",
+      "default": "0.1"
+    },
+    "language": {
+      "description": "The primary language of the resource. Please use ISO_639-3 language codes.",
+      "title": "Language",
+      "type": "string",
+      "default": "eng",
+      "readonly": true,
+      "options": {
+         "hidden": true
+       }
+    },
+    "publisher": {
+      "description": "The entity responsible for making the resource available, either a person, an organization, or a service.",
+      "title": "Publisher",
+      "type": "string",
+      "default": "OpenEBench",
+      "readonly": true,
+      "options": {
+         "hidden": true
+       }
+    },
+    "community_specific": {
+      "type": "object",
+      "properties": {
+        "12ed8b46-1e2f-4fd3-9963-29c112b92da1": {
+          "type": "object",
+          "properties": {
+            "oeb_id": {
+              "description": "The unique identifier of the dataset, provided by OEB API",
+              "pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[0-9]+$",
+              "title": "Dataset ID",
+              "type": "string",
+              "readonly": true
+            },
+            "type": {
+              "description": "Type of dataset within OEB",
+              "enum": [
+                "public_reference",
+                "metrics_reference",
+                "input",
+                "participant",
+                "assessment",
+                "participant_assessments",
+                "aggregation",
+                "other"
+              ],
+              "minLength": 1,
+              "title": "Dataset type",
+              "type": "string",
+              "readonly": true
+            },
+            "oeb_community": {
+              "description": "Acronym defined in OEB for the benchmarking community - ideally, should match the one used in the benchmarking data model",
+              "minLength": 1,
+              "title": "Community OEB acronym",
+              "type": "string",
+              "readonly": true
+            },
+            "oeb_dataset_version": {
+              "description": "Version (or release date) of the metadata",
+              "minLength": 1,
+              "title": "Version",
+              "type": "string",
+              "readonly": true
+            }
+          },
+          "required": [
+            "oeb_id",
+            "type",
+            "oeb_community"
+          ]
+        }
+      },
+      "required": [
+        "12ed8b46-1e2f-4fd3-9963-29c112b92da1"
+      ]
+    }
+  },
+  "required": [
+    "community",
+    "titles",
+    "open_access",
+    "community_specific"
+  ],
+  "additionalProperties": false,
+  "format": "categories",
+  "basicCategoryTitle": "Edit Information",
+  "show_errors": "interaction"
+}
