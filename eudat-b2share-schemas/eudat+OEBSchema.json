@@ -135,7 +135,12 @@
                     "publisher": {
                         "title": "Publisher",
                         "description": "The entity responsible for making the resource available, either a person, an organization, or a service.",
-                        "type": "string"
+                        "type": "string",
+                         "default": "OpenEBench",
+						 "readonly": true,
+						 "options": {
+							 "hidden": true
+						  }
                     },
                     "publication_date": {
                         "title": "Publication date",
@@ -181,12 +186,14 @@
                                         "Workflow",
                                         "Other"
                                     ],
-                                    "title": "Type"
+                                    "title": "Type",
+                                    "default":"Dataset"
                                 },
                                 "resource_type_description": {
                                     "title": "Description",
                                     "description": "An optional description of the resource type.",
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "Benchmarking dataset"
                                 }
                             },
                             "additionalProperties": false,
@@ -195,7 +202,10 @@
                             ]
                         },
                         "minItems": 1,
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "options": {
+							"hidden": true
+						}
                     },
                     "instruments": {
                         "title": "Instruments",
@@ -252,28 +262,33 @@
                             "type": "object",
                             "properties": {
                                 "discipline_name": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "3.1.4 → Biology → Bioinformatics"
                                 },
                                 "discipline_identifier": {
                                     "title": "Identifier",
                                     "description": "The unique identifier of the discipline, according to various identifier schemes.",
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "3.1.4 → Biology → Bioinformatics"
                                 },
                                 "classification_code": {
                                     "title": "Code",
                                     "description": "The corresponding classification code of the discipline, according to various identifier schemes.",
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "3.1.4"
                                 },
                                 "scheme": {
                                     "title": "Scheme",
                                     "description": "The scheme used for the identifier.",
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "b2share.legacy"
                                 },
                                 "scheme_uri": {
                                     "title": "Scheme URI",
                                     "description": "The URI pointing to the scheme.",
                                     "type": "string",
-                                    "format": "uri"
+                                    "format": "uri",
+                                    "default": "http://b2share.eudat.eu/suggest/disciplines.json"
                                 }
                             },
                             "required": [
@@ -451,12 +466,15 @@
                             "type": "object",
                             "properties": {
                                 "language_name": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "English"
+                                    
                                 },
                                 "language_identifier": {
                                     "title": "Identifier",
                                     "type": "string",
-                                    "description": "The identifier for the language, according to various identifier schemes."
+                                    "description": "The identifier for the language, according to various identifier schemes.",
+                                    "default": "eng"
                                 },
                                 "scheme": {
                                     "title": "Scheme",
@@ -475,7 +493,11 @@
                                 "language_identifier"
                             ]
                         },
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "readonly": true,
+                        "options": {
+							"hidden": true
+						}
                     },
                     "alternate_identifiers": {
                         "title": "Alternate identifier",
@@ -687,13 +709,12 @@
                     "open_access": {
                         "title": "Open access",
                         "description": "Indicate whether the record's files are publicly accessible or not. In case of restricted access the uploaded files will only be accessible by the record's owner and the community administrators. Please note that the record's metadata is always publicly accessible. ",
-                        "type": "boolean"
-                    },
-                    "embargo_date": {
-                        "title": "Embargo date",
-                        "description": "The date marking the end of the embargo period. The record will be marked as open access on the specified date at midnight. Please note that the record metadata is always publicly accessible, and only the data files can have private access.",
-                        "type": "string",
-                        "format": "date-time"
+                        "type": "boolean",
+                        "default": true,
+						"readonly": true,
+						"options": {
+							"hidden": true
+						}
                     },
                     "license": {
                         "title": "License",
@@ -701,13 +722,22 @@
                         "type": "object",
                         "properties": {
                             "license": {
-                                "type": "string"
+								"title": "License",
+                                "type": "string",
+                                "enum": [
+									"Creative Commons Attribution-ShareAlike (CC-BY-SA)",
+									"Creative Commons Attribution (CC-BY)",
+									"Public Domain Dedication (CC Zero)"
+								 ],
+								 "default":"Public Domain Dedication (CC Zero)"
                             },
                             "license_uri": {
                                 "title": "License URI",
                                 "description": "The URI pointing to the description of the license.",
                                 "type": "string",
-                                "format": "uri"
+                                "format": "uri",
+                                "readonly": true,
+								"default":"http://creativecommons.org/publicdomain/zero/1.0/"
                             },
                             "license_identifier": {
                                 "title": "Identifier",
@@ -775,238 +805,12 @@
                         },
                         "uniqueItems": true
                     },
-                    "sizes": {
-                        "title": "Sizes",
-                        "description": "The unstructured size information about the resource",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "uniqueItems": true
-                    },
                     "formats": {
                         "title": "Formats",
                         "description": "The technical formats of the resource.",
                         "type": "array",
                         "items": {
                             "type": "string"
-                        },
-                        "uniqueItems": true
-                    },
-                    "spatial_coverages": {
-                        "title": "Spatial coverages",
-                        "description": "The spatial coverages of the contents of the resource.",
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "place": {
-                                    "title": "Place",
-                                    "description": "The name of a place or location.",
-                                    "type": "string"
-                                },
-                                "point": {
-                                    "title": "Point",
-                                    "type": "object",
-                                    "properties": {
-                                        "point_longitude": {
-                                            "title": "Longitude",
-                                            "description": "The longitude of the point.",
-                                            "type": "number",
-                                            "minimum": -180,
-                                            "maximum": 180,
-                                            "format": "coordinate"
-                                        },
-                                        "point_latitude": {
-                                            "title": "Latitude",
-                                            "description": "The latitude of the point.",
-                                            "type": "number",
-                                            "minimum": -90,
-                                            "maximum": 90,
-                                            "format": "coordinate"
-                                        },
-                                        "point_vertical": {
-                                            "title": "Vertical",
-                                            "description": "The vertical position of the point.",
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "point_longitude",
-                                        "point_latitude"
-                                    ],
-                                    "description": "A point contains a single latitude-longitude pair."
-                                },
-                                "box": {
-                                    "title": "Boxes",
-                                    "description": "A bounding box defined by two points.",
-                                    "type": "object",
-                                    "properties": {
-                                        "westbound_longitude": {
-                                            "title": "Westbound longitude",
-                                            "description": "The westbound longitude of the enclosing box.",
-                                            "type": "number",
-                                            "minimum": -180,
-                                            "maximum": 180,
-                                            "format": "coordinate"
-                                        },
-                                        "eastbound_longitude": {
-                                            "title": "Eastbound longitude",
-                                            "description": "The eastbound longitude of the enclosing box.",
-                                            "type": "number",
-                                            "minimum": -180,
-                                            "maximum": 180,
-                                            "format": "coordinate"
-                                        },
-                                        "northbound_latitude": {
-                                            "title": "Northbound latitude",
-                                            "description": "The northbound latitude of the enclosing box.",
-                                            "type": "number",
-                                            "minimum": -90,
-                                            "maximum": 90,
-                                            "format": "coordinate"
-                                        },
-                                        "southbound_latitude": {
-                                            "title": "Southbound latitude",
-                                            "description": "The southbound latitude of the enclosing box.",
-                                            "type": "number",
-                                            "minimum": -90,
-                                            "maximum": 90,
-                                            "format": "coordinate"
-                                        }
-                                    },
-                                    "required": [
-                                        "westbound_longitude",
-                                        "eastbound_longitude",
-                                        "northbound_latitude",
-                                        "southbound_latitude"
-                                    ]
-                                },
-                                "polygons": {
-                                    "title": "Polygons",
-                                    "description": "One or more drawn polygon areas, defined by a set of points and lines connecting the points in a closed chain.",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "polygon": {
-                                                "type": "array",
-                                                "title": "Polygon",
-                                                "description": "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "point_longitude": {
-                                                            "title": "Longitude",
-                                                            "description": "The longitude of the point.",
-                                                            "type": "number",
-                                                            "minimum": -180,
-                                                            "maximum": 180,
-                                                            "format": "coordinate"
-                                                        },
-                                                        "point_latitude": {
-                                                            "title": "Latitude",
-                                                            "description": "The latitude of the point.",
-                                                            "type": "number",
-                                                            "minimum": -90,
-                                                            "maximum": 90,
-                                                            "format": "coordinate"
-                                                        },
-                                                        "point_vertical": {
-                                                            "title": "Vertical",
-                                                            "description": "The vertical position of the point.",
-                                                            "type": "number"
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "point_longitude",
-                                                        "point_latitude"
-                                                    ]
-                                                },
-                                                "uniqueItems": true
-                                            },
-                                            "inpoint": {
-                                                "title": "Internal point",
-                                                "description": "A point inside the polygon",
-                                                "type": "object",
-                                                "properties": {
-                                                    "point_longitude": {
-                                                        "title": "Longitude",
-                                                        "description": "The longitude of the point.",
-                                                        "type": "number",
-                                                        "minimum": -180,
-                                                        "maximum": 180,
-                                                        "format": "coordinate"
-                                                    },
-                                                    "point_latitude": {
-                                                        "title": "Latitude",
-                                                        "description": "The latitude of the point.",
-                                                        "type": "number",
-                                                        "minimum": -90,
-                                                        "maximum": 90,
-                                                        "format": "coordinate"
-                                                    },
-                                                    "point_vertical": {
-                                                        "title": "Vertical",
-                                                        "description": "The vertical position of the point.",
-                                                        "type": "number"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "point_longitude",
-                                                    "point_latitude"
-                                                ]
-                                            }
-                                        }
-                                    },
-                                    "uniqueItems": true
-                                }
-                            }
-                        },
-                        "uniqueItems": true
-                    },
-                    "temporal_coverages": {
-                        "title": "Temporal coverages",
-                        "description": "The temporal coverage of the contents of the resource.",
-                        "type": "object",
-                        "properties": {
-                            "ranges": {
-                                "title": "Ranges",
-                                "description": "The temporal ranges of the contents of the resource.",
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "start_date": {
-                                            "title": "Start date",
-                                            "description": "The start date and time of the range covered by the resource.",
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "end_date": {
-                                            "title": "End date",
-                                            "description": "The end date and time of the range covered by the resource.",
-                                            "type": "string",
-                                            "format": "date-time"
-                                        }
-                                    },
-                                    "required": [
-                                        "start_date",
-                                        "end_date"
-                                    ]
-                                },
-                                "uniqueItems": true
-                            },
-                            "spans": {
-                                "title": "Spans",
-                                "description": "The named spans of the contents of the resource.",
-                                "type": "array",
-                                "items": {
-                                    "type": "string",
-                                    "description": "The name of the span covered by the data in the resource."
-                                },
-                                "uniqueItems": true
-                            }
                         },
                         "uniqueItems": true
                     },
@@ -1071,7 +875,16 @@
                     "community": {
                         "title": "Community",
                         "description": "The community to which the record has been submitted.",
-                        "type": "string"
+                        "type": "string",
+                         "readonly": true,
+						  "default": "f60ff069-c8fa-4b48-8442-903bffa3acb1",
+						  "options": {
+							"inputAttributes": {
+							  "value":"f60ff069-c8fa-4b48-8442-903bffa3acb1"
+							},
+							"hidden": true
+
+						  }
                     },
                     "publication_state": {
                         "title": "Publication State",
@@ -1082,16 +895,6 @@
                             "submitted",
                             "published"
                         ]
-                    },
-                    "_pid": {
-                        "title": "Persistent Identifiers",
-                        "description": "Array of persistent identifiers pointing to this record."
-                    },
-                    "_deposit": {
-                        "type": "object"
-                    },
-                    "_oai": {
-                        "type": "object"
                     },
                     "_files": {
                         "type": "array"
@@ -1161,6 +964,7 @@
 					  ],
 					  "additionalProperties": false,
 					  "basicCategoryTitle": "Edit Information",
+					  "format": "categories",
 					  "show_errors": "interaction"
                 }
         
