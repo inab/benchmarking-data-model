@@ -281,7 +281,7 @@
               "type": "string",
               "readonly": true
             },
-            "type": {
+            "oeb_type": {
               "description": "Type of dataset within OEB",
               "enum": [
                 "public_reference",
@@ -315,7 +315,7 @@
           },
           "required": [
             "oeb_id",
-            "type",
+            "oeb_type",
             "oeb_community"
           ]
         }
