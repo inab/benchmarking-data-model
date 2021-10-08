@@ -1,11 +1,10 @@
 
 			{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Edit Metadata file",
+                "description": "New file to upload to EUDAT",
                 "type": "object",
                 "properties": {
-                    "$schema": {
-                        "type": "string"
-                    },
                     "creators": {
                         "title": "Creators",
                         "description": "The full name of the creators. The personal name format should be: family, given (e.g.: Smith, John).",
@@ -887,16 +886,6 @@
 							"hidden": true
 
 						  }
-                    },
-                    "publication_state": {
-                        "title": "Publication State",
-                        "description": "State of the publication workflow.",
-                        "type": "string",
-                        "enum": [
-                            "draft",
-                            "submitted",
-                            "published"
-                        ]
                     },
                     "_files": {
                         "type": "array"
