@@ -10,10 +10,10 @@
       "description": "The community to which the record has been submitted.",
       "type": "string",
       "readonly": true,
-      "default": "b3b2f331-7cf8-44c5-a15a-1dae9dca48f6",
+      "default": "f60ff069-c8fa-4b48-8442-903bffa3acb1",
       "options": {
         "inputAttributes": {
-          "value":"b3b2f331-7cf8-44c5-a15a-1dae9dca48f6"
+          "value":"f60ff069-c8fa-4b48-8442-903bffa3acb1"
         },
         "hidden": true
         
