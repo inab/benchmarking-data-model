@@ -14,6 +14,7 @@
                             "type": "object",
                             "properties": {
                                 "creator_name": {
+									"title": "Creator name",
                                     "type": "string",
                                     "minLength": 1
                                 },
@@ -698,7 +699,8 @@
                     "version": {
                         "title": "Version",
                         "description": "The version of the resource.",
-                        "type": "string"
+                        "type": "string",
+                        "default": "0.1"
                     },
                     "contact_email": {
                         "title": "Contact email",
