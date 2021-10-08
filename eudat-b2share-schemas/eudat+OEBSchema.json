@@ -271,7 +271,7 @@
     "community_specific": {
       "type": "object",
       "properties": {
-        "12ed8b46-1e2f-4fd3-9963-29c112b92da1": {
+        "176df0a6-8c8e-424d-a5c1-34b1d84a580c": {
           "type": "object",
           "properties": {
             "oeb_id": {
@@ -321,7 +321,7 @@
         }
       },
       "required": [
-        "12ed8b46-1e2f-4fd3-9963-29c112b92da1"
+        "176df0a6-8c8e-424d-a5c1-34b1d84a580c"
       ]
     }
   },
