@@ -1160,7 +1160,6 @@
 						"community_specific"
 					  ],
 					  "additionalProperties": false,
-					  "format": "categories",
 					  "basicCategoryTitle": "Edit Information",
 					  "show_errors": "interaction"
                 }
