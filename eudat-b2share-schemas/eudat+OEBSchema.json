@@ -255,13 +255,13 @@
                             "properties": {
                                 "discipline_name": {
                                     "type": "string",
-                                    "default": "3.1.4 → Biology → Bioinformatics"
+                                    "default": "3.1.4 Biology Bioinformatics"
                                 },
                                 "discipline_identifier": {
                                     "title": "Identifier",
                                     "description": "The unique identifier of the discipline, according to various identifier schemes.",
                                     "type": "string",
-                                    "default": "3.1.4 → Biology → Bioinformatics"
+                                    "default": "3.1.4 Biology Bioinformatics"
                                 },
                                 "classification_code": {
                                     "title": "Code",
