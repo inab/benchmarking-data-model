@@ -17,16 +17,6 @@
                                     "type": "string",
                                     "minLength": 1
                                 },
-                                "given_name": {
-                                    "title": "Given name",
-                                    "description": "The first names given to this entity.",
-                                    "type": "string"
-                                },
-                                "family_name": {
-                                    "title": "Family name",
-                                    "description": "The family names given to this entity.",
-                                    "type": "string"
-                                },
                                 "affiliations": {
                                     "type": "array",
                                     "title": "Affiliations",
@@ -129,8 +119,9 @@
                                 "title"
                             ]
                         },
-                        "minItems": 1,
-                        "uniqueItems": true
+                         "minItems": 1,
+						 "maxItems":1,
+                         "uniqueItems": true
                     },
                     "publisher": {
                         "title": "Publisher",
@@ -193,7 +184,7 @@
                                     "title": "Description",
                                     "description": "An optional description of the resource type.",
                                     "type": "string",
-                                    "default": "Benchmarking dataset"
+                                    "default": "OpenEBench Benchmarking dataset"
                                 }
                             },
                             "additionalProperties": false,
@@ -202,6 +193,7 @@
                             ]
                         },
                         "minItems": 1,
+                        "maxItems": 1,
                         "uniqueItems": true,
                         "options": {
 							"hidden": true
@@ -296,7 +288,12 @@
                                 "discipline_identifier"
                             ]
                         },
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "options": {
+							"hidden": true
+						}
                     },
                     "keywords": {
                         "title": "Keywords",
@@ -330,7 +327,12 @@
                                 "keyword"
                             ]
                         },
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "options": {
+							"hidden": true
+						}
                     },
                     "contributors": {
                         "title": "Contributors",
@@ -494,6 +496,8 @@
                             ]
                         },
                         "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
                         "readonly": true,
                         "options": {
 							"hidden": true
@@ -693,7 +697,9 @@
                                 "description_type"
                             ]
                         },
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "minItems": 1,
+						"maxItems":1
                     },
                     "version": {
                         "title": "Version",
