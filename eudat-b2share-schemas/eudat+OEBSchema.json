@@ -310,17 +310,6 @@
                                     "title": "Code",
                                     "description": "The corresponding classification code of the keyword, according to various identifier schemes.",
                                     "type": "string"
-                                },
-                                "scheme": {
-                                    "title": "Scheme",
-                                    "description": "The scheme used for the identifier.",
-                                    "type": "string"
-                                },
-                                "scheme_uri": {
-                                    "title": "Scheme URI",
-                                    "description": "The URI pointing to the scheme.",
-                                    "type": "string",
-                                    "format": "uri"
                                 }
                             },
                             "required": [
@@ -477,17 +466,6 @@
                                     "type": "string",
                                     "description": "The identifier for the language, according to various identifier schemes.",
                                     "default": "eng"
-                                },
-                                "scheme": {
-                                    "title": "Scheme",
-                                    "description": "The scheme used for the identifier.",
-                                    "type": "string"
-                                },
-                                "scheme_uri": {
-                                    "title": "Scheme URI",
-                                    "description": "The URI pointing to the scheme.",
-                                    "type": "string",
-                                    "format": "uri"
                                 }
                             },
                             "required": [
@@ -745,72 +723,12 @@
                                 "format": "uri",
                                 "readonly": true,
 								"default":"http://creativecommons.org/publicdomain/zero/1.0/"
-                            },
-                            "license_identifier": {
-                                "title": "Identifier",
-                                "description": "The unique identifier of the license, according to various identifier schemes.",
-                                "type": "string"
-                            },
-                            "scheme": {
-                                "title": "Scheme",
-                                "description": "The scheme used for the identifier.",
-                                "type": "string"
-                            },
-                            "scheme_uri": {
-                                "title": "Scheme URI",
-                                "description": "The URI pointing to the scheme.",
-                                "type": "string",
-                                "format": "uri"
                             }
                         },
                         "additionalProperties": false,
                         "required": [
                             "license"
                         ]
-                    },
-                    "dates": {
-                        "title": "Dates",
-                        "description": "The dates related to the resource",
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "date": {
-                                    "title": "Date",
-                                    "type": "string",
-                                    "format": "date"
-                                },
-                                "date_type": {
-                                    "title": "Date type",
-                                    "description": "The type of the date.",
-                                    "type": "string",
-                                    "enum": [
-                                        "Accepted",
-                                        "Available",
-                                        "Collected",
-                                        "Copyrighted",
-                                        "Created",
-                                        "Issued",
-                                        "Other",
-                                        "Submitted",
-                                        "Updated",
-                                        "Valid",
-                                        "Withdrawn"
-                                    ]
-                                },
-                                "date_information": {
-                                    "title": "Date information",
-                                    "description": "The additional information about the date.",
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "date",
-                                "date_type"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "uniqueItems": true
                     },
                     "formats": {
                         "title": "Formats",
