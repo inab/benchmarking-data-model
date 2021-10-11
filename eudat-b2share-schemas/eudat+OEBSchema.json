@@ -249,32 +249,47 @@
                             "properties": {
                                 "discipline_name": {
                                     "type": "string",
-                                    "default": "3.1.4 Biology Bioinformatics"
+                                    "default": "3.1.4 Biology Bioinformatics",
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "discipline_identifier": {
                                     "title": "Identifier",
                                     "description": "The unique identifier of the discipline, according to various identifier schemes.",
                                     "type": "string",
-                                    "default": "3.1.4 Biology Bioinformatics"
+                                    "default": "3.1.4 Biology Bioinformatics",
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "classification_code": {
                                     "title": "Code",
                                     "description": "The corresponding classification code of the discipline, according to various identifier schemes.",
                                     "type": "string",
-                                    "default": "3.1.4"
+                                    "default": "3.1.4",
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "scheme": {
                                     "title": "Scheme",
                                     "description": "The scheme used for the identifier.",
                                     "type": "string",
-                                    "default": "b2share.legacy"
+                                    "default": "b2share.legacy",
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "scheme_uri": {
                                     "title": "Scheme URI",
                                     "description": "The URI pointing to the scheme.",
                                     "type": "string",
                                     "format": "uri",
-                                    "default": "http://b2share.eudat.eu/suggest/disciplines.json"
+                                    "default": "http://b2share.eudat.eu/suggest/disciplines.json",
+                                    "options": {
+										"hidden": true
+									}
                                 }
                             },
                             "required": [
@@ -298,12 +313,18 @@
                             "properties": {
                                 "keyword": {
                                     "type": "string",
-                                    "minLength": 1
+                                    "minLength": 1,
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "classification_code": {
                                     "title": "Code",
                                     "description": "The corresponding classification code of the keyword, according to various identifier schemes.",
-                                    "type": "string"
+                                    "type": "string",
+                                    "options": {
+										"hidden": true
+									}
                                 }
                             },
                             "required": [
