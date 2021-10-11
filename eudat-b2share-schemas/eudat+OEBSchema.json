@@ -46,15 +46,6 @@
                                     },
                                     "uniqueItems": true
                                 },
-                                "name_type": {
-                                    "title": "Name type",
-                                    "description": "The type of name described.",
-                                    "type": "string",
-                                    "enum": [
-                                        "Personal",
-                                        "Organizational"
-                                    ]
-                                },
                                 "name_identifiers": {
                                     "title": "Name identifiers",
                                     "description": "The identifiers that point to any information about this creator.",
@@ -111,7 +102,10 @@
                                         "Subtitle",
                                         "TranslatedTitle"
                                     ],
-                                    "description": "The type of the title."
+                                    "description": "The type of the title.",
+                                     "options": {
+										 "hidden": true
+									 }
                                 }
                             },
                             "additionalProperties": false,
@@ -333,16 +327,6 @@
                                 "contributor_name": {
                                     "type": "string"
                                 },
-                                "given_name": {
-                                    "title": "Given name",
-                                    "description": "The first names given to this entity.",
-                                    "type": "string"
-                                },
-                                "family_name": {
-                                    "title": "Family name",
-                                    "description": "The family names given to this entity.",
-                                    "type": "string"
-                                },
                                 "affiliations": {
                                     "type": "array",
                                     "title": "Affiliations",
@@ -480,50 +464,6 @@
                         "options": {
 							"hidden": true
 						}
-                    },
-                    "alternate_identifiers": {
-                        "title": "Alternate identifier",
-                        "description": "The alternative identifiers for this resource such as a URN, URI or an ISBN number.",
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "alternate_identifier": {
-                                    "type": "string"
-                                },
-                                "alternate_identifier_type": {
-                                    "title": "Type",
-                                    "description": "The type of the identifier.",
-                                    "type": "string",
-                                    "enum": [
-                                        "ARK",
-                                        "arXiv",
-                                        "bibcode",
-                                        "DOI",
-                                        "EAN13",
-                                        "EISSN",
-                                        "Handle",
-                                        "ISBN",
-                                        "ISSN",
-                                        "ISTC",
-                                        "LISSN",
-                                        "LSID",
-                                        "ORCiD",
-                                        "PMID",
-                                        "PURL",
-                                        "UPC",
-                                        "URL",
-                                        "URN"
-                                    ]
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "alternate_identifier",
-                                "alternate_identifier_type"
-                            ]
-                        },
-                        "uniqueItems": true
                     },
                     "related_identifiers": {
                         "title": "Related identifiers",
@@ -737,7 +677,10 @@
                         "items": {
                             "type": "string"
                         },
-                        "uniqueItems": true
+                        "uniqueItems": true,
+                        "options": {
+							"hidden": true
+						}
                     },
                     "funding_references": {
                         "title": "Funding references",
@@ -810,9 +753,6 @@
 							"hidden": true
 
 						  }
-                    },
-                    "_files": {
-                        "type": "array"
                     },
                      "community_specific": {
 						  "type": "object",
