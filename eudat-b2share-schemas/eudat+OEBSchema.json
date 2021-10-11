@@ -28,16 +28,6 @@
                                                 "description": "The name of the affiliation.",
                                                 "type": "string",
                                                 "minLength": 1
-                                            },
-                                            "affiliation_identifier": {
-                                                "title": "Identifier",
-                                                "type": "string",
-                                                "description": "The unique identifier of the affiliation."
-                                            },
-                                            "scheme": {
-                                                "title": "Scheme",
-                                                "description": "The scheme used for the identifier.",
-                                                "type": "string"
                                             }
                                         },
                                         "required": [
@@ -57,17 +47,6 @@
                                                 "description": "The unique identifier of the entity, according to various identifier schemes.",
                                                 "type": "string",
                                                 "minLength": 1
-                                            },
-                                            "scheme": {
-                                                "title": "Scheme",
-                                                "description": "The scheme used for the identifier.",
-                                                "type": "string"
-                                            },
-                                            "scheme_uri": {
-                                                "title": "Scheme URI",
-                                                "description": "The URI pointing to the scheme.",
-                                                "type": "string",
-                                                "format": "uri"
                                             }
                                         },
                                         "required": [
@@ -92,6 +71,7 @@
                             "type": "object",
                             "properties": {
                                 "title": {
+									"title": "Title",
                                     "type": "string",
                                     "minLength": 1
                                 },
@@ -616,7 +596,9 @@
                             "type": "object",
                             "properties": {
                                 "description": {
-                                    "type": "string"
+									"title": "Description",
+                                    "type": "string",
+                                    "default": "Benchmarking dataset"
                                 },
                                 "description_type": {
                                     "title": "Type",
@@ -649,7 +631,10 @@
                         "title": "Version",
                         "description": "The version of the resource.",
                         "type": "string",
-                        "default": "0.1"
+                        "default": "0.1",
+                        "options": {
+							"hidden": true
+						}
                     },
                     "contact_email": {
                         "title": "Contact email",
