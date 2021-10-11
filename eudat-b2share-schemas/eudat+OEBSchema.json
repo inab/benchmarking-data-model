@@ -314,6 +314,7 @@
                                 "keyword": {
                                     "type": "string",
                                     "minLength": 1,
+                                    "default": "benchmarking",
                                     "options": {
 										"hidden": true
 									}
@@ -627,7 +628,11 @@
                                         "TableOfContents",
                                         "TechnicalInfo",
                                         "Other"
-                                    ]
+                                    ],
+                                    "default": "Abstract",
+                                    "options": {
+										"hidden": true
+									}
                                 }
                             },
                             "additionalProperties": false,
