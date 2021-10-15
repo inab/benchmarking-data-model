@@ -52,7 +52,27 @@
 							"role": {
 								"title": "The role assigned to the contact",
 								"type": "string",
-								"enum":  [ "manager", "contributor", "member" ]
+								"enum":  [ "manager", "contributor" ]
+							},
+							"benchmarking_event_id": {
+ 								"title": "The benchmarking event the role is assigned to",
+								"type": "string",
+								"foreign_keys": [
+									{
+										"schema_id": "BenchmarkingEvent",
+										"members": [ "." ]
+									}
+								],
+								"minLength": 1
+							}
+						}
+					}
+					{
+						"properties": {
+							"role": {
+								"title": "The role assigned to the contact",
+								"type": "string",
+								"enum":  [ "contributor", "evaluator" ]
 							},
 							"challenge_id": {
  								"title": "The challenge the role is assigned to",
