@@ -41,22 +41,22 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset" ]
 		},
 		
-		"__canonical_id": {
+		"_canonical_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"_metadata": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"__revision": {
+		"_revision": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"__updated": {
+		"_updated": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"__deleted": {
+		"_deleted": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"__created": {
+		"_created": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"orig_id": {

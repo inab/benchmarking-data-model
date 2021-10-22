@@ -202,10 +202,10 @@
 				"_metadata": {
 					"$ref": "#/definitions/Metadata"
 				},
-				"__revision": {
+				"_revision": {
 					"$ref": "#/definitions/Revision"
 				},
-				"__canonical_id": {
+				"_canonical_id": {
 					"title": "The canonical id of the entry",
 					"description": "The field is filled in on server side, and it contains the canonical id, which is in some cases the content of '_id', plus its revision",
 					"readOnly": true,
@@ -244,13 +244,13 @@
 						}
 					]
 				},
-				"__updated": {
+				"_updated": {
 					"$ref": "#/definitions/Updated"
 				},
-				"__deleted": {
+				"_deleted": {
 					"$ref": "#/definitions/Deleted"
 				},
-				"__created": {
+				"_created": {
 					"$ref": "#/definitions/Created"
 				}
 			}
