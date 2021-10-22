@@ -35,22 +35,22 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction" ]
 		},
 		
-		"@canonical_id": {
+		"__canonical_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"_metadata": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"@revision": {
+		"__revision": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"@updated": {
+		"__updated": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"@deleted": {
+		"__deleted": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
-		"@created": {
+		"__created": {
 			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		"orig_id": {
