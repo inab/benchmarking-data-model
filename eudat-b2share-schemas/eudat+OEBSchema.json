@@ -107,12 +107,6 @@
 							 "hidden": true
 						  }
                     },
-                    "publication_date": {
-                        "title": "Publication date",
-                        "description": "The date when the data was or will be made publicly available (e.g. 2018-07-13)",
-                        "type": "string",
-                        "format": "date"
-                    },
                     "resource_types": {
                         "title": "Resource type",
                         "description": "The type(s) of the resource.",
@@ -152,13 +146,19 @@
                                         "Other"
                                     ],
                                     "title": "Type",
-                                    "default":"Dataset"
+                                    "default":"Dataset",
+                                    "options": {
+										"hidden": true
+									}
                                 },
                                 "resource_type_description": {
                                     "title": "Description",
                                     "description": "An optional description of the resource type.",
                                     "type": "string",
-                                    "default": "OpenEBench Benchmarking dataset"
+                                    "default": "OpenEBench Benchmarking dataset",
+                                    "options": {
+										"hidden": true
+									}
                                 }
                             },
                             "additionalProperties": false,
@@ -680,18 +680,6 @@
                         "required": [
                             "license"
                         ]
-                    },
-                    "formats": {
-                        "title": "Formats",
-                        "description": "The technical formats of the resource.",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "uniqueItems": true,
-                        "options": {
-							"hidden": true
-						}
                     },
                     "funding_references": {
                         "title": "Funding references",
