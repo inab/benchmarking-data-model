@@ -69,7 +69,7 @@
 		"status": {
 			"title": "_id(s) of the current community status(es)",
 			"type": "string",
-			"enum": [ "inactive","active","unknown","coming_soon" ]
+			"enum": [ "inactive","active","unknown","incubating", "hidden", "archived"]
 		},
 		"keywords": {
 			"title": "A list of keywords defining the community. They can be either strings or URIs of ontology terms",
