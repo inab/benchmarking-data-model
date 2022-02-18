@@ -64,14 +64,14 @@
 		"BenchmarkingEventId": {
 			"title": "The id of a benchmarking event entry",
 			"type": "string",
-			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$",
+			"pattern": "^OEBE[0-9]{3}0[A-Z0-9]{6}$",
 			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"BenchmarkingEventCanonicalId": {
 			"title": "The canonical id of a benchmarking event entry",
 			"type": "string",
 			"description": "Canonical benchmarking event identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBE[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"ChallengeTemporaryId": {
@@ -83,14 +83,14 @@
 		"ChallengeId": {
 			"title": "The id of a challenge",
 			"type": "string",
-			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
+			"pattern": "^OEBX[0-9]{3}0[A-Z0-9]{6}$",
 			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"ChallengeCanonicalId": {
 			"title": "The canonical id of a challenge",
 			"type": "string",
 			"description": "Canonical challenge identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBX[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"CommunityCanonicalId": {
@@ -117,13 +117,13 @@
 			"title": "The id of a dataset",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$"
+			"pattern": "^OEBD[0-9]{3}0[A-Z0-9]{6}$"
 		},
 		"DatasetCanonicalId": {
 			"title": "The canonical id of a dataset",
 			"type": "string",
 			"description": "Canonical dataset identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBD[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"SchemeCanonicalId": {
@@ -143,13 +143,13 @@
 			"title": "The id of a metrics definition",
 			"description": "Identifiers returned by the APIs must follow this pattern",
 			"type": "string",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$"
+			"pattern": "^OEBM[0-9]{3}0[A-Z0-9]{6}$"
 		},
 		"MetricsCanonicalId": {
 			"title": "The canonical id of a metrics definition",
 			"type": "string",
 			"description": "Canonical metrics identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBM[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"ReferenceCanonicalId": {
@@ -168,14 +168,14 @@
 		"TestActionId": {
 			"title": "The id of a test action",
 			"type": "string",
-			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$",
+			"pattern": "^OEBA[0-9]{3}0[A-Z0-9]{6}$",
 			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"TestActionCanonicalId": {
 			"title": "The canonical id of a test action",
 			"type": "string",
 			"description": "Canonical test action identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBA[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"ToolTemporaryId": {
@@ -188,13 +188,13 @@
 			"title": "The id of a tool",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$"
+			"pattern": "^OEBT[0-9]{3}0[A-Z0-9]{6}$"
 		},
 		"ToolCanonicalId": {
 			"title": "The canonical id of a tool",
 			"type": "string",
 			"description": "Canonical tool identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
+			"pattern": "^OEBT[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
 		"CommonKeys": {
