@@ -1,0 +1,826 @@
+
+			{
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Edit Metadata file",
+                "description": "New file to upload to EUDAT",
+                "type": "object",
+                "properties": {
+                    "creators": {
+                        "title": "Creators",
+                        "description": "The full name of the creators. The personal name format should be: family, given (e.g.: Smith, John).",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "creator_name": {
+									"title": "Creator name",
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "affiliations": {
+                                    "type": "array",
+                                    "title": "Affiliations",
+                                    "description": "The organisations or entities this entity is affiliated with.",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "affiliation_name": {
+                                                "description": "The name of the affiliation.",
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "required": [
+                                            "affiliation_name"
+                                        ]
+                                    },
+                                    "uniqueItems": true
+                                },
+                                "name_identifiers": {
+                                    "title": "Name identifiers",
+                                    "description": "The identifiers that point to any information about this creator.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name_identifier": {
+                                                "description": "The unique identifier of the entity, according to various identifier schemes.",
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "required": [
+                                            "name_identifier",
+                                            "scheme"
+                                        ]
+                                    },
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+                                "creator_name"
+                            ]
+                        },
+                        "uniqueItems": true
+                    },
+                    "titles": {
+                        "title": "Titles",
+                        "description": "The titles(s) of the uploaded resource, or a name by which the resource is known.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+									"title": "Title",
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "type": {
+                                    "title": "Type",
+                                    "enum": [
+                                        "Alternative Title",
+                                        "Subtitle",
+                                        "TranslatedTitle"
+                                    ],
+                                    "description": "The type of the title.",
+                                     "options": {
+										 "hidden": true
+									 }
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "title"
+                            ]
+                        },
+                         "minItems": 1,
+						 "maxItems":1,
+                         "uniqueItems": true
+                    },
+                    "publisher": {
+                        "title": "Publisher",
+                        "description": "The entity responsible for making the resource available, either a person, an organization, or a service.",
+                        "type": "string",
+                         "default": "OpenEBench",
+						 "readonly": true,
+						 "options": {
+							 "hidden": true
+						  }
+                    },
+                    "resource_types": {
+                        "title": "Resource type",
+                        "description": "The type(s) of the resource.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "resource_type_general": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Audiovisual",
+                                        "Book",
+                                        "BookChapter",
+                                        "Collection",
+                                        "ComputationalNotebook",
+                                        "ConferencePaper",
+                                        "ConferenceProceeding",
+                                        "Dataset",
+                                        "Dissertation",
+                                        "Event",
+                                        "Image",
+                                        "InteractiveResource",
+                                        "Journal",
+                                        "JournalArticle",
+                                        "Model",
+                                        "OutputsManagementPlan",
+                                        "PeerReview",
+                                        "PhysicalObject",
+                                        "Preprint",
+                                        "Report",
+                                        "Service",
+                                        "Software",
+                                        "Sound",
+                                        "Standard",
+                                        "Text",
+                                        "Workflow",
+                                        "Other"
+                                    ],
+                                    "title": "Type",
+                                    "default":"Dataset",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "resource_type_description": {
+                                    "title": "Description",
+                                    "description": "An optional description of the resource type.",
+                                    "type": "string",
+                                    "default": "OpenEBench Benchmarking dataset",
+                                    "options": {
+										"hidden": true
+									}
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "resource_type_general"
+                            ]
+                        },
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "uniqueItems": true,
+                        "options": {
+							"hidden": true
+						}
+                    },
+                    "instruments": {
+                        "title": "Instruments",
+                        "description": "The scientific instruments the data was generated or captured on.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "instrument_name": {
+                                    "type": "string"
+                                },
+                                "instrument_identifier": {
+                                    "title": "Identifier",
+                                    "description": "The unique identifier of the instrument.",
+                                    "type": "string"
+                                },
+                                "instrument_identifier_type": {
+                                    "title": "Type",
+                                    "description": "The type of the identifier.",
+                                    "type": "string",
+                                    "enum": [
+                                        "ARK",
+                                        "arXiv",
+                                        "bibcode",
+                                        "DOI",
+                                        "EAN13",
+                                        "EISSN",
+                                        "Handle",
+                                        "ISBN",
+                                        "ISSN",
+                                        "ISTC",
+                                        "LISSN",
+                                        "LSID",
+                                        "ORCiD",
+                                        "PMID",
+                                        "PURL",
+                                        "UPC",
+                                        "URL",
+                                        "URN"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "instrument_name"
+                            ]
+                        },
+                        "uniqueItems": true
+                    },
+                    "disciplines": {
+                        "title": "Disciplines",
+                        "description": "The scientific disciplines linked with the resource.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "discipline_name": {
+                                    "type": "string",
+                                    "default": "3.1.4 Biology Bioinformatics",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "discipline_identifier": {
+                                    "title": "Identifier",
+                                    "description": "The unique identifier of the discipline, according to various identifier schemes.",
+                                    "type": "string",
+                                    "default": "3.1.4 Biology Bioinformatics",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "classification_code": {
+                                    "title": "Code",
+                                    "description": "The corresponding classification code of the discipline, according to various identifier schemes.",
+                                    "type": "string",
+                                    "default": "3.1.4",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "scheme": {
+                                    "title": "Scheme",
+                                    "description": "The scheme used for the identifier.",
+                                    "type": "string",
+                                    "default": "b2share.legacy",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "scheme_uri": {
+                                    "title": "Scheme URI",
+                                    "description": "The URI pointing to the scheme.",
+                                    "type": "string",
+                                    "format": "uri",
+                                    "default": "http://b2share.eudat.eu/suggest/disciplines.json",
+                                    "options": {
+										"hidden": true
+									}
+                                }
+                            },
+                            "required": [
+                                "discipline_name",
+                                "discipline_identifier"
+                            ]
+                        },
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "options": {
+							"hidden": true
+						}
+                    },
+                    "keywords": {
+                        "title": "Keywords",
+                        "description": "The keywords or key phrases describing the resource.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "keyword": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "default": "benchmarking",
+                                    "options": {
+										"hidden": true
+									}
+                                },
+                                "classification_code": {
+                                    "title": "Code",
+                                    "description": "The corresponding classification code of the keyword, according to various identifier schemes.",
+                                    "type": "string",
+                                    "options": {
+										"hidden": true
+									}
+                                }
+                            },
+                            "required": [
+                                "keyword"
+                            ]
+                        },
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "options": {
+							"hidden": true
+						}
+                    },
+                    "contributors": {
+                        "title": "Contributors",
+                        "description": "The list of all other contributors. Please mention all persons that were relevant in the creation of the resource.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "contributor_name": {
+                                    "type": "string"
+                                },
+                                "affiliations": {
+                                    "type": "array",
+                                    "title": "Affiliations",
+                                    "description": "The organisations or entities this entity is affiliated with.",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "affiliation_name": {
+                                                "description": "The name of the affiliation.",
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "affiliation_identifier": {
+                                                "title": "Identifier",
+                                                "type": "string",
+                                                "description": "The unique identifier of the affiliation."
+                                            },
+                                            "scheme": {
+                                                "title": "Scheme",
+                                                "description": "The scheme used for the identifier.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "affiliation_name"
+                                        ]
+                                    },
+                                    "uniqueItems": true
+                                },
+                                "name_type": {
+                                    "title": "Name type",
+                                    "description": "The type of name described.",
+                                    "type": "string",
+                                    "enum": [
+                                        "Personal",
+                                        "Organizational"
+                                    ]
+                                },
+                                "name_identifiers": {
+                                    "title": "Name identifiers",
+                                    "description": "The identifiers that point to any information about this creator.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name_identifier": {
+                                                "description": "The unique identifier of the entity, according to various identifier schemes.",
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "scheme": {
+                                                "title": "Scheme",
+                                                "description": "The scheme used for the identifier.",
+                                                "type": "string"
+                                            },
+                                            "scheme_uri": {
+                                                "title": "Scheme URI",
+                                                "description": "The URI pointing to the scheme.",
+                                                "type": "string",
+                                                "format": "uri"
+                                            }
+                                        },
+                                        "required": [
+                                            "name_identifier",
+                                            "scheme"
+                                        ]
+                                    },
+                                    "uniqueItems": true
+                                },
+                                "contributor_type": {
+                                    "title": "Contributor type",
+                                    "description": "The type of the contributor.",
+                                    "enum": [
+                                        "ContactPerson",
+                                        "DataCollector",
+                                        "DataCurator",
+                                        "DataManager",
+                                        "Distributor",
+                                        "Editor",
+                                        "Funder",
+                                        "HostingInstitution",
+                                        "Producer",
+                                        "ProjectLeader",
+                                        "ProjectManager",
+                                        "ProjectMember",
+                                        "RegistrationAgency",
+                                        "RegistrationAuthority",
+                                        "RelatedPerson",
+                                        "Researcher",
+                                        "ResearchGroup",
+                                        "RightsHolder",
+                                        "Sponsor",
+                                        "Supervisor",
+                                        "WorkPackageLeader",
+                                        "Other"
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "contributor_name",
+                                "contributor_type"
+                            ]
+                        },
+                        "uniqueItems": true
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "description": "The language(s) of the contents of the resource. Allowed values should be taken from ISO 639-1 and 639-3 language codes or IETF BCP 47. Examples: en, de or deu, eng or de-AT, en-US.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "language_name": {
+                                    "type": "string",
+                                    "default": "English"
+                                    
+                                },
+                                "language_identifier": {
+                                    "title": "Identifier",
+                                    "type": "string",
+                                    "description": "The identifier for the language, according to various identifier schemes.",
+                                    "default": "eng"
+                                }
+                            },
+                            "required": [
+                                "language_name",
+                                "language_identifier"
+                            ]
+                        },
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "readonly": true,
+                        "options": {
+							"hidden": true
+						}
+                    },
+                    "related_identifiers": {
+                        "title": "Related identifiers",
+                        "description": "The identifiers of other resources related to the resource such as a URN, URI or an ISBN number.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "related_identifier": {
+                                    "type": "string"
+                                },
+                                "resource_type_general": {
+                                    "title": "Resource type",
+                                    "description": "The type of the resource.",
+                                    "type": "string",
+                                    "enum": [
+                                        "Audiovisual",
+                                        "Book",
+                                        "BookChapter",
+                                        "Collection",
+                                        "ComputationalNotebook",
+                                        "ConferencePaper",
+                                        "ConferenceProceeding",
+                                        "Dataset",
+                                        "Dissertation",
+                                        "Event",
+                                        "Image",
+                                        "InteractiveResource",
+                                        "Journal",
+                                        "JournalArticle",
+                                        "Model",
+                                        "OutputsManagementPlan",
+                                        "PeerReview",
+                                        "PhysicalObject",
+                                        "Preprint",
+                                        "Report",
+                                        "Service",
+                                        "Software",
+                                        "Sound",
+                                        "Standard",
+                                        "Text",
+                                        "Workflow",
+                                        "Other"
+                                    ]
+                                },
+                                "related_identifier_type": {
+                                    "title": "Type",
+                                    "description": "The type of the identifier.",
+                                    "type": "string",
+                                    "enum": [
+                                        "ARK",
+                                        "arXiv",
+                                        "bibcode",
+                                        "DOI",
+                                        "EAN13",
+                                        "EISSN",
+                                        "Handle",
+                                        "ISBN",
+                                        "ISSN",
+                                        "ISTC",
+                                        "LISSN",
+                                        "LSID",
+                                        "ORCiD",
+                                        "PMID",
+                                        "PURL",
+                                        "UPC",
+                                        "URL",
+                                        "URN"
+                                    ]
+                                },
+                                "relation_type": {
+                                    "title": "Relation",
+                                    "description": "The relation type of the described reference.",
+                                    "enum": [
+                                        "IsCitedBy",
+                                        "Cites",
+                                        "IsSupplementTo",
+                                        "IsPublishedIn",
+                                        "IsSupplementedBy",
+                                        "IsContinuedBy",
+                                        "Continues",
+                                        "HasMetadata",
+                                        "IsMetadataFor",
+                                        "IsNewVersionOf",
+                                        "IsPreviousVersionOf",
+                                        "IsPartOf",
+                                        "HasPart",
+                                        "IsReferencedBy",
+                                        "References",
+                                        "IsDocumentedBy",
+                                        "Documents",
+                                        "isCompiledBy",
+                                        "Compiles",
+                                        "IsVariantFormOf",
+                                        "IsOriginalFormOf",
+                                        "IsIdenticalTo",
+                                        "IsReviewedBy",
+                                        "Reviews",
+                                        "IsDerivedFrom",
+                                        "IsSourceOf"
+                                    ]
+                                },
+                                "scheme": {
+                                    "title": "Scheme",
+                                    "description": "The scheme used for the identifier.",
+                                    "type": "string"
+                                },
+                                "scheme_uri": {
+                                    "title": "Scheme URI",
+                                    "description": "The URI pointing to the scheme.",
+                                    "type": "string",
+                                    "format": "uri"
+                                }
+                            },
+                            "required": [
+                                "related_identifier",
+                                "related_identifier_type",
+                                "relation_type"
+                            ]
+                        },
+                        "uniqueItems": true
+                    },
+                    "descriptions": {
+                        "title": "Descriptions",
+                        "description": "The more elaborate description of the resource. Focus on a content description that makes it easy for others to find, and to interpret its relevance.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "description": {
+									"title": "Description",
+                                    "type": "string",
+                                    "default": "Benchmarking dataset"
+                                },
+                                "description_type": {
+                                    "title": "Type",
+                                    "description": "The type of the description.",
+                                    "enum": [
+                                        "Abstract",
+                                        "Methods",
+                                        "SeriesInformation",
+                                        "TableOfContents",
+                                        "TechnicalInfo",
+                                        "Other"
+                                    ],
+                                    "default": "Abstract",
+                                    "options": {
+										"hidden": true
+									}
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "description",
+                                "description_type"
+                            ]
+                        },
+                        "uniqueItems": true,
+                        "minItems": 1,
+						"maxItems":1
+                    },
+                    "version": {
+                        "title": "Version",
+                        "description": "The version of the resource.",
+                        "type": "string",
+                        "default": "0.1",
+                        "options": {
+							"hidden": true
+						}
+                    },
+                    "contact_email": {
+                        "title": "Contact email",
+                        "description": "The contact email information for this resource.",
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "open_access": {
+                        "title": "Open access",
+                        "description": "Indicate whether the record's files are publicly accessible or not. In case of restricted access the uploaded files will only be accessible by the record's owner and the community administrators. Please note that the record's metadata is always publicly accessible. ",
+                        "type": "boolean",
+                        "default": true,
+						"readonly": true,
+						"options": {
+							"hidden": true
+						}
+                    },
+                    "license": {
+                        "title": "License",
+                        "description": "The license under which this data set is available to the users (e.g. GPL, Apache v2 or Commercial). Please use the License Selector for help and additional information.",
+                        "type": "object",
+                        "properties": {
+                            "license": {
+								"title": "License",
+                                "type": "string",
+                                "enum": [
+									"Creative Commons Attribution-ShareAlike (CC-BY-SA)",
+									"Creative Commons Attribution (CC-BY)",
+									"Public Domain Dedication (CC Zero)"
+								 ],
+								 "default":"Public Domain Dedication (CC Zero)"
+                            },
+                            "license_uri": {
+                                "title": "License URI",
+                                "description": "The URI pointing to the description of the license.",
+                                "type": "string",
+                                "format": "uri",
+                                "readonly": true,
+								"default":"http://creativecommons.org/publicdomain/zero/1.0/"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "license"
+                        ]
+                    },
+                    "funding_references": {
+                        "title": "Funding references",
+                        "description": "The information about financial support (funding) for the resource being registered.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "funder_name": {
+                                    "title": "Funder name",
+                                    "description": "The full name of the funder.",
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "funder_identifier": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the funder."
+                                },
+                                "funder_identifier_type": {
+                                    "title": "Type",
+                                    "description": "The type of the identifier of the funder.",
+                                    "type": "string",
+                                    "enum": [
+                                        "ISNI",
+                                        "GRID",
+                                        "ROR",
+                                        "Crossref Funder ID",
+                                        "Other"
+                                    ]
+                                },
+                                "scheme_uri": {
+                                    "title": "Scheme URI",
+                                    "description": "The URI pointing to the scheme.",
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "award_title": {
+                                    "title": "Award title",
+                                    "description": "The title of the award.",
+                                    "type": "string"
+                                },
+                                "award_number": {
+                                    "title": "Award number",
+                                    "type": "string",
+                                    "description": "The corresponding number of the award."
+                                },
+                                "award_uri": {
+                                    "title": "Award URI",
+                                    "description": "The URI pointing to the award.",
+                                    "type": "string",
+                                    "format": "uri"
+                                }
+                            },
+                            "required": [
+                                "funder_name"
+                            ]
+                        },
+                        "uniqueItems": true
+                    },
+                    "community": {
+                        "title": "Community",
+                        "description": "The community to which the record has been submitted.",
+                        "type": "string",
+                         "readonly": true,
+						  "default": "f60ff069-c8fa-4b48-8442-903bffa3acb1",
+						  "options": {
+							"inputAttributes": {
+							  "value":"f60ff069-c8fa-4b48-8442-903bffa3acb1"
+							},
+							"hidden": true
+
+						  }
+                    },
+                     "community_specific": {
+						  "type": "object",
+						  "properties": {
+							"176df0a6-8c8e-424d-a5c1-34b1d84a580c": {
+							  "type": "object",
+							  "properties": {
+								"oeb_id": {
+								  "description": "The unique identifier of the dataset, provided by OEB API",
+								  "pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[0-9]+$",
+								  "title": "Dataset ID",
+								  "type": "string",
+								  "readonly": true
+								},
+								"oeb_type": {
+								  "description": "Type of dataset within OEB",
+								  "enum": [
+									"public_reference",
+									"metrics_reference",
+									"input",
+									"participant",
+									"assessment",
+									"participant_assessments",
+									"aggregation",
+									"other"
+								  ],
+								  "minLength": 1,
+								  "title": "Dataset type",
+								  "type": "string",
+								  "readonly": true
+								},
+								"oeb_community": {
+								  "description": "Acronym defined in OEB for the benchmarking community - ideally, should match the one used in the benchmarking data model",
+								  "minLength": 1,
+								  "title": "Community OEB acronym",
+								  "type": "string",
+								  "readonly": true
+								},
+								"oeb_dataset_version": {
+								  "description": "Version (or release date) of the metadata",
+								  "minLength": 1,
+								  "title": "Version",
+								  "type": "string",
+								  "readonly": true
+								}
+							  },
+							  "required": [
+								"oeb_id",
+								"oeb_type",
+								"oeb_community"
+							  ]
+							}
+						  },
+						  "required": [
+							"176df0a6-8c8e-424d-a5c1-34b1d84a580c"
+						  ]
+					}
+					},
+					  "required": [
+						"community",
+						"titles",
+						"open_access",
+						"community_specific"
+					  ],
+					  "additionalProperties": false,
+					  "basicCategoryTitle": "Edit Information",
+					  "format": "categories",
+					  "show_errors": "interaction"
+                }
+        
+        
+    
