@@ -5,6 +5,12 @@ repos:
     rev: v0.10.7
     hooks:
       - id: jsonschema_dir_validate
+        name: Check 2.0.x
+        language: python
+        always_run: true
+        pass_filenames: false
+        args: [ "json-schemas/2.0.x" ]
+      - id: jsonschema_dir_validate
         name: Check 1.0.x
         language: python
         always_run: true

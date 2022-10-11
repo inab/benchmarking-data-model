@@ -21,7 +21,7 @@ jobs:
       - json-schema-validation
     strategy:
       matrix:
-        schema-version: [ "0.4.x", "1.0.x" ]
+        schema-version: [ "0.4.x", "1.0.x", "2.0.x" ]
     steps:
       - uses: actions/checkout@v3
       - uses: ts-graphviz/setup-graphviz@v1
