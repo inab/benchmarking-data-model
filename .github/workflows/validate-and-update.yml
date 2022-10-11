@@ -3,7 +3,7 @@ name: validate-and-update
 on:
   pull_request:
   push:
-    branches: [master, 1.0.x, 2.0.x]
+    branches: [1.0.x, 2.0.x]
 
 jobs:
   json-schema-validation:
