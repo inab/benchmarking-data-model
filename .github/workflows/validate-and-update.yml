@@ -69,10 +69,14 @@ jobs:
       - id: move
         name: Move charts to their right place
         run: |
-          ls -ld ${{steps.download.outputs.download-path}}
-          mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
+          skip=true
+          if [ -d ${{steps.download.outputs.download-path}} ] ; then
+            mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
+            skip=false
+          fi
+          echo "::set-output name=skip::$skip"
       - uses: EndBug/add-and-commit@v9
-        if: steps.move.outcome == 'success'
+        if: steps.move.outputs.skip == 'false'
         with:
           add: json-schemas/*
           message: Automatically commit updated charts
