@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Helvetica", labelloc=t, label=< OpenEBench Benchmarking Data Model 1.0.x <br/> <font point-size="40">(as of 2022-10-11T10:50:54.503773)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Helvetica", labelloc=t, label=< OpenEBench Benchmarking Data Model 1.0.x <br/> <font point-size="40">(as of 2022-10-11T17:55:26.228137)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	s0 [label=<
 
