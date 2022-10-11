@@ -1,9 +1,9 @@
-name: pre-commit
+name: validate-and-update
 
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [master, 1.0.x, 2.0.x]
 
 jobs:
   json-schema-validation:
