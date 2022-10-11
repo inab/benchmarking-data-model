@@ -10,8 +10,8 @@
         "Erik.Sonnhammer"
     ],
     "dates": {
-        "benchmark_start": "2011-07-07T00:00:00Z",
-        "benchmark_stop": "2011-07-07T00:00:00Z",
+        "challenge_start": "2011-07-07T00:00:00Z",
+        "challenge_stop": "2011-07-07T00:00:00Z",
         "creation": "2011-07-07T00:00:00Z",
         "modification": "2011-07-07T00:00:00Z"
     },

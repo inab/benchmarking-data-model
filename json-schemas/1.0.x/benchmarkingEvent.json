@@ -75,6 +75,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation","modification"],
 			"dependencies": {
 				"benchmark_start": ["benchmark_stop"],
