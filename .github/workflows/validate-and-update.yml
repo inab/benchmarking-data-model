@@ -32,6 +32,7 @@ jobs:
           python-version: "3.8"
           cache: 'pip'
           architecture: x64
+          cache-dependency-path: 'dev-requirements.txt'
       - run: |
           pip install --upgrade pip wheel
           pip install -r dev-requirements.txt
