@@ -1,0 +1,81 @@
+name: validate-and-update
+
+on:
+  pull_request:
+  push:
+    branches: [1.0.x, 2.0.x]
+
+jobs:
+  json-schema-validation:
+    runs-on: ubuntu-latest
+    name: JSON Schema validation through pre-commit
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pre-commit/action@v3.0.0
+        with:
+          extra_args: --all -c .pre-commit-config.yaml
+  generate-charts:
+    runs-on: ubuntu-latest
+    name: Generate graphical representations of the schemas
+    needs:
+      - json-schema-validation
+    strategy:
+      matrix:
+        schema-version: [ "0.4.x", "1.0.x" ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ts-graphviz/setup-graphviz@v1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+          cache: 'pip'
+          architecture: x64
+          cache-dependency-path: 'dev-requirements.txt'
+      - run: |
+          pip install --upgrade pip wheel
+          pip install -r dev-requirements.txt
+      - name: Changes at ${{ matrix.schema-version }} schemas
+        id: changed
+        uses: tj-actions/changed-files@v32
+        with:
+          files: |
+            json-schemas/${{ matrix.schema-version }}/**
+      - name: Generated ${{ matrix.schema-version }} schema
+        id: generate-if-changed
+        if: steps.changed.outputs.any_changed == 'true'
+        run: |
+          ext-json-validate --dot-report openebench-bdm-${{ matrix.schema-version }}.dot "OpenEBench Benchmarking Data Model ${{ matrix.schema-version }}" json-schemas/${{ matrix.schema-version }}
+          dot -Tpng openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.png
+          dot -Tpdf openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.pdf
+      - uses: actions/upload-artifact@v3
+        if: steps.generate-if-changed.outcome == 'success'
+        with:
+          retention-days: 2
+          path: openebench-bdm-${{ matrix.schema-version }}.dot*
+
+  push-charts:
+    runs-on: ubuntu-latest
+    name: Store newly generated charts
+    needs:
+      - generate-charts
+    steps:
+      - uses: actions/checkout@v3
+      - id: download
+        uses: actions/download-artifact@v3
+        with:
+          path: charts-dir
+      - id: move
+        name: Move charts to their right place
+        run: |
+          skip=true
+          if [ -d ${{steps.download.outputs.download-path}} ] ; then
+            mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
+            skip=false
+          fi
+          echo "::set-output name=skip::$skip"
+      - uses: EndBug/add-and-commit@v9
+        if: steps.move.outputs.skip == 'false'
+        with:
+          add: json-schemas/*
+          message: Automatically commit updated charts
+          default_author: github_actions
