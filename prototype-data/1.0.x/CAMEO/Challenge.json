@@ -7,8 +7,8 @@
   "dates": {
     "creation": "2017-01-14T00:00:00Z",
     "modification": "2017-01-15T14:00:00Z",
-    "benchmark_start": "2017-01-14T05:00:00Z",
-    "benchmark_stop": "2017-01-18T02:00:00Z"
+    "challenge_start": "2017-01-14T05:00:00Z",
+    "challenge_stop": "2017-01-18T02:00:00Z"
   },
   "url": "http://cameo3d.org/sp/2017-01-14",
   "challenge_contact_ids": [

@@ -95,6 +95,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation","modification"],
 			"dependencies": {
 				"challenge_start": ["challenge_stop"],
@@ -151,10 +152,12 @@
 									]
 								}
 							},
+							"additionalProperties": false,
 							"required": [ "metrics_id" ]
 						}
 					}
 				},
+				"additionalProperties": false,
 				"required": [
 					"metrics",
 					"category"

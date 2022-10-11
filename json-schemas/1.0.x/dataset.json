@@ -105,6 +105,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation","modification"]
 		},
 		"type": {
@@ -244,10 +245,12 @@
 								"default": "dependency"
 							}
 						},
+						"additionalProperties": false,
 						"required": [ "dataset_id" ]
 					}
 				}
 			},
+			"additionalProperties": false,
 			"required": [ "rel_dataset_ids" ]
 		},
 		"references": {

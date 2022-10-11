@@ -128,6 +128,7 @@
 						"type": "string"
 					}
 				},
+				"additionalProperties": false,
 				"required": [ "tool_id" ]
 			}
 		}
