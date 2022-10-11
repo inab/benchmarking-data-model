@@ -24,8 +24,6 @@ jobs:
         schema-version: [ "0.4.x", "1.0.x" ]
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
       - uses: ts-graphviz/setup-graphviz@v1
       - uses: actions/setup-python@v4
         with:
