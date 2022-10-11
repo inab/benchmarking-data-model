@@ -62,12 +62,17 @@ jobs:
       - generate-charts
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - id: download
+        uses: actions/download-artifact@v3
         with:
           path: charts-dir
-      - name: Move charts to their right place
-        run: mv charts-dir/artifact/* json-schemas/
+      - id: move
+        name: Move charts to their right place
+        run: |
+          ls -ld ${{steps.download.outputs.download-path}}
+          mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
       - uses: EndBug/add-and-commit@v9
+        if: steps.move.outcome == 'success'
         with:
           add: json-schemas/*
           message: Automatically commit updated charts
