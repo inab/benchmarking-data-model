@@ -4,7 +4,7 @@ These are the latest benchmarking concepts modelled so far using [JSON Schema Dr
 
 Sample JSON files can be validated against these schemas using scripts located into [extended JSON Schema validators](//github.com/inab/extended-json-validators) repository or [JSON Schema Validator](http://www.jsonschemavalidator.net/). There is even a script to generate a chart describing these schemas:
 
-![Benchmarking JSON Schema 1.0.x](schemaChart-1.0.x.dot.png "Benchmarking JSON Schema 1.0.x")
+![Benchmarking JSON Schema 1.0.x](openebench-bdm-1.0.x.dot.png "Benchmarking JSON Schema 1.0.x")
 
 * [Community](1.0.x/community.json): The description of a benchmarking community, like CASP, CAFA, Quest for Orthologs, etc...
 
