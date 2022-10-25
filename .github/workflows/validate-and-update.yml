@@ -47,6 +47,7 @@ jobs:
           ext-json-validate --dot-report openebench-bdm-${{ matrix.schema-version }}.dot "OpenEBench Benchmarking Data Model ${{ matrix.schema-version }}" json-schemas/${{ matrix.schema-version }}
           dot -Tpng openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.png
           dot -Tpdf openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.pdf
+          dot -Tsvg openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.svg
       - uses: actions/upload-artifact@v3
         if: steps.generate-if-changed.outcome == 'success'
         with:
