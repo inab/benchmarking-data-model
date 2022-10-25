@@ -1,19 +1,23 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Tool concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Tool concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
+			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
 		},
 		{
+			"$comment": "Declaration of references",
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
+			"$comment": "Declarations of links, name, description",
 			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
@@ -41,32 +45,16 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The tool original (community) id"
 		},
+		
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The reference id(s) of this tool (if any)"
 		},
+		
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Optional links related to the metrics"
@@ -179,15 +167,24 @@
 						}
 					}
 				},
-				"additionalProperties": true,
+				"additionalProperties": false,
 				"required": [
 					"tool_access_type"
 				]
 			}
 		}
 	},
-	"additionalProperties": false,
-	"required": ["_id","_schema","name","community_ids","is_automated","tool_contact_ids","status","tool_access"],
+	"unevaluatedProperties": false,
+	"required": [
+		"_id",
+		"_schema",
+		"name",
+		"community_ids",
+		"is_automated",
+		"tool_contact_ids",
+		"status",
+		"tool_access"
+	],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

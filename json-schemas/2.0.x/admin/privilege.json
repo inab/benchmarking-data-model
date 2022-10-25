@@ -1,7 +1,7 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Privilege",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Security privileges concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Security privileges concept (OpenEBench Benchmarking Data Model schemas)",
 	"type": "object",
 	"properties": {
 		"_id": {
@@ -88,11 +88,12 @@
 						}
 					}
 
-				]
+				],
+				"additionalProperties": false
 			}
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": [
 		"_id",
 		"_schema",

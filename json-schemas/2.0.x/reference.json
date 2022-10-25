@@ -1,10 +1,11 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Bibliographic reference concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		}
 	],
@@ -18,25 +19,6 @@
 			"type": "string",
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference" ]
-		},
-		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
 		},
 		
 		"title": {
@@ -103,7 +85,7 @@
 			}
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": ["_id","_schema","title","bibliographic_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}

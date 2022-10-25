@@ -1,13 +1,15 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Test Action concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Test Action concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
+			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
 		}
 	],
@@ -35,24 +37,6 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The test action original id"
@@ -110,6 +94,7 @@
 						"format": "date-time"
 					}
 				},
+				"additionalProperties": false,
 				"required": [ "dataset_id", "role" ]
 			}
 		},
@@ -165,11 +150,19 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation"]
 		}
 	},
-	"additionalProperties": false,
-	"required": ["_id","_schema","involved_datasets","challenge_id","test_contact_ids","dates"],
+	"unevaluatedProperties": false,
+	"required": [
+		"_id",
+		"_schema",
+		"involved_datasets",
+		"challenge_id",
+		"test_contact_ids",
+		"dates"
+	],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }

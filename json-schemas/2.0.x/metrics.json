@@ -1,19 +1,23 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Metrics concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Metrics concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
+			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
 		},
 		{
+			"$comment": "Declaration of references",
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
+			"$comment": "Declarations of links, name, description",
 			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
@@ -41,32 +45,16 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The dataset original id"
 		},
+		
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The reference id(s) of this dataset (if any)"
 		},
+		
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Optional links related to the metrics"
@@ -114,7 +102,7 @@
 			"minProperties": 1
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": ["_id","_schema","name","metrics_contact_ids"],
 	"primary_key": ["_id"],
 	"dependencies": {}

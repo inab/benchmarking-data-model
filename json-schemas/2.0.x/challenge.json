@@ -1,19 +1,23 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Challenge concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Challenge concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
+			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
 		},
 		{
+			"$comment": "Declaration of references",
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
+			"$comment": "Declarations of links, name, description",
 			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
@@ -41,32 +45,16 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The challenge original id"
 		},
+		
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The challenge reference id(s) (if any)"
 		},
+		
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Ways to contact the challenge responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
@@ -130,6 +118,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation","modification"],
 			"dependencies": {
 				"challenge_start": ["challenge_stop"],
@@ -181,10 +170,12 @@
 									]
 								}
 							},
+							"additionalProperties": false,
 							"required": [ "metrics_id" ]
 						}
 					}
 				},
+				"additionalProperties": false,
 				"required": [
 					"metrics",
 					"category"
@@ -207,7 +198,7 @@
 			}
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","metrics_categories"],
 	"primary_key": ["_id"],
 	"dependencies": {}

@@ -1,19 +1,23 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Dataset concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Dataset concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
+			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
 		},
 		{
+			"$comment": "Declaration of references",
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
+			"$comment": "Declarations of links, name, description",
 			"$ref": "_shared#/definitions/LinksDescProp"
 		}
 	],
@@ -41,24 +45,6 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The dataset original id"
@@ -136,6 +122,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation","modification"]
 		},
 		"type": {
@@ -172,13 +159,13 @@
 						}
 					],
 					"additionalItems": {
-						"$ref": "#/definitions/DataLink"
+						"$ref": "#/$defs/DataLink"
 					}
 				},
 				{
 					"title": "The link to reach the dataset",
 					"items": {
-						"$ref": "#/definitions/DataLink"
+						"$ref": "#/$defs/DataLink"
 					}
 				}
 			]
@@ -248,14 +235,16 @@
 								"default": "dependency"
 							}
 						},
+						"additionalProperties": false,
 						"required": [ "dataset_id" ]
 					}
 				}
 			},
+			"additionalProperties": false,
 			"required": [ "rel_dataset_ids" ]
 		}
 	},
-	"definitions": {
+	"$defs": {
 		"DataLink": {
 			"title": "The link to reach the dataset",
 			"properties": {
@@ -304,7 +293,7 @@
 			"required": [ "uri", "attrs" ]
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": [
 		"_id",
 		"_schema",

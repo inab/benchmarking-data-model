@@ -1,10 +1,11 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Simple Namespace resolver for CURIE ids",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Simple Namespace resolver for CURIE ids (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
+			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
 		}
 	],
@@ -20,24 +21,6 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv" ]
 		},
 		
-		"_canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"description": {
 			"title": "Long description of the namespace",
 			"type": "string"
@@ -54,7 +37,7 @@
 			"format": "uri-template"
 		}
 	},
-	"additionalProperties": false,
+	"unevaluatedProperties": false,
 	"required": ["_id","pattern","endpoint"],
 	"primary_key": ["_id"]
 }

@@ -1,37 +1,41 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "ELIXIR-EXCELERATE WP2 Benchmarking schemas",
-	"oneOf": [
-		{
-			"$ref": "BenchmarkingEvent"
-		},
-		{
-			"$ref": "Challenge"
-		},
-		{
-			"$ref": "Community"
-		},
-		{
-			"$ref": "Contact"
-		},
-		{
-			"$ref": "Dataset"
-		},
-		{
-			"$ref": "idSolv"
-		},
-		{
-			"$ref": "Metrics"
-		},
-		{
-			"$ref": "Reference"
-		},
-		{
-			"$ref": "TestAction"
-		},
-		{
-			"$ref": "Tool"
-		}
-	]
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "OpenEBench Benchmarking Data Model schemas",
+	"type": "array",
+	"items": {
+		"oneOf": [
+			{
+				"$ref": "BenchmarkingEvent"
+			},
+			{
+				"$ref": "Challenge"
+			},
+			{
+				"$ref": "Community"
+			},
+			{
+				"$ref": "Contact"
+			},
+			{
+				"$ref": "Dataset"
+			},
+			{
+				"$ref": "idSolv"
+			},
+			{
+				"$ref": "Metrics"
+			},
+			{
+				"$ref": "Reference"
+			},
+			{
+				"$ref": "TestAction"
+			},
+			{
+				"$ref": "Tool"
+			}
+		]
+	},
+	"unevaluatedProperties": false
 }
