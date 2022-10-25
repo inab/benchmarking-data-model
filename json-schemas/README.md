@@ -1,10 +1,12 @@
 # ELIXIR-EXCELERATE Benchmarking JSON Schemas
 
-These are the latest benchmarking concepts modelled so far using [JSON Schema Draft-07](https://json-schema.org/latest/json-schema-core.html), available in [2.0.x folder](2.0.x). All of them have `_id` and `_schema` attributes.
+These are the latest benchmarking concepts modelled so far using [JSON Schema Draft-07](https://json-schema.org/draft/2019-09/json-schema-core.html), available in [2.0.x folder](2.0.x). All of them have `_id`, `_schema` and other common attributes.
 
-Sample JSON files can be validated against these schemas using scripts located into [extended JSON Schema validators](//github.com/inab/extended-json-validators) repository or [JSON Schema Validator](http://www.jsonschemavalidator.net/). There is even a script to generate a chart describing these schemas:
+Sample JSON files can be validated against these schemas using the [extended JSON Schema validator in Python](https://pypi.org/project/extended-json-schema-validator/) repository or [JSON Schema Validator](http://www.jsonschemavalidator.net/). The extended JSON Schema validator is also able to generate a [Graphviz DOT](https://graphviz.org/doc/info/lang.html) graph describing a set of schemas. There is even a semi-interactive viewer which consumes SVGs generated from Graphviz DOT files (click next image for it):
 
-![Benchmarking JSON Schema 2.0.x](openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")
+[![Benchmarking JSON Schema 2.0.x](openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
+
+These are the main concepts of the OpenEBench Benchmarking Data Model:
 
 * [Community](2.0.x/community.json): The description of a benchmarking community, like CASP, CAFA, Quest for Orthologs, etc...
 
