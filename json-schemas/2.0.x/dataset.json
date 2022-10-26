@@ -17,8 +17,8 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$comment": "Declarations of links, name, description",
-			"$ref": "_shared#/definitions/LinksDescProp"
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
 		}
 	],
 	"type": "object",
@@ -53,12 +53,13 @@
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The reference id(s) of this dataset (if any)"
 		},
+		
 		"name": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Short dataset name"
 		},
 		"description": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long dataset description, written in Markdown"
 		},
 		

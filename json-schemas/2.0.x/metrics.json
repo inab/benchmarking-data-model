@@ -17,8 +17,12 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$comment": "Declarations of links, name, description",
-			"$ref": "_shared#/definitions/LinksDescProp"
+			"$comment": "Declaration of links",
+			"$ref": "_shared#/definitions/LinksProp"
+		},
+		{
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
 		}
 	],
 	"type": "object",
@@ -47,7 +51,7 @@
 		
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
-			"title": "The dataset original id"
+			"title": "The metrics original id"
 		},
 		
 		"references": {
@@ -56,15 +60,16 @@
 		},
 		
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
 			"title": "Optional links related to the metrics"
 		},
+		
 		"name": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Short metrics name"
 		},
 		"description": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long metrics description, in Markdown format"
 		},
 		

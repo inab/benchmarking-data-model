@@ -17,8 +17,12 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$comment": "Declarations of links, name, description",
-			"$ref": "_shared#/definitions/LinksDescProp"
+			"$comment": "Declaration of links",
+			"$ref": "_shared#/definitions/LinksProp"
+		},
+		{
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
 		}
 	],
 	"type": "object",
@@ -56,15 +60,16 @@
 		},
 		
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
 			"title": "Ways to contact the challenge responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
+		
 		"name": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Short challenge name"
 		},
 		"description": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long challenge description, written in Markdown"
 		},
 		

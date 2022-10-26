@@ -58,7 +58,14 @@
 			"title": "The type of action",
 			"description": "The type of action performed by the tool, also describing the kind of input datasets.\nTest Event = Input + Tool -> Participant Data\nMetrics event = Participant Data + Metrics -> Assessment Data\nAggregation event = All Assessment Data + Metrics -> Aggregated Challenge Data\nParticipant Assessments event = Specific Participant Asssement Data + Metrics -> Participant Datasets Data\n",
 			"type": "string",
-			"enum": [ "SetupEvent", "MetricsEvent", "StatisticsEvent", "ParticipantAssessmentsEvent", "AggregationEvent", "TestEvent" ]
+			"enum": [
+				"SetupEvent",
+				"MetricsEvent",
+				"StatisticsEvent",
+				"ParticipantAssessmentsEvent",
+				"AggregationEvent",
+				"TestEvent"
+			]
 		},
 		"involved_datasets": {
 			"title": "The incoming, outgoing and settings datasets involved in this test action",
@@ -126,9 +133,15 @@
 			}
 		},
 		"status": {
-			"title": "The lifecicle of the testAction will be managed by the API, validating it is progressing forward instead of backward",
+			"title": "The lifecycle of the testAction will be managed by the API, validating it is progressing forward instead of backward",
 			"type": "string",
-			"enum": [ "scheduled", "sent", "incomplete", "complete", "failed" ]
+			"enum": [
+				"scheduled",
+				"sent",
+				"incomplete",
+				"complete",
+				"failed"
+			]
 		},
 		"dates": {
 			"title": "Relevant dates for this test action",

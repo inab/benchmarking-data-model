@@ -9,8 +9,8 @@
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
-			"$comment": "Declarations of links, name, description",
-			"$ref": "_shared#/definitions/LinksDescProp"
+			"$comment": "Declaration of links",
+			"$ref": "_shared#/definitions/LinksProp"
 		}
 	],
 	"type": "object",
@@ -26,7 +26,7 @@
 		},
 		
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
 			"title": "Optional links related to the contact"
 		},
 		

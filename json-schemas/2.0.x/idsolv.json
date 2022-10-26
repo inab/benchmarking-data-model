@@ -7,6 +7,10 @@
 		{
 			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
 			"$ref": "_shared#/definitions/CommonKeys"
+		},
+		{
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
 		}
 	],
 	"type": "object",
@@ -21,9 +25,13 @@
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv" ]
 		},
 		
+		"name": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "Short, scheme name"
+		},
 		"description": {
-			"title": "Long description of the namespace",
-			"type": "string"
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "Long description of the namespace, written in Markdown"
 		},
 		
 		"pattern": {

@@ -17,8 +17,12 @@
 			"$ref": "_shared#/definitions/ReferencesProp"
 		},
 		{
-			"$comment": "Declarations of links, name, description",
-			"$ref": "_shared#/definitions/LinksDescProp"
+			"$comment": "Declaration of links",
+			"$ref": "_shared#/definitions/LinksProp"
+		},
+		{
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
 		}
 	],
 	"type": "object",
@@ -56,15 +60,16 @@
 		},
 		
 		"links": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
 			"title": "Optional links related to the metrics"
 		},
+		
 		"name": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Short tool name"
 		},
 		"description": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long tool description, in Markdown format"
 		},
 		
@@ -110,7 +115,12 @@
 		"status": {
 			"title": "Current tool status",
 			"type": "string",
-			"enum": ["unknown","online","offline","unmaintained"],
+			"enum": [
+				"unknown",
+				"online",
+				"offline",
+				"unmaintained"
+			],
 			"minLength": 1
 		},
 		"activation": {
@@ -133,7 +143,13 @@
 					"tool_access_type": {
 						"title": "The tool access type",
 						"type": "string",
-						"enum": [ "command-line", "REST/OpenAPI", "SOAP/WSDL", "Web", "other" ],
+						"enum": [
+							"command-line",
+							"REST/OpenAPI",
+							"SOAP/WSDL",
+							"Web",
+							"other"
+						],
 						"minLength": 1
 					},
 					"link": {
@@ -156,7 +172,14 @@
 								"label": {
 									"title": "The type of URI (WSDL, WADL, OpenAPI/Swagger, Source code, Miscellaneous documentation)",
 									"type": "string",
-									"enum": ["WSDL","WADL","OpenAPI","API","source","doc"]
+									"enum": [
+										"WSDL",
+										"WADL",
+										"OpenAPI",
+										"API",
+										"source",
+										"doc"
+									]
 								}
 							},
 							"additionalProperties": false,
