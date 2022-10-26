@@ -242,7 +242,17 @@
 				}
 			},
 			"additionalProperties": false,
-			"required": [ "rel_dataset_ids" ]
+			"anyOf": [
+				{
+					"required": [ "rel_dataset_ids" ]
+				},
+				{
+					"required": [ "tool_id" ]
+				},
+				{
+					"required": [ "metrics_id" ]
+				}
+			]
 		}
 	},
 	"$defs": {
