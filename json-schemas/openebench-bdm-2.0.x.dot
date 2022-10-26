@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2022-10-25T16:31:45.213796)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2022-10-26T16:11:15.388054)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Challenge concept (OpenEBench Benchmarking Data Model schemas)> label=<
@@ -582,14 +582,6 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2">name</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -726,24 +718,6 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -760,6 +734,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2">_schema</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2">name</TD>
 
 	</TR>
 	<TR>
