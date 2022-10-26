@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2022-10-26T16:11:15.388054)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2022-10-26T16:26:37.085105)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Challenge concept (OpenEBench Benchmarking Data Model schemas)> label=<
@@ -667,7 +667,7 @@ digraph schemas {
 		<TD ALIGN="LEFT" PORT="0cb4f09a238f2a12115366c6de3f3a20d777cc6c">depends_on{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
 	<TR>
-		<TD ALIGN="LEFT" PORT="8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" COLSPAN="2"><I>metrics_id</I>⎇</TD>
+		<TD ALIGN="LEFT" PORT="8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" COLSPAN="2"><B><I>metrics_id</I></B>⎇</TD>
 
 	</TR>
 	<TR>

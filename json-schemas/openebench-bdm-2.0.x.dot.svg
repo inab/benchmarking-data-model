@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-1997 7506,-1997 7506,4 -4,4"/>
 <text text-anchor="start" x="3047.5" y="-1942" font-family="Sans-Serif" font-size="60.00"> OpenEBench Benchmarking Data Model 2.0.x </text>
 <text text-anchor="start" x="3359.5" y="-1882" font-family="Sans-Serif" font-size="60.00"> </text>
-<text text-anchor="start" x="3378.5" y="-1882" font-family="Sans-Serif" font-size="40.00">(as of 2022&#45;10&#45;26T16:11:15.388054)</text>
+<text text-anchor="start" x="3378.5" y="-1882" font-family="Sans-Serif" font-size="40.00">(as of 2022&#45;10&#45;26T16:26:37.085105)</text>
 <text text-anchor="start" x="4123.5" y="-1882" font-family="Sans-Serif" font-size="60.00"> </text>
 <!-- s0 -->
 <g id="node1" class="node">
@@ -700,7 +700,7 @@
 <polygon fill="none" stroke="black" points="1181,-356 1181,-448 1287,-448 1287,-356 1181,-356"/>
 <text text-anchor="start" x="1184" y="-398.3" font-family="Monospace" font-size="14.00">depends_on{}</text>
 <polygon fill="none" stroke="black" points="1289,-425 1289,-446 1741,-446 1741,-425 1289,-425"/>
-<text text-anchor="start" x="1292" y="-432.8" font-family="Monospace" font-style="italic" font-size="14.00">metrics_id</text>
+<text text-anchor="start" x="1292" y="-432.8" font-family="Monospace" font-weight="bold" font-style="italic" font-size="14.00">metrics_id</text>
 <text text-anchor="start" x="1375" y="-432.8" font-family="Monospace" font-size="14.00">⎇</text>
 <polygon fill="none" stroke="black" points="1289,-404 1289,-425 1741,-425 1741,-404 1289,-404"/>
 <text text-anchor="start" x="1292" y="-411.8" font-family="Monospace" font-style="italic" font-size="14.00">tool_id</text>
