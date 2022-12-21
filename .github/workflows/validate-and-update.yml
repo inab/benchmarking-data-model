@@ -24,6 +24,8 @@ jobs:
         schema-version: [ "0.4.x", "1.0.x" ]
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: ts-graphviz/setup-graphviz@v1
       - uses: actions/setup-python@v4
         with:
@@ -36,10 +38,26 @@ jobs:
           pip install -r dev-requirements.txt
       - name: Changes at ${{ matrix.schema-version }} schemas
         id: changed
-        uses: tj-actions/changed-files@v32
-        with:
-          files: |
-            json-schemas/${{ matrix.schema-version }}/**
+        run: |
+          dotfile="json-schemas/openebench-bdm-${{ matrix.schema-version }}.dot"
+          if [ -f "$dotfile" ] ; then
+            at="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$dotfile")"
+            dat="$at"
+            for schema in json-schemas/${{ matrix.schema-version }}/*.json ; do
+              dat="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$schema")"
+              if [ "$at" -lt "$dat"] ; then
+                break
+              fi
+            done
+            
+            if [ "$at" -lt "$dat"] ; then
+              echo "any_changed=true" >> $GITHUB_OUTPUT
+            else
+              echo "any_changed=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "any_changed=true" >> $GITHUB_OUTPUT
+          fi
       - name: Generated ${{ matrix.schema-version }} schema
         id: generate-if-changed
         if: steps.changed.outputs.any_changed == 'true'
