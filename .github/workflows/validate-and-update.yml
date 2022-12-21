@@ -45,12 +45,12 @@ jobs:
             dat="$at"
             for schema in json-schemas/${{ matrix.schema-version }}/*.json ; do
               dat="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$schema")"
-              if [ "$at" -lt "$dat"] ; then
+              if [ "$at" -lt "$dat" ] ; then
                 break
               fi
             done
             
-            if [ "$at" -lt "$dat"] ; then
+            if [ "$at" -lt "$dat" ] ; then
               echo "any_changed=true" >> $GITHUB_OUTPUT
             else
               echo "any_changed=false" >> $GITHUB_OUTPUT
