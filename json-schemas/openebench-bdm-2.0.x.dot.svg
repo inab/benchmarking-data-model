@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-2099.41 8368,-2099.41 8368,4 -4,4"/>
 <text text-anchor="start" x="3478.5" y="-2044.41" font-family="Sans-Serif" font-size="60.00"> OpenEBench Benchmarking Data Model 2.0.x </text>
 <text text-anchor="start" x="3790.5" y="-1984.41" font-family="Sans-Serif" font-size="60.00"> </text>
-<text text-anchor="start" x="3809.5" y="-1984.41" font-family="Sans-Serif" font-size="40.00">(as of 2023&#45;07&#45;10T08:25:13.163230)</text>
+<text text-anchor="start" x="3809.5" y="-1984.41" font-family="Sans-Serif" font-size="40.00">(as of 2023&#45;07&#45;10T09:53:36.766418)</text>
 <text text-anchor="start" x="4554.5" y="-1984.41" font-family="Sans-Serif" font-size="60.00"> </text>
 <!-- s0 -->
 <g id="node1" class="node">
@@ -161,7 +161,7 @@
 <polygon fill="none" stroke="black" points="5618.5,-710.41 5618.5,-731.41 6171.5,-731.41 6171.5,-710.41 5618.5,-710.41"/>
 <text text-anchor="start" x="5621.5" y="-717.21" font-family="Monospace" font-size="14.00">surname</text>
 <polygon fill="none" stroke="black" points="5618.5,-689.41 5618.5,-710.41 6171.5,-710.41 6171.5,-689.41 5618.5,-689.41"/>
-<text text-anchor="start" x="5621.5" y="-697.21" font-family="Monospace" font-weight="bold" font-size="14.00">email[]</text>
+<text text-anchor="start" x="5621.5" y="-697.21" font-family="Monospace" font-weight="bold" font-size="14.00">email</text>
 <polygon fill="none" stroke="black" points="5618.5,-668.41 5618.5,-689.41 6171.5,-689.41 6171.5,-668.41 5618.5,-668.41"/>
 <text text-anchor="start" x="5621.5" y="-676.21" font-family="Monospace" font-weight="bold" font-style="italic" font-size="14.00">community_id</text>
 <text text-anchor="start" x="5721.5" y="-676.21" font-family="Monospace" font-size="14.00">⎇</text>
