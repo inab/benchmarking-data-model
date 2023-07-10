@@ -68,6 +68,7 @@
 					"contact_id": {
 						"title": "If it is a known contact, its contact id",
 						"type": "string",
+						"pattern": "^orcid:0",
 						"foreign_keys": [
 							{
 								"schema_id": "Contact",

@@ -5,8 +5,9 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "The unique id of the contact. It should be whatever ELIXIR AAI uses as public unique user id (for instance, a URI)",
+			"title": "The unique id of the contact. It should be a qualified, valid ORCID",
 			"type": "string",
+			"pattern": "^orcid:0",
 			"foreign_keys": [
 				{
 					"schema_id": "Contact",

@@ -101,10 +101,17 @@
 		},
 		
 		"ContactCanonicalId": {
-			"title": "The canonical id of a contact. It must be a valid ORCID",
+			"title": "The canonical id of a contact. It must be either a valid ORCID or a fake ISNI generated from the e-mail address",
 			"type": "string",
 			"description": "Canonical contact identifiers returned by the APIs must follow this pattern, and they do not include the revision",
-			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
+			"oneOf": [
+				{
+					"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
+				},
+				{
+					"pattern": "^orcid:9\\d{3}-\\d{4}-\\d{4}-\\d{4}$"
+				}
+			]
 		},
 		
 		"DatasetTemporaryId": {

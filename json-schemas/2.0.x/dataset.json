@@ -177,6 +177,7 @@
 			"minItems": 1,
 			"items": {
 				"type": "string",
+				"pattern": "^orcid:0",
 				"foreign_keys": [
 					{
 						"schema_id": "Contact",
