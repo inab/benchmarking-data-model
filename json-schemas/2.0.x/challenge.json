@@ -176,7 +176,7 @@
 								}
 							},
 							"additionalProperties": false,
-							"required": [ "metrics_id" ]
+							"required": [ "metrics_id", "tool_id" ]
 						}
 					}
 				},

@@ -113,6 +113,21 @@
 				"minLength": 1
 			}
 		},
+		"implements": {
+			"description": "A tool might implement at least one metrics",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Metrics",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
 		"status": {
 			"title": "Current tool status",
 			"type": "string",
