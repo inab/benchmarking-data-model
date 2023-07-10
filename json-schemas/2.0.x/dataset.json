@@ -264,6 +264,11 @@
 					"type": "string",
 					"format": "uri"
 				},
+				"schema_uri": {
+					"title": "The optional URI to the JSON Schema which validates the remote data, in case it is either JSON or YAML",
+					"type": "string",
+					"format": "uri"
+				},
 				"attrs": {
 					"title": "Attributes describing the datalink: whether it is inline (i.e. a data URI); a CURIE; whether it is compressed, or an archive (tar, zip, rar), a metalink (RFC 5854, RFC 6249, https://en.wikipedia.org/wiki/Metalink) or a standard sums (MD5, SHA1) file",
 					"type": "array",
@@ -295,9 +300,19 @@
 					"format": "date-time"
 				},
 				"status": {
-					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok)",
+					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok) or the HTTP code (numerical)",
 					"type": "string",
-					"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+					"oneOf": [
+						{
+							"type": "string",
+							"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+						},
+						{
+							"type": "integer",
+							"minimum": 100,
+							"exclusiveMaximum": 600
+						}
+					]
 				}
 			},
 			"additionalProperties": false,
