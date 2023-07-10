@@ -1,9 +1,827 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2022-10-26T16:26:37.085105)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2023-07-10T08:25:13.163230)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
-	s0 [tooltip=<Challenge concept (OpenEBench Benchmarking Data Model schemas)> label=<
+	s0 [tooltip=<Metrics concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Metrics</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="fdc4dabd062fc123464af2b8a1cb25aef1b341e2" COLSPAN="2"><B><I>metrics_contact_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="14bcc98c6a93ea880229b6c152855b8054de2301" COLSPAN="2">formal_definition</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="9b2f75435ad18ec644b766411951bce8a734ee00" COLSPAN="2">execution_type</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="5ee99406c06fcf0cadcf08c327a34be6cc24e53b" COLSPAN="2">data_schemas</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="55d1bf45c8de9ee16f3a3199935c017c6781f420" COLSPAN="2">representation_hints{}</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s1 [tooltip=<Simple Namespace resolver for CURIE ids (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">idSolv</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2">_schema</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2">name</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="91cc2e927b3bfb1d4477b744f7c70221ddb86ef1" COLSPAN="2"><B>pattern</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e13fe41b5c330dd923da91992ed0cedb7e30960f" COLSPAN="2"><B>endpoint</B></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s2 [tooltip=<Dataset concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Dataset</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a000d7838c58386e5ce0aa9bd1ed6e31945af038" COLSPAN="2"><I>community_ids[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c71e19113ad60db1f60739e65eb2e50b33abbace" COLSPAN="2"><B><I>challenge_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="70ef4adb6243a8757f5ac77a5cae9a726f406b98" COLSPAN="2"><B>visibility</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c692273deb2772da307ffe37041fef77bf4baa97" COLSPAN="2"><B>version</B></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="c09a2565eb3e551d0b33b3f5111b7fd0b90263f4">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="9b2aac80fdd03e80812740a9017e10253aee4315" COLSPAN="2"><B>creation</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a273fcca90b9effb5bf6a680e3cc8fdd024e5b14" COLSPAN="2"><B>modification</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="bf8ff3c4a7e587f7ff90b6421810365bf58a078f" COLSPAN="2">public</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="d0a3e7f81a9885e99049d1cae0336d269d5e47a9" COLSPAN="2"><B>type</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="742808d5247eb4fc92e35717d5ff302cb6ee73ac" COLSPAN="2"><B>datalinks[]</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="8b432edbbabc899fd0876bd36b7a73e9ec64a259" COLSPAN="2"><B><I>dataset_contact_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="0cb4f09a238f2a12115366c6de3f3a20d777cc6c">depends_on{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" COLSPAN="2"><B><I>metrics_id</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="17e6cf4775729bf7dc0194921b0bb931400b2b28" COLSPAN="2"><I>tool_id</I>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="4c0bb05a2c9a75e6e9c6cfe50118b7dc266a042c">rel_dataset_ids[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="6cf5d36b3e1d9f63cfb89f7f2e63933d27ffbc21" COLSPAN="2"><B><I>dataset_id</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="f259d888cf0cd2cae7d180777354c6e0399ae25b" COLSPAN="2">role</TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s3 [tooltip=<Community concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Community</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="18b1ec962b2619762af0ec0fed21b2a539c0a2ad" COLSPAN="2"><B>acronym</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="48a3661d846478fa991a825ebd10b78671444b5b" COLSPAN="2"><B>status</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="82e1f1f38a95723175f781e2e388d68de536caa8" COLSPAN="2"><B><I>community_contact_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="967540a250ee3d44e8f2b71630e6e357cc8d4721">reference_tools[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="7fb8e6aa319208c147f18cccfa71c0fce40b895f" COLSPAN="2"><B><I>tool_id</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="7820dd16bc30a14050bafc0d10b3a255cd132e87" COLSPAN="2">description</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s4 [tooltip=<Bibliographic reference concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Reference</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3c6de1b7dd91465d437ef415f94f36afc1fbc8a8" COLSPAN="2"><B>title</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="bc0e6cb7503293bbf803d489cf582132e8a9ddc3" COLSPAN="2"><B>bibliographic_ids[]</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="ec3ec33367ae71405e35bd1b8b9135d59e173c1a" COLSPAN="2">abstract</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="9ed5229656b1a6f69aa66ee2f158ee85f18884e3">authors[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="410af507bcaa37336cebb3d6471574f204041420" COLSPAN="2"><B>givenName[]</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="0ce93177060ab21b8a97bd23434271d02b577a2a" COLSPAN="2"><B>surname[]</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="9635a50c62ca20e8728abc4160594dbd11298586" COLSPAN="2"><I>contact_id</I>⎇</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s5 [tooltip=<Tool concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Tool</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="802f9f2cf80dec7c8a7d7d2299a674888849a2c0" COLSPAN="2">registry_tool_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a000d7838c58386e5ce0aa9bd1ed6e31945af038" COLSPAN="2"><B><I>community_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2"><B>is_automated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3185f78d03b48ce4999d6e2871efc649d82630ab" COLSPAN="2"><B><I>tool_contact_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="48a3661d846478fa991a825ebd10b78671444b5b" COLSPAN="2"><B>status</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6d183114493d1d4647e348df3e7c7aa0d05fa9db" COLSPAN="2">activation</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="9ef4eb1e8a3ad2a645710bc45ad1d5b87d71d693" COLSPAN="2">deactivation</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="e8d857268722de107b6ce542594561fe36ae346b">tool_access[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="aee159f9553f533021d5fdaae9e397020e73bd1e" COLSPAN="2"><B>tool_access_type</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="895a2ca9e60b90998e931f71cd0126ec9ee0015a" COLSPAN="2">link</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="8671fc88acb32db4c0dee665a0eca72523ed10e2">techdocs[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="bed52b4251fc52d5c91df077858205f13acce395" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="bb1dfbe911a8bb3e546d41b5be90ec6b8ca5d82c" COLSPAN="2"><B>label</B></TD>
+	</TR>
+</TABLE></TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s6 [tooltip=<Benchmarking Event concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">BenchmarkingEvent</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2">is_automated</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="c09a2565eb3e551d0b33b3f5111b7fd0b90263f4">dates{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="9b2aac80fdd03e80812740a9017e10253aee4315" COLSPAN="2"><B>creation</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a273fcca90b9effb5bf6a680e3cc8fdd024e5b14" COLSPAN="2"><B>modification</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="bf8ff3c4a7e587f7ff90b6421810365bf58a078f" COLSPAN="2">public</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b985f91d6392f1b3ef6b1f0916bac5b75bce0614" COLSPAN="2">benchmark_start</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="5824848603476c8a8b5bd57acf8bd5fa156b38bc" COLSPAN="2">benchmark_stop</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cae794115a383328e8923de41938846f4279e1cc" COLSPAN="2"><B><I>community_id</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="0655626703bafeed898fc0f98c5ffa8aa4150469" COLSPAN="2"><B><I>bench_contact_ids[]</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s7 [tooltip=<Contact concept (OpenEBench Benchmarking Data Model schemas)> label=<
+
+<FONT FACE="Monospace">
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
+	<TR>
+		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Contact</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact</FONT></TD>
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="527029febeff65eb5aa60dab1eb1d2cc6fc2beb9" COLSPAN="2">givenName</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="81854c97713138b21edcb12d27c81e7aa99d57b2" COLSPAN="2">surname</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="0b15bf6fa1e5bdabc9fde97a14bee63a5d5e62f6" COLSPAN="2"><B>email[]</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cae794115a383328e8923de41938846f4279e1cc" COLSPAN="2"><B><I>community_id</I></B>⎇</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="3add7b9612102f2a7dbe4ed4fe886e07e847c24d" COLSPAN="2">notes</TD>
+
+	</TR>
+	<TR>
+
+		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
+	</TR>
+</TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+	</TR>
+</TABLE></FONT>
+>];
+	s8 [tooltip=<Challenge concept (OpenEBench Benchmarking Data Model schemas)> label=<
 
 <FONT FACE="Monospace">
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
@@ -153,113 +971,7 @@ digraph schemas {
 	</TR>
 </TABLE></FONT>
 >];
-	s1 [tooltip=<Community concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Community</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="18b1ec962b2619762af0ec0fed21b2a539c0a2ad" COLSPAN="2"><B>acronym</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="48a3661d846478fa991a825ebd10b78671444b5b" COLSPAN="2"><B>status</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="82e1f1f38a95723175f781e2e388d68de536caa8" COLSPAN="2"><B><I>community_contact_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="967540a250ee3d44e8f2b71630e6e357cc8d4721">reference_tools[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="7fb8e6aa319208c147f18cccfa71c0fce40b895f" COLSPAN="2"><B><I>tool_id</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="7820dd16bc30a14050bafc0d10b3a255cd132e87" COLSPAN="2">description</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s2 [tooltip=<Test Action concept (OpenEBench Benchmarking Data Model schemas)> label=<
+	s9 [tooltip=<Test Action concept (OpenEBench Benchmarking Data Model schemas)> label=<
 
 <FONT FACE="Monospace">
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
@@ -365,718 +1077,6 @@ digraph schemas {
 	</TR>
 </TABLE></FONT>
 >];
-	s3 [tooltip=<Tool concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Tool</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="802f9f2cf80dec7c8a7d7d2299a674888849a2c0" COLSPAN="2">registry_tool_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a000d7838c58386e5ce0aa9bd1ed6e31945af038" COLSPAN="2"><B><I>community_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2"><B>is_automated</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3185f78d03b48ce4999d6e2871efc649d82630ab" COLSPAN="2"><B><I>tool_contact_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="48a3661d846478fa991a825ebd10b78671444b5b" COLSPAN="2"><B>status</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6d183114493d1d4647e348df3e7c7aa0d05fa9db" COLSPAN="2">activation</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="9ef4eb1e8a3ad2a645710bc45ad1d5b87d71d693" COLSPAN="2">deactivation</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="e8d857268722de107b6ce542594561fe36ae346b">tool_access[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="aee159f9553f533021d5fdaae9e397020e73bd1e" COLSPAN="2"><B>tool_access_type</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="895a2ca9e60b90998e931f71cd0126ec9ee0015a" COLSPAN="2">link</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="8671fc88acb32db4c0dee665a0eca72523ed10e2">techdocs[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="bed52b4251fc52d5c91df077858205f13acce395" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="bb1dfbe911a8bb3e546d41b5be90ec6b8ca5d82c" COLSPAN="2"><B>label</B></TD>
-	</TR>
-</TABLE></TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s4 [tooltip=<Contact concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Contact</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="527029febeff65eb5aa60dab1eb1d2cc6fc2beb9" COLSPAN="2">givenName</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="81854c97713138b21edcb12d27c81e7aa99d57b2" COLSPAN="2">surname</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="0b15bf6fa1e5bdabc9fde97a14bee63a5d5e62f6" COLSPAN="2"><B>email[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cae794115a383328e8923de41938846f4279e1cc" COLSPAN="2"><B><I>community_id</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3add7b9612102f2a7dbe4ed4fe886e07e847c24d" COLSPAN="2">notes</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s5 [tooltip=<Dataset concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Dataset</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a000d7838c58386e5ce0aa9bd1ed6e31945af038" COLSPAN="2"><I>community_ids[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c71e19113ad60db1f60739e65eb2e50b33abbace" COLSPAN="2"><B><I>challenge_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="70ef4adb6243a8757f5ac77a5cae9a726f406b98" COLSPAN="2"><B>visibility</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c692273deb2772da307ffe37041fef77bf4baa97" COLSPAN="2"><B>version</B></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="c09a2565eb3e551d0b33b3f5111b7fd0b90263f4">dates{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="9b2aac80fdd03e80812740a9017e10253aee4315" COLSPAN="2"><B>creation</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a273fcca90b9effb5bf6a680e3cc8fdd024e5b14" COLSPAN="2"><B>modification</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="bf8ff3c4a7e587f7ff90b6421810365bf58a078f" COLSPAN="2">public</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="d0a3e7f81a9885e99049d1cae0336d269d5e47a9" COLSPAN="2"><B>type</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="742808d5247eb4fc92e35717d5ff302cb6ee73ac" COLSPAN="2"><B>datalinks[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="8b432edbbabc899fd0876bd36b7a73e9ec64a259" COLSPAN="2"><B><I>dataset_contact_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="0cb4f09a238f2a12115366c6de3f3a20d777cc6c">depends_on{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" COLSPAN="2"><B><I>metrics_id</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="17e6cf4775729bf7dc0194921b0bb931400b2b28" COLSPAN="2"><I>tool_id</I>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="4c0bb05a2c9a75e6e9c6cfe50118b7dc266a042c">rel_dataset_ids[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="6cf5d36b3e1d9f63cfb89f7f2e63933d27ffbc21" COLSPAN="2"><B><I>dataset_id</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="f259d888cf0cd2cae7d180777354c6e0399ae25b" COLSPAN="2">role</TD>
-	</TR>
-</TABLE></TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s6 [tooltip=<Simple Namespace resolver for CURIE ids (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">idSolv</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2">_schema</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2">name</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="91cc2e927b3bfb1d4477b744f7c70221ddb86ef1" COLSPAN="2"><B>pattern</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e13fe41b5c330dd923da91992ed0cedb7e30960f" COLSPAN="2"><B>endpoint</B></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s7 [tooltip=<Bibliographic reference concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Reference</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3c6de1b7dd91465d437ef415f94f36afc1fbc8a8" COLSPAN="2"><B>title</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="bc0e6cb7503293bbf803d489cf582132e8a9ddc3" COLSPAN="2"><B>bibliographic_ids[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="ec3ec33367ae71405e35bd1b8b9135d59e173c1a" COLSPAN="2">abstract</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="9ed5229656b1a6f69aa66ee2f158ee85f18884e3">authors[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="410af507bcaa37336cebb3d6471574f204041420" COLSPAN="2"><B>givenName[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="0ce93177060ab21b8a97bd23434271d02b577a2a" COLSPAN="2"><B>surname[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="9635a50c62ca20e8728abc4160594dbd11298586" COLSPAN="2"><I>contact_id</I>⎇</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s8 [tooltip=<Metrics concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">Metrics</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="fdc4dabd062fc123464af2b8a1cb25aef1b341e2" COLSPAN="2"><B><I>metrics_contact_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="14bcc98c6a93ea880229b6c152855b8054de2301" COLSPAN="2">formal_definition</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="9b2f75435ad18ec644b766411951bce8a734ee00" COLSPAN="2">execution_type</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="5ee99406c06fcf0cadcf08c327a34be6cc24e53b" COLSPAN="2">data_schemas</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="55d1bf45c8de9ee16f3a3199935c017c6781f420" COLSPAN="2">representation_hints{}</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
-	s9 [tooltip=<Benchmarking Event concept (OpenEBench Benchmarking Data Model schemas)> label=<
-
-<FONT FACE="Monospace">
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="white">
-	<TR>
-		<TD COLSPAN="2" ALIGN="CENTER" PORT="schema" BGCOLOR="lightgreen"><FONT POINT-SIZE="20">BenchmarkingEvent</FONT><BR/><FONT POINT-SIZE="8">https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent</FONT></TD>
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a6526f25fbdfbb2678bba3fbc087623f3edb7400" COLSPAN="2"><B><FONT COLOR="BLUE">_id</FONT></B>🔑</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="897345305386c908195d73766146bf456c4afa73" COLSPAN="2"><B>_schema</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="c39a15eca335bf7d46851d0191f072729b2dc3ba" COLSPAN="2"><I>references[]</I>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="76e907d22e6b4cd156a7680ff8dc2c10ed546ec0">links[]{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="14a00c6ca3af63c1956875e601d78b382b865b4b" COLSPAN="2"><B>uri</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="28a92bc708df9017bf774eeafecf6829f78e0509" COLSPAN="2"><B>label</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="3fbe026d736e62987cbc9300bfcfe3af67ed0fa9" COLSPAN="2">comment</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="6ae999552a0d2dca14d62e2bc8b764d377b1dd6c" COLSPAN="2"><B>name</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2">is_automated</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="c09a2565eb3e551d0b33b3f5111b7fd0b90263f4">dates{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="9b2aac80fdd03e80812740a9017e10253aee4315" COLSPAN="2"><B>creation</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="a273fcca90b9effb5bf6a680e3cc8fdd024e5b14" COLSPAN="2"><B>modification</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="bf8ff3c4a7e587f7ff90b6421810365bf58a078f" COLSPAN="2">public</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b985f91d6392f1b3ef6b1f0916bac5b75bce0614" COLSPAN="2">benchmark_start</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="5824848603476c8a8b5bd57acf8bd5fa156b38bc" COLSPAN="2">benchmark_stop</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cae794115a383328e8923de41938846f4279e1cc" COLSPAN="2"><B><I>community_id</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="0655626703bafeed898fc0f98c5ffa8aa4150469" COLSPAN="2"><B><I>bench_contact_ids[]</I></B>⎇</TD>
-
-	</TR>
-	<TR>
-
-		<TD ALIGN="LEFT" PORT="f9c3cd13a7594ae0b3e7c5f757c69c929cc7935d">_metadata{}</TD>
-		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
-	<TR>
-		<TD ALIGN="LEFT" PORT="3145037cf1c7a0f1e063153c1edcfff754bdd957" COLSPAN="2">^(?:[A-Za-z][A-Za-z0-9_-]*:|_)?[A-Za-z][A-Za-z0-9_-]*$</TD>
-	</TR>
-</TABLE></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="b793814e4536ca66c5b8378ac8255eb00347942f" COLSPAN="2">_revision</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
-	</TR>
-</TABLE></FONT>
->];
 	s10 [tooltip=<Security privileges concept (OpenEBench Benchmarking Data Model schemas)> label=<
 
 <FONT FACE="Monospace">
@@ -1097,42 +1097,42 @@ digraph schemas {
 	</TR>
 </TABLE></FONT>
 >];
-	s0:"dc1123c31cff7870d735084397d1fd206cb0b4d8" -> s9:schema [label=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> ];
-	s0:"299a1c8f68372ddbdf7fd6771a6cf17462a2d216" -> s8:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> ];
-	s0:"859f89ce6eef8a513ee2b567c9201e5e0a9272e1" -> s3:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> ];
-	s0:"b2b98dccf2ef52a52282130b38d891a9ae046965" -> s4:schema [label=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> ];
-	s0:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Challenge/references&#91;&#93; -&gt; Reference> tooltip=<Challenge/references&#91;&#93; -&gt; Reference> ];
-	s1:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s4:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
-	s1:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s3:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
-	s1:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
-	s2:"3bf5b1016a384916073184f99b79e30358e17b70" -> s3:schema [label=<TestAction/tool_id -&gt; Tool> tooltip=<TestAction/tool_id -&gt; Tool> ];
-	s2:"f4efc1aa77f68666528083fa796defcaad240e80" -> s5:schema [label=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> ];
-	s2:"5f31455ad09ea6a836a06871b7ac59e8ea30cacd" -> s0:schema [label=<TestAction/challenge_id -&gt; Challenge> tooltip=<TestAction/challenge_id -&gt; Challenge> ];
-	s2:"d92969e34debec47c6d4cf68a9207a242e093722" -> s4:schema [label=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> tooltip=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> ];
-	s2:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<TestAction/references&#91;&#93; -&gt; Reference> tooltip=<TestAction/references&#91;&#93; -&gt; Reference> ];
-	s3:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s1:schema [label=<Tool/community_ids&#91;&#93; -&gt; Community> tooltip=<Tool/community_ids&#91;&#93; -&gt; Community> ];
-	s3:"3185f78d03b48ce4999d6e2871efc649d82630ab" -> s4:schema [label=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> ];
-	s3:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Tool/references&#91;&#93; -&gt; Reference> tooltip=<Tool/references&#91;&#93; -&gt; Reference> ];
-	s4:"cae794115a383328e8923de41938846f4279e1cc" -> s1:schema [label=<Contact/community_id -&gt; Community> tooltip=<Contact/community_id -&gt; Community> ];
-	s4:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Contact/references&#91;&#93; -&gt; Reference> tooltip=<Contact/references&#91;&#93; -&gt; Reference> ];
-	s5:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s1:schema [label=<Dataset/community_ids&#91;&#93; -&gt; Community> tooltip=<Dataset/community_ids&#91;&#93; -&gt; Community> ];
-	s5:"c71e19113ad60db1f60739e65eb2e50b33abbace" -> s0:schema [label=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> tooltip=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> ];
-	s5:"8b432edbbabc899fd0876bd36b7a73e9ec64a259" -> s4:schema [label=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> ];
-	s5:"8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" -> s8:schema [label=<Dataset/depends_on.metrics_id -&gt; Metrics> tooltip=<Dataset/depends_on.metrics_id -&gt; Metrics> ];
-	s5:"17e6cf4775729bf7dc0194921b0bb931400b2b28" -> s3:schema [label=<Dataset/depends_on.tool_id -&gt; Tool> tooltip=<Dataset/depends_on.tool_id -&gt; Tool> ];
-	s5:"6cf5d36b3e1d9f63cfb89f7f2e63933d27ffbc21" -> s5:schema [label=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset>  headport=e];
-	s5:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Dataset/references&#91;&#93; -&gt; Reference> tooltip=<Dataset/references&#91;&#93; -&gt; Reference> ];
-	s6:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<idSolv/references&#91;&#93; -&gt; Reference> tooltip=<idSolv/references&#91;&#93; -&gt; Reference> ];
-	s7:"9635a50c62ca20e8728abc4160594dbd11298586" -> s4:schema [label=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> tooltip=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> ];
-	s7:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Reference/references&#91;&#93; -&gt; Reference> tooltip=<Reference/references&#91;&#93; -&gt; Reference>  headport=e];
-	s8:"fdc4dabd062fc123464af2b8a1cb25aef1b341e2" -> s4:schema [label=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> ];
-	s8:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<Metrics/references&#91;&#93; -&gt; Reference> tooltip=<Metrics/references&#91;&#93; -&gt; Reference> ];
-	s9:"cae794115a383328e8923de41938846f4279e1cc" -> s1:schema [label=<BenchmarkingEvent/community_id -&gt; Community> tooltip=<BenchmarkingEvent/community_id -&gt; Community> ];
-	s9:"0655626703bafeed898fc0f98c5ffa8aa4150469" -> s4:schema [label=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> tooltip=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> ];
-	s9:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s7:schema [label=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> tooltip=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> ];
-	s10:"a6526f25fbdfbb2678bba3fbc087623f3edb7400" -> s4:schema [label=<Privilege/_id -&gt; Contact> tooltip=<Privilege/_id -&gt; Contact> ];
-	s10:"c3b966e532e24ffe748ce08bfc608fce6b8a6f45" -> s1:schema [label=<Privilege/roles&#91;&#93;.community_id -&gt; Community> tooltip=<Privilege/roles&#91;&#93;.community_id -&gt; Community> ];
-	s10:"d6041c059263f4413ec229f861542cd12cb0b150" -> s9:schema [label=<Privilege/roles&#91;&#93;.benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Privilege/roles&#91;&#93;.benchmarking_event_id -&gt; BenchmarkingEvent> ];
-	s10:"9e07d4bfab4db6dc54141c4dbc56c293c61daa42" -> s0:schema [label=<Privilege/roles&#91;&#93;.challenge_id -&gt; Challenge> tooltip=<Privilege/roles&#91;&#93;.challenge_id -&gt; Challenge> ];
+	s0:"fdc4dabd062fc123464af2b8a1cb25aef1b341e2" -> s7:schema [label=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> ];
+	s0:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Metrics/references&#91;&#93; -&gt; Reference> tooltip=<Metrics/references&#91;&#93; -&gt; Reference> ];
+	s1:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<idSolv/references&#91;&#93; -&gt; Reference> tooltip=<idSolv/references&#91;&#93; -&gt; Reference> ];
+	s2:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s3:schema [label=<Dataset/community_ids&#91;&#93; -&gt; Community> tooltip=<Dataset/community_ids&#91;&#93; -&gt; Community> ];
+	s2:"c71e19113ad60db1f60739e65eb2e50b33abbace" -> s8:schema [label=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> tooltip=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> ];
+	s2:"8b432edbbabc899fd0876bd36b7a73e9ec64a259" -> s7:schema [label=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> ];
+	s2:"8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" -> s0:schema [label=<Dataset/depends_on.metrics_id -&gt; Metrics> tooltip=<Dataset/depends_on.metrics_id -&gt; Metrics> ];
+	s2:"17e6cf4775729bf7dc0194921b0bb931400b2b28" -> s5:schema [label=<Dataset/depends_on.tool_id -&gt; Tool> tooltip=<Dataset/depends_on.tool_id -&gt; Tool> ];
+	s2:"6cf5d36b3e1d9f63cfb89f7f2e63933d27ffbc21" -> s2:schema [label=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset>  headport=e];
+	s2:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Dataset/references&#91;&#93; -&gt; Reference> tooltip=<Dataset/references&#91;&#93; -&gt; Reference> ];
+	s3:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s7:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
+	s3:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s5:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
+	s3:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
+	s4:"9635a50c62ca20e8728abc4160594dbd11298586" -> s7:schema [label=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> tooltip=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> ];
+	s4:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Reference/references&#91;&#93; -&gt; Reference> tooltip=<Reference/references&#91;&#93; -&gt; Reference>  headport=e];
+	s5:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s3:schema [label=<Tool/community_ids&#91;&#93; -&gt; Community> tooltip=<Tool/community_ids&#91;&#93; -&gt; Community> ];
+	s5:"3185f78d03b48ce4999d6e2871efc649d82630ab" -> s7:schema [label=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> ];
+	s5:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Tool/references&#91;&#93; -&gt; Reference> tooltip=<Tool/references&#91;&#93; -&gt; Reference> ];
+	s6:"cae794115a383328e8923de41938846f4279e1cc" -> s3:schema [label=<BenchmarkingEvent/community_id -&gt; Community> tooltip=<BenchmarkingEvent/community_id -&gt; Community> ];
+	s6:"0655626703bafeed898fc0f98c5ffa8aa4150469" -> s7:schema [label=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> tooltip=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> ];
+	s6:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> tooltip=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> ];
+	s7:"cae794115a383328e8923de41938846f4279e1cc" -> s3:schema [label=<Contact/community_id -&gt; Community> tooltip=<Contact/community_id -&gt; Community> ];
+	s7:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Contact/references&#91;&#93; -&gt; Reference> tooltip=<Contact/references&#91;&#93; -&gt; Reference> ];
+	s8:"dc1123c31cff7870d735084397d1fd206cb0b4d8" -> s6:schema [label=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> ];
+	s8:"299a1c8f68372ddbdf7fd6771a6cf17462a2d216" -> s0:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> ];
+	s8:"859f89ce6eef8a513ee2b567c9201e5e0a9272e1" -> s5:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> ];
+	s8:"b2b98dccf2ef52a52282130b38d891a9ae046965" -> s7:schema [label=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> ];
+	s8:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Challenge/references&#91;&#93; -&gt; Reference> tooltip=<Challenge/references&#91;&#93; -&gt; Reference> ];
+	s9:"3bf5b1016a384916073184f99b79e30358e17b70" -> s5:schema [label=<TestAction/tool_id -&gt; Tool> tooltip=<TestAction/tool_id -&gt; Tool> ];
+	s9:"f4efc1aa77f68666528083fa796defcaad240e80" -> s2:schema [label=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> ];
+	s9:"5f31455ad09ea6a836a06871b7ac59e8ea30cacd" -> s8:schema [label=<TestAction/challenge_id -&gt; Challenge> tooltip=<TestAction/challenge_id -&gt; Challenge> ];
+	s9:"d92969e34debec47c6d4cf68a9207a242e093722" -> s7:schema [label=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> tooltip=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> ];
+	s9:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<TestAction/references&#91;&#93; -&gt; Reference> tooltip=<TestAction/references&#91;&#93; -&gt; Reference> ];
+	s10:"a6526f25fbdfbb2678bba3fbc087623f3edb7400" -> s7:schema [label=<Privilege/_id -&gt; Contact> tooltip=<Privilege/_id -&gt; Contact> ];
+	s10:"c3b966e532e24ffe748ce08bfc608fce6b8a6f45" -> s3:schema [label=<Privilege/roles&#91;&#93;.community_id -&gt; Community> tooltip=<Privilege/roles&#91;&#93;.community_id -&gt; Community> ];
+	s10:"d6041c059263f4413ec229f861542cd12cb0b150" -> s6:schema [label=<Privilege/roles&#91;&#93;.benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Privilege/roles&#91;&#93;.benchmarking_event_id -&gt; BenchmarkingEvent> ];
+	s10:"9e07d4bfab4db6dc54141c4dbc56c293c61daa42" -> s8:schema [label=<Privilege/roles&#91;&#93;.challenge_id -&gt; Challenge> tooltip=<Privilege/roles&#91;&#93;.challenge_id -&gt; Challenge> ];
 
 }
