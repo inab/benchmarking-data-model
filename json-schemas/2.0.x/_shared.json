@@ -251,14 +251,33 @@
 						}
 					]
 				},
-				"_updated": {
-					"$ref": "#/definitions/Updated"
-				},
-				"_deleted": {
-					"$ref": "#/definitions/Deleted"
-				},
-				"_created": {
-					"$ref": "#/definitions/Created"
+				"_provenance": {
+					"type": "object",
+					"properties": {
+						"orcid": {
+							"type": "string",
+							"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
+						},
+						"created": {
+							"$ref": "#/definitions/Created"
+						},
+						"updated": {
+							"$ref": "#/definitions/Updated"
+						},
+						"deleted": {
+							"$ref": "#/definitions/Deleted"
+						},
+						"reason": {
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"required": [
+						"orcid",
+						"created",
+						"updated"
+					],
+					"additionalProperties": false
 				}
 			}
 		},		
