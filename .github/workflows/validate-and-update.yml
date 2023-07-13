@@ -73,10 +73,25 @@ jobs:
             mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
             skip=false
           fi
-          echo "::set-output name=skip::$skip"
-      - uses: EndBug/add-and-commit@v9
+          echo "skip=$skip" >> $GITHUB_OUTPUT
+#      - uses: EndBug/add-and-commit@v9
+#        if: steps.move.outputs.skip == 'false'
+#        with:
+#          add: json-schemas/*
+#          message: Automatically commit updated charts
+#          default_author: github_actions
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
         if: steps.move.outputs.skip == 'false'
         with:
-          add: json-schemas/*
-          message: Automatically commit updated charts
-          default_author: github_actions
+          title: Updated documentation (triggered by ${{ github.sha }})
+          delete-branch: true
+          signoff: true
+          commit-message: "[create-pull-request] Automatically commit updated contents (generated documentation)"
+      - name: Check outputs
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"

@@ -28,3 +28,10 @@ repos:
         always_run: true
         pass_filenames: false
         args: [ "json-schemas/0.4.x" ]
+  - repo: https://github.com/jmfernandez/pre-commit_mirrors-actionlint.git
+    rev: v1.6.25
+    hooks:
+      - id: actionlint
+        args:
+          - "-ignore"
+          - property "download-path" is not defined in object type
