@@ -20,6 +20,23 @@
 			"format": "uri",
 			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference" ]
 		},
+		"dependable_community_ids": {
+			"title": "Dependable community ids",
+			"description": "The communities which could depend on this manuscript's knowledge. This list is only informative, because the list can only be managed by administrators",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"foreign_keys": [
+					{
+						"schema_id": "Community",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			},
+			"uniqueItems": true,
+			"minItems": 1
+		},
 		
 		"title": {
 			"title": "The title of the referenced material",
