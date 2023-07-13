@@ -69,8 +69,8 @@ jobs:
         name: Move charts to their right place
         run: |
           skip=true
-          if [ -d ${{steps.download.outputs.download-path}} ] ; then
-            mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
+          if [ -d "${{steps.download.outputs.download-path}}" ] ; then
+            mv "${{steps.download.outputs.download-path}}"/artifact/* json-schemas/
             skip=false
           fi
           echo "skip=$skip" >> $GITHUB_OUTPUT
