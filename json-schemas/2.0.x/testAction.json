@@ -11,6 +11,10 @@
 		{
 			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
+		},
+		{
+			"$comment": "Declaration of anonymize",
+			"$ref": "_shared#/definitions/AnonymizeProp"
 		}
 	],
 	"type": "object",
