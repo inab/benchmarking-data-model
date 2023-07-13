@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2023-07-13T15:40:41.098525)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2023-07-13T19:05:57.863551)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Abstract definition of any operation (implemented by a Tool) applied to a dataset> label=<
@@ -53,6 +53,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="fdc4dabd062fc123464af2b8a1cb25aef1b341e2" COLSPAN="2"><B><I>metrics_contact_ids[]</I></B>⎇</TD>
 
 	</TR>
@@ -80,6 +84,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
 
 	</TR>
 	<TR>
@@ -159,6 +167,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -182,6 +194,10 @@ digraph schemas {
 		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
 	</TR>
 </TABLE></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -217,6 +233,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="a000d7838c58386e5ce0aa9bd1ed6e31945af038" COLSPAN="2"><I>community_ids[]</I>⎇</TD>
 
 	</TR>
@@ -226,6 +246,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="70ef4adb6243a8757f5ac77a5cae9a726f406b98" COLSPAN="2"><B>visibility</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="ebc418d023d1bedf828eadae2fcb62daf74df7cf" COLSPAN="2">anonymize</TD>
 
 	</TR>
 	<TR>
@@ -309,6 +333,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -381,15 +409,15 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[][]</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="18b1ec962b2619762af0ec0fed21b2a539c0a2ad" COLSPAN="2"><B>acronym</B></TD>
 
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="48a3661d846478fa991a825ebd10b78671444b5b" COLSPAN="2"><B>status</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
 
 	</TR>
 	<TR>
@@ -426,6 +454,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
 
 	</TR>
 	<TR>
@@ -471,6 +503,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="a0d43225dbaf165d330ad402c94c9e952bc94d1a" COLSPAN="2"><I>dependable_community_ids[]</I>⎇</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="3c6de1b7dd91465d437ef415f94f36afc1fbc8a8" COLSPAN="2"><B>title</B></TD>
 
 	</TR>
@@ -512,6 +548,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
 
 	</TR>
 	<TR>
@@ -588,6 +628,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="cb329146a0dd0d566b0628744d67936558741ffa" COLSPAN="2">description</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
 
 	</TR>
 	<TR>
@@ -669,6 +713,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -745,6 +793,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2">is_automated</TD>
 
 	</TR>
@@ -798,6 +850,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="abeca793c5a7d6f7ba865a1e52981b8f286608d7" COLSPAN="2">_canonical_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
 
 	</TR>
 	<TR>
@@ -899,6 +955,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -975,6 +1035,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="e7a192d252351f64694d9a66ffeda6a1ed5d8869" COLSPAN="2">keywords[]</TD>
+
+	</TR>
+	<TR>
 		<TD ALIGN="LEFT" PORT="18b1ec962b2619762af0ec0fed21b2a539c0a2ad" COLSPAN="2">acronym</TD>
 
 	</TR>
@@ -984,6 +1048,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="5c61576919673ef2a5627e0a791a093d46ccc868" COLSPAN="2"><B>is_automated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="e9abd97fa8319697aa145539d00ca13288bc36bf" COLSPAN="2"><B>participation_model</B></TD>
 
 	</TR>
 	<TR>
@@ -1063,6 +1131,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -1106,6 +1178,10 @@ digraph schemas {
 	</TR>
 	<TR>
 		<TD ALIGN="LEFT" PORT="30441c468f1d2488efd5ee127d43ef666d4d9bb0" COLSPAN="2">orig_id</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="ebc418d023d1bedf828eadae2fcb62daf74df7cf" COLSPAN="2">anonymize</TD>
 
 	</TR>
 	<TR>
@@ -1183,6 +1259,10 @@ digraph schemas {
 
 	</TR>
 	<TR>
+		<TD ALIGN="LEFT" PORT="6583064e7b505b87112276e4c74c86f5af0e5a7f" COLSPAN="2">_license</TD>
+
+	</TR>
+	<TR>
 
 		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
@@ -1242,6 +1322,7 @@ digraph schemas {
 	s3:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s7:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
 	s3:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s5:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
 	s3:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
+	s4:"a0d43225dbaf165d330ad402c94c9e952bc94d1a" -> s3:schema [label=<Reference/dependable_community_ids&#91;&#93; -&gt; Community> tooltip=<Reference/dependable_community_ids&#91;&#93; -&gt; Community> ];
 	s4:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Reference/references&#91;&#93; -&gt; Reference> tooltip=<Reference/references&#91;&#93; -&gt; Reference>  headport=e];
 	s5:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s3:schema [label=<Tool/community_ids&#91;&#93; -&gt; Community> tooltip=<Tool/community_ids&#91;&#93; -&gt; Community> ];
 	s5:"3185f78d03b48ce4999d6e2871efc649d82630ab" -> s7:schema [label=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> ];
