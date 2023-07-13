@@ -73,6 +73,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long metrics description, in Markdown format"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this metrics"
+		},
 		
 		"metrics_contact_ids": {
 			"title": "The contact id(s) of the creators of this metrics",

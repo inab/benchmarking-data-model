@@ -72,6 +72,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long benchmarking event description, written in Markdown"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this benchmarking event"
+		},
 		
 		"is_automated": {
 			"title": "Is this an automated event?",

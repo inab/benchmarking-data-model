@@ -72,6 +72,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long challenge description, written in Markdown"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this challenge"
+		},
 		
 		"acronym": {
 			"title": "Friendly challenge acronym",

@@ -346,6 +346,17 @@
 					"title": "Long community, benchmarking event or challenge description, written in Markdown",
 					"minLength": 1,
 					"type": "string"
+				},
+				"keywords": {
+					"title": "List of keywords",
+					"description": "List of keywords which match this concept. They can be either bare ones or ontological terms",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1
+					},
+					"minItems": 1,
+					"uniqueItems": true
 				}
 			}
 		},

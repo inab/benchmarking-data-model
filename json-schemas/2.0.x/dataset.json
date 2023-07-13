@@ -66,6 +66,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long dataset description, written in Markdown"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this dataset"
+		},
 		
 		"community_ids": {
 			"title": "The communities where this dataset was generated or used",

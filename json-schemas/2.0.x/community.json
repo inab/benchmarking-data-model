@@ -51,6 +51,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long community description, written in Markdown"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this community"
+		},
 		
 		"acronym": {
 			"title": "Unique community acronym",

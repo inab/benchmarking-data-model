@@ -72,6 +72,10 @@
 			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
 			"title": "Long tool description, in Markdown format"
 		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this tool (could be already defined at bio.tools)"
+		},
 		
 		"registry_tool_id": {
 			"title": "The unique id of the tool (in bio.tools, bioconda, biocontainers, OpenEBench, etc...), in CURIE format",
