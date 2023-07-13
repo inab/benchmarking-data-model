@@ -54,6 +54,12 @@
 			"type": "string",
 			"format": "date-time"
 		},
+		"License": {
+			"title": "License, either in form of spdx CURIE or full URL",
+			"type": "string",
+			"format": "uri",
+			"pattern": "^(spdx|http(s)?):.+$"
+		},
 		
 		"BenchmarkingEventTemporaryId":	{
 			"title": "The temporary id of a benchmarking event entry",
@@ -250,6 +256,9 @@
 							"$ref": "#/definitions/ToolCanonicalId"
 						}
 					]
+				},
+				"_license": {
+					"$ref": "#/definitions/License"
 				},
 				"_provenance": {
 					"type": "object",
