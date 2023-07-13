@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2023-07-10T10:35:04.788109)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2023-07-13T15:40:41.098525)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Abstract definition of any operation (implemented by a Tool) applied to a dataset> label=<
@@ -83,15 +83,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -145,15 +159,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -281,15 +309,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -387,15 +429,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -431,15 +487,11 @@ digraph schemas {
 		<TD ALIGN="LEFT" PORT="9ed5229656b1a6f69aa66ee2f158ee85f18884e3">authors[]{}</TD>
 		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
 	<TR>
-		<TD ALIGN="LEFT" PORT="410af507bcaa37336cebb3d6471574f204041420" COLSPAN="2"><B>givenName[]</B></TD>
+		<TD ALIGN="LEFT" PORT="052c82ab05b81fa4f9dd9d53750003d1e5f55766" COLSPAN="2"><B>publishName</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="0ce93177060ab21b8a97bd23434271d02b577a2a" COLSPAN="2"><B>surname[]</B></TD>
-
-	</TR>
-	<TR>
-		<TD ALIGN="LEFT" PORT="9635a50c62ca20e8728abc4160594dbd11298586" COLSPAN="2"><I>contact_id</I>⎇</TD>
+		<TD ALIGN="LEFT" PORT="414a83723f786bf2e288175e502db453fa6ec3a2" COLSPAN="2">orcid</TD>
 	</TR>
 </TABLE></TD>
 
@@ -463,15 +515,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -603,15 +669,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -721,15 +801,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -805,15 +899,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -955,15 +1063,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -1061,15 +1183,29 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="e7c5529710e062bcc39bcf0c8c0c716e6a9f9c8a" COLSPAN="2">_updated</TD>
+
+		<TD ALIGN="LEFT" PORT="4c6690a6b373763f837e9fbc69fe8ee9c3547e91">_provenance{}</TD>
+		<TD BORDER="0"><TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR>
+		<TD ALIGN="LEFT" PORT="78ea90d5695fac96110e370d940efdb3000c3410" COLSPAN="2"><B>orcid</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cfc04f7a9dc50ce1885ecfb0ce2a996cad2e9596" COLSPAN="2">_deleted</TD>
+		<TD ALIGN="LEFT" PORT="edd01c8eef46db0a59c84980900c442c70f73b53" COLSPAN="2"><B>created</B></TD>
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="88143dbdcf8247dc709d1933882f0b62c830dcd9" COLSPAN="2">_created</TD>
+		<TD ALIGN="LEFT" PORT="f375f932c65a2516d11ffc073288ed6826438d2a" COLSPAN="2"><B>updated</B></TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="464e55d7e9c290f0eafa681ce46c6680e2c95c3c" COLSPAN="2">deleted</TD>
+
+	</TR>
+	<TR>
+		<TD ALIGN="LEFT" PORT="1ff0d275b236e304b8fa8eb59ea5626f7c2071c6" COLSPAN="2">reason</TD>
+	</TR>
+</TABLE></TD>
 	</TR>
 </TABLE></FONT>
 >];
@@ -1106,7 +1242,6 @@ digraph schemas {
 	s3:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s7:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
 	s3:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s5:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
 	s3:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
-	s4:"9635a50c62ca20e8728abc4160594dbd11298586" -> s7:schema [label=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> tooltip=<Reference/authors&#91;&#93;.contact_id -&gt; Contact> ];
 	s4:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s4:schema [label=<Reference/references&#91;&#93; -&gt; Reference> tooltip=<Reference/references&#91;&#93; -&gt; Reference>  headport=e];
 	s5:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s3:schema [label=<Tool/community_ids&#91;&#93; -&gt; Community> tooltip=<Tool/community_ids&#91;&#93; -&gt; Community> ];
 	s5:"3185f78d03b48ce4999d6e2871efc649d82630ab" -> s7:schema [label=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> ];
