@@ -5,12 +5,16 @@
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
-			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
+			"$comment": "It declares _canonical_id, _metadata, _revision, _license, _provenance",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
 			"$comment": "Declaration of orig_id",
 			"$ref": "_shared#/definitions/OrigIdProp"
+		},
+		{
+			"$comment": "Declaration of anonymize",
+			"$ref": "_shared#/definitions/AnonymizeProp"
 		},
 		{
 			"$comment": "Declaration of references",
@@ -96,7 +100,11 @@
 		"visibility": {
 			"title": "The visibility of this dataset, which must be acknowledged by the APIs",
 			"type": "string",
-			"enum": [ "public", "community", "challenge" ]
+			"enum": [ "anonymous", "public", "community", "challenge" ]
+		},
+		"anonymize": {
+			"$comment": "Placeholder covered by _shared#/definitions/AnonymizeProp",
+			"title": "Anonymize rule"
 		},
 		"version": {
 			"title": "Version (or relelase date) of the dataset",
@@ -108,17 +116,17 @@
 			"type": "object",
 			"properties": {
 				"creation": {
-					"title": "Creation date of the dataset",
+					"title": "Creation date of the dataset (from the perspective of the community)",
 					"type": "string",
 					"format": "date-time"
 				},
 				"modification": {
-					"title": "Last modification date of the dataset",
+					"title": "Last modification date of the dataset (from the perspective of the community)",
 					"type": "string",
 					"format": "date-time"
 				},
 				"public": {
-					"title": "The date when this dataset becomes public",
+					"title": "The date when this dataset becomes public (honoured when challenges are either 'embargoed' or 'anonymous')",
 					"type": "string",
 					"format": "date-time"
 				}

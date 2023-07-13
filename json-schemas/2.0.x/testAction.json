@@ -5,7 +5,7 @@
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
-			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
+			"$comment": "It declares _canonical_id, _metadata, _revision, _license, _provenance",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
@@ -40,6 +40,11 @@
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
 			"title": "The test action original id"
+		},
+		
+		"anonymize": {
+			"$comment": "Placeholder covered by _shared#/definitions/AnonymizeProp",
+			"title": "Anonymize rule for test actions"
 		},
 		
 		"tool_id": {

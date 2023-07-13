@@ -5,7 +5,7 @@
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
-			"$comment": "It declares _canonical_id, _metadata, _revision, _updated, _deleted, _created",
+			"$comment": "It declares _canonical_id, _metadata, _revision, _license, _provenance",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
@@ -92,6 +92,17 @@
 		"is_automated": {
 			"title": "Is this an automated challenge?",
 			"type": "boolean"
+		},
+		"participation_model": {
+			"title": "Challenge participation model",
+			"description": "There are four main models, which can be combined with individual dataset and test action anonimization level: public, where all the participant results are visible just when they are uploaded; anonymous: the results of the participants are public, but they are anonymous until the end of the challenge; embargoed: the results of the participants are under controlled access with no anonymization; secret: the results of the participants are under controlled access, and they remain anonymized until the end of the challenge",
+			"type": "string",
+			"enum": [
+				"public",
+				"anonymous",
+				"embargoed",
+				"secret"
+			]
 		},
 		"dates": {
 			"title": "Relevant dates for this challenge",
@@ -205,7 +216,17 @@
 		}
 	},
 	"unevaluatedProperties": false,
-	"required": ["_id","_schema","name","benchmarking_event_id","is_automated","dates","challenge_contact_ids","metrics_categories"],
+	"required": [
+		"_id",
+		"_schema",
+		"name",
+		"benchmarking_event_id",
+		"is_automated",
+		"participation_model",
+		"dates",
+		"challenge_contact_ids",
+		"metrics_categories"
+	],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
