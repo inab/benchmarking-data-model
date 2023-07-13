@@ -47,41 +47,22 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"givenName": {
-						"title": "First / given name (or initials)",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "string",
-							"minLength": 1
-						}
+					"publishName": {
+						"title": "Name of the author as it appears at the publication",
+						"type": "string",
+						"minLength": 1
 					},
-					"surname": {
-						"title": "Surname(s)",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "string",
-							"minLength": 1
-						}
-					},
-					"contact_id": {
-						"title": "If it is a known contact, its contact id",
+					
+					"orcid": {
+						"title": "If an orcid exists for this author in the publication, the orcid itself",
 						"type": "string",
 						"pattern": "^orcid:0",
-						"foreign_keys": [
-							{
-								"schema_id": "Contact",
-								"members": [ "." ]
-							}
-						],
 						"minLength": 1
 					}
 				},
 				"additionalProperties": false,
 				"required": [
-					"givenName",
-					"surname"
+					"publishName"
 				]
 			}
 		}
