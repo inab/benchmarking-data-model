@@ -44,7 +44,7 @@ jobs:
           if [ -f "$dotfile" ] ; then
             at="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$dotfile")"
             dat="$at"
-            for schema in json-schemas/${{ matrix.schema-version }}/*.json ; do
+            for schema in json-schemas/"${{ matrix.schema-version }}"/*.json ; do
               dat="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$schema")"
               if [ "$at" -lt "$dat" ] ; then
                 break
@@ -52,12 +52,12 @@ jobs:
             done
             
             if [ "$at" -lt "$dat" ] ; then
-              echo "any_changed=true" >> $GITHUB_OUTPUT
+              echo "any_changed=true" >> "$GITHUB_OUTPUT"
             else
-              echo "any_changed=false" >> $GITHUB_OUTPUT
+              echo "any_changed=false" >> "$GITHUB_OUTPUT"
             fi
           else
-            echo "any_changed=true" >> $GITHUB_OUTPUT
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
           fi
       - name: Generated ${{ matrix.schema-version }} schema
         id: generate-if-changed
@@ -88,11 +88,11 @@ jobs:
         name: Move charts to their right place
         run: |
           skip=true
-          if [ -d ${{steps.download.outputs.download-path}} ] ; then
-            mv ${{steps.download.outputs.download-path}}/artifact/* json-schemas/
+          if [ -d "${{steps.download.outputs.download-path}}" ] ; then
+            mv "${{steps.download.outputs.download-path}}"/artifact/* json-schemas/
             skip=false
           fi
-          echo "skip=$skip" >> $GITHUB_OUTPUT
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5

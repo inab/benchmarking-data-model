@@ -23,7 +23,7 @@ repos:
         pass_filenames: false
         args: [ "json-schemas/0.4.x" ]
   - repo: https://github.com/jmfernandez/pre-commit_mirrors-actionlint.git
-    rev: v1.6.25
+    rev: v1.6.25-r1
     hooks:
       - id: actionlint
         args:
