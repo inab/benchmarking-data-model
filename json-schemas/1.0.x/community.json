@@ -31,7 +31,7 @@
 		"status": {
 			"title": "_id(s) of the current community status(es)",
 			"type": "string",
-			"enum": [ "abandoned","active","unknown" ]
+			"enum": [ "abandoned","active","archived","incubating","unknown" ]
 		},
 		"description": {
 			"title": "Long community name or description",

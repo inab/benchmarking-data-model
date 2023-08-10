@@ -24,6 +24,8 @@ jobs:
         schema-version: [ "0.4.x", "1.0.x", "2.0.x" ]
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 100
       - uses: ts-graphviz/setup-graphviz@v1
       - uses: actions/setup-python@v4
         with:
@@ -31,15 +33,32 @@ jobs:
           cache: 'pip'
           architecture: x64
           cache-dependency-path: 'dev-requirements.txt'
-      - run: |
+      - name: Install chart generator dependencies (development)
+        run: |
           pip install --upgrade pip wheel
           pip install -r dev-requirements.txt
       - name: Changes at ${{ matrix.schema-version }} schemas
         id: changed
-        uses: tj-actions/changed-files@v32
-        with:
-          files: |
-            json-schemas/${{ matrix.schema-version }}/**
+        run: |
+          dotfile="json-schemas/openebench-bdm-${{ matrix.schema-version }}.dot"
+          if [ -f "$dotfile" ] ; then
+            at="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$dotfile")"
+            dat="$at"
+            for schema in json-schemas/"${{ matrix.schema-version }}"/*.json ; do
+              dat="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$schema")"
+              if [ "$at" -lt "$dat" ] ; then
+                break
+              fi
+            done
+            
+            if [ "$at" -lt "$dat" ] ; then
+              echo "any_changed=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "any_changed=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Generated ${{ matrix.schema-version }} schema
         id: generate-if-changed
         if: steps.changed.outputs.any_changed == 'true'
@@ -74,22 +93,16 @@ jobs:
             skip=false
           fi
           echo "skip=$skip" >> "$GITHUB_OUTPUT"
-#      - uses: EndBug/add-and-commit@v9
-#        if: steps.move.outputs.skip == 'false'
-#        with:
-#          add: json-schemas/*
-#          message: Automatically commit updated charts
-#          default_author: github_actions
-
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
         if: steps.move.outputs.skip == 'false'
         with:
-          title: Updated documentation (triggered by ${{ github.sha }})
+          title: Updated schemas documentation (triggered by ${{ github.sha }})
+          branch: create-pull-request/patch-schema-docs
           delete-branch: true
           signoff: true
-          commit-message: "[create-pull-request] Automatically commit updated contents (generated documentation)"
+          commit-message: "[create-pull-request] Automatically commit updated contents (generated schemas documentation)"
       - name: Check outputs
         if: ${{ steps.cpr.outputs.pull-request-number }}
         run: |
