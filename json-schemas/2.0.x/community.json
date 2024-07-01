@@ -66,15 +66,7 @@
 			"type": "string",
 			"enum": [ "inactive","active","unknown","incubating", "hidden", "archived"]
 		},
-		"keywords": {
-			"title": "A list of keywords defining the community. They can be either strings or URIs of ontology terms",
-			"type": "array",
-			"items": {
-				"type": "string",
-				"minLength": 1
-			},
-			"minItems": 1
-		},
+		
 		"community_contact_ids": {
 			"title": "_id of the contacts of the responsible researchers in charge of the community coordination in OpenEBench",
 			"type": "array",
