@@ -1,6 +1,6 @@
 # ELIXIR-EXCELERATE Benchmarking JSON Schemas
 
-These are the latest benchmarking concepts modelled so far using [JSON Schema Draft-07](https://json-schema.org/draft/2019-09/json-schema-core.html), available in [2.0.x folder](2.0.x). All of them have `_id`, `_schema` and other common attributes.
+These are the latest benchmarking concepts modelled so far using [JSON Schema 2019-09](https://json-schema.org/draft/2019-09/json-schema-core.html), available in [2.0.x folder](2.0.x). All of them have `_id`, `_schema` and other common attributes. The prefix of the `$id` of these schemas has been changed to https://w3id.org/openebench/scientific-schemas/2.0/ , in order to provide permanent / stable links to them. For instance, https://w3id.org/openebench/scientific-schemas/2.0/Community is going to be redirected to (2.0.x/community.json).
 
 Sample JSON files can be validated against these schemas using the [extended JSON Schema validator in Python](https://pypi.org/project/extended-json-schema-validator/) repository or [JSON Schema Validator](http://www.jsonschemavalidator.net/). The extended JSON Schema validator is also able to generate a [Graphviz DOT](https://graphviz.org/doc/info/lang.html) graph describing a set of schemas. There is even a semi-interactive viewer which consumes SVGs generated from Graphviz DOT files (click next image for it):
 
