@@ -1,6 +1,6 @@
 {
     "_id": "QfO:2011-07-07_G_STD_LUCA_metricsEvent_OrthoFinder-2.0-MSA_STD_incorrect_trees",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction",
     "action_type": "MetricsEvent",
     "challenge_id": "QfO:2011-07-07_G_STD_LUCA",
     "dates": {

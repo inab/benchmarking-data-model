@@ -1,6 +1,6 @@
 {
   "_id": "QfO:2011-07-07_GOtest_A_GOTest_schlicker_OMA-Groups-2.0",
-  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Dataset",
+  "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Dataset",
   "challenge_ids": [
     "QfO:2011-07-07_GOtest"
   ],

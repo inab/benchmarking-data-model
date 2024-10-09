@@ -1,6 +1,6 @@
 {
 	"_id": "QfO:STD_RF_distance",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
 	"name": "Species Tree Discordance test / Robinson-Foulds distance",
 	"description": "The species tree discordance test assesses the accuracy (precision) of orthologs in terms of the accuracy of the species tree that can be reconstructed from them. It is measured in terms of the average tree error, which is calculated by means of the mean Robinson-Foulds distance from reference species tree",
 	"metrics_contact_ids": ["orcid:0000-0002-2170-853X",

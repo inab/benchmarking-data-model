@@ -1,6 +1,6 @@
 {
 	"_id":"doi:10.1186/gb-2009-10-9-403",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Reference",
 	"title": "Joining forces in the quest for orthologs",
 	"bibliographic_ids":["doi:10.1186/gb-2009-10-9-403"],
 	"abstract": "Better orthology-prediction resources would be beneficial for the whole biological community. A recent meeting discussed how to coordinate and leverage current efforts."

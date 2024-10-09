@@ -1,6 +1,6 @@
 {
 	"_id": "QfO:SwissTree_TPR",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
 	"name": "Recall for Reference Gene Phylogenies: SwissTree",
 	"description": "Agreement (sensitivity) with Reference Gene Phylogenies - SwissTree measured through the True Positives Rate (TPR)",
 	"metrics_contact_ids": ["orcid:0000-0002-2170-853X",

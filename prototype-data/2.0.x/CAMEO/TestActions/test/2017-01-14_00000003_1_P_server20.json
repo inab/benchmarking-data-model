@@ -1,6 +1,6 @@
 {
   "_id": "CAMEO:2017-01-14_00000003_1_test_server20",
-  "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+  "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction",
   "action_type": "TestEvent",
   "challenge_id": "CAMEO:CAMEO-3D_2017-01-14",
   "tool_id": "CAMEO:server20",

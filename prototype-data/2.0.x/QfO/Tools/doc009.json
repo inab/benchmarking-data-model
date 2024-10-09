@@ -1,6 +1,6 @@
 {
 	"_id": "QfO:InParanoidCore",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
 	"name":"InParanoidCore",
 	"description": "InParanoid is a program for automatic identification of orthologs while differentiating between inparalogs and outparalogs. An InParanoid cluster is seeded by a reciprocally bestmatching ortholog pair, around which inparalogs are gathered independently, while outparalogs are excluded.  The InParanoid database is a collection of pairwise ortholog groups aiming to include all 'completely sequenced' eukaryotic genomes. By this we mean above 6X coverage, and less than 1% X letters in the protein sequences. Two variants were tested in this study: this one is the high-confidence set including only orthologs with InParanoid's maximum confidence score of 1.0",
 	"community_ids": [

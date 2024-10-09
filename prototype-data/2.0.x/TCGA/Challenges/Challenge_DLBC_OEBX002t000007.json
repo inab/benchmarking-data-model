@@ -1,6 +1,6 @@
 {
     "_id": "TCGA:2018-04-05_DLBC",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge",
     "acronym": "DLBC",
     "benchmarking_event_id": "TCGA:2018-04-05",
     "challenge_contact_ids": [

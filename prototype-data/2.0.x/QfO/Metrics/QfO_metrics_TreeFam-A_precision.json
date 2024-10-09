@@ -1,6 +1,6 @@
 {
 	"_id": "QfO:TreeFam-A_PPV",
-	"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
 	"name": "Positive Predictive Value rate for Reference Gene Phylogenies: TreeFam-A",
 	"description": "Agreement (specificity) with Reference Gene Phylogenies - TreeFam-A measured through the Positive Predictive Value (PPV) rate",
 	"metrics_contact_ids": ["orcid:0000-0002-2170-853X",

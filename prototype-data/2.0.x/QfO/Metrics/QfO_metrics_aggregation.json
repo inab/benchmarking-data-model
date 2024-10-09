@@ -1,6 +1,6 @@
 {
     "_id":"QfO:aggregation",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Metrics",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
     "name":" Benchmark consolidation",
     "description":"Aggregation of benchmarking data from a single challenge into a consolidated aggregation dataset",
     "metrics_contact_ids":[

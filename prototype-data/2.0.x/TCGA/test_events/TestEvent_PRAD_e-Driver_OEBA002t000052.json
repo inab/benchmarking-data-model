@@ -1,6 +1,6 @@
 {
     "_id": "TCGA:2018-04-05_PRAD_testEvent_e-Driver",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction",
     "action_type": "TestEvent",
     "challenge_id": "TCGA:2018-04-05_PRAD",
     "dates": {

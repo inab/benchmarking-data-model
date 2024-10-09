@@ -1,6 +1,6 @@
 {
     "_id":"TCGA:2020plus",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
     "activation": "2018-04-05T00:00:00Z",
     "description": "Cancer Driver Genes prediction",
     "is_automated": true,

@@ -1,5 +1,5 @@
 {
-	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/",
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/",
 	"$schema": "https://json-schema.org/draft/2019-09/schema",
 	"title": "OpenEBench Benchmarking Data Model schemas",
 	"type": "array",

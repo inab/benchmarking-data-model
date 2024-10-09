@@ -1,6 +1,6 @@
 {
     "_id":"TCGA:aggregate_benchmark",  
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Tool",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
     "activation": "2018-04-05T00:00:00Z",
     "description": "Docker container gathers benchmarking data for a TCGA challenge",
     "is_automated": true,

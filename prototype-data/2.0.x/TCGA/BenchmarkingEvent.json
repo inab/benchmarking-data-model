@@ -1,6 +1,6 @@
 {
    "_id":"TCGA:2018-04-05",
-   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent",
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/BenchmarkingEvent",
    "name":"2018 PanCancer data - Driver Genes prediction benchmark",
    "is_automated": false,
    "dates":{

@@ -1,6 +1,6 @@
 {
     "_id": "QfO:2011-07-07_TreeFam-A_metricsEvent_EggNOG-5-Fine-grained_TreeFam-A_TPR",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/TestAction",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction",
     "action_type": "MetricsEvent",
     "challenge_id": "QfO:2011-07-07_TreeFam-A",
     "dates": {

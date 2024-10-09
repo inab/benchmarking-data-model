@@ -1,6 +1,6 @@
 {
    "_id":"doi:10.1101/gr.134635.111",
-   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Reference",
    "title":"MuSiC: identifying mutational significance in cancer genomes.",
    "bibliographic_ids":["pmid:22759861", "doi:10.1101/gr.134635.111"],
    "abstract": "Massively parallel sequencing technology and the associated rapidly decreasing sequencing costs have enabled systemic analyses of somatic mutations in large cohorts of cancer cases. Here we introduce a comprehensive mutational analysis pipeline that uses standardized sequence-based inputs along with multiple types of clinical data to establish correlations among mutation sites, affected genes and pathways, and to ultimately separate the commonly abundant passenger mutations from the truly significant events. In other words, we aim to determine the Mutational Significance in Cancer (MuSiC) for these large data sets. The integration of analytical operations in the MuSiC framework is widely applicable to a broad set of tumor types and offers the benefits of automation as well as standardization. Herein, we describe the computational structure and statistical underpinnings of the MuSiC pipeline and demonstrate its performance using 316 ovarian cancer samples from the TCGA ovarian cancer project. MuSiC correctly confirms many expected results, and identifies several potentially novel avenues for discovery."

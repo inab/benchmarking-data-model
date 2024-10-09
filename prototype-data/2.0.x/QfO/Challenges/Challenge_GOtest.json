@@ -1,6 +1,6 @@
 {
     "_id": "QfO:2011-07-07_GOtest",
-    "_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Challenge",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge",
     "acronym": "GOtest",
     "benchmarking_event_id": "QfO:2011-07-07",
     "challenge_contact_ids": [

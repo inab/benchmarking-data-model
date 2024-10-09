@@ -1,5 +1,5 @@
 {
-	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv",
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/idSolv",
 	"$schema": "https://json-schema.org/draft/2019-09/schema",
 	"title": "Simple Namespace resolver for CURIE ids (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
@@ -22,7 +22,7 @@
 			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/idSolv" ]
+			"enum": [ "https://w3id.org/openebench/scientific-schemas/2.0/idSolv" ]
 		},
 		
 		"name": {

@@ -27,6 +27,6 @@
       "driver genes",
       "mutations"
    ],
-   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community"
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Community"
 }
 

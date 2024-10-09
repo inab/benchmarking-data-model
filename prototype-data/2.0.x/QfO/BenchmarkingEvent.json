@@ -1,6 +1,6 @@
 {
    "_id":"QfO:2011-07-07",
-   "_schema":"https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent",
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/BenchmarkingEvent",
    "name":"Quest for Orthologs - 2011 Reference Proteomes",
    "is_automated": true,
    "dates":{
