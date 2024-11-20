@@ -1,7 +1,7 @@
 {
   "_id": "orcid:0000-0003-2715-335X",
   "_schema" : "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
-  "community_id" : "OEBC008",
+  "initial_community_id" : "OEBC008",
   "givenName": "Torsten",
   "surname": "Schwede",
   "email": [

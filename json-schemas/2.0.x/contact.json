@@ -46,7 +46,7 @@
 			"minLength": 1,
 			"format": "email"
 		},
-		"community_id": {
+		"initial_community_id": {
 			"title": "The community id where this contact first attached to",
 			"type": "string",
 			"foreign_keys": [
