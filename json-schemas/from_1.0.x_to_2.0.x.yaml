@@ -1,5 +1,5 @@
 # python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --fetched-concept-dir MIG-1.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate  --concepts BenchmarkingEvent Challenge Community Contact Dataset Metrics Reference TestAction Tool
-# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate --input MIG-1.0/Contact --input MIG-1.0/Community/ --input MIG-1.0/Tool/ --input MIG-1.0/Metrics/ --input MIG-1.0/BenchmarkingEvent/
+# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate --input MIG-1.0/Contact --input MIG-1.0/Community/ --input MIG-1.0/Tool/ --input MIG-1.0/Metrics/ --input MIG-1.0/BenchmarkingEvent/ --input MIG-1.0/Reference --input MIG-1.0/Challenge/
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent
   side_objects_paths:
     contacts: MIG-1.0/Contact
@@ -45,10 +45,36 @@
         "_id": $id
     }
     |
+    (
+        .challenge_contact_ids | map(
+            $contacts[.].links[] | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $challenge_contact_ids
+    |
     . * {
         "_id": $id,
-        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge"
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge",
+        "challenge_contact_ids": $challenge_contact_ids,
+        "participation_model": "anonymous"
     }
+    |
+    if .url then
+        . * {
+            "links": [
+                {
+                    "uri": .url,
+                    "label": "MainSite"
+                }
+            ]
+        }
+        |
+        del(.url)
+    end
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community
   side_objects_paths:
     contacts: MIG-1.0/Contact
