@@ -125,10 +125,25 @@
         "_id": $id
     }
     |
+    (
+        .metrics_contact_ids | map(
+            $contacts[.].links[] | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $metrics_contact_ids
+    |
     . * {
         "_id": $id,
-        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics"
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
+        "metrics_contact_ids": $metrics_contact_ids,
+        "name": .title
     }
+    |
+    del(.title)
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference
   side_objects_paths:
     contacts: MIG-1.0/Contact
