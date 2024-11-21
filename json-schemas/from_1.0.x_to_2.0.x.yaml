@@ -1,0 +1,183 @@
+# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --fetched-concept-dir MIG-1.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate  --concepts BenchmarkingEvent Challenge Community Contact Dataset Metrics Reference TestAction Tool
+# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate --input MIG-1.0/Contact
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/BenchmarkingEvent"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    (
+        .community_contact_ids | map(
+            $contacts[.].links[] | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $community_contact_ids
+    |
+    . * {
+        "_id": $id,
+        "community_contact_ids": $community_contact_ids,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Community"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+#    (.links[] | select(.label == "ORCID") | .uri) as $orcid
+  script: |-
+     . as {
+         "_id": $id,
+         "community_id": $initial_community_id
+     }
+     |
+     (
+        .links | map(
+            select(.label != "ORCID")
+            |
+            if .label == "Other" then
+                . * {"label": "other"}
+            elif .label == "LinkedIn" then
+                . * {"label": "SocialMedia"}
+            end
+        )
+     ) as $links
+     |
+     (
+        .links[] | select(.label == "ORCID")
+        |
+        .uri
+        | ltrimstr("orcid:")
+        | ltrimstr("https://orcid.org/")
+        | "orcid:" + .
+     ) as $orcid
+     |
+     del(.contact_type, .links, .community_id)
+     |
+     . * {
+         "_id": $orcid,
+         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
+         "email": .email[0],
+         "initial_community_id": $initial_community_id
+     }
+     |
+     if ($links | length) > 0 then
+     . * {
+         "links": $links
+     }
+     end
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Dataset"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/idSolv"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Reference"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction"
+    }
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool
+  side_objects_paths:
+    contacts: MIG-1.0/Contact
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    (
+        .tool_contact_ids | map(
+            $contacts[.].links[] | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $tool_contact_ids
+    |
+    . * {
+        "_id": $id,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
+        "tool_contact_ids": $tool_contact_ids
+    }
+    |
+    if ( .description | length ) == 0 then
+        del(.description)
+    end
