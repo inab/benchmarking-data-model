@@ -67,7 +67,7 @@
 		"_id",
 		"_schema",
 		"email",
-		"community_id"
+		"initial_community_id"
 	],
 	"primary_key": ["_id"],
 	"dependencies": {}

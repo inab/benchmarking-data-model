@@ -16,15 +16,18 @@
       "uri": "http://cameo3d.org/sp/2017-01-14"
     }
   ],
+  "participation_model": "public",
   "metrics_categories": [
     {
       "category": "assessment",
       "description": "Challenge metrics",
       "metrics": [
         {
+          "tool_id": "CAMEO:metrics",
           "metrics_id": "CAMEO:lDDT"
         },
         {
+          "tool_id": "CAMEO:metrics",
           "metrics_id": "CAMEO:QS-score"
         }
       ]

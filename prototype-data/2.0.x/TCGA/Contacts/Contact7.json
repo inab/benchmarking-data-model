@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"David",
    "surname":"Tamborero",
-   "email":[
-      "david.tamborero@irbbarcelona.org"
-   ],
+   "email": "david.tamborero@irbbarcelona.org",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

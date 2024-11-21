@@ -4,7 +4,5 @@
   "initial_community_id" : "OEBC008",
   "givenName": "David",
   "surname": "Baker",
-  "email": [
-    "dabaker@u.washington.edu"
-  ]
+  "email": "dabaker@u.washington.edu"
 }

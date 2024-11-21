@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Odile",
 	"surname": "Lecompte",
-	"email": [
-		"odile.lecompte@unistra.fr"
-	],
+	"email": "odile.lecompte@unistra.fr",
 	"initial_community_id":"OEBC002",
 	"notes": "Contact for any questions about OrthoInspector in general or collaborations",
 	"links": [

@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Matthew",
    "surname":"Bailey",
-   "email":[
-      "m.hawkins.bailey@gmail.com"
-   ],
+   "email": "m.hawkins.bailey@gmail.com",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

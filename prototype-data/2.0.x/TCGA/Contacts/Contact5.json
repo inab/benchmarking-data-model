@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Nathan",
    "surname":"Dees",
-   "email":[
-      "unknown@example.com"
-   ],
+   "email": "unknown@example.com",
    "notes":"Left science: https://www.linkedin.com/in/nathan-dees/ . Unknown ORCID, unknown e-mail",
    "initial_community_id": "OEBC001"
 }

@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Eduard",
    "surname":"Porta-Pardo",
-   "email":[
-      "eduard.porta@bsc.es"
-   ],
+   "email": "eduard.porta@bsc.es",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

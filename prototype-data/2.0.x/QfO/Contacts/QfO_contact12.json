@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Mateusz",
 	"surname": "Kaduk",
-	"email": [
-		"mateusz.kaduk@scilifelab.se"
-	],
+	"email": "mateusz.kaduk@scilifelab.se",
 	"initial_community_id":"OEBC002",
 	"notes": "Contact for Hieranoid 2 tool",
 	"links": [

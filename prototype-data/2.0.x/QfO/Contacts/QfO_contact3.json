@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Paul",
 	"surname": "Thomas",
-	"email": [
-		"pdthomas@med.usc.edu"
-	],
+	"email": "pdthomas@med.usc.edu",
 	"initial_community_id":"OEBC002",
 	"notes": "QfO4 organizer",
 	"links": [

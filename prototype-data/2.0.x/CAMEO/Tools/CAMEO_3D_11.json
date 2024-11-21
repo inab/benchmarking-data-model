@@ -2,6 +2,10 @@
   "_id": "CAMEO:server11",
   "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
   "name": "Robetta",
+  "community_ids": [
+    "OEBC008"
+  ],
+  "is_automated": true,
   "tool_contact_ids": [
     "orcid:0000-0001-7896-6217"
   ],

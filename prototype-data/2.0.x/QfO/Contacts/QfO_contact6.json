@@ -3,10 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Jaime",
 	"surname": "Huerta-Cepas",
-	"email": [
-		"huerta@embl.de",
-		"jaime.huerta@embl.de"
-	],
+	"email": "jaime.huerta@embl.de",
 	"initial_community_id":"OEBC002",
 	"notes": "EggNOG contact",
 	"links": [

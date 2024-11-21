@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Toni",
 	"surname": "Gabaldon",
-	"email": [
-		"toni.gabaldon@crg.eu"
-	],
+	"email": "toni.gabaldon@crg.eu",
 	"initial_community_id":"OEBC002",
 	"notes": "QfO4 organizer",
 	"links": [

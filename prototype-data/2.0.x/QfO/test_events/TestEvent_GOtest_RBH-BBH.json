@@ -4,8 +4,7 @@
     "action_type": "TestEvent",
     "challenge_id": "QfO:2011-07-07_GOtest",
     "dates": {
-        "creation": "2011-07-07T00:00:00Z",
-        "reception": "2011-07-07T00:00:00Z"
+        "creation": "2011-07-07T00:00:00Z"
     },
     "involved_datasets": [
         {

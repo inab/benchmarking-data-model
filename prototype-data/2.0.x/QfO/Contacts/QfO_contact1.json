@@ -3,9 +3,7 @@
     "_schema" : "https://w3id.org/openebench/scientific-schemas/2.0/Contact", 
     "surname" : "Garrayo", 
     "givenName" : "Javier", 
-    "email" : [
-        "javier.garrayo@bsc.es"
-    ], 
+    "email" : "javier.garrayo@bsc.es", 
     "notes" : "Contact for QfO datasets", 
     "initial_community_id" : "OEBC002"
 }

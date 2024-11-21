@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Adrian",
 	"surname": "Altenhoff",
-	"email": [
-		"adrian.altenhoff@inf.ethz.ch"
-	],
+	"email": "adrian.altenhoff@inf.ethz.ch",
 	"initial_community_id":"OEBC002",
 	"notes": "OMA contact",
 	"links": [

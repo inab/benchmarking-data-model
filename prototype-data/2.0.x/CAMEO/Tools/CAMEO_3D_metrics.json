@@ -1,0 +1,20 @@
+{
+  "_id": "CAMEO:metrics",
+  "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
+  "name": "CAMEO metrics",
+  "community_ids": [
+    "OEBC008"
+  ],
+  "is_automated": true,
+  "tool_contact_ids": [
+    "orcid:0000-0003-2715-335X"
+  ],
+  "status": "online",
+  "activation": "2013-07-05T00:00:00.000+00:00",
+  "tool_access": [
+    {
+      "tool_access_type": "Web",
+      "link": "http://swissmodel.expasy.org"
+    }
+  ]
+}

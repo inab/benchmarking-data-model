@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Jüri",
    "surname":"Reimand",
-   "email":[
-      "juri.reimand@utoronto.ca"
-   ],
+   "email": "juri.reimand@utoronto.ca",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

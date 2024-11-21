@@ -3,10 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Christophe",
 	"surname": "Dessimoz",
-	"email": [
-		"orcid:0000-0002-2170-853X@unil.ch",
-		"c.dessimoz@ucl.ac.uk"
-	],
+	"email": "Christophe.Dessimoz@unil.ch@unil.ch",
 	"initial_community_id":"OEBC002",
 	"notes": "Main organizer and principal contact",
 	"links": [

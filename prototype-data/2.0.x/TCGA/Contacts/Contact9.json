@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Kyle",
    "surname":"Ellrott",
-   "email":[
-      "ellrott@ohsu.edu"
-   ],
+   "email": "ellrott@ohsu.edu",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Erik",
 	"surname": "Sonnhammer",
-	"email": [
-		"orcid:0000-0002-9015-5588@scilifelab.se"
-	],
+	"email": "Erik.Sonnhammer@scilifelab.se",
 	"initial_community_id":"OEBC002",
 	"notes": "QfO4 organizer",
 	"links": [

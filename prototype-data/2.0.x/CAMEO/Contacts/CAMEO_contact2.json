@@ -4,10 +4,7 @@
   "initial_community_id" : "OEBC008",
   "givenName": "Torsten",
   "surname": "Schwede",
-  "email": [
-    "torsten.schwede@sib.swiss",
-    "torsten.schwede@unibas.ch"
-  ],
+  "email": "torsten.schwede@sib.swiss",
   "notes": "Responsible for CAMEO project",
   "links": [
     {

@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Andreas",
 	"surname": "Schlicker",
-	"email": [
-		"schlandi@mpi-inf.mpg.de"
-	],
+	"email": "schlandi@mpi-inf.mpg.de",
 	"initial_community_id":"OEBC002",
 	"notes": "Contact for Schlicker's semantic similarity metric",
 	"links": [

@@ -4,9 +4,7 @@
   "initial_community_id" : "OEBC008",
   "givenName": "Xavier",
   "surname": "Robin",
-  "email": [
-    "Xavier.Robin@sib.swiss"
-  ],
+  "email": "Xavier.Robin@sib.swiss",
   "notes": "Community manager for CAMEO project",
   "links": [
     {

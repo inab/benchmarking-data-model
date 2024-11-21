@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Loris",
    "surname":"Mularoni",
-   "email":[
-      "loris.mularoni@irbbarcelona.org"
-   ],
+   "email": "loris.mularoni@irbbarcelona.org",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

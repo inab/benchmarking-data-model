@@ -10,6 +10,12 @@ repos:
         always_run: true
         pass_filenames: false
         args: [ "json-schemas/2.0.x" ]
+      - id: json_validation
+        name: Validate 2.0.x prototype data
+        language: python
+        always_run: true
+        pass_filenames: false
+        args: [ "-c", "json-schemas/2.0.x", "prototype-data/2.0.x" ]
       - id: jsonschema_dir_validate
         name: Check 1.0.x
         language: python
@@ -21,7 +27,7 @@ repos:
         language: python
         always_run: true
         pass_filenames: false
-        args: [ "json-schemas/1.0.x", "prototype-data/1.0.x" ]
+        args: [ "-c", "json-schemas/1.0.x", "prototype-data/1.0.x" ]
       - id: jsonschema_dir_validate
         name: Check 0.4.x
         language: python

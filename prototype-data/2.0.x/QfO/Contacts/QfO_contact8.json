@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Dennis P.",
 	"surname": "Wall",
-	"email": [
-		"dpwall@stanford.edu"
-	],
+	"email": "dpwall@stanford.edu",
 	"initial_community_id":"OEBC002",
 	"notes": "Roundup contact",
 	"links": [

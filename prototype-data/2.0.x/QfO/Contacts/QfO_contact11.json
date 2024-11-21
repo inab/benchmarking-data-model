@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Albert",
 	"surname": "Vilella",
-	"email": [
-		"avilella@gmail.com"
-	],
+	"email": "avilella@gmail.com",
 	"initial_community_id":"OEBC002",
 	"notes": "Contact for Ensembl Compara tool",
 	"links": [

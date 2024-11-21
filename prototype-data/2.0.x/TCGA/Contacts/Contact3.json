@@ -3,9 +3,7 @@
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
    "givenName":"Collin",
    "surname":"Tokheim",
-   "email":[
-      "ctokheim@ds.dfci.harvard.edu"
-   ],
+   "email": "ctokheim@ds.dfci.harvard.edu",
    "notes":"Curated",
    "initial_community_id": "OEBC001"
 }

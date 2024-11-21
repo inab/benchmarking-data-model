@@ -9,10 +9,10 @@
         "orcid:0000-0003-1395-5378"
     ],
     "dates": {
-        "benchmark_start": "2018-04-05T05:00:00Z",
-        "benchmark_stop": "2018-04-05T02:00:00Z",
         "creation": "2018-04-05T00:00:00Z",
-        "modification": "2018-04-05T14:00:00Z"
+        "modification": "2018-04-05T14:00:00Z",
+        "challenge_start": "2018-04-05T05:00:00Z",
+        "challenge_stop": "2018-04-05T02:00:00Z"
     },
     "is_automated": false,
     "metrics_categories": [
@@ -47,8 +47,9 @@
     ],
     "links": [
         {
-            "label":"MainSite",
+            "label": "MainSite",
             "uri": "https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga/studied-cancers/testicular-germ-cell"
         }
-    ]
+    ],
+    "participation_model": "anonymous"
 }

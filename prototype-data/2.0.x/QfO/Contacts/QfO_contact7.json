@@ -3,9 +3,7 @@
 	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
 	"givenName": "Todd F.",
 	"surname": "DeLuca",
-	"email": [
-		"todd_deluca@hms.harvard.edu"
-	],
+	"email": "todd_deluca@hms.harvard.edu",
 	"initial_community_id":"OEBC002",
 	"notes": "Roundup contact",
 	"links": [
