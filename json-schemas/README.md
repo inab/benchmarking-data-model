@@ -6,6 +6,13 @@ Sample JSON files can be validated against these schemas using the [extended JSO
 
 [![Benchmarking JSON Schema 2.0.x](openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
 
+
+## Permanent identifiers
+
+All these 2.0 schemas have resolvable permanent identifiers whose prefix is https://w3id.org/openebench/scientific-schemas/2.0/ , having a URI structure of `https://w3id.org/openebench/scientific-schemas/2.0/{concept}`, like for instance https://w3id.org/openebench/scientific-schemas/2.0/Community .
+
+## Concepts
+
 These are the main concepts of the OpenEBench Benchmarking Data Model:
 
 * [Community](2.0.x/community.json): The description of a benchmarking community, like CASP, CAFA, Quest for Orthologs, etc...
