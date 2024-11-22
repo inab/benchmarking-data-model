@@ -3,7 +3,7 @@ _(born from ELIXIR EXCELERATE WP2)_
 
 This repository contains all the developments around the [OpenEBench scientific benchmarking](https://openebench.bsc.es/benchmarking/) data model.
 
-[![Benchmarking JSON Schema 2.0.x](openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
+[![Benchmarking JSON Schema 2.0.x](json-schemas/openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
 
 ## JSON Schemas
 Folder [json-schemas](json-schemas) contains the Scientific Benchmarking Data Model JSON Schemas, being developed to validate the different concepts modelled as JSON objects used by OpenEBench scientific benchmarking services and databases. They were written using JSON Schema Draft 04 standard for [version 0.4](json-schemas/0.4.x), JSON Schema Draft 07 standard for [version 1.0](json-schemas/1.0.x) and JSON Schema Draft 2019-09 standard for [version 2.0](json-schemas/2.0.x). These schemas use extensions to the standards which were modelled based on relational databases concepts, in order to declare the primary and foreign keys of the documents, used when all the documents are validated as a set, or are stored in a database.

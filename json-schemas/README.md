@@ -4,7 +4,7 @@ These are the latest benchmarking concepts modelled so far using [JSON Schema 20
 
 Sample JSON files can be validated against these schemas using the [extended JSON Schema validator in Python](https://pypi.org/project/extended-json-schema-validator/) repository or [JSON Schema Validator](http://www.jsonschemavalidator.net/). The extended JSON Schema validator is also able to generate a [Graphviz DOT](https://graphviz.org/doc/info/lang.html) graph describing a set of schemas. There is even a semi-interactive viewer which consumes SVGs generated from Graphviz DOT files (click next image for it):
 
-[![Benchmarking JSON Schema 2.0.x](json-schemas/openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
+[![Benchmarking JSON Schema 2.0.x](openebench-bdm-2.0.x.dot.png "Benchmarking JSON Schema 2.0.x")](https://inab.github.io/responsive.graphviz.svg/openebench-bdm-2.0.x.html)
 
 
 ## Permanent identifiers
