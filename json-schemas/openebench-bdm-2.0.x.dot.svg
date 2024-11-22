@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-1914.51 9526,-1914.51 9526,4 -4,4"/>
 <text text-anchor="start" x="4057.5" y="-1859.51" font-family="Sans-Serif" font-size="60.00"> OpenEBench Benchmarking Data Model 2.0.x </text>
 <text text-anchor="start" x="4369.5" y="-1799.51" font-family="Sans-Serif" font-size="60.00"> </text>
-<text text-anchor="start" x="4388.5" y="-1799.51" font-family="Sans-Serif" font-size="40.00">(as of 2024&#45;10&#45;09T17:41:54.235910)</text>
+<text text-anchor="start" x="4388.5" y="-1799.51" font-family="Sans-Serif" font-size="40.00">(as of 2024&#45;11&#45;22T13:49:48.161283)</text>
 <text text-anchor="start" x="5133.5" y="-1799.51" font-family="Sans-Serif" font-size="60.00"> </text>
 <!-- s0 -->
 <g id="node1" class="node">
@@ -494,8 +494,8 @@
 <polygon fill="none" stroke="black" points="8944,-879.41 8944,-900.41 9514,-900.41 9514,-879.41 8944,-879.41"/>
 <text text-anchor="start" x="8947" y="-887.21" font-family="Monospace" font-weight="bold" font-size="14.00">email</text>
 <polygon fill="none" stroke="black" points="8944,-858.41 8944,-879.41 9514,-879.41 9514,-858.41 8944,-858.41"/>
-<text text-anchor="start" x="8947" y="-866.21" font-family="Monospace" font-weight="bold" font-style="italic" font-size="14.00">community_id</text>
-<text text-anchor="start" x="9047" y="-866.21" font-family="Monospace" font-size="14.00">⎇</text>
+<text text-anchor="start" x="8947" y="-866.21" font-family="Monospace" font-weight="bold" font-style="italic" font-size="14.00">initial_community_id</text>
+<text text-anchor="start" x="9113" y="-866.21" font-family="Monospace" font-size="14.00">⎇</text>
 <polygon fill="none" stroke="black" points="8944,-837.41 8944,-858.41 9514,-858.41 9514,-837.41 8944,-837.41"/>
 <text text-anchor="start" x="8947" y="-844.21" font-family="Monospace" font-size="14.00">notes</text>
 <polygon fill="none" stroke="black" points="8944,-812.41 8944,-837.41 9058,-837.41 9058,-812.41 8944,-812.41"/>
@@ -868,13 +868,13 @@
 </g>
 <!-- s6&#45;&gt;s5 -->
 <g id="edge24" class="edge">
-<title>s6:cae794115a383328e8923de41938846f4279e1cc&#45;&gt;s5:schema</title>
-<g id="a_edge24"><a xlink:title="Contact/community_id &#45;&gt; Community">
+<title>s6:6d434383ad0d9a1afc52d2bd95870132e3552de5&#45;&gt;s5:schema</title>
+<g id="a_edge24"><a xlink:title="Contact/initial_community_id &#45;&gt; Community">
 <path fill="none" stroke="black" stroke-width="2" d="M8943,-869.41C8907.26,-869.41 8899.57,-880.92 8864,-884.41 8845.09,-886.26 7511.51,-884.43 7496,-895.41 7419.22,-949.74 7500.99,-1040.39 7424,-1094.41 7314.49,-1171.24 6955.46,-1103.56 6822,-1094.41 6766.22,-1090.58 6394.59,-1028.52 6309.69,-1022.83"/>
 <polygon fill="black" stroke="black" stroke-width="2" points="6309.63,-1019.32 6299.5,-1022.41 6309.35,-1026.31 6309.63,-1019.32"/>
 </a>
 </g>
-<text text-anchor="start" x="7535" y="-899.21" font-family="Serif" font-size="14.00">Contact/community_id &#45;&gt; Community</text>
+<text text-anchor="start" x="7511" y="-899.21" font-family="Serif" font-size="14.00">Contact/initial_community_id &#45;&gt; Community</text>
 </g>
 <!-- s7&#45;&gt;s0 -->
 <g id="edge30" class="edge">

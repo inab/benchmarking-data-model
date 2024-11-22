@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2024-10-09T17:41:54.235910)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2024-11-22T13:49:48.161283)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Bibliographic reference concept (OpenEBench Benchmarking Data Model schemas)> label=<
@@ -833,7 +833,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="cae794115a383328e8923de41938846f4279e1cc" COLSPAN="2"><B><I>community_id</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="6d434383ad0d9a1afc52d2bd95870132e3552de5" COLSPAN="2"><B><I>initial_community_id</I></B>⎇</TD>
 
 	</TR>
 	<TR>
@@ -1332,7 +1332,7 @@ digraph schemas {
 	s5:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s6:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
 	s5:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s4:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
 	s5:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
-	s6:"cae794115a383328e8923de41938846f4279e1cc" -> s5:schema [label=<Contact/community_id -&gt; Community> tooltip=<Contact/community_id -&gt; Community> ];
+	s6:"6d434383ad0d9a1afc52d2bd95870132e3552de5" -> s5:schema [label=<Contact/initial_community_id -&gt; Community> tooltip=<Contact/initial_community_id -&gt; Community> ];
 	s6:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Contact/references&#91;&#93; -&gt; Reference> tooltip=<Contact/references&#91;&#93; -&gt; Reference> ];
 	s7:"dc1123c31cff7870d735084397d1fd206cb0b4d8" -> s9:schema [label=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> ];
 	s7:"299a1c8f68372ddbdf7fd6771a6cf17462a2d216" -> s2:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> ];
