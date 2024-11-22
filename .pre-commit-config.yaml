@@ -29,7 +29,7 @@ repos:
         name: Validate 2.0.x prototype data
         types:
           - json
-        files: ^prototype-data/2.0.x/.*\.json$
+        files: ^(json-schemas|prototype-data)/2.0.x/.*\.json$
         require_serial: true
         pass_filenames: false
         args: [ "-c", "json-schemas/2.0.x", "prototype-data/2.0.x" ]
@@ -45,7 +45,7 @@ repos:
         name: Validate 1.0.x prototype data
         types:
           - json
-        files: ^prototype-data/1.0.x/.*\.json$
+        files: ^(json-schemas|prototype-data)/1.0.x/.*\.json$
         require_serial: true
         pass_filenames: false
         args: [ "-c", "json-schemas/1.0.x", "prototype-data/1.0.x" ]
