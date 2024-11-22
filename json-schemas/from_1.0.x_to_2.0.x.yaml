@@ -10,7 +10,7 @@
     |
     (
         .bench_contact_ids | map(
-            $contacts[.].links[] | select(.label == "ORCID")
+            $contacts[.].links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")
@@ -47,7 +47,7 @@
     |
     (
         .challenge_contact_ids | map(
-            $contacts[.].links[] | select(.label == "ORCID")
+            $contacts[.].links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")
@@ -85,7 +85,7 @@
     |
     (
         .community_contact_ids | map(
-            $contacts[.].links[] | select(.label == "ORCID")
+            $contacts[.].links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")
@@ -102,7 +102,7 @@
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact
   side_objects_paths:
     contacts: MIG-1.0/Contact
-#    (.links[] | select(.label == "ORCID") | .uri) as $orcid
+#    (.links[]? | select(.label == "ORCID") | .uri) as $orcid
   script: |-
      . as {
          "_id": $id,
@@ -122,7 +122,7 @@
      ) as $links
      |
      (
-        .links[] | select(.label == "ORCID")
+        .links[]? | select(.label == "ORCID")
         |
         .uri
         | ltrimstr("orcid:")
@@ -178,7 +178,7 @@
     |
     (
         .metrics_contact_ids | map(
-            $contacts[.].links[] | select(.label == "ORCID")
+            $contacts[.].links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")
@@ -229,7 +229,7 @@
     |
     (
         .tool_contact_ids | map(
-            $contacts[.].links[] | select(.label == "ORCID")
+            $contacts[.].links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")

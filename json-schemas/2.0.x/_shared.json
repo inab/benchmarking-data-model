@@ -119,6 +119,23 @@
 				}
 			]
 		},
+
+		"ReferredContactIds": {
+			"title": "The concept's contact id(s), i.e. the creators",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"pattern": "^orcid:[09]",
+				"foreign_keys": [
+					{
+						"schema_id": "Contact",
+						"members": [ "." ]
+					}
+				],
+				"minLength": 1
+			}
+		},
 		
 		"DatasetTemporaryId": {
 			"title": "The temporary id of a dataset",

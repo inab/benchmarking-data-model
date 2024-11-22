@@ -69,19 +69,7 @@
 		
 		"community_contact_ids": {
 			"title": "_id of the contacts of the responsible researchers in charge of the community coordination in OpenEBench",
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string",
-				"pattern": "^orcid:0",
-				"foreign_keys": [
-					{
-						"schema_id": "Contact",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			}
+			"$ref": "_shared#/definitions/ReferredContactIds"
 		},
 		"reference_tools": {
 			"title": "The tools which are considered as reference/baseline on this community",
