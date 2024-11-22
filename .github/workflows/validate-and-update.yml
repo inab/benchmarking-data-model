@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     name: JSON Schema validation through pre-commit
     steps:
-      - uses: actions/checkout@v3
-      - uses: pre-commit/action@v3.0.0
+      - uses: actions/checkout@v4
+      - uses: pre-commit/action@v3.0.1
         with:
           extra_args: --all -c .pre-commit-config.yaml
   generate-charts:
@@ -23,13 +23,13 @@ jobs:
       matrix:
         schema-version: [ "0.4.x", "1.0.x", "2.0.x" ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 100
-      - uses: ts-graphviz/setup-graphviz@v1
-      - uses: actions/setup-python@v4
+      - uses: ts-graphviz/setup-graphviz@v2
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: "3.9"
           cache: 'pip'
           architecture: x64
           cache-dependency-path: 'dev-requirements.txt'
@@ -67,9 +67,10 @@ jobs:
           dot -Tpng openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.png
           dot -Tpdf openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.pdf
           dot -Tsvg openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.svg
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: steps.generate-if-changed.outcome == 'success'
         with:
+          name: charts-${{ matrix.schema-version }}
           retention-days: 2
           path: openebench-bdm-${{ matrix.schema-version }}.dot*
 
@@ -79,23 +80,25 @@ jobs:
     needs:
       - generate-charts
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: download
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
+          pattern: charts-*
+          merge-multiple: true
           path: charts-dir
       - id: move
         name: Move charts to their right place
         run: |
           skip=true
           if [ -d "${{steps.download.outputs.download-path}}" ] ; then
-            mv "${{steps.download.outputs.download-path}}"/artifact/* json-schemas/
+            mv "${{steps.download.outputs.download-path}}"/* json-schemas/
             skip=false
           fi
           echo "skip=$skip" >> "$GITHUB_OUTPUT"
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         if: steps.move.outputs.skip == 'false'
         with:
           title: Updated schemas documentation (triggered by ${{ github.sha }})
