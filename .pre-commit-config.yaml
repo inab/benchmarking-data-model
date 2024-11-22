@@ -6,6 +6,10 @@ repos:
     hooks:
       # This one has been added to fail fast on syntax errors
       # before running expensive pylint
+      - id: check-ast
+        types_or:
+          - python
+          - pyi
       - id: check-json
       - id: check-yaml
         types: [file]
