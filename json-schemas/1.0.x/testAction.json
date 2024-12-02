@@ -132,7 +132,7 @@
 					"type": "string",
 					"format": "date-time"
 				},
-				"modification": {
+				"reception": {
 					"title": "Last modification date of the test action",
 					"type": "string",
 					"format": "date-time"
@@ -143,6 +143,7 @@
 					"format": "date-time"
 				}
 			},
+			"additionalProperties": false,
 			"required": ["creation"]
 		},
 		"metadata": {
