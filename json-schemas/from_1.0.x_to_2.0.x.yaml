@@ -1,12 +1,15 @@
-# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --fetched-concept-dir MIG-1.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate  --concepts BenchmarkingEvent Challenge Community Contact Dataset Metrics Reference TestAction Tool
-# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate --input MIG-1.0/Contact --input MIG-1.0/Community/ --input MIG-1.0/Tool/ --input MIG-1.0/Metrics/ --input MIG-1.0/BenchmarkingEvent/ --input MIG-1.0/Reference --input MIG-1.0/Challenge/
+# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --fetched-concept-dir MIG-1.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate  --concepts BenchmarkingEvent Challenge Community Contact Dataset Metrics Reference TestAction Tool --ignore-ids-file ids-to-remove.txt --ignore-ids-file contacts-to-remove.txt
+# python oeb-migrator.py --base_url https://openebench.bsc.es/api/scientific/ -cr oeb_api_auth_new.json --bdm-dir w3id-oeb-schemas --bdm-tag 2.0 --recipes ../benchmarking-data-model_2.0.x/json-schemas/from_1.0.x_to_2.0.x.yaml --output-dir MIG-2.0 --validate --input MIG-1.0-raw/Contact --input MIG-1.0-raw/Community/ --input MIG-1.0-raw/Tool/ --input MIG-1.0-raw/Metrics/ --input MIG-1.0-raw/BenchmarkingEvent/ --input MIG-1.0-raw/Reference --input MIG-1.0-raw/Challenge/ --input MIG-1.0-raw/Dataset/ --input MIG-1.0-raw/TestAction/  --ignore-ids-file ids-to-remove.txt --ignore-ids-file contacts-to-remove.txt
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/BenchmarkingEvent
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
+    |
+    $id[4:7] as $cdigits
     |
     (
         .bench_contact_ids | map(
@@ -19,31 +22,79 @@
         )
     ) as $bench_contact_ids
     |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/BenchmarkingEvent",
-        "bench_contact_ids": $bench_contact_ids
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "bench_contact_ids": ($bench_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end)
     }
+    |
+    del(.["@provenance"])
     |
     if .url then
         . * {
-            "links": [
-                {
-                    "uri": .url,
-                    "label": "MainSite"
-                }
-            ]
+            "links": (
+                ( .links? // [] )
+                +
+                [
+                    {
+                        "uri": .url,
+                        "label": "MainSite"
+                    }
+                ]
+            )
         }
         |
         del(.url)
     end
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Challenge
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
+    |
+    $id[4:7] as $cdigits
     |
     (
         .challenge_contact_ids | map(
@@ -56,12 +107,59 @@
         )
     ) as $challenge_contact_ids
     |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge",
-        "challenge_contact_ids": $challenge_contact_ids,
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "challenge_contact_ids": ($challenge_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end),
         "participation_model": "anonymous"
     }
+    |
+    del(.["@provenance"])
+    |
+    if .metrics_categories == null then
+        . * {
+            "metrics_categories": $missprov[$cdigits]?.metrics_categories
+        }
+    end
     |
     if .url then
         . * {
@@ -77,11 +175,17 @@
     end
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Community
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
+    # Inspired on https://stackoverflow.com/a/65417432
+    # def intersect($other): (.-(.-$other));
+    # def iselem($other): [.]| intersect($other) | length > 0;
     . as {
         "_id": $id
     }
+    |
+    $id[4:7] as $cdigits
     |
     (
         .community_contact_ids | map(
@@ -94,71 +198,262 @@
         )
     ) as $community_contact_ids
     |
+    (
+        (
+            .links? | map(
+                if .comment? == "@logo" then
+                    {
+                        "uri": .uri,
+                        "label": "Logo",
+                        "comment": "Automatically migrated from 1.0 logo style"
+                    }
+                end
+            )
+        )
+        +
+        (
+            .community_contact_ids
+            |
+            map(
+                $contacts[.]
+            )
+            |
+            map(
+                select(
+                    ( [ .links[]? | select(.label == "ORCID") ] | length ) == 0
+                )
+                |
+                .email[]
+                |
+                {
+                    "uri": ("mailto:" + .),
+                    "label": "ContactEmail",
+                    "comment": "Automatically migrated from 1.0"
+                }
+            )
+        )
+    ) as $links
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
         "community_contact_ids": $community_contact_ids,
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Community"
     }
+    |
+    if ( $links | length ) > 0 then
+        . * {
+            "links": $links
+        }
+    end
+    |
+    del(.["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
 #    (.links[]? | select(.label == "ORCID") | .uri) as $orcid
   script: |-
-     . as {
-         "_id": $id,
-         "community_id": $initial_community_id
-     }
-     |
-     (
-        .links | map(
-            select(.label != "ORCID")
-            |
-            if .label == "Other" then
-                . * {"label": "other"}
-            elif .label == "LinkedIn" then
-                . * {"label": "SocialMedia"}
-            end
+    . as {
+        "_id": $id,
+        "community_id": $initial_community_id
+    }
+    |
+    # This one differs from the standard pattern
+    $initial_community_id[4:7] as $cdigits
+    |
+    (
+        (
+            .links? | map(
+                select(.label != "ORCID")
+                |
+                if .label == "Other" then
+                    . * {"label": "other"}
+                elif .label == "LinkedIn" then
+                    . * {"label": "SocialMedia"}
+                end
+            ) // []
         )
-     ) as $links
-     |
-     (
+        +
+        [
+            .email[range(1;(.email | length))] | {
+                "uri": ("mailto:" + .),
+                "label": "ContactEmail"
+            }
+        ]
+    ) as $links
+    |
+    (
         .links[]? | select(.label == "ORCID")
         |
         .uri
         | ltrimstr("orcid:")
         | ltrimstr("https://orcid.org/")
         | "orcid:" + .
-     ) as $orcid
-     |
-     del(.contact_type, .links, .community_id)
-     |
-     . * {
-         "_id": $orcid,
-         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
-         "email": .email[0],
-         "initial_community_id": $initial_community_id
-     }
-     |
-     if ($links | length) > 0 then
-     . * {
-         "links": $links
-     }
-     end
+    ) as $orcid
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
+    del(.contact_type, .links, .community_id, .["@provenance"])
+    |
+    . * {
+        "_id": $orcid,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
+        "email": .email[0],
+        "initial_community_id": $initial_community_id,
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        }
+    }
+    |
+    if ($links | length) > 0 then
+    . * {
+        "links": $links
+    }
+    end
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Dataset
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
     |
+    $id[4:7] as $cdigits
+    |
+    (
+        .dataset_contact_ids | map(
+            $contacts[.].links[]? | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $dataset_contact_ids
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
-        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Dataset"
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Dataset",
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "dataset_contact_ids": ($dataset_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end),
+        "datalinks": [
+            .datalink
+        ]
     }
+    |
+    del(.datalink, .["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/idSolv
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
@@ -168,13 +463,18 @@
         "_id": $id,
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/idSolv"
     }
+    |
+    del(.["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Metrics
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
+    |
+    $id[4:7] as $cdigits
     |
     (
         .metrics_contact_ids | map(
@@ -187,49 +487,197 @@
         )
     ) as $metrics_contact_ids
     |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
-        "metrics_contact_ids": $metrics_contact_ids,
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "metrics_contact_ids": ($metrics_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end),
         "name": .title
     }
     |
-    del(.title)
+    del(.title, .["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Reference
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
     |
+    $id[4:7] as $cdigits
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
-        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Reference"
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Reference",
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        }
     }
+    |
+    del(.["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/TestAction
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
     |
+    $id[4:7] as $cdigits
+    |
+    (
+        .test_contact_ids | map(
+            $contacts[.].links[]? | select(.label == "ORCID")
+            |
+            .uri
+            | ltrimstr("orcid:")
+            | ltrimstr("https://orcid.org/")
+            | "orcid:" + .
+        )
+    ) as $test_contact_ids
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
-        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction"
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/TestAction",
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "test_contact_ids": ($test_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end)
     }
+    |
+    if .dates.reception then
+        .dates * {
+            "modification": .dates.reception
+        }
+        |
+        del(.dates.reception)
+    end
+    |
+    del(.["@provenance"])
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Tool
   side_objects_paths:
-    contacts: MIG-1.0/Contact
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
   script: |-
     . as {
         "_id": $id
     }
+    |
+    $id[4:7] as $cdigits
     |
     (
         .tool_contact_ids | map(
-            $contacts[.].links[]? | select(.label == "ORCID")
+            $contacts[.]?.links[]? | select(.label == "ORCID")
             |
             .uri
             | ltrimstr("orcid:")
@@ -238,11 +686,86 @@
         )
     ) as $tool_contact_ids
     |
+    (
+        (
+            .links? // []
+        )
+        +
+        (
+            .tool_contact_ids
+            |
+            map(
+                $contacts[.]
+            )
+            |
+            map(
+                select(
+                    ( [ .links[]? | select(.label == "ORCID") ] | length ) == 0
+                )
+                |
+                .email[]
+                |
+                {
+                    "uri": ("mailto:" + .),
+                    "label": "ContactEmail",
+                    "comment": "Automatically migrated from 1.0"
+                }
+            )
+        )
+    ) as $links
+    |
+    (
+        .["@provenance"] // "openebench_vre@bsc.es"
+        |
+        if . == "openebench_vre@bsc.es" then
+            $missprov[$cdigits]?["@provenance"]
+        end
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
     . * {
         "_id": $id,
         "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Tool",
-        "tool_contact_ids": $tool_contact_ids
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        },
+        "tool_contact_ids": ($tool_contact_ids | if length == 0 then
+            $missprov[$cdigits]?.contacts
+        end)
     }
+    |
+    if ( $links | length ) > 0 then
+        . * {
+            "links": $links
+        }
+    end
+    |
+    del(.["@provenance"])
     |
     if ( .description | length ) == 0 then
         del(.description)
