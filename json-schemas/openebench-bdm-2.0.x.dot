@@ -1,6 +1,6 @@
 
 digraph schemas {
-	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2024-11-22T13:49:48.161283)</font> >  ];
+	graph[ rankdir=LR, ranksep=2, fontsize=60, fontname="Sans-Serif", labelloc=t, label=< OpenEBench Benchmarking Data Model 2.0.x <br/> <font point-size="40">(as of 2024-12-03T16:57:31.682308)</font> >  ];
 	node [shape=tab, style=filled, fillcolor="green"];
 	edge [penwidth=2, fontname="Serif"];
 	s0 [tooltip=<Bibliographic reference concept (OpenEBench Benchmarking Data Model schemas)> label=<
@@ -179,7 +179,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="8b432edbbabc899fd0876bd36b7a73e9ec64a259" COLSPAN="2"><B><I>dataset_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="8b432edbbabc899fd0876bd36b7a73e9ec64a259" COLSPAN="2"><B>dataset_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -313,7 +313,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="fdc4dabd062fc123464af2b8a1cb25aef1b341e2" COLSPAN="2"><B><I>metrics_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="fdc4dabd062fc123464af2b8a1cb25aef1b341e2" COLSPAN="2"><B>metrics_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -427,7 +427,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="d92969e34debec47c6d4cf68a9207a242e093722" COLSPAN="2"><B><I>test_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="d92969e34debec47c6d4cf68a9207a242e093722" COLSPAN="2"><B>test_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -567,7 +567,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="3185f78d03b48ce4999d6e2871efc649d82630ab" COLSPAN="2"><B><I>tool_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="3185f78d03b48ce4999d6e2871efc649d82630ab" COLSPAN="2"><B>tool_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -721,7 +721,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="82e1f1f38a95723175f781e2e388d68de536caa8" COLSPAN="2"><B><I>community_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="82e1f1f38a95723175f781e2e388d68de536caa8" COLSPAN="2"><B>community_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -1013,7 +1013,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="b2b98dccf2ef52a52282130b38d891a9ae046965" COLSPAN="2"><B><I>challenge_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="b2b98dccf2ef52a52282130b38d891a9ae046965" COLSPAN="2"><B>challenge_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -1237,7 +1237,7 @@ digraph schemas {
 
 	</TR>
 	<TR>
-		<TD ALIGN="LEFT" PORT="0655626703bafeed898fc0f98c5ffa8aa4150469" COLSPAN="2"><B><I>bench_contact_ids[]</I></B>⎇</TD>
+		<TD ALIGN="LEFT" PORT="0655626703bafeed898fc0f98c5ffa8aa4150469" COLSPAN="2"><B>bench_contact_ids[]</B></TD>
 
 	</TR>
 	<TR>
@@ -1310,38 +1310,41 @@ digraph schemas {
 </TABLE></FONT>
 >];
 	s0:"a0d43225dbaf165d330ad402c94c9e952bc94d1a" -> s5:schema [label=<Reference/dependable_community_ids&#91;&#93; -&gt; Community> tooltip=<Reference/dependable_community_ids&#91;&#93; -&gt; Community> ];
+	s0:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Reference/&#91;&#93; -&gt; Contact> tooltip=<Reference/&#91;&#93; -&gt; Contact> ];
 	s0:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Reference/references&#91;&#93; -&gt; Reference> tooltip=<Reference/references&#91;&#93; -&gt; Reference>  headport=e];
 	s1:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s5:schema [label=<Dataset/community_ids&#91;&#93; -&gt; Community> tooltip=<Dataset/community_ids&#91;&#93; -&gt; Community> ];
 	s1:"c71e19113ad60db1f60739e65eb2e50b33abbace" -> s7:schema [label=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> tooltip=<Dataset/challenge_ids&#91;&#93; -&gt; Challenge> ];
-	s1:"8b432edbbabc899fd0876bd36b7a73e9ec64a259" -> s6:schema [label=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Dataset/dataset_contact_ids&#91;&#93; -&gt; Contact> ];
 	s1:"8a3e7ca7c2ed848734f80584b6ee62dc2b2bea55" -> s2:schema [label=<Dataset/depends_on.metrics_id -&gt; Metrics> tooltip=<Dataset/depends_on.metrics_id -&gt; Metrics> ];
 	s1:"17e6cf4775729bf7dc0194921b0bb931400b2b28" -> s4:schema [label=<Dataset/depends_on.tool_id -&gt; Tool> tooltip=<Dataset/depends_on.tool_id -&gt; Tool> ];
 	s1:"6cf5d36b3e1d9f63cfb89f7f2e63933d27ffbc21" -> s1:schema [label=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<Dataset/depends_on.rel_dataset_ids&#91;&#93;.dataset_id -&gt; Dataset>  headport=e];
+	s1:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Dataset/&#91;&#93; -&gt; Contact> tooltip=<Dataset/&#91;&#93; -&gt; Contact> ];
 	s1:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Dataset/references&#91;&#93; -&gt; Reference> tooltip=<Dataset/references&#91;&#93; -&gt; Reference> ];
-	s2:"fdc4dabd062fc123464af2b8a1cb25aef1b341e2" -> s6:schema [label=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Metrics/metrics_contact_ids&#91;&#93; -&gt; Contact> ];
+	s2:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Metrics/&#91;&#93; -&gt; Contact> tooltip=<Metrics/&#91;&#93; -&gt; Contact> ];
 	s2:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Metrics/references&#91;&#93; -&gt; Reference> tooltip=<Metrics/references&#91;&#93; -&gt; Reference> ];
 	s3:"3bf5b1016a384916073184f99b79e30358e17b70" -> s4:schema [label=<TestAction/tool_id -&gt; Tool> tooltip=<TestAction/tool_id -&gt; Tool> ];
 	s3:"f4efc1aa77f68666528083fa796defcaad240e80" -> s1:schema [label=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> tooltip=<TestAction/involved_datasets&#91;&#93;.dataset_id -&gt; Dataset> ];
 	s3:"5f31455ad09ea6a836a06871b7ac59e8ea30cacd" -> s7:schema [label=<TestAction/challenge_id -&gt; Challenge> tooltip=<TestAction/challenge_id -&gt; Challenge> ];
-	s3:"d92969e34debec47c6d4cf68a9207a242e093722" -> s6:schema [label=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> tooltip=<TestAction/test_contact_ids&#91;&#93; -&gt; Contact> ];
+	s3:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<TestAction/&#91;&#93; -&gt; Contact> tooltip=<TestAction/&#91;&#93; -&gt; Contact> ];
 	s3:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<TestAction/references&#91;&#93; -&gt; Reference> tooltip=<TestAction/references&#91;&#93; -&gt; Reference> ];
 	s4:"a000d7838c58386e5ce0aa9bd1ed6e31945af038" -> s5:schema [label=<Tool/community_ids&#91;&#93; -&gt; Community> tooltip=<Tool/community_ids&#91;&#93; -&gt; Community> ];
-	s4:"3185f78d03b48ce4999d6e2871efc649d82630ab" -> s6:schema [label=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Tool/tool_contact_ids&#91;&#93; -&gt; Contact> ];
 	s4:"eb117b356e7decd6b2d37cdfa974b25fdc920286" -> s2:schema [label=<Tool/implements&#91;&#93; -&gt; Metrics> tooltip=<Tool/implements&#91;&#93; -&gt; Metrics> ];
+	s4:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Tool/&#91;&#93; -&gt; Contact> tooltip=<Tool/&#91;&#93; -&gt; Contact> ];
 	s4:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Tool/references&#91;&#93; -&gt; Reference> tooltip=<Tool/references&#91;&#93; -&gt; Reference> ];
-	s5:"82e1f1f38a95723175f781e2e388d68de536caa8" -> s6:schema [label=<Community/community_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Community/community_contact_ids&#91;&#93; -&gt; Contact> ];
 	s5:"7fb8e6aa319208c147f18cccfa71c0fce40b895f" -> s4:schema [label=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> tooltip=<Community/reference_tools&#91;&#93;.tool_id -&gt; Tool> ];
+	s5:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Community/&#91;&#93; -&gt; Contact> tooltip=<Community/&#91;&#93; -&gt; Contact> ];
 	s5:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Community/references&#91;&#93; -&gt; Reference> tooltip=<Community/references&#91;&#93; -&gt; Reference> ];
 	s6:"6d434383ad0d9a1afc52d2bd95870132e3552de5" -> s5:schema [label=<Contact/initial_community_id -&gt; Community> tooltip=<Contact/initial_community_id -&gt; Community> ];
+	s6:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Contact/&#91;&#93; -&gt; Contact> tooltip=<Contact/&#91;&#93; -&gt; Contact>  headport=e];
 	s6:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Contact/references&#91;&#93; -&gt; Reference> tooltip=<Contact/references&#91;&#93; -&gt; Reference> ];
 	s7:"dc1123c31cff7870d735084397d1fd206cb0b4d8" -> s9:schema [label=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> tooltip=<Challenge/benchmarking_event_id -&gt; BenchmarkingEvent> ];
 	s7:"299a1c8f68372ddbdf7fd6771a6cf17462a2d216" -> s2:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.metrics_id -&gt; Metrics> ];
 	s7:"859f89ce6eef8a513ee2b567c9201e5e0a9272e1" -> s4:schema [label=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> tooltip=<Challenge/metrics_categories&#91;&#93;.metrics&#91;&#93;.tool_id -&gt; Tool> ];
-	s7:"b2b98dccf2ef52a52282130b38d891a9ae046965" -> s6:schema [label=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> tooltip=<Challenge/challenge_contact_ids&#91;&#93; -&gt; Contact> ];
+	s7:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<Challenge/&#91;&#93; -&gt; Contact> tooltip=<Challenge/&#91;&#93; -&gt; Contact> ];
 	s7:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<Challenge/references&#91;&#93; -&gt; Reference> tooltip=<Challenge/references&#91;&#93; -&gt; Reference> ];
+	s8:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<idSolv/&#91;&#93; -&gt; Contact> tooltip=<idSolv/&#91;&#93; -&gt; Contact> ];
 	s8:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<idSolv/references&#91;&#93; -&gt; Reference> tooltip=<idSolv/references&#91;&#93; -&gt; Reference> ];
 	s9:"cae794115a383328e8923de41938846f4279e1cc" -> s5:schema [label=<BenchmarkingEvent/community_id -&gt; Community> tooltip=<BenchmarkingEvent/community_id -&gt; Community> ];
-	s9:"0655626703bafeed898fc0f98c5ffa8aa4150469" -> s6:schema [label=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> tooltip=<BenchmarkingEvent/bench_contact_ids&#91;&#93; -&gt; Contact> ];
+	s9:"97d170e1550eee4afc0af065b78cda302a97674c" -> s6:schema [label=<BenchmarkingEvent/&#91;&#93; -&gt; Contact> tooltip=<BenchmarkingEvent/&#91;&#93; -&gt; Contact> ];
 	s9:"c39a15eca335bf7d46851d0191f072729b2dc3ba" -> s0:schema [label=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> tooltip=<BenchmarkingEvent/references&#91;&#93; -&gt; Reference> ];
 	s10:"a6526f25fbdfbb2678bba3fbc087623f3edb7400" -> s6:schema [label=<Privilege/_id -&gt; Contact> tooltip=<Privilege/_id -&gt; Contact> ];
 	s10:"c3b966e532e24ffe748ce08bfc608fce6b8a6f45" -> s5:schema [label=<Privilege/roles&#91;&#93;.community_id -&gt; Community> tooltip=<Privilege/roles&#91;&#93;.community_id -&gt; Community> ];
