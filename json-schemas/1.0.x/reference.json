@@ -9,7 +9,7 @@
 			"type": "string",
 			"oneOf": [
 				{
-					"pattern": "^doi:[0-9]{2}\\.[0-9]{4,}/"
+					"pattern": "^doi:[0-9]{2}\\.[0-9]{4,}/.*$"
 				},
 				{
 					"pattern": "^pubmed:[1-9][0-9]*$"
