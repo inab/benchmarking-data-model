@@ -140,6 +140,5 @@
 		"_schema",
 		"roles"
 	],
-	"primary_key": ["_id"],
 	"dependencies": {}
 }
