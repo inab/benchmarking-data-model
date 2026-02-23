@@ -1,0 +1,15 @@
+{
+    "_id": "orcid:0000-0002-6813-3200",
+    "roles": [
+        {
+            "role": "owner",
+            "community_id": "OEBC008"
+        }
+    ],
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Privilege",
+    "_provenance": {
+        "orcid": "orcid:0000-0001-6415-0532",
+        "created": "2026-02-23T17:24:27Z",
+        "updated": "2026-02-23T17:24:27Z"
+    }
+}

@@ -86,7 +86,9 @@
 								],
 								"minLength": 7
 							}
-						}
+						},
+						"required": ["role", "community_id"],
+						"additionalProperties": false
 					},
 					{
 						"properties": {
@@ -106,7 +108,9 @@
 								],
 								"minLength": 1
 							}
-						}
+						},
+						"required": [ "role", "benchmarking_event_id" ],
+						"additionalProperties": false
 					},
 					{
 						"properties": {
@@ -126,11 +130,11 @@
 								],
 								"minLength": 1
 							}
-						}
+						},
+						"required": [ "role", "challenge_id" ],
+						"additionalProperties": false
 					}
-
-				],
-				"additionalProperties": false
+				]
 			}
 		}
 	},
@@ -138,6 +142,7 @@
 	"required": [
 		"_id",
 		"_schema",
+		"_provenance",
 		"roles"
 	],
 	"dependencies": {}
