@@ -22,6 +22,46 @@
 			"format": "uri",
 			"enum": [ "https://w3id.org/openebench/scientific-schemas/2.0/Privilege" ]
 		},
+		"_provenance": {
+			"type": "object",
+			"properties": {
+				"orcid": {
+					"type": "string",
+					"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
+				},
+				"created": {
+					"title": "Entries' creation timestamp (internal to the database)",
+					"description": "date-time",
+					"readOnly": true,
+					"type": "string",
+					"format": "date-time"
+				},
+				"updated": {
+					"title": "Entries' last update's timestamp (internal to the database)",
+					"description": "date-time",
+					"readOnly": true,
+					"type": "string",
+					"format": "date-time"
+				},
+				"deleted": {
+					"title": "Entries' deletion timestamp (internal to the database)",
+					"description": "date-time",
+					"readOnly": true,
+					"type": "string",
+					"format": "date-time"
+				},
+				"reason": {
+					"type": "string",
+					"minLength": 1
+				}
+			},
+			"required": [
+				"orcid",
+				"created",
+				"updated"
+			],
+			"additionalProperties": false
+		},
 		"roles" : {
 			"title": "The roles assigned to this contact",
 			"type": "array",
