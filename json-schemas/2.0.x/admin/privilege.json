@@ -113,7 +113,7 @@
 							"role": {
 								"title": "The role assigned to the contact",
 								"type": "string",
-								"enum":  [ "contributor", "evaluator" ]
+								"enum":  [ "contributor", "evaluator", "supervisor" ]
 							},
 							"challenge_id": {
  								"title": "The challenge the role is assigned to",
