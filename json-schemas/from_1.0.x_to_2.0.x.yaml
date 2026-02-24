@@ -284,6 +284,77 @@
     end
     |
     del(.["@provenance"])
+- schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Privilege
+  side_objects_paths:
+    contacts: MIG-1.0-raw/Contact
+    missprov: provenance-mapping.json.array
+#    (.links[]? | select(.label == "ORCID") | .uri) as $orcid
+  script: |-
+    . as {
+        "_id": $id
+    }
+    |
+    (
+        if $id | startswith("orcid:") then
+            $id
+        else
+            $contacts
+            |
+            map(
+                select(._id == $id)
+                |
+                .links[]?
+                |
+                select(.label == "ORCID")
+                |
+                .uri
+                |
+                ltrimstr("orcid:")
+                |
+                ltrimstr("https://orcid.org/")
+                |
+                "orcid:" + .
+            )[0] // $id
+        end
+    ) as $orcid
+    |
+    (
+        "redmitry@list.ru"
+    ) as $provenance_email
+    |
+    (
+        $contacts
+        |
+        map(
+            select(.email[] == $provenance_email)
+            |
+            .links[]?
+            |
+            select(.label == "ORCID")
+            |
+            .uri
+            |
+            ltrimstr("orcid:")
+            |
+            ltrimstr("https://orcid.org/")
+            |
+            "orcid:" + .
+        )[0]
+    ) as $provenance_orcid
+    |
+    (
+        now | todate
+    ) as $now
+    |
+    . * {
+        "_id": $orcid,
+        "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Privilege",
+        "_provenance": {
+            "orcid": $provenance_orcid,
+            "created": $now,
+            "updated": $now
+        }
+    }
 - schema: https://www.elixir-europe.org/excelerate/WP2/json-schemas/1.0/Contact
   side_objects_paths:
     contacts: MIG-1.0-raw/Contact
