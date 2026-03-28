@@ -1,16 +1,19 @@
-name: validate-and-update
+name: validate-and-update_1_0_x
 
 on:
   pull_request:
+    branches:
+      - 1.0.x
   push:
-    branches: [1.0.x, 2.0.x]
+    branches:
+      - 1.0.x
 
 jobs:
   json-schema-validation:
     runs-on: ubuntu-latest
     name: JSON Schema validation through pre-commit
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: pre-commit/action@v3.0.1
         with:
           extra_args: --all -c .pre-commit-config.yaml
@@ -23,13 +26,13 @@ jobs:
       matrix:
         schema-version: [ "0.4.x", "1.0.x" ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 100
       - uses: ts-graphviz/setup-graphviz@v2
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.9"
+          python-version: "3.12"
           cache: 'pip'
           architecture: x64
           cache-dependency-path: 'dev-requirements.txt'
@@ -44,14 +47,15 @@ jobs:
           if [ -f "$dotfile" ] ; then
             at="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$dotfile")"
             dat="$at"
-            for schema in json-schemas/"${{ matrix.schema-version }}"/*.json ; do
+            find json-schemas/"${{ matrix.schema-version }}" -type f -name "*.json" | while read -r schema ; do
               dat="$(git --no-pager log -p -1 "--format=tformat:%at" --no-patch -- "$schema")"
               if [ "$at" -lt "$dat" ] ; then
+                touch /tmp/there_were_changes.txt
                 break
               fi
             done
             
-            if [ "$at" -lt "$dat" ] ; then
+            if [ -f /tmp/there_were_changes.txt ] ; then
               echo "any_changed=true" >> "$GITHUB_OUTPUT"
             else
               echo "any_changed=false" >> "$GITHUB_OUTPUT"
@@ -67,7 +71,7 @@ jobs:
           dot -Tpng openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.png
           dot -Tpdf openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.pdf
           dot -Tsvg openebench-bdm-${{ matrix.schema-version }}.dot -o openebench-bdm-${{ matrix.schema-version }}.dot.svg
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: steps.generate-if-changed.outcome == 'success'
         with:
           name: charts-${{ matrix.schema-version }}
@@ -80,9 +84,9 @@ jobs:
     needs:
       - generate-charts
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - id: download
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: charts-*
           merge-multiple: true
@@ -98,14 +102,14 @@ jobs:
           echo "skip=$skip" >> "$GITHUB_OUTPUT"
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         if: steps.move.outputs.skip == 'false'
         with:
-          title: Updated schemas documentation (triggered by ${{ github.sha }})
-          branch: create-pull-request/patch-schema-docs
+          title: Updated schemas documentation 1.0.x (triggered by ${{ github.sha }})
+          branch: create-pull-request/patch-schema-docs_1_0_x
           delete-branch: true
           signoff: true
-          commit-message: "[create-pull-request] Automatically commit updated contents (generated schemas documentation)"
+          commit-message: "[create-pull-request] Automatically commit updated contents (generated schemas documentation for 1.0.x)"
       - name: Check outputs
         if: ${{ steps.cpr.outputs.pull-request-number }}
         run: |
