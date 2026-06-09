@@ -41,9 +41,13 @@
       "attrs": [
         "archive"
       ],
-      "status": "ok",
       "uri": "https://orthology.benchmarkservice.org/raw/OrthoFinder_2.0_MSA_with_BLAST-.238.rels.raw.gz",
-      "validation_date": "2011-07-07T00:00:00Z"
+      "validations": [
+        {
+          "validation_stamp": "2011-07-07T00:00:00Z",
+          "status": "ok"
+        }
+      ]
     }
   ]
 }

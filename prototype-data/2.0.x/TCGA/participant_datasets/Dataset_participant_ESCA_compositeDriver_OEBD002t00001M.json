@@ -32,9 +32,13 @@
       "attrs": [
         "archive"
       ],
-      "status": "ok",
       "uri": "https://api.gdc.cancer.gov/data/bee64811-952a-4fac-b011-9cd28c0bd8d1",
-      "validation_date": "2018-04-05T00:00:00Z"
+      "validations": [
+        {
+          "validation_stamp": "2018-04-05T00:00:00Z",
+          "status": "ok"
+        }
+      ]
     }
   ]
 }

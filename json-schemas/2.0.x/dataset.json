@@ -304,25 +304,39 @@
 					"type": "string",
 					"enum": [ "mirror", "authoritative", "pid" ]
 				},
-				"validation_date": {
-					"title": "Last validation date of the datalink",
-					"type": "string",
-					"format": "date-time"
-				},
-				"status": {
-					"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok) or the HTTP code (numerical)",
-					"type": "string",
-					"oneOf": [
-						{
-							"type": "string",
-							"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+				"validations": {
+					"title": "Validations performed over the link pointing over the physical dataset. The logs of these validations are stored here.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"validation_stamp": {
+								"title": "Last validation date of the datalink",
+								"type": "string",
+								"format": "date-time"
+							},
+							"status": {
+								"title": "Last validation status (unreachable content, missing content(404), interrupted while validating, corrupted (checksums, not all the contents available, etc...), ok) or the HTTP code (numerical)",
+								"type": "string",
+								"oneOf": [
+									{
+										"type": "string",
+										"enum": [ "unreachable", "missing", "interrupted", "corrupted", "ok" ]
+									},
+									{
+										"type": "integer",
+										"minimum": 100,
+										"exclusiveMaximum": 600
+									}
+								]
+							}
 						},
-						{
-							"type": "integer",
-							"minimum": 100,
-							"exclusiveMaximum": 600
-						}
-					]
+						"required": [
+							"validation_stamp",
+							"status"
+						]
+					}
 				}
 			},
 			"additionalProperties": false,

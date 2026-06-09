@@ -41,9 +41,13 @@
       "attrs": [
         "archive"
       ],
-      "status": "ok",
       "uri": "https://orthology.benchmarkservice.org/raw/orthoinspector_1.30_blast_threshold_10-9-.154.rels.raw.gz",
-      "validation_date": "2011-07-07T00:00:00Z"
+      "validations": [
+        {
+          "validation_stamp": "2011-07-07T00:00:00Z",
+          "status": "ok"
+        }
+      ]
     }
   ]
 }

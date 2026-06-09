@@ -20,9 +20,13 @@
 	    "attrs": [
 		"archive"
 	    ],
-	    "status": "ok",
 	    "uri": "ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/previous_releases/qfo_release-2011_04/",
-	    "validation_date": "2011-07-07T00:00:00Z"
+	    "validations": [
+		{
+		    "status": "ok",
+		    "validation_stamp": "2011-07-07T00:00:00Z"
+		}
+	    ]
 	}
     ],
     "dataset_contact_ids": [

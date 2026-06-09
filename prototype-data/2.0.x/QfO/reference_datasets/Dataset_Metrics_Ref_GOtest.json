@@ -34,9 +34,13 @@
       "attrs": [
         "archive"
       ],
-      "status": "ok",
       "uri": "https://www.ebi.ac.uk/GOA",
-      "validation_date": "2011-07-07T00:00:00Z"
+      "validations": [
+        {
+          "validation_stamp": "2011-07-07T00:00:00Z",
+          "status": "ok"
+        }
+      ]
     }
   ]
 }
