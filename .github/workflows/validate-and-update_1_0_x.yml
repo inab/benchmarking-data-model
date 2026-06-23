@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     name: JSON Schema validation through pre-commit
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pre-commit/action@v3.0.1
         with:
           extra_args: --all -c .pre-commit-config.yaml
@@ -26,7 +26,7 @@ jobs:
       matrix:
         schema-version: [ "0.4.x", "1.0.x" ]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 100
       - uses: ts-graphviz/setup-graphviz@v2
@@ -84,7 +84,7 @@ jobs:
     needs:
       - generate-charts
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - id: download
         uses: actions/download-artifact@v8
         with:
