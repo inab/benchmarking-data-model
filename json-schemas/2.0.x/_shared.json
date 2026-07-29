@@ -280,30 +280,45 @@
 				"___provenance___": {
 					"type": "object",
 					"properties": {
-						"orcid": {
+						"person": {
 							"type": "string",
 							"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
-						},
-						"created": {
-							"$ref": "#/definitions/Created"
-						},
-						"updated": {
-							"$ref": "#/definitions/Updated"
-						},
-						"deleted": {
-							"$ref": "#/definitions/Deleted"
 						},
 						"reason": {
 							"type": "string",
 							"minLength": 1
 						}
 					},
-					"required": [
-						"orcid",
-						"created",
-						"updated"
+					"oneOf": [
+						{
+							"properties": {
+								"created": {
+									"$ref": "#/definitions/Created"
+								}
+							},
+							"required": [ "created" ]
+						},
+						{
+							"properties": {
+								"updated": {
+									"$ref": "#/definitions/Updated"
+								}
+							},
+							"required": [ "updated" ]
+						},
+						{
+							"properties": {
+								"deleted": {
+									"$ref": "#/definitions/Deleted"
+								}
+							},
+							"required": [ "deleted" ]
+						}
 					],
-					"additionalProperties": false
+					"required": [
+						"person"
+					],
+					"unevaluatedProperties": false
 				}
 			}
 		},		
