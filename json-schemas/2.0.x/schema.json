@@ -15,7 +15,7 @@
 				"$ref": "Community"
 			},
 			{
-				"$ref": "Contact"
+				"$ref": "Person"
 			},
 			{
 				"$ref": "Dataset"

@@ -1,11 +1,11 @@
 {
-	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/Contact",
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/Person",
 	"$schema": "https://json-schema.org/draft/2019-09/schema",
-	"title": "Contact concept (OpenEBench Benchmarking Data Model schemas)",
+	"title": "Person concept (OpenEBench Benchmarking Data Model schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
-			"$comment": "It declares _canonical_id, _metadata, _revision, _license, _provenance",
+			"$comment": "It declares _canonical_id, _metadata, _revision, _license, ___provenance___",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{
@@ -16,13 +16,13 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"$ref": "_shared#/definitions/ContactCanonicalId"
+			"$ref": "_shared#/definitions/PersonCanonicalId"
 		},
 		"_schema": {
 			"title": "The JSON schema absolute URI. It must match the value of '$id' in the JSON schema",
 			"type": "string",
 			"format": "uri",
-			"enum": [ "https://w3id.org/openebench/scientific-schemas/2.0/Contact" ]
+			"enum": [ "https://w3id.org/openebench/scientific-schemas/2.0/Person" ]
 		},
 		
 		"links": {

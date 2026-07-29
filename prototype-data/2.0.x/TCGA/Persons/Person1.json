@@ -1,6 +1,6 @@
 {
    "_id":"orcid:0000-0003-4526-9727",
-   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Person",
    "givenName":"Matthew",
    "surname":"Bailey",
    "email": "m.hawkins.bailey@gmail.com",

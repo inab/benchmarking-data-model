@@ -106,8 +106,8 @@
 			"pattern": "^OEBC[0-9]{3}$"
 		},
 		
-		"ContactCanonicalId": {
-			"title": "The canonical id of a contact. It must be either a valid ORCID or a fake ISNI generated from the e-mail address",
+		"PersonCanonicalId": {
+			"title": "The canonical id of a person. It must be either a valid ORCID or a fake ISNI generated from the e-mail address",
 			"type": "string",
 			"description": "Canonical contact identifiers returned by the APIs must follow this pattern, and they do not include the revision",
 			"oneOf": [
@@ -121,7 +121,7 @@
 		},
 
 		"ReferredContactIds": {
-			"title": "The concept's contact id(s), i.e. the creators",
+			"title": "The concept's person id(s), i.e. the creators",
 			"type": "array",
 			"minItems": 1,
 			"items": {
@@ -129,7 +129,7 @@
 				"pattern": "^orcid:[09]",
 				"foreign_keys": [
 					{
-						"schema_id": "Contact",
+						"schema_id": "Person",
 						"members": [ "." ]
 					}
 				],
@@ -252,7 +252,7 @@
 							"$ref": "#/definitions/CommunityCanonicalId"
 						},
 						{
-							"$ref": "#/definitions/ContactCanonicalId"
+							"$ref": "#/definitions/PersonCanonicalId"
 						},
 						{
 							"$ref": "#/definitions/DatasetCanonicalId"
@@ -277,7 +277,7 @@
 				"_license": {
 					"$ref": "#/definitions/License"
 				},
-				"_provenance": {
+				"___provenance___": {
 					"type": "object",
 					"properties": {
 						"orcid": {

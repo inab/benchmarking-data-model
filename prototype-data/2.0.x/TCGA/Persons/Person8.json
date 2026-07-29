@@ -1,6 +1,6 @@
 {
    "_id":"orcid:0000-0001-7053-7717",
-   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Contact",
+   "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/Person",
    "givenName":"Loris",
    "surname":"Mularoni",
    "email": "loris.mularoni@irbbarcelona.org",
