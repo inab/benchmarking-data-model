@@ -284,6 +284,12 @@
 							"type": "string",
 							"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
 						},
+						"changeset": {
+							"description": "An identifier to match all the changes which happened at once",
+							"type": "string",
+							"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+							"minLength": 1
+						},
 						"reason": {
 							"type": "string",
 							"minLength": 1
@@ -316,7 +322,8 @@
 						}
 					],
 					"required": [
-						"person"
+						"person",
+						"changeset"
 					],
 					"unevaluatedProperties": false
 				}
