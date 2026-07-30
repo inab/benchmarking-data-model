@@ -5,5 +5,10 @@
    "surname":"Porta-Pardo",
    "email": "eduard.porta@bsc.es",
    "notes":"Curated",
-   "initial_community_id": "OEBC001"
+   "___privileges___": [
+      {
+         "role": "public",
+         "community_id": "OEBC001"
+      }
+   ]
 }

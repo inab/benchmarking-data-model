@@ -4,7 +4,16 @@
 	"givenName": "Toni",
 	"surname": "Gabaldon",
 	"email": "toni.gabaldon@crg.eu",
-	"initial_community_id":"OEBC002",
+    "___privileges___": [
+        {
+            "role": "public",
+            "community_id": "OEBC002"
+        },
+        {
+            "role": "owner",
+            "community_id": "OEBC002"
+        }
+    ],
 	"notes": "QfO4 organizer",
 	"links": [
 		{

@@ -1,7 +1,12 @@
 {
   "_id": "orcid:0000-0003-2715-335X",
   "_schema" : "https://w3id.org/openebench/scientific-schemas/2.0/Person",
-  "initial_community_id" : "OEBC008",
+   "___privileges___": [
+      {
+         "role": "public",
+         "community_id": "OEBC008"
+      }
+   ],
   "givenName": "Torsten",
   "surname": "Schwede",
   "email": "torsten.schwede@sib.swiss",

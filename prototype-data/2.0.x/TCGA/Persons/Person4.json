@@ -5,5 +5,10 @@
    "surname":"Reimand",
    "email": "juri.reimand@utoronto.ca",
    "notes":"Curated",
-   "initial_community_id": "OEBC001"
+   "___privileges___": [
+      {
+         "role": "public",
+         "community_id": "OEBC001"
+      }
+   ]
 }

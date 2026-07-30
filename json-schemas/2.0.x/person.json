@@ -46,28 +46,136 @@
 			"minLength": 1,
 			"format": "email"
 		},
-		"initial_community_id": {
-			"title": "The community id where this contact first attached to",
-			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "Community",
-					"members": [ "." ]
-				}
-			],
-			"minLength": 7
-		},
 		"notes": {
 			"title": "Comments about the contact",
 			"type": "string"
+		},
+		"___privileges___" : {
+			"title": "The roles assigned to this person",
+			"type": "array",
+  			"items": {
+				"type": "object",
+				"properties": {
+					"role": {
+						"title": "The role assigned to the person",
+						"type": "string",
+						"enum":  [ "owner", "manager", "contributor", "manager", "contributor", "evaluator", "supervisor", "public" ]
+					},
+					"community_id": {
+						"title": "The community the role is assigned to",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Community",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 7
+					},
+					"benchmarking_event_id": {
+						"title": "The benchmarking event the role is assigned to",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "BenchmarkingEvent",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"challenge_id": {
+						"title": "The challenge the role is assigned to",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Challenge",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					}
+				},
+				"required": ["role"],
+				"unevaluatedProperties": false,
+				"oneOf": [
+					{
+						"required": ["role", "community_id"],
+						"allOf": [
+							{
+								"not": {
+									"required": ["benchmarking_event_id"]
+								}
+							},
+							{
+								"not": {
+									"required": ["challenge_id"]
+								}
+							},
+							{
+								"properties": {
+									"role": {
+										"type": "string",
+										"enum": [ "owner", "public" ]
+									}
+								}
+							}
+						]
+					},
+					{
+						"required": ["role", "benchmarking_event_id"],
+						"allOf": [
+							{
+								"not": {
+									"required": ["community_id"]
+								}
+							},
+							{
+								"not": {
+									"required": ["challenge_id"]
+								}
+							},
+							{
+								"properties": {
+									"role": {
+										"type": "string",
+										"enum": [ "manager", "contributor" ]
+									}
+								}
+							}
+						]
+					},
+					{
+						"required": ["role", "challenge_id"],
+						"allOf": [
+							{
+								"not": {
+									"required": ["community_id"]
+								}
+							},
+							{
+								"not": {
+									"required": ["benchmarking_event_id"]
+								}
+							},
+							{
+								"properties": {
+									"role": {
+										"type": "string",
+										"enum": [ "manager", "contributor", "evaluator", "supervisor" ]
+									}
+								}
+							}
+						]
+					}
+				]
+			}
 		}
 	},
 	"unevaluatedProperties": false,
 	"required": [
 		"_id",
 		"_schema",
-		"email",
-		"initial_community_id"
+		"email"
 	],
 	"primary_key": ["_id"],
 	"dependencies": {}

@@ -5,5 +5,10 @@
    "surname":"Ellrott",
    "email": "ellrott@ohsu.edu",
    "notes":"Curated",
-   "initial_community_id": "OEBC001"
+   "___privileges___": [
+      {
+         "role": "public",
+         "community_id": "OEBC001"
+      }
+   ]
 }

@@ -5,5 +5,10 @@
    "surname":"Dees",
    "email": "unknown@example.com",
    "notes":"Left science: https://www.linkedin.com/in/nathan-dees/ . Unknown ORCID, unknown e-mail",
-   "initial_community_id": "OEBC001"
+   "___privileges___": [
+      {
+         "role": "public",
+         "community_id": "OEBC001"
+      }
+   ]
 }
