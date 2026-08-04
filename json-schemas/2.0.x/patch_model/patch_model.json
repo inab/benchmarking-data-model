@@ -1,0 +1,91 @@
+{
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/patch_model/",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "JSON Schema to describe the MongoDB patch model",
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "The identifier of the materialised entry",
+					"type": "string",
+					"minLength": 1
+				},
+				"ver": {
+					"title": "The 'version' is when the patch entry was computed, in UTC UNIX epoch (including milliseconds)",
+					"type": "integer",
+					"minimum": 0
+				}
+			},
+			"unevaluatedProperties": false,
+			"required": [ "id", "ver"]
+		},
+		"src": {
+			"description": "The source for this entry. In the case of OpenEBench Scientific 2.0, the collection / concept name",
+			"type": "string",
+			"enum": ["BenchmarkingEvent", "Challenge", "Community", "Dataset", "Metrics", "Person", "Reference", "TestAction", "Tool"],
+			"minLength": 1
+		},
+		"patch": {
+			"description": "A list of JSON patches, as it is described at https://jsonpatch.com/ ",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"description": "A subset of a single JSON patch, as it is described at https://jsonpatch.com/ ",
+				"properties": {
+					"op": {
+						"description": "Patch operation",
+						"type": "string",
+						"enum": [ "add", "replace", "remove" ]
+					},
+					"path": {
+						"description": "RFC 6901 JSON pointer",
+						"type": "string"
+					},
+					"value": {
+						"description": "The value to add / replace, which can be any"
+					}
+				},
+				"oneOf": [
+					{
+						"properties": {
+							"enum": ["add", "replace"]
+						},
+						"required": ["op", "path", "value"]
+					},
+					{
+						"properties": {
+							"enum": ["remove"]
+						},
+						"not": {
+							"required": ["value"]
+						}
+					}
+				],
+				"required": ["op", "path"],
+				"unevaluatedProperties": false
+			},
+			"minItems": 1
+		},
+		"person": {
+			"description": "Who submitted this modification",
+			"type": "string",
+			"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
+		},
+		"changeset": {
+			"description": "An identifier (in UUID format) to match all the changes which happened at once. Recommendation is either v4 , v1, v6 or v7 variants",
+			"type": "string",
+			"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			"minLength": 1
+		}		
+	},
+	"unevaluatedProperties": false,
+	"required": [
+		"_id",
+		"src",
+		"patch",
+		"person",
+		"changeset"
+	]
+}

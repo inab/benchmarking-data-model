@@ -11,6 +11,8 @@ repos:
           - python
           - pyi
       - id: check-json
+        types: [file]
+        files: \.(json|jsonpatch)$
       - id: check-yaml
         types: [file]
         files: \.(yaml|yml)$
@@ -33,6 +35,14 @@ repos:
         require_serial: true
         pass_filenames: false
         args: [ "-c", "json-schemas/2.0.x", "prototype-data/2.0.x" ]
+      - id: json_validation
+        name: Validate JSON PATCH examples
+        types:
+          - json
+        files: ^json-schemas/2.0.x/patch_model/.*\.(json|jsonpatch)$
+        require_serial: true
+        pass_filenames: false
+        args: [ "--guess-schema", "-c", "json-schemas/2.0.x/patch_model", "json-schemas/2.0.x/patch_model/examples" ]
       - id: jsonschema_dir_validate
         name: Check 1.0.x
         types:
