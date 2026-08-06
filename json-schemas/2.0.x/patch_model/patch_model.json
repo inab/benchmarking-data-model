@@ -1,7 +1,7 @@
 {
-	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/patch_model/",
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/patch_model/patch",
 	"$schema": "https://json-schema.org/draft/2019-09/schema",
-	"title": "JSON Schema to describe the MongoDB patch model",
+	"title": "JSON Schema to describe the on disk MongoDB patch model",
 	"type": "object",
 	"properties": {
 		"_id": {
@@ -78,7 +78,13 @@
 			"type": "string",
 			"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
 			"minLength": 1
-		}		
+		},
+		"prev": {
+			"description": "The previous version of the entry, which was used as base to compute this difference. This number must be lower than the value of `/_id/rev`. When a entry is created, the value of this property must be 0",
+			"type": "integer",
+			"minimum": 0,
+			"default": 0
+		}
 	},
 	"unevaluatedProperties": false,
 	"required": [
@@ -86,6 +92,7 @@
 		"src",
 		"patch",
 		"person",
-		"changeset"
+		"changeset",
+		"prev"
 	]
 }
