@@ -4,11 +4,5 @@
    "givenName":"Michael",
    "surname":"Lawrence",
    "email": "lawrence@broadinstitute.org",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

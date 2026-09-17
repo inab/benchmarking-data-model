@@ -28,7 +28,7 @@
 		},
 		"Revision": {
 			"title": "Entries' revision number",
-			"description": "This is a monotonic, incremental counter which changes only when the entry has changed",
+			"description": "This is a monotonic, incremental value which changes only when the entry has changed. It should be the UTC UNIX epoch (including milliseconds)",
 			"readOnly": true,
 			"type": "integer",
 			"minimum": 1
@@ -126,7 +126,7 @@
 			"minItems": 1,
 			"items": {
 				"type": "string",
-				"pattern": "^orcid:[09]",
+				"pattern": "^orcid:[09].+$",
 				"foreign_keys": [
 					{
 						"schema_id": "Person",
@@ -232,10 +232,15 @@
 				"_metadata": {
 					"$ref": "#/definitions/Metadata"
 				},
-				"_revision": {
+				"___ver___": {
+					"description": "The field is filled in and kept on server side, and it contains the revision",
 					"$ref": "#/definitions/Revision"
 				},
-				"_canonical_id": {
+				"__revision__": {
+					"description": "The field is shadow copy of the ___ver___, and it contains the revision",
+					"$ref": "#/definitions/Revision"
+				},
+				"__canonical_id__": {
 					"title": "The canonical id of the entry",
 					"description": "The field is filled in on server side, and it contains the canonical id, which is in some cases the content of '_id', plus its revision",
 					"readOnly": true,
@@ -274,58 +279,9 @@
 						}
 					]
 				},
-				"_license": {
+				"__license__": {
+					"description": "The distribution license of this metadata (usually hardcoded by the API)",
 					"$ref": "#/definitions/License"
-				},
-				"___provenance___": {
-					"type": "object",
-					"properties": {
-						"person": {
-							"type": "string",
-							"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
-						},
-						"changeset": {
-							"description": "An identifier to match all the changes which happened at once",
-							"type": "string",
-							"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
-							"minLength": 1
-						},
-						"reason": {
-							"type": "string",
-							"minLength": 1
-						}
-					},
-					"oneOf": [
-						{
-							"properties": {
-								"created": {
-									"$ref": "#/definitions/Created"
-								}
-							},
-							"required": [ "created" ]
-						},
-						{
-							"properties": {
-								"updated": {
-									"$ref": "#/definitions/Updated"
-								}
-							},
-							"required": [ "updated" ]
-						},
-						{
-							"properties": {
-								"deleted": {
-									"$ref": "#/definitions/Deleted"
-								}
-							},
-							"required": [ "deleted" ]
-						}
-					],
-					"required": [
-						"person",
-						"changeset"
-					],
-					"unevaluatedProperties": false
 				}
 			}
 		},		

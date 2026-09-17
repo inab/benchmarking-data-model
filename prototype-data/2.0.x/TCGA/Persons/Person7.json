@@ -4,11 +4,5 @@
    "givenName":"David",
    "surname":"Tamborero",
    "email": "david.tamborero@irbbarcelona.org",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

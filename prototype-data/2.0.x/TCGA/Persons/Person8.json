@@ -4,11 +4,5 @@
    "givenName":"Loris",
    "surname":"Mularoni",
    "email": "loris.mularoni@irbbarcelona.org",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

@@ -5,7 +5,7 @@
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
-			"$comment": "It declares _canonical_id, _metadata, _revision, _license, ___provenance___",
+			"$comment": "It declares __canonical_id__, _metadata, __revision__, __license__",
 			"$ref": "_shared#/definitions/CommonKeys"
 		},
 		{

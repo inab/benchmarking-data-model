@@ -4,11 +4,5 @@
    "givenName":"Collin",
    "surname":"Tokheim",
    "email": "ctokheim@ds.dfci.harvard.edu",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

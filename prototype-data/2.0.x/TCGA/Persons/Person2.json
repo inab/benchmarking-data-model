@@ -4,11 +4,5 @@
    "givenName":"Eduard",
    "surname":"Porta-Pardo",
    "email": "eduard.porta@bsc.es",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

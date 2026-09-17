@@ -4,11 +4,5 @@
    "givenName":"Jüri",
    "surname":"Reimand",
    "email": "juri.reimand@utoronto.ca",
-   "notes":"Curated",
-   "___privileges___": [
-      {
-         "role": "public",
-         "community_id": "OEBC001"
-      }
-   ]
+   "notes":"Curated"
 }

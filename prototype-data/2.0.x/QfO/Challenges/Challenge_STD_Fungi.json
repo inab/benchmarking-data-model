@@ -2,7 +2,7 @@
     "_id": "QfO:2011-07-07_STD_Fungi",
     "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Challenge",
     "acronym": "STD_Fungi",
-    "benchmarking_event_id": "QfO:2011-07-07",
+    "benchmarking_event_id": "OEBE0020000000",
     "challenge_contact_ids": [
         "orcid:0000-0002-2170-853X",
         "orcid:0000-0002-9074-3507",

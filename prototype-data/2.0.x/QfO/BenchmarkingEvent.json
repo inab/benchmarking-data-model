@@ -1,5 +1,6 @@
 {
-   "_id":"QfO:2011-07-07",
+   "_id":"OEBE0020000000",
+   "orig_id": "QfO:2011-07-07",
    "_schema":"https://w3id.org/openebench/scientific-schemas/2.0/BenchmarkingEvent",
    "name":"Quest for Orthologs - 2011 Reference Proteomes",
    "is_automated": true,
