@@ -32,16 +32,17 @@ repos:
         name: Validate 2.0.x prototype data (admin)
         types:
           - json
-        files: (^json-schemas/2.0.x/admin/.*\.json$)|(^prototype-data/2.0.x/.*/Roles/.*\.json$)
+        files: (^json-schemas/2.0.x/admin/.*\.json$)|(^prototype-data/2.0.x/.*/Permissions/.*\.json$)|(^prototype-data/2.0.x/roles/.*\.json$)
         require_serial: true
         pass_filenames: false
         args:
           - "-c"
           - "--guess-schema"
           - "json-schemas/2.0.x/admin"
-          - "prototype-data/2.0.x/CAMEO/Roles"
-          - "prototype-data/2.0.x/TCGA/Roles"
-          - "prototype-data/2.0.x/QfO/Roles"
+          - "prototype-data/2.0.x/roles"
+          - "prototype-data/2.0.x/CAMEO/Permissions"
+          - "prototype-data/2.0.x/TCGA/Permissions"
+          - "prototype-data/2.0.x/QfO/Permissions"
 
       - id: json_validation
         name: Validate 2.0.x prototype data

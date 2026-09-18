@@ -1,32 +1,14 @@
 {
-	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/role",
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/admin/role",
 	"$schema": "https://json-schema.org/draft/2019-09/schema",
-	"title": "JSON Schema to describe a granted role assigned to a person",
+	"title": "JSON Schema to enumerate a role along with its description",
 	"type": "object",
 	"properties": {
 		"_id": {
-			"type": "object",
-			"properties": {
-				"person": {
-					"title": "The unique id of the person. It should be a qualified, valid ORCID",
-					"type": "string",
-					"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$",
-					"minLength": 1
-				},
-				"oeb_id": {
-					"title": "A valid OEB id being affected by this role",
-					"type": "string",
-					"pattern": "(?:^OEBC[0-9]{3}$)|(?:^OEBE[0-9]{3}0[A-Z0-9]{6}$)|(?:^OEBX[0-9]{3}0[A-Z0-9]{6}$)",
-					"minLength": 7
-				}
-			},
-			"required": ["person","oeb_id"],
-			"additionalProperties": false
-		},
-		"role": {
-			"title": "The role assigned to the person",
+			"title": "The role internal, unique name, in order to avoid ambiguities",
 			"type": "string",
-			"enum":  [ "owner", "manager", "contributor", "manager", "contributor", "evaluator", "supervisor", "public" ]
+			"pattern": "^[^:]+:[^:]+$",
+			"minLength": 1
 		},
 		"concept": {
 			"title": "The concept type over the one the role is being assigned",
@@ -37,87 +19,31 @@
 				"Challenge"
 			]
 		},
+		"description": {
+			"title": "The text which describes this role",
+			"type": "string",
+			"minLength": 1
+		},
 		"ver": {
 			"title": "The 'version' is when the role entry was created or updated, in UTC UNIX epoch (including milliseconds)",
 			"type": "integer",
 			"minimum": 0
 		},
-		"grantor": {
-			"title": "Who granted this role?",
+		"creator": {
+			"title": "Who created this role?",
 			"type": "string",
 			"pattern": "^orcid:0\\d{3}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$",
 			"minLength": 1
 		}
 	},
-	"required": ["_id", "role", "concept", "ver", "grantor"],
+	"required": ["_id", "concept", "description", "ver", "creator"],
 	"primary_key": ["_id"],
-	"unevaluatedProperties": false,
-	"oneOf": [
-		{
-			"properties": {
-				"_id": {
-					"type": "object",
-					"properties": {
-						"oeb_id": {
-							"title": "A valid OEB community_id being affected by this role",
-							"type": "string",
-							"pattern": "^OEBC[0-9]{3}$"
-						}
-					}
-				},
-				"concept": {
-					"type": "string",
-					"const": "Community"
-				},
-				"role": {
-					"type": "string",
-					"enum": [ "owner", "public" ]
-				}
-			}
-		},
-		{
-			"properties": {
-				"_id": {
-					"type": "object",
-					"properties": {
-						"oeb_id": {
-							"title": "A valid OEB benchmarking_event_id being affected by this role",
-							"type": "string",
-							"pattern": "^OEBE[0-9]{3}0[A-Z0-9]{6}$"
-						}
-					}
-				},
-				"concept": {
-					"type": "string",
-					"const": "BenchmarkingEvent"
-				},
-				"role": {
-					"type": "string",
-					"enum": [ "manager", "contributor" ]
-				}
-			}
-		},
-		{
-			"properties": {
-				"_id": {
-					"type": "object",
-					"properties": {
-						"oeb_id": {
-							"title": "A valid OEB challenge_id being affected by this role",
-							"type": "string",
-							"pattern": "^OEBX[0-9]{3}0[A-Z0-9]{6}$"
-						}
-					}
-				},
-				"concept": {
-					"type": "string",
-					"const": "Challenge"
-				},
-				"role": {
-					"type": "string",
-					"enum": [ "manager", "contributor", "evaluator", "supervisor" ]
-				}
-			}
-		}
-	]
+	"index": {
+		"members": [
+			"_id",
+			"concept"
+		],
+		"name": "RoleIndex"
+	},
+	"unevaluatedProperties": false
 }

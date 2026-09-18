@@ -1,0 +1,10 @@
+{
+    "_id": {
+        "person": "orcid:0000-0002-9808-688X",
+        "role": "be:contributor",
+        "oeb_id": "OEBE0020000000"
+    },
+    "concept": "BenchmarkingEvent",
+    "ver": 1789662639000,
+    "grantor": "orcid:0000-0003-0015-1573"
+}
