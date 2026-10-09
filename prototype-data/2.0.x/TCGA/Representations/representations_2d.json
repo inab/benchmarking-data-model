@@ -1,9 +1,9 @@
 {
     "_id":"TCGA:aggregation",
-    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Metrics",
-    "name":"TCGA benchmark consolidattion",
+    "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/Representation",
+    "name":"TCGA benchmark consolidation",
     "description":"Aggregation of TCGA benchmarking data from a single challenge into a consolidated aggregation dataset",
-    "metrics_contact_ids":[
+    "representation_contact_ids":[
        "orcid:0000-0003-4526-9727",
       "orcid:0000-0001-7900-4239",
       "orcid:0000-0003-1395-5378"

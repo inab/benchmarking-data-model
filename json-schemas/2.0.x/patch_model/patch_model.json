@@ -50,13 +50,17 @@
 				"oneOf": [
 					{
 						"properties": {
-							"enum": ["add", "replace"]
+							"op": {
+								"enum": ["add", "replace"]
+							}
 						},
 						"required": ["op", "path", "value"]
 					},
 					{
 						"properties": {
-							"enum": ["remove"]
+							"op": {
+								"enum": ["remove"]
+							}
 						},
 						"not": {
 							"required": ["value"]

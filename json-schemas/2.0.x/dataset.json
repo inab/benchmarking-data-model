@@ -202,6 +202,17 @@
 					],
 					"minLength": 1
 				},
+				"representation_id": {
+					"title": "The id of the metrics tied to the tool id",
+					"type": "string",
+					"foreign_keys": [
+						{
+							"schema_id": "Representation",
+							"members": [ "." ]
+						}
+					],
+					"minLength": 1
+				},
 				"tool_id": {
 					"title": "The id of the tool which generated this dataset",
 					"type": "string",
@@ -243,6 +254,18 @@
 				}
 			},
 			"additionalProperties": false,
+			"join_keys": [
+				{
+					"schema_id": "Challenge",
+					"members": ["_id", "depends_on.metrics_id"],
+					"refers_to": "MetricsChallengeIndex"
+				},
+				{
+					"schema_id": "Challenge",
+					"members": ["_id", "depends_on.representation_id"],
+					"refers_to": "RepresentationChallengeIndex"
+				}
+			],
 			"anyOf": [
 				{
 					"required": [ "rel_dataset_ids" ]
@@ -251,7 +274,14 @@
 					"required": [ "tool_id" ]
 				},
 				{
-					"required": [ "metrics_id" ]
+					"oneOf": [
+						{
+							"required": [ "metrics_id" ]
+						},
+						{
+							"required": [ "representation_id" ]
+						}
+					]
 				}
 			]
 		}

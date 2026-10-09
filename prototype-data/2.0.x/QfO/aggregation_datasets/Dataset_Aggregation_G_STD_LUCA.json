@@ -18,6 +18,7 @@
     "modification": "2011-07-07T00:00:00Z"
   },
   "depends_on": {
+    "representation_id": "QfO:aggregation",
     "rel_dataset_ids": [
       {
         "dataset_id": "QfO:2011-07-07_G_STD_LUCA_A_STD_comp_trees_EggNOG"

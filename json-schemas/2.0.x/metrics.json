@@ -57,7 +57,7 @@
 		
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
-			"title": "The reference id(s) of this dataset (if any)"
+			"title": "The reference id(s) of this metrics (if any)"
 		},
 		
 		"links": {

@@ -189,6 +189,25 @@
 			"pattern": "^(doi:[0-9]{2}\\.[0-9]{4,}/.*)|(pubmed:[1-9][0-9]*)$"
 		},
 		
+		"RepresentationTemporaryId": {
+			"title": "The temporary id of a representation definition",
+			"description": "Temporary identifiers internally used must follow this pattern",
+			"type": "string",
+			"pattern": "^OEBR[0-9]{3}t[A-Z0-9]{6}$"
+		},
+		"RepresentationId": {
+			"title": "The id of a representation definition",
+			"description": "Identifiers returned by the APIs must follow this pattern",
+			"type": "string",
+			"pattern": "^OEBR[0-9]{3}0[A-Z0-9]{6}$"
+		},
+		"RepresentationCanonicalId": {
+			"title": "The canonical id of a representation definition",
+			"type": "string",
+			"description": "Canonical metrics identifiers returned by the APIs must follow this pattern",
+			"pattern": "^OEBR[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
+		},
+		
 		"TestActionTemporaryId": {
 			"title": "The temporary id of a test action",
 			"type": "string",

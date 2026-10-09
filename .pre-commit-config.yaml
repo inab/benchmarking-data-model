@@ -17,7 +17,7 @@ repos:
         types: [file]
         files: \.(yaml|yml)$
   - repo: https://github.com/inab/python-extended-json-schema-validator.git
-    rev: v0.15.1
+    rev: v0.16.2
     hooks:
       - id: jsonschema_dir_validate
         name: Check 2.0.x
@@ -82,6 +82,10 @@ repos:
         require_serial: true
         pass_filenames: false
         args: [ "-c", "json-schemas/1.0.x", "prototype-data/1.0.x" ]
+  - repo: https://github.com/inab/python-extended-json-schema-validator.git
+    rev: v0.15.1
+    # Newer versions of jsonschema dropped Draft04 hyperschemas
+    hooks:
       - id: jsonschema_dir_validate
         name: Check 0.4.x
         types:
@@ -91,7 +95,7 @@ repos:
         pass_filenames: false
         args: [ "json-schemas/0.4.x" ]
   - repo: https://github.com/jmfernandez/pre-commit_mirrors-actionlint.git
-    rev: v1.6.25-r1
+    rev: v1.7.9
     hooks:
       - id: actionlint
         args:

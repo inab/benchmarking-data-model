@@ -17,30 +17,20 @@
     },
     "is_automated": true,
     "participation_model": "public",
-    "metrics_categories": [
+    "metrics": [
         {
-            "category": "assessment",
-            "description": "metrics used to benchmark the performance of ortholog predictors in Challenge Gene Ontology Conservation Test, generating the assessment dataset",
-            "metrics": [
-                {
-                    "metrics_id": "QfO:GOTest_ortholog_relations",
-                    "tool_id": "QfO:metrics_computator"
-                },
-                {
-                    "metrics_id": "QfO:GOTest_schlicker",
-                    "tool_id": "QfO:metrics_computator"
-                }
-            ]
+            "metrics_id": "QfO:GOTest_ortholog_relations",
+            "tool_id": "QfO:metrics_computator"
         },
         {
-            "category": "aggregation",
-            "description": "metrics used to aggregate the assessment data of all ortholog predictors participating in challenge Gene Ontology Conservation Test in a consolidated Aggregation dataset",
-            "metrics": [
-                {
-                    "metrics_id": "QfO:aggregation",
-                    "tool_id": "QfO:aggregate_benchmark"
-                }
-            ]
+            "metrics_id": "QfO:GOTest_schlicker",
+            "tool_id": "QfO:metrics_computator"
+        }
+    ],
+    "representations": [
+        {
+            "representation_id": "QfO:aggregation",
+            "tool_id": "QfO:aggregate_benchmark"
         }
     ],
     "name": "Gene Ontology Conservation Test benchmark",

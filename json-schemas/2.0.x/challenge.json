@@ -145,61 +145,94 @@
 				"challenge_stop": ["challenge_start"]
 			}
 		},
-		"metrics_categories": {
-			"title": "The metrics category/es appliable to all or part of the participants of this challenge",
+		"metrics": {
+			"title": "The list of available metrics in this category",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
-					"category": {
-						"title": "Metrics category",
-						"minLength": 1,
+					"metrics_id": {
+						"title": "The metrics id",
 						"type": "string",
-						"enum": ["aggregation","assessment"]
+						"foreign_keys": [
+							{
+								"schema_id": "Metrics",
+								"members": [ "." ]
+							}
+						]
 					},
-					"description": {
-						"title": "Description of the metrics category",
-						"type": "string"
+					"tool_id": {
+						"title": "The optional tool id which computes this metric(s)",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						]
+					}
+				},
+				"index": {
+					"members": [
+						"metrics_id"
+					],
+					"name": "MetricsAssessmentIndex",
+					"limit_scope": true
+				},
+				"additionalProperties": false,
+				"required": [ "metrics_id", "tool_id" ]
+			}
+		},
+		"representations": {
+			"title": "The list of available representations (ways to combine metrics) for the aggregation. When this tag is not available, no associated aggregation dataset should exist",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"representation_id": {
+						"title": "The representation id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Representation",
+								"members": [ "." ]
+							}
+						]
 					},
-					"metrics": {
-						"title": "The list of metrics in this category",
+					"tool_id": {
+						"title": "The optional tool id which computes this metric(s)",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Tool",
+								"members": [ "." ]
+							}
+						]
+					},
+					"metrics_combinations": {
+						"title": "The allowed metrics combinations. If absent, any metrics combination is allowed. If present, only the combinations declare here are valid",
 						"type": "array",
 						"minItems": 1,
 						"items": {
-							"type": "object",
-							"properties": {
-								"metrics_id": {
-									"title": "The metrics id",
-									"type": "string",
-									"foreign_keys": [
-										{
-											"schema_id": "Metrics",
-											"members": [ "." ]
-										}
-									]
-								},
-								"tool_id": {
-									"title": "The optional tool id which computes this metric(s)",
-									"type": "string",
-									"foreign_keys": [
-										{
-											"schema_id": "Tool",
-											"members": [ "." ]
-										}
-									]
-								}
-							},
-							"additionalProperties": false,
-							"required": [ "metrics_id", "tool_id" ]
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"title": "The allowed metrics id",
+								"type": "string",
+								"join_keys": [
+									{
+										"members": ["."],
+										"refers_to": "MetricsAssessmentIndex"
+									}
+								]
+							}
 						}
 					}
 				},
 				"additionalProperties": false,
-				"required": [
-					"metrics",
-					"category"
-				]
+				"required": [ "representation_id", "tool_id" ]
 			}
 		},
 		"challenge_contact_ids": {
@@ -217,8 +250,27 @@
 		"participation_model",
 		"dates",
 		"challenge_contact_ids",
-		"metrics_categories"
+		"metrics"
 	],
+	
 	"primary_key": ["_id"],
+	"index": [
+		{
+			"members": [
+				"_id",
+				"metrics.metrics_id"
+			],
+			"name": "MetricsChallengeIndex",
+			"limit_scope": true
+		},
+		{
+			"members": [
+				"_id",
+				"representations.representation_id"
+			],
+			"name": "RepresentationChallengeIndex",
+			"limit_scope": true
+		}
+	],
 	"dependencies": {}
 }

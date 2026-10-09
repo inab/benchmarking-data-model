@@ -1,0 +1,100 @@
+{
+	"$id": "https://w3id.org/openebench/scientific-schemas/2.0/Representation",
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"title": "Representation concept (OpenEBench Benchmarking Data Model 2.0 schemas)",
+	"description": "Abstract definition of a representation (implemented by a Tool) applied to a set of metrics",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$comment": "It declares __canonical_id__, _metadata, __revision__, __license__",
+			"$ref": "_shared#/definitions/CommonKeys"
+		},
+		{
+			"$comment": "Declaration of orig_id",
+			"$ref": "_shared#/definitions/OrigIdProp"
+		},
+		{
+			"$comment": "Declaration of references",
+			"$ref": "_shared#/definitions/ReferencesProp"
+		},
+		{
+			"$comment": "Declaration of links",
+			"$ref": "_shared#/definitions/LinksProp"
+		},
+		{
+			"$comment": "Declarations of name, description",
+			"$ref": "_shared#/definitions/NameDescProp"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"_id": {
+			"title": "The unique id of the representation",
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "_shared#/definitions/OriginalIdOnSub"
+				},
+				{
+					"$ref": "_shared#/definitions/RepresentationTemporaryId"
+				},
+				{
+					"$ref": "_shared#/definitions/RepresentationId"
+				}
+			]
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://w3id.org/openebench/scientific-schemas/2.0/Representation" ]
+		},
+		
+		"orig_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
+			"title": "The metrics original id"
+		},
+		
+		"references": {
+			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
+			"title": "The reference id(s) of this representation (if any)"
+		},
+		
+		"links": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksProp",
+			"title": "Optional links related to the representation"
+		},
+		
+		"name": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "Short representation name"
+		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "Long representation description, in Markdown format"
+		},
+		"keywords": {
+			"$comment": "Placeholder covered by _shared#/definitions/NameDescProp",
+			"title": "List of keywords which match this representation"
+		},
+		
+		"representation_contact_ids": {
+			"title": "The contact id(s) of the creators of this representation",
+			"$ref": "_shared#/definitions/ReferredContactIds"
+		},
+		"formal_definition": {
+			"title": "Formal definition of the representation",
+			"type": "string"
+		},
+		"representation_hints": {
+			"title": "The optional representation hints which can be used or ignored by any data browser / viewer",
+			"type": "object",
+			"additionalProperties": true,
+			"minProperties": 1
+		}
+	},
+	"unevaluatedProperties": false,
+	"required": ["_id","_schema","name","representation_contact_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
