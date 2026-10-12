@@ -374,6 +374,83 @@
 				}
 			}
 		},
+		"MetricsDescProp": {
+			"properties": {
+				"metrics_labels": {
+					"title": "Metrics labels",
+					"description": "This declaration overrides the one within the Metrics entry. These labels are internally used to resolve the metrics within representations, even in sloppy scenarios. If it is not defined, the original id of the metrics (removing the community label prefix, if it matches) is taken into account. If no original id is provided, then the metrics id will be considered in the worst case scenario",
+					"minItems": 1,
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1
+					},
+					"uniqueItems": true
+				},
+				"limits": {
+					"description": "Reasonable value limits (useful to detect issues in metrics computation implementations, as well as at the representation level)",
+					"type": "object",
+					"properties": {
+						"min": {
+							"type": "number",
+							"title": "Minimal value (either inclusive or exclusive)"
+						},
+						"min_inclusive": {
+							"type": "boolean",
+							"title": "Is the minimum value included or excluded?",
+							"default": true
+						},
+						"max": {
+							"type": "number",
+							"title": "Max value (either inclusive or exclusive)"
+						},
+						"max_inclusive": {
+							"type": "boolean",
+							"title": "Is the max value included or excluded?",
+							"default": true
+						}
+					},
+					"minProperties": 1,
+					"additionalProperties": false,
+					"dependentRequired": {
+						"min_inclusive": ["min"],
+						"max_inclusive": ["max"]
+					}
+				},
+				"representation": {
+					"title": "The representation hints which can be used or ignored by any data browser / viewer",
+					"type": "object",
+					"properties": {
+						"scale": {
+							"description": "Recommended scale to be used to represent the values, either linear or log2",
+							"type": "string",
+							"enum": [
+								"linear",
+								"log2"
+							],
+							"default": "linear"
+						},
+						"optimization": {
+							"description": "Chart representation optimization",
+							"oneOf": [
+								{
+									"type": "string",
+									"enum": [
+										"minimize",
+										"maximize"
+									]
+								},
+								{
+									"type": "number"
+								}
+							]
+						}
+					},
+					"additionalProperties": false,
+					"minProperties": 1
+				}
+			}
+		},
 		"LinksProp": {
 			"properties": {
 				"links": {

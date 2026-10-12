@@ -24,6 +24,10 @@
 		{
 			"$comment": "Declarations of name, description",
 			"$ref": "_shared#/definitions/NameDescProp"
+		},
+		{
+			"$comment": "Declaration of metrics_labels, limits, representation",
+			"$ref": "_shared#/definitions/MetricsDescProp"
 		}
 	],
 	"type": "object",
@@ -86,8 +90,20 @@
 			"title": "Formal definition of the metrics",
 			"type": "string"
 		},
-		"representation_hints": {
-			"title": "The optional representation hints which can be used or ignored by any data browser / viewer",
+		"metrics_labels": {
+			"$comment": "Placeholder covered by _shared#/definitions/MetricsDescProp",
+			"title": "Metrics labels"
+		},
+		"limits": {
+			"$comment": "Placeholder covered by _shared#/definitions/MetricsDescProp",
+			"title": "Reasonable value limits"
+		},
+		"representation": {
+			"$comment": "Placeholder covered by _shared#/definitions/MetricsDescProp",
+			"title": "Representation hints"
+		},
+		"other_hints": {
+			"title": "The optional representation (or whatnot) hints which can be used or ignored by any data browser / viewer",
 			"type": "object",
 			"additionalProperties": true,
 			"minProperties": 1

@@ -18,7 +18,11 @@
     "metrics": [
         {
             "metrics_id": "TCGA:TPR",
-            "tool_id": "TCGA:compute_TPR"
+            "tool_id": "TCGA:compute_TPR",
+            "limits": {
+                "min": 0,
+                "max": 1
+            }
         },
         {
             "metrics_id": "TCGA:precision",

@@ -11,6 +11,8 @@
     "formal_definition":"TPR = TP / (TP + FN)",
     "references":[
         "doi:10.1016/j.cell.2018.02.060"
-     ]
-
+     ],
+    "representation": {
+        "optimization": "maximize"
+    }
  }

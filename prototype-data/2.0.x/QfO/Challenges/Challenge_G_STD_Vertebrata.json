@@ -15,6 +15,7 @@
         "creation": "2011-07-07T00:00:00Z",
         "modification": "2011-07-07T00:00:00Z"
     },
+    "engagement_level": 2,
     "is_automated": true,
     "participation_model": "public",
     "metrics": [

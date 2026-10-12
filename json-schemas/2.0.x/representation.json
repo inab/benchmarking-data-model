@@ -86,15 +86,56 @@
 			"title": "Formal definition of the representation",
 			"type": "string"
 		},
-		"representation_hints": {
-			"title": "The optional representation hints which can be used or ignored by any data browser / viewer",
+		"visualization": {
+			"title": "Visualisation hints, like the chart type and schema representing it",
+			"type": "object",
+			"properties": {
+				"chart_type": {
+					"type": "string",
+					"enum": ["2D-plot","bar-plot", "box-plot", "line-plot", "radar-plot"]
+				},
+				"chart_schema_id": {
+					"type": "string",
+					"format": "uri"
+				},
+				"min_metrics": {
+					"description": "Minimal number of metrics needed for this kind of representation",
+					"type": "integer",
+					"default": 1
+				},
+				"max_metrics": {
+					"description": "Max number of metrics needed for this kind of representation",
+					"type": "integer"
+				},
+				"recommended_metrics_combinations": {
+					"title": "The recommended metrics combinations. If absent, no recommendation is provided",
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"items": {
+						"type": "array",
+						"minItems": 1,
+						"uniqueItems": true,
+						"items": {
+							"title": "The recommended metrics id",
+							"type": "string",
+							"minLength": 1
+						}
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": ["chart_type","chart_schema_id"]
+		},
+		"other_hints": {
+			"title": "The optional representation (or whatnot) hints which can be used or ignored by any data browser / viewer",
 			"type": "object",
 			"additionalProperties": true,
 			"minProperties": 1
 		}
 	},
 	"unevaluatedProperties": false,
-	"required": ["_id","_schema","name","representation_contact_ids"],
+	"required": ["_id","_schema","name","representation_contact_ids","visualization"],
 	"primary_key": ["_id"],
 	"dependencies": {}
 }
