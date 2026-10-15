@@ -386,19 +386,113 @@
 	},
 	"oneOf": [
 		{
+			"$comment": "Participant team id is required for this kind of datasets",
 			"properties": {
 				"type": {
 					"type": "string",
 					"const": "participant"
+				},
+				"community_ids": {
+					"description": "There can be only a single community id (if declared) associated to a participant dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"depends_on": {
+					"required": ["rel_dataset_ids"],
+					"not": {
+						"required": ["metrics_id", "representation_id"]
+					}
 				}
 			},
-			"required": ["type", "participant_team_id"]
+			"required": ["type", "participant_team_id", "depends_on"]
 		},
 		{
 			"properties": {
 				"type": {
 					"type": "string",
-					"enum": [ "public_reference", "metrics_reference", "input", "assessment", "participant_assessments", "aggregation", "other" ]
+					"const": "assessment"
+				},
+				"challenge_ids": {
+					"description": "There can be only a single challenge id associated to an assessment dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"community_ids": {
+					"description": "There can be only a single community id (if declared) associated to an assessment dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"depends_on": {
+					"required": ["rel_dataset_ids","metrics_id"],
+					"not": {
+						"required": ["representation_id"]
+					}
+				}
+			},
+			"required": ["type", "challenge_ids", "depends_on"]
+		},
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"const": "aggregation"
+				},
+				"challenge_ids": {
+					"description": "There can be only a single challenge id associated to an aggregation dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"community_ids": {
+					"description": "There can be only a single community id (if declared) associated to an aggregation dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"depends_on": {
+					"required": ["rel_dataset_ids","representation_id"],
+					"not": {
+						"required": ["metrics_id"]
+					}
+				}
+			},
+			"required": ["type", "challenge_ids", "depends_on"]
+		},
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"const": "participant_assessments"
+				},
+				"community_ids": {
+					"description": "There can be only a single community id (if declared) associated to a participant assessments dataset",
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1
+				},
+				"depends_on": {
+					"required": ["rel_dataset_ids","representation_id"],
+					"not": {
+						"required": ["metrics_id"]
+					}
+				}
+			},
+			"required": ["type", "challenge_ids", "depends_on"]
+		},
+		{
+			"$comment": "No participant team id should be allowed for these kinds of datasets",
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [ "public_reference", "metrics_reference", "input", "other" ]
+				},
+				"depends_on": {
+					"not": {
+						"required": ["metrics_id", "representation_id"]
+					}
 				}
 			},
 			"not": {
