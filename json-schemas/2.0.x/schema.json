@@ -12,6 +12,9 @@
 				"$ref": "Challenge"
 			},
 			{
+				"$ref": "ChallengeParticipant"
+			},
+			{
 				"$ref": "Community"
 			},
 			{
@@ -28,6 +31,9 @@
 			},
 			{
 				"$ref": "Reference"
+			},
+			{
+				"$ref": "Representation"
 			},
 			{
 				"$ref": "TestAction"

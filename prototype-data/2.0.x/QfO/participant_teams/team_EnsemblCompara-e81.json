@@ -1,0 +1,30 @@
+{
+  "_id": "QfO:2011-07-07_team_EnsemblCompara-e81",
+  "_schema": "https://w3id.org/openebench/scientific-schemas/2.0/ParticipantTeam",
+  "name": "EnsemblCompara-e81",
+  "benchmarking_event_id": "OEBE0020000000",
+  "enrolled_challenge_ids": [
+    "QfO:2011-07-07_SwissTree",
+    "QfO:2011-07-07_STD_Fungi",
+    "QfO:2011-07-07_STD_Eukaryota",
+    "QfO:2011-07-07_GOtest",
+    "QfO:2011-07-07_TreeFam-A",
+    "QfO:2011-07-07_G_STD_Fungi",
+    "QfO:2011-07-07_G_STD_Eukaryota",
+    "QfO:2011-07-07_G_STD_LUCA",
+    "QfO:2011-07-07_G_STD_Vertebrata",
+    "QfO:2011-07-07_ECtest"
+  ],
+  "tool_id": "QfO:EnsemblCompara-e81",
+  "team_members": [
+    {
+      "person": "orcid:0000-0002-2170-853X",
+      "roles": [
+        "2451924d-425e-4778-9f4c-36c848ca70c2"
+      ]
+    }
+  ],
+  "team_manager_ids": [
+    "orcid:0000-0002-2170-853X"
+  ]
+}

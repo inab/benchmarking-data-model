@@ -99,6 +99,25 @@
 			"pattern": "^OEBX[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
 		},
 		
+		"ParticipantTeamTemporaryId": {
+			"title": "The temporary id of a team which participates in one or more challenges (from the same benchmarking event)",
+			"type": "string",
+			"pattern": "^OEBP[0-9]{3}t[A-Z0-9]{6}$",
+			"description": "Temporary identifiers internally used must follow this pattern"
+		},
+		"ParticipantTeamId": {
+			"title": "The id of a team which participates in one or more challenges (from the same benchmarking event)",
+			"type": "string",
+			"pattern": "^OEBP[0-9]{3}0[A-Z0-9]{6}$",
+			"description": "Identifiers returned by the APIs must follow this pattern"
+		},
+		"ParticipantTeamCanonicalId": {
+			"title": "The canonical id of a team which participates in one or more challenges (from the same benchmarking event)",
+			"type": "string",
+			"description": "Canonical challenge identifiers returned by the APIs must follow this pattern",
+			"pattern": "^OEBP[0-9]{3}0[A-Z0-9]{6}\\.[1-9][0-9]*$"
+		},
+		
 		"CommunityCanonicalId": {
 			"title": "The canonical id of a community",
 			"type": "string",
@@ -134,6 +153,58 @@
 					}
 				],
 				"minLength": 1
+			}
+		},
+		
+		"AuthorContactIds": {
+			"title": "The concept's person id(s) along with their CRediT roles",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"person": {
+						"type": "string",
+						"pattern": "^orcid:[09].+$",
+						"foreign_keys": [
+							{
+								"schema_id": "Person",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					},
+					"roles": {
+						"type": "array",
+						"minItems": 1,
+						"uniqueItems": true,
+						"items": {
+							"title": "A CRediT role",
+							"description": "The 14 roles defined at CRediT (see https://credit.niso.org/implementing-credit/)",
+							"type": "string",
+							"minLength": 1,
+							"enum": [
+								"8b73531f-db56-4914-9502-4cc4d4d8ed73",
+								"f93e0f44-f2a4-4ea1-824a-4e0853b05c9d",
+								"95394cbd-4dc8-4735-b589-7e5f9e622b3f",
+								"34ff6d68-132f-4438-a1f4-fba61ccf364a",
+								"2451924d-425e-4778-9f4c-36c848ca70c2",
+								"f21e2be9-4e38-4ab7-8691-d6f72d5d5843",
+								"a693fe76-ea33-49ad-9dcc-5e4f3ac5f938",
+								"ebd781f0-bf79-492c-ac21-b31b9c3c990c",
+								"f89c5233-01b0-4778-93e9-cc7d107aa2c8",
+								"0c8ca7d4-06ad-4527-9cea-a8801fcb8746",
+								"4b1bf348-faf2-4fc4-bd66-4cd3a84b9d44",
+								"76b9d56a-e430-4e0a-84c9-59c11be343ae",
+								"43ebbd94-98b4-42f1-866b-c930cef228ca",
+								"d3aead86-f2a2-47f7-bb99-79de6421164d"
+							]
+						},
+						"default": ["2451924d-425e-4778-9f4c-36c848ca70c2"]
+					}
+				},
+				"required": [ "person", "roles" ],
+				"additionalProperties": false
 			}
 		},
 		
@@ -288,7 +359,13 @@
 							"$ref": "#/definitions/MetricsCanonicalId"
 						},
 						{
+							"$ref": "#/definitions/ParticipantTeamCanonicalId"
+						},
+						{
 							"$ref": "#/definitions/ReferenceCanonicalId"
+						},
+						{
+							"$ref": "#/definitions/RepresentationCanonicalId"
 						},
 						{
 							"$ref": "#/definitions/TestActionCanonicalId"

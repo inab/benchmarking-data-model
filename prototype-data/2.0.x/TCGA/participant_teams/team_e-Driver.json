@@ -1,0 +1,54 @@
+{
+	"_id": "TCGA:2018-04-05_team_e-Driver",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/ParticipantTeam",
+	"name": "e-Driver",
+	"benchmarking_event_id": "TCGA:2018-04-05",
+	"enrolled_challenge_ids": [
+		"TCGA:2018-04-05_ACC",
+		"TCGA:2018-04-05_ALL",
+		"TCGA:2018-04-05_BLCA",
+		"TCGA:2018-04-05_BRCA",
+		"TCGA:2018-04-05_CESC",
+		"TCGA:2018-04-05_CHOL",
+		"TCGA:2018-04-05_COAD",
+		"TCGA:2018-04-05_DLBC",
+		"TCGA:2018-04-05_ESCA",
+		"TCGA:2018-04-05_GBM",
+		"TCGA:2018-04-05_HNSC",
+		"TCGA:2018-04-05_KICH",
+		"TCGA:2018-04-05_KIRC",
+		"TCGA:2018-04-05_KIRP",
+		"TCGA:2018-04-05_LAML",
+		"TCGA:2018-04-05_LGG",
+		"TCGA:2018-04-05_LIHC",
+		"TCGA:2018-04-05_LUAD",
+		"TCGA:2018-04-05_LUSC",
+		"TCGA:2018-04-05_MESO",
+		"TCGA:2018-04-05_OV",
+		"TCGA:2018-04-05_PAAD",
+		"TCGA:2018-04-05_PCPG",
+		"TCGA:2018-04-05_PRAD",
+		"TCGA:2018-04-05_READ",
+		"TCGA:2018-04-05_SARC",
+		"TCGA:2018-04-05_SKCM",
+		"TCGA:2018-04-05_STAD",
+		"TCGA:2018-04-05_TGCT",
+		"TCGA:2018-04-05_THCA",
+		"TCGA:2018-04-05_THYM",
+		"TCGA:2018-04-05_UCEC",
+		"TCGA:2018-04-05_UCS",
+		"TCGA:2018-04-05_UVM"
+	],
+	"tool_id": "TCGA:e-Driver",
+	"team_members": [
+		{
+			"person": "orcid:0000-0001-7900-4239",
+			"roles": [
+				"2451924d-425e-4778-9f4c-36c848ca70c2"
+			]
+		}
+	],
+	"team_manager_ids": [
+		"orcid:0000-0001-7900-4239"
+	]
+}

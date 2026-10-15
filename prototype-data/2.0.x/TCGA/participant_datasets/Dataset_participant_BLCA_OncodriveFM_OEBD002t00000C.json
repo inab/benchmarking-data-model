@@ -10,6 +10,7 @@
   "dataset_contact_ids": [
     "orcid:0000-0001-7053-7717"
   ],
+  "participant_team_id": "TCGA:2018-04-05_team_OncodriveFM",
   "dates": {
     "creation": "2018-04-05T00:00:00Z",
     "modification": "2018-04-05T14:00:00Z"

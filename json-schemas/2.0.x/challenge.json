@@ -289,16 +289,21 @@
 				"_id",
 				"metrics.metrics_id"
 			],
-			"name": "MetricsChallengeIndex",
-			"limit_scope": true
+			"name": "MetricsChallengeIndex"
 		},
 		{
 			"members": [
 				"_id",
 				"representations.representation_id"
 			],
-			"name": "RepresentationChallengeIndex",
-			"limit_scope": true
+			"name": "RepresentationChallengeIndex"
+		},
+		{
+			"members": [
+				"_id",
+				"benchmarking_event_id"
+			],
+			"name": "BEChallengeIndex"
 		}
 	],
 	"dependencies": {}

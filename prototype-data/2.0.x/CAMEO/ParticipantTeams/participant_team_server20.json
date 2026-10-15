@@ -1,0 +1,21 @@
+{
+	"_id": "CAMEO:2017-01-14_team_server20",
+	"_schema": "https://w3id.org/openebench/scientific-schemas/2.0/ParticipantTeam",
+	"name": "server20",
+	"benchmarking_event_id": "CAMEO:2017-01-14",
+	"enrolled_challenge_ids": [
+		"CAMEO:CAMEO-3D_2017-01-14"
+	],
+	"tool_id": "CAMEO:server20",
+	"team_members": [
+		{
+			"person": "orcid:0000-0003-2715-335X",
+			"roles": [
+				"2451924d-425e-4778-9f4c-36c848ca70c2"
+			]
+		}
+	],
+	"team_manager_ids": [
+		"orcid:0000-0003-2715-335X"
+	]
+}

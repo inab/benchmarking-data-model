@@ -187,6 +187,17 @@
 			"title": "The contact id(s) of the depositor(s)/creator(s) of this dataset",
 			"$ref": "_shared#/definitions/ReferredContactIds"
 		},
+		"participant_team_id": {
+			"title": "Participant team which submitted this dataset",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "ParticipantTeam",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
 		"depends_on": {
 			"title": "The causal, direct dependencies of this dataset on a tool and other datasets, if available",
 			"type": "object",
@@ -373,6 +384,28 @@
 			"required": [ "uri", "attrs" ]
 		}
 	},
+	"oneOf": [
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"const": "participant"
+				}
+			},
+			"required": ["type", "participant_team_id"]
+		},
+		{
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [ "public_reference", "metrics_reference", "input", "assessment", "participant_assessments", "aggregation", "other" ]
+				}
+			},
+			"not": {
+				"required": ["participant_team_id"]
+			}
+		}
+	],
 	"unevaluatedProperties": false,
 	"required": [
 		"_id",
