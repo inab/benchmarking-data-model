@@ -12,7 +12,7 @@
 				"$ref": "Challenge"
 			},
 			{
-				"$ref": "ChallengeParticipant"
+				"$ref": "ParticipantTeam"
 			},
 			{
 				"$ref": "Community"
