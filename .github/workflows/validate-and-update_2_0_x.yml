@@ -1,6 +1,7 @@
 name: validate-and-update_2_0_x
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - 2.0.x
